@@ -1,4 +1,4 @@
-import { useCurrentFrame, useVideoConfig, spring, interpolate, Audio, staticFile } from "remotion";
+import { useCurrentFrame, useVideoConfig, spring, interpolate, Audio, staticFile, Img } from "remotion";
 import React from "react";
 import subtitles from "./subtitles.json";
 
@@ -7,6 +7,20 @@ interface SubtitleItem {
   start: number;
   end: number;
 }
+
+interface BrollScene {
+  image: string;
+  start: number;
+  end: number;
+}
+
+const brollScenes: BrollScene[] = [
+  { image: "lie_concept.png", start: 0.0, end: 9.5 },
+  { image: "echo_chamber.png", start: 9.5, end: 16.15 },
+  { image: "cognitive_brain.png", start: 16.15, end: 22.25 },
+  { image: "brain_shortcuts.png", start: 22.25, end: 36.15 },
+  { image: "critical_thinking.png", start: 36.15, end: 47.28 }
+];
 
 export const MyVideo: React.FC = () => {
   const frame = useCurrentFrame();
@@ -23,6 +37,11 @@ export const MyVideo: React.FC = () => {
 
   const currentSubtitleText = activeSubtitle ? activeSubtitle.text : "";
 
+  // Find the active B-roll scene
+  const activeScene = brollScenes.find(
+    (scene) => currentTime >= scene.start && currentTime < scene.end
+  );
+
   // Dynamic values for screen effects
   // Check if "Jhooth" or "fake" or "fek" is active in subtitle text to apply a camera shake
   const isFakeNewsActive =
@@ -34,14 +53,8 @@ export const MyVideo: React.FC = () => {
   const shakeX = isFakeNewsActive ? Math.sin(frame * 0.8) * 8 : 0;
   const shakeY = isFakeNewsActive ? Math.cos(frame * 0.8) * 8 : 0;
 
-  // Speec active checker
+  // Speech active checker
   const isSpeechActive = activeSubtitle !== undefined;
-
-  // Brain visualization scale pulse
-  const brainPulse = isSpeechActive
-    ? spring({ frame, fps, config: { damping: 10, stiffness: 100 } })
-    : 1;
-  const brainScale = interpolate(brainPulse, [0, 1], [1, 1.15]);
 
   // Keyword color highlight
   const getWordColor = (word: string, isActive: boolean) => {
@@ -73,6 +86,39 @@ export const MyVideo: React.FC = () => {
     return null;
   };
 
+  // Calculate dynamic animations and scale for B-roll image card
+  const getBrollStyles = (scene: BrollScene) => {
+    const elapsed = currentTime - scene.start;
+    const sceneDuration = scene.end - scene.start;
+    const progressInScene = elapsed / sceneDuration;
+    
+    // Slow Ken Burns zoom-in from 1.0x to 1.12x
+    const zoomScale = interpolate(progressInScene, [0, 1], [1.0, 1.12], {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp"
+    });
+    
+    // Smooth elastic spring scale-in at start of scene
+    const sceneStartFrame = elapsed * fps;
+    const bounceSpring = spring({
+      frame: sceneStartFrame,
+      fps,
+      config: { damping: 13, stiffness: 100 }
+    });
+    const entranceScale = interpolate(bounceSpring, [0, 1], [0.85, 1.0]);
+
+    // Cross-fade opacity: 0.4 seconds fade-in at the start of a scene
+    const opacity = interpolate(elapsed, [0, 0.4], [0, 1], {
+      extrapolateLeft: "clamp",
+      extrapolateRight: "clamp"
+    });
+
+    return {
+      transform: `scale(${zoomScale * entranceScale})`,
+      opacity
+    };
+  };
+
   // Word Highlight Component
   const RenderHighlightedSubtitle = () => {
     if (!activeSubtitle) return null;
@@ -100,13 +146,13 @@ export const MyVideo: React.FC = () => {
     const emojiScale = (isSpeechActive ? 1.25 : 1.0) * emojiPulse;
 
     return (
-      <div className="flex flex-col items-center justify-center w-full px-8 text-center">
+      <div className="flex flex-col items-center justify-center w-full px-4 text-center">
         {/* Floating Emoji display with scale animation */}
-        <div style={{ height: "90px", marginBottom: "20px", display: "flex", alignItems: "center", justifyContent: "center" }}>
+        <div style={{ height: "80px", marginBottom: "15px", display: "flex", alignItems: "center", justifyContent: "center" }}>
           {activeEmoji && (
             <div
               style={{
-                fontSize: "70px",
+                fontSize: "65px",
                 transform: `scale(${emojiScale})`,
                 filter: "drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))",
               }}
@@ -120,9 +166,9 @@ export const MyVideo: React.FC = () => {
         <div
           className="flex flex-wrap justify-center items-center"
           style={{
-            maxWidth: isLandscape ? "800px" : "900px",
-            lineHeight: "1.4",
-            fontSize: isLandscape ? "42px" : "55px",
+            maxWidth: isLandscape ? "800px" : "950px",
+            lineHeight: "1.45",
+            fontSize: isLandscape ? "40px" : "48px",
             fontWeight: 800,
             fontFamily: "'Space Grotesk', sans-serif"
           }}
@@ -152,7 +198,7 @@ export const MyVideo: React.FC = () => {
                 key={i}
                 style={{
                   display: "inline-block",
-                  margin: isLandscape ? "6px 12px" : "8px 16px",
+                  margin: isLandscape ? "5px 10px" : "6px 12px",
                   color,
                   transform: `scale(${wordScale})`,
                   textShadow: isActive ? `0 0 25px ${color}80` : "none",
@@ -170,21 +216,21 @@ export const MyVideo: React.FC = () => {
   // Wave Visualizer Bars Component
   const BarVisualizer = () => {
     return (
-      <div className="flex gap-4 items-center justify-center h-48">
+      <div className="flex gap-3 items-center justify-center h-28">
         {[...Array(9)].map((_, i) => {
           const phase = i * 0.45;
           const barHeight = isSpeechActive
-            ? interpolate(Math.sin(frame * 0.25 + phase), [-1, 1], [30, 180])
-            : 18;
+            ? interpolate(Math.sin(frame * 0.25 + phase), [-1, 1], [20, 100])
+            : 12;
           return (
             <div
               key={i}
               style={{
-                width: "16px",
+                width: "12px",
                 height: `${barHeight}px`,
-                borderRadius: "8px",
+                borderRadius: "6px",
                 background: "linear-gradient(to top, #58a6ff, #00e5ff)",
-                boxShadow: "0 0 15px rgba(0, 229, 255, 0.4)",
+                boxShadow: "0 0 10px rgba(0, 229, 255, 0.3)",
               }}
             />
           );
@@ -197,7 +243,7 @@ export const MyVideo: React.FC = () => {
     <div
       style={{
         flex: 1,
-        backgroundColor: "#080c10",
+        backgroundColor: "#06090e",
         display: "flex",
         flexDirection: "column",
         position: "relative",
@@ -214,42 +260,12 @@ export const MyVideo: React.FC = () => {
           position: "absolute",
           inset: 0,
           backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
+            linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px)
           `,
-          backgroundSize: "80px 80px",
-          transform: `scale(${1 + progress * 0.06})`,
-          opacity: 0.7,
-          pointerEvents: "none",
-        }}
-      />
-
-      {/* Radial glows in the background */}
-      <div
-        style={{
-          position: "absolute",
-          top: "10%",
-          left: "20%",
-          width: "700px",
-          height: "700px",
-          background: "radial-gradient(circle, rgba(0, 229, 255, 0.1) 0%, rgba(0, 229, 255, 0) 70%)",
-          borderRadius: "50%",
-          transform: `translate(${Math.sin(frame * 0.008) * 80}px, ${Math.cos(frame * 0.008) * 80}px) scale(${interpolate(Math.sin(frame * 0.02), [-1, 1], [0.9, 1.15])})`,
-          filter: "blur(50px)",
-          pointerEvents: "none",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          bottom: "10%",
-          right: "20%",
-          width: "700px",
-          height: "700px",
-          background: "radial-gradient(circle, rgba(213, 0, 249, 0.08) 0%, rgba(213, 0, 249, 0) 70%)",
-          borderRadius: "50%",
-          transform: `translate(${Math.cos(frame * 0.008) * 80}px, ${Math.sin(frame * 0.008) * 80}px) scale(${interpolate(Math.cos(frame * 0.02), [-1, 1], [0.9, 1.15])})`,
-          filter: "blur(50px)",
+          backgroundSize: "60px 60px",
+          transform: `scale(${1 + progress * 0.04})`,
+          opacity: 0.6,
           pointerEvents: "none",
         }}
       />
@@ -274,22 +290,37 @@ export const MyVideo: React.FC = () => {
             <RenderHighlightedSubtitle />
           </div>
 
-          {/* Right Panel: Motion Graphics Visualizer */}
+          {/* Right Panel: B-roll Visual Card & Visualizer */}
           <div className="flex-1 flex flex-col justify-center items-center gap-8 bg-black/10 p-12">
-            {/* Pulsing Brain Graphic */}
-            <div
-              style={{
-                fontSize: "120px",
-                transform: `scale(${brainScale})`,
-                filter: "drop-shadow(0 0 30px rgba(0, 229, 255, 0.35))",
-              }}
-            >
-              🧠
-            </div>
+            {activeScene && (
+              <div 
+                style={{
+                  width: "90%",
+                  height: "480px",
+                  borderRadius: "24px",
+                  border: "2px solid rgba(88, 166, 255, 0.35)",
+                  boxShadow: "0 0 45px rgba(88, 166, 255, 0.2)",
+                  overflow: "hidden",
+                  position: "relative",
+                  backgroundColor: "#000"
+                }}
+              >
+                <Img
+                  src={staticFile(activeScene.image)}
+                  alt="B-roll Visual"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    ...getBrollStyles(activeScene)
+                  }}
+                />
+              </div>
+            )}
             
             {/* Status indicator */}
-            <div className="text-gray-400 font-medium text-xl tracking-widest uppercase">
-              {isSpeechActive ? "Neural Waveform Processing..." : "Silence Detected"}
+            <div className="text-gray-400 font-medium text-lg tracking-widest uppercase">
+              {isSpeechActive ? "Visual Analytics Sync Active" : "Silence Detected"}
             </div>
 
             {/* Bouncing Audio Visualizer */}
@@ -300,31 +331,46 @@ export const MyVideo: React.FC = () => {
 
       {/* PORTRAIT / MOBILE LAYOUT (9:16) */}
       {!isLandscape && (
-        <div className="flex flex-col h-full w-full justify-between items-center z-10 py-32 px-12">
-          {/* Upper Section: Pulsing Graphic */}
-          <div className="flex flex-col items-center gap-6 mt-12">
-            <div
-              style={{
-                fontSize: "140px",
-                transform: `scale(${brainScale})`,
-                filter: "drop-shadow(0 0 40px rgba(0, 229, 255, 0.4))",
-              }}
-            >
-              🧠
-            </div>
-            <div className="text-gray-400 font-semibold text-2xl tracking-widest uppercase text-center">
-              {isSpeechActive ? "Analyzing Cognitive Process" : "Listening..."}
-            </div>
+        <div className="flex flex-col h-full w-full justify-between items-center z-10 py-16 px-6">
+          {/* Top Panel: Visual Card (55% Height area) */}
+          <div className="w-full flex items-center justify-center mt-6" style={{ height: "55%" }}>
+            {activeScene && (
+              <div 
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  borderRadius: "28px",
+                  border: "2.5px solid rgba(88, 166, 255, 0.35)",
+                  boxShadow: "0 0 50px rgba(88, 166, 255, 0.22)",
+                  overflow: "hidden",
+                  position: "relative",
+                  backgroundColor: "#000"
+                }}
+              >
+                <Img
+                  src={staticFile(activeScene.image)}
+                  alt="B-roll Visual"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    ...getBrollStyles(activeScene)
+                  }}
+                />
+              </div>
+            )}
           </div>
 
-          {/* Middle Section: Big Captions */}
-          <div className="w-full flex justify-center items-center my-auto">
-            <RenderHighlightedSubtitle />
-          </div>
+          {/* Bottom Panel: Subtitles and Visualizer (45% Height area) */}
+          <div className="w-full flex flex-col justify-end items-center gap-8 mb-4" style={{ height: "40%" }}>
+            <div className="w-full flex justify-center items-center my-auto">
+              <RenderHighlightedSubtitle />
+            </div>
 
-          {/* Bottom Section: Audio Visualizer */}
-          <div className="w-full mb-12">
-            <BarVisualizer />
+            {/* Visualizer at the very bottom */}
+            <div className="w-full">
+              <BarVisualizer />
+            </div>
           </div>
         </div>
       )}
