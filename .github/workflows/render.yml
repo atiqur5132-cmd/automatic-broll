@@ -1,0 +1,31 @@
+name: Cloud Video Renderer
+on:
+  workflow_dispatch:
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js Environment
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install Remotion Dependencies
+        run: |
+          npm ci
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser libgbm-dev
+
+      - name: Cloud Render MP4 Video
+        run: npx remotion render src/index.ts YTShorts out/shorts-broll.mp4
+
+      - name: Upload Finished Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cloud-Rendered-Video
+          path: out/shorts-broll.mp4
