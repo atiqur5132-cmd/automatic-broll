@@ -4,6 +4,7 @@ import { MyVideo } from "./MyVideo";
 export const Root = () => {
   return (
     <>
+      {/* 9:16 ratio composition */}
       <Composition
         id="YTShorts"
         component={MyVideo}
@@ -11,6 +12,15 @@ export const Root = () => {
         fps={30}
         width={1080}
         height={1920}
+      />
+      {/* 16:9 ratio composition */}
+      <Composition
+        id="YTVideo"
+        component={MyVideo}
+        durationInFrames={90}
+        fps={30}
+        width={1920}
+        height={1080}
       />
     </>
   );
