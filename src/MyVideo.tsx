@@ -1,240 +1,315 @@
-import { useCurrentFrame, useVideoConfig, spring, interpolate, Audio, staticFile, Img } from "remotion";
+import {
+  useCurrentFrame,
+  useVideoConfig,
+  spring,
+  interpolate,
+  Audio,
+  staticFile,
+  Img,
+} from "remotion";
 import React from "react";
-import subtitles from "./subtitles.json";
 
-interface SubtitleItem {
-  text: string;
-  start: number;
-  end: number;
-}
-
-interface BrollScene {
+// ─── Scene definitions ───────────────────────────────────────────────
+interface Scene {
   image: string;
   start: number;
   end: number;
+  text?: string;
+  textTime?: number; // seconds into the video when text appears
+  textColor?: string;
+  textGlow?: string;
+  shake?: boolean;
+  redFlash?: boolean;
+  textPersist?: boolean; // text stays until scene ends
 }
 
-const brollScenes: BrollScene[] = [
-  { image: "lie_concept.png", start: 0.0, end: 9.5 },
-  { image: "echo_chamber.png", start: 9.5, end: 16.15 },
-  { image: "cognitive_brain.png", start: 16.15, end: 22.25 },
-  { image: "brain_shortcuts.png", start: 22.25, end: 36.15 },
-  { image: "critical_thinking.png", start: 36.15, end: 47.28 }
+const scenes: Scene[] = [
+  {
+    image: "Glowing_red_neon_speech_bubble_202607072242.jpeg",
+    start: 0.0,
+    end: 3.95,
+    text: "JHOOTH × 100",
+    textTime: 1.5,
+    textColor: "#ff3333",
+    textGlow: "rgba(255, 51, 51, 0.7)",
+  },
+  {
+    image: "Speech_bubbles_on_grid_202607072242.jpeg",
+    start: 3.95,
+    end: 6.20,
+  },
+  {
+    image: "Red_cracks_spreading_on_globe_202607072242.jpeg",
+    start: 6.20,
+    end: 9.50,
+    text: "BAR BAR SUNOGE...",
+    textTime: 7.0,
+    textColor: "#ff6b35",
+    textGlow: "rgba(255, 107, 53, 0.6)",
+  },
+  {
+    image: "Glowing_brain_turning_blue_202607072242.jpeg",
+    start: 9.50,
+    end: 13.05,
+    text: "DIMAG SACH\nMAAN LETA HAI",
+    textTime: 10.0,
+    textColor: "#00e5ff",
+    textGlow: "rgba(0, 229, 255, 0.6)",
+  },
+  {
+    image: "Human_silhouette_bust_cracked_stone_202607072242.jpeg",
+    start: 13.05,
+    end: 16.15,
+    text: "INSAAN KI FITRAT",
+    textTime: 14.0,
+    textColor: "#7c8aff",
+    textGlow: "rgba(124, 138, 255, 0.6)",
+  },
+  {
+    image: "Glowing_maze_with_light_particle_202607072242.jpeg",
+    start: 16.15,
+    end: 20.0,
+    text: "SHORTCUTS",
+    textTime: 19.0,
+    textColor: "#00e5ff",
+    textGlow: "rgba(0, 229, 255, 0.7)",
+  },
+  {
+    image: "Human_silhouette_kneeling_202607072242.jpeg",
+    start: 20.0,
+    end: 24.9,
+    text: "AASANI SE YAKIN",
+    textTime: 23.0,
+    textColor: "#d183ff",
+    textGlow: "rgba(209, 131, 255, 0.6)",
+  },
+  {
+    image: "Blue_orb_outweighed_by_red_202607072242.jpeg",
+    start: 24.9,
+    end: 29.65,
+    text: "SACH vs JHOOTH",
+    textTime: 26.0,
+    textColor: "#ff4444",
+    textGlow: "rgba(255, 68, 68, 0.7)",
+  },
+  {
+    image: "Human_silhouette_broken_lie_202607072242.jpeg",
+    start: 29.65,
+    end: 32.45,
+    text: "FAKE NEWS",
+    textTime: 31.0,
+    textColor: "#ff2222",
+    textGlow: "rgba(255, 34, 34, 0.8)",
+    shake: true,
+    redFlash: true,
+  },
+  {
+    image: "Glowing_question_mark_near_head_202607072242.jpeg",
+    start: 32.45,
+    end: 35.65,
+    text: "BELIEFS",
+    textTime: 33.5,
+    textColor: "#ffab40",
+    textGlow: "rgba(255, 171, 64, 0.6)",
+  },
+  {
+    image: "Magnifying_glass_over_speech_bubble_202607072242.jpeg",
+    start: 35.65,
+    end: 42.5,
+    text: "SAWAAL POOCHHO",
+    textTime: 38.0,
+    textColor: "#40c4ff",
+    textGlow: "rgba(64, 196, 255, 0.6)",
+  },
+  {
+    image: "Speech_bubble_transforming_202607072242.jpeg",
+    start: 42.5,
+    end: 47.28,
+    text: "VERIFY KARO ✓",
+    textTime: 44.0,
+    textColor: "#00e676",
+    textGlow: "rgba(0, 230, 118, 0.8)",
+    textPersist: true,
+  },
 ];
 
+// ─── Floating Particle ──────────────────────────────────────────────
+const Particle: React.FC<{
+  index: number;
+  frame: number;
+  width: number;
+  height: number;
+}> = ({ index, frame, width, height }) => {
+  // Deterministic pseudo-random from index
+  const seed = (index * 7919 + 104729) % 100000;
+  const x = (seed % 1000) / 1000;
+  const speed = 0.3 + ((seed % 500) / 500) * 0.7;
+  const size = 2 + (seed % 4);
+  const delay = (seed % 300);
+  const opacity = 0.15 + ((seed % 40) / 100);
+
+  const yProgress = ((frame + delay) * speed * 0.5) % (height + 40);
+  const yPos = height + 20 - yProgress;
+  const xDrift = Math.sin((frame + delay) * 0.02 + index) * 30;
+
+  return (
+    <div
+      style={{
+        position: "absolute",
+        left: `${x * width + xDrift}px`,
+        top: `${yPos}px`,
+        width: `${size}px`,
+        height: `${size}px`,
+        borderRadius: "50%",
+        backgroundColor: "rgba(255, 255, 255, 1)",
+        opacity,
+        pointerEvents: "none",
+        filter: `blur(${size > 4 ? 1 : 0}px)`,
+      }}
+    />
+  );
+};
+
+// ─── Main Component ─────────────────────────────────────────────────
 export const MyVideo: React.FC = () => {
   const frame = useCurrentFrame();
   const { fps, width, height, durationInFrames } = useVideoConfig();
-
   const currentTime = frame / fps;
   const progress = frame / durationInFrames;
-  const isLandscape = width > height;
 
-  // Find the active subtitle item
-  const activeSubtitle = subtitles.find(
-    (sub: SubtitleItem) => currentTime >= sub.start && currentTime < sub.end
-  ) as SubtitleItem | undefined;
-
-  const currentSubtitleText = activeSubtitle ? activeSubtitle.text : "";
-
-  // Find the active B-roll scene
-  const activeScene = brollScenes.find(
-    (scene) => currentTime >= scene.start && currentTime < scene.end
+  // Find current and previous scene for cross-fade
+  const currentSceneIndex = scenes.findIndex(
+    (s) => currentTime >= s.start && currentTime < s.end
   );
+  const activeScene = currentSceneIndex >= 0 ? scenes[currentSceneIndex] : scenes[scenes.length - 1];
+  const prevScene = currentSceneIndex > 0 ? scenes[currentSceneIndex - 1] : null;
 
-  // Dynamic values for screen effects
-  // Check if "Jhooth" or "fake" or "fek" is active in subtitle text to apply a camera shake
-  const isFakeNewsActive =
-    currentSubtitleText.toLowerCase().includes("jhooth") ||
-    currentSubtitleText.toLowerCase().includes("fake") ||
-    currentSubtitleText.toLowerCase().includes("fek");
+  // Cross-fade timing
+  const FADE_DURATION = 0.5; // seconds
+  const timeIntoScene = currentTime - activeScene.start;
+  const isFading = timeIntoScene < FADE_DURATION && currentSceneIndex > 0;
+  const fadeProgress = isFading
+    ? interpolate(timeIntoScene, [0, FADE_DURATION], [0, 1], {
+        extrapolateLeft: "clamp",
+        extrapolateRight: "clamp",
+      })
+    : 1;
 
-  // Shake animation using sine/cosine waves
-  const shakeX = isFakeNewsActive ? Math.sin(frame * 0.8) * 8 : 0;
-  const shakeY = isFakeNewsActive ? Math.cos(frame * 0.8) * 8 : 0;
+  // Ken Burns zoom
+  const sceneDuration = activeScene.end - activeScene.start;
+  const sceneProgress = timeIntoScene / sceneDuration;
+  const kenBurnsScale = interpolate(sceneProgress, [0, 1], [1.0, 1.15], {
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
 
-  // Speech active checker
-  const isSpeechActive = activeSubtitle !== undefined;
+  // Previous scene Ken Burns (for cross-fade)
+  const prevKenBurns = prevScene
+    ? interpolate(
+        (currentTime - prevScene.start) / (prevScene.end - prevScene.start),
+        [0, 1],
+        [1.0, 1.15],
+        { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+      )
+    : 1;
 
-  // Keyword color highlight
-  const getWordColor = (word: string, isActive: boolean) => {
-    if (!isActive) return "rgba(255, 255, 255, 0.4)"; // Muted gray-white for inactive words
-    
-    const w = word.toLowerCase().replace(/[^a-z0-9]/g, "");
-    if (w === "jhooth" || w === "fake" || w === "fek") return "#ff4444"; // Red for Lies
-    if (w === "sach" || w === "verify" || w === "sahi") return "#00e676"; // Emerald green for Truth/Verification
-    if (w === "intelligence") return "#00e5ff"; // Neon Cyan
-    if (w === "beliefs") return "#d500f9"; // Neon Purple
-    if (w === "dimag") return "#ffeb3b"; // Bright Yellow
-    if (w === "shortcuts") return "#ff9100"; // Orange
-    return "#ffffff"; // Pure active white
-  };
+  // Screen shake
+  const isShaking = activeScene.shake === true;
+  const shakeX = isShaking ? Math.sin(frame * 1.2) * 12 : 0;
+  const shakeY = isShaking ? Math.cos(frame * 1.5) * 10 : 0;
 
-  // Keyword emoji finder
-  const getWordEmoji = (word: string) => {
-    const w = word.toLowerCase().replace(/[^a-z0-9]/g, "");
-    if (w === "jhooth" || w === "jotha") return "🤥";
-    if (w === "sach") return "✨";
-    if (w === "verify") return "✅";
-    if (w === "fake" || w === "fek") return "🚫";
-    if (w === "dimag") return "🧠";
-    if (w === "intelligence") return "💡";
-    if (w === "yakin") return "🤝";
-    if (w === "fitrat") return "👤";
-    if (w === "shortcuts") return "⚡";
-    if (w === "sawal" || w === "sawaal") return "❓";
-    return null;
-  };
+  // Red flash overlay
+  const showRedFlash = activeScene.redFlash === true;
+  const redFlashOpacity = showRedFlash
+    ? interpolate(Math.sin(frame * 0.3), [-1, 1], [0, 0.15])
+    : 0;
 
-  // Calculate dynamic animations and scale for B-roll image card
-  const getBrollStyles = (scene: BrollScene) => {
-    const elapsed = currentTime - scene.start;
-    const sceneDuration = scene.end - scene.start;
-    const progressInScene = elapsed / sceneDuration;
-    
-    // Slow Ken Burns zoom-in from 1.0x to 1.12x
-    const zoomScale = interpolate(progressInScene, [0, 1], [1.0, 1.12], {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp"
-    });
-    
-    // Smooth elastic spring scale-in at start of scene
-    const sceneStartFrame = elapsed * fps;
-    const bounceSpring = spring({
-      frame: sceneStartFrame,
+  // Impact text logic
+  const renderImpactText = () => {
+    if (!activeScene.text || activeScene.textTime === undefined) return null;
+
+    const textAppearTime = activeScene.textTime;
+    const textDuration = activeScene.textPersist
+      ? activeScene.end - textAppearTime
+      : Math.min(2.5, activeScene.end - textAppearTime);
+    const textEndTime = textAppearTime + textDuration;
+
+    if (currentTime < textAppearTime || currentTime > textEndTime) return null;
+
+    const timeSinceAppear = currentTime - textAppearTime;
+    const framesSinceAppear = timeSinceAppear * fps;
+
+    // Spring scale-in
+    const scaleSpring = spring({
+      frame: framesSinceAppear,
       fps,
-      config: { damping: 13, stiffness: 100 }
+      config: { damping: 12, stiffness: 80 },
     });
-    const entranceScale = interpolate(bounceSpring, [0, 1], [0.85, 1.0]);
+    const scale = interpolate(scaleSpring, [0, 1], [0.3, 1]);
 
-    // Cross-fade opacity: 0.4 seconds fade-in at the start of a scene
-    const opacity = interpolate(elapsed, [0, 0.4], [0, 1], {
-      extrapolateLeft: "clamp",
-      extrapolateRight: "clamp"
-    });
+    // Fade-out (last 0.4s unless persist)
+    const fadeOut = activeScene.textPersist
+      ? 1
+      : interpolate(
+          timeSinceAppear,
+          [textDuration - 0.4, textDuration],
+          [1, 0],
+          { extrapolateLeft: "clamp", extrapolateRight: "clamp" }
+        );
 
-    return {
-      transform: `scale(${zoomScale * entranceScale})`,
-      opacity
-    };
-  };
-
-  // Word Highlight Component
-  const RenderHighlightedSubtitle = () => {
-    if (!activeSubtitle) return null;
-
-    const words = activeSubtitle.text.split(" ");
-    const duration = activeSubtitle.end - activeSubtitle.start;
-    const wordDuration = duration / words.length;
-
-    // Find the currently active word index
-    const activeWordIndex = Math.floor(
-      (currentTime - activeSubtitle.start) / wordDuration
+    // Glow pulse
+    const glowPulse = interpolate(
+      Math.sin(frame * 0.08),
+      [-1, 1],
+      [0.7, 1.0]
     );
 
-    // Find if there's any emoji to display above subtitles
-    let activeEmoji: string | null = null;
-    for (let i = 0; i <= activeWordIndex; i++) {
-      if (i < words.length) {
-        const emoji = getWordEmoji(words[i]);
-        if (emoji) activeEmoji = emoji;
-      }
-    }
-
-    // Pure frame-based emoji pulsing scale to avoid flickering
-    const emojiPulse = interpolate(Math.sin(frame * 0.1), [-1, 1], [0.95, 1.05]);
-    const emojiScale = (isSpeechActive ? 1.25 : 1.0) * emojiPulse;
+    const textLines = activeScene.text.split("\n");
 
     return (
-      <div className="flex flex-col items-center justify-center w-full px-4 text-center">
-        {/* Floating Emoji display with scale animation */}
-        <div style={{ height: "80px", marginBottom: "15px", display: "flex", alignItems: "center", justifyContent: "center" }}>
-          {activeEmoji && (
-            <div
-              style={{
-                fontSize: "65px",
-                transform: `scale(${emojiScale})`,
-                filter: "drop-shadow(0 0 20px rgba(255, 255, 255, 0.3))",
-              }}
-            >
-              {activeEmoji}
-            </div>
-          )}
-        </div>
-
-        {/* Captions container */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: "18%",
+          left: 0,
+          right: 0,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          zIndex: 30,
+          transform: `scale(${scale})`,
+          opacity: fadeOut,
+        }}
+      >
+        {/* Backdrop blur pill */}
         <div
-          className="flex flex-wrap justify-center items-center"
           style={{
-            maxWidth: isLandscape ? "800px" : "950px",
-            lineHeight: "1.45",
-            fontSize: isLandscape ? "40px" : "48px",
-            fontWeight: 800,
-            fontFamily: "'Space Grotesk', sans-serif"
+            padding: "20px 50px",
+            borderRadius: "20px",
+            backgroundColor: "rgba(0, 0, 0, 0.45)",
+            backdropFilter: "blur(12px)",
+            WebkitBackdropFilter: "blur(12px)",
           }}
         >
-          {words.map((word, i) => {
-            const isActive = i === activeWordIndex;
-            
-            // Calculate word start and frames since word start for spring animation
-            const wordStartSec = activeSubtitle.start + i * wordDuration;
-            const framesSinceActive = Math.max(0, (currentTime - wordStartSec) * fps);
-            
-            // Spring animation for active word scale bounce
-            const wordBounce = spring({
-              frame: framesSinceActive,
-              fps,
-              config: { damping: 10, stiffness: 120 }
-            });
-            
-            const wordScale = isActive 
-              ? interpolate(wordBounce, [0, 1], [0.9, 1.25]) 
-              : 1;
-
-            const color = getWordColor(word, isActive);
-            
-            return (
-              <span
-                key={i}
-                style={{
-                  display: "inline-block",
-                  margin: isLandscape ? "5px 10px" : "6px 12px",
-                  color,
-                  transform: `scale(${wordScale})`,
-                  textShadow: isActive ? `0 0 25px ${color}80` : "none",
-                }}
-              >
-                {word}
-              </span>
-            );
-          })}
-        </div>
-      </div>
-    );
-  };
-
-  // Wave Visualizer Bars Component
-  const BarVisualizer = () => {
-    return (
-      <div className="flex gap-3 items-center justify-center h-28">
-        {[...Array(9)].map((_, i) => {
-          const phase = i * 0.45;
-          const barHeight = isSpeechActive
-            ? interpolate(Math.sin(frame * 0.25 + phase), [-1, 1], [20, 100])
-            : 12;
-          return (
+          {textLines.map((line, i) => (
             <div
               key={i}
               style={{
-                width: "12px",
-                height: `${barHeight}px`,
-                borderRadius: "6px",
-                background: "linear-gradient(to top, #58a6ff, #00e5ff)",
-                boxShadow: "0 0 10px rgba(0, 229, 255, 0.3)",
+                fontFamily: "'Space Grotesk', 'Inter', sans-serif",
+                fontSize: "58px",
+                fontWeight: 900,
+                color: activeScene.textColor || "#ffffff",
+                textAlign: "center",
+                letterSpacing: "3px",
+                lineHeight: 1.2,
+                textShadow: `0 0 ${30 * glowPulse}px ${activeScene.textGlow || "rgba(255,255,255,0.5)"}, 0 0 ${60 * glowPulse}px ${activeScene.textGlow || "rgba(255,255,255,0.3)"}`,
               }}
-            />
-          );
-        })}
+            >
+              {line}
+            </div>
+          ))}
+        </div>
       </div>
     );
   };
@@ -242,138 +317,137 @@ export const MyVideo: React.FC = () => {
   return (
     <div
       style={{
-        flex: 1,
-        backgroundColor: "#06090e",
-        display: "flex",
-        flexDirection: "column",
+        width: "100%",
+        height: "100%",
+        backgroundColor: "#000",
         position: "relative",
         overflow: "hidden",
-        transform: `translate(${shakeX}px, ${shakeY}px)`, // Shake effect
+        transform: `translate(${shakeX}px, ${shakeY}px)`,
       }}
     >
-      {/* Audio track sync */}
+      {/* Audio */}
       <Audio src={staticFile("WhatsApp Audio 2026-07-04 at 1.54.49 PM.mp4")} />
 
-      {/* Floating Animated Background Grid */}
+      {/* ── Previous scene (under, for cross-fade) ── */}
+      {isFading && prevScene && (
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 1,
+          }}
+        >
+          <Img
+            src={staticFile(prevScene.image)}
+            alt=""
+            style={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              transform: `scale(${prevKenBurns})`,
+            }}
+          />
+        </div>
+      )}
+
+      {/* ── Active scene (full screen) ── */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: `
-            linear-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.015) 1px, transparent 1px)
-          `,
-          backgroundSize: "60px 60px",
-          transform: `scale(${1 + progress * 0.04})`,
-          opacity: 0.6,
-          pointerEvents: "none",
+          zIndex: 2,
+          opacity: fadeProgress,
         }}
-      />
-
-      {/* Glowing Top Progress Bar */}
-      <div className="absolute top-0 left-0 w-full h-3 bg-gray-900 z-50">
-        <div
+      >
+        <Img
+          src={staticFile(activeScene.image)}
+          alt=""
           style={{
-            width: `${progress * 100}%`,
+            width: "100%",
             height: "100%",
-            background: "linear-gradient(90deg, #58a6ff, #00e5ff, #d500f9)",
-            boxShadow: "0 0 15px rgba(0, 229, 255, 0.8)",
+            objectFit: "cover",
+            transform: `scale(${kenBurnsScale})`,
           }}
         />
       </div>
 
-      {/* WIDESCREEN / LANDSCAPE LAYOUT (16:9) */}
-      {isLandscape && (
-        <div className="flex flex-row h-full w-full z-10">
-          {/* Left Panel: Subtitles */}
-          <div className="flex-1 flex flex-col justify-center items-center border-r border-white/5 bg-black/20 backdrop-blur-sm p-12">
-            <RenderHighlightedSubtitle />
-          </div>
+      {/* ── Vignette overlay ── */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 10,
+          background:
+            "radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.65) 100%)",
+          pointerEvents: "none",
+        }}
+      />
 
-          {/* Right Panel: B-roll Visual Card & Visualizer */}
-          <div className="flex-1 flex flex-col justify-center items-center gap-8 bg-black/10 p-12">
-            {activeScene && (
-              <div 
-                style={{
-                  width: "90%",
-                  height: "480px",
-                  borderRadius: "24px",
-                  border: "2px solid rgba(88, 166, 255, 0.35)",
-                  boxShadow: "0 0 45px rgba(88, 166, 255, 0.2)",
-                  overflow: "hidden",
-                  position: "relative",
-                  backgroundColor: "#000"
-                }}
-              >
-                <Img
-                  src={staticFile(activeScene.image)}
-                  alt="B-roll Visual"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    ...getBrollStyles(activeScene)
-                  }}
-                />
-              </div>
-            )}
-            
-            {/* Status indicator */}
-            <div className="text-gray-400 font-medium text-lg tracking-widest uppercase">
-              {isSpeechActive ? "Visual Analytics Sync Active" : "Silence Detected"}
-            </div>
+      {/* ── Bottom gradient for text readability ── */}
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          height: "45%",
+          zIndex: 11,
+          background:
+            "linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 50%, transparent 100%)",
+          pointerEvents: "none",
+        }}
+      />
 
-            {/* Bouncing Audio Visualizer */}
-            <BarVisualizer />
-          </div>
-        </div>
+      {/* ── Red flash overlay ── */}
+      {showRedFlash && (
+        <div
+          style={{
+            position: "absolute",
+            inset: 0,
+            zIndex: 12,
+            backgroundColor: `rgba(255, 0, 0, ${redFlashOpacity})`,
+            pointerEvents: "none",
+          }}
+        />
       )}
 
-      {/* PORTRAIT / MOBILE LAYOUT (9:16) */}
-      {!isLandscape && (
-        <div className="flex flex-col h-full w-full justify-between items-center z-10 py-16 px-6">
-          {/* Top Panel: Visual Card (55% Height area) */}
-          <div className="w-full flex items-center justify-center mt-6" style={{ height: "55%" }}>
-            {activeScene && (
-              <div 
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: "28px",
-                  border: "2.5px solid rgba(88, 166, 255, 0.35)",
-                  boxShadow: "0 0 50px rgba(88, 166, 255, 0.22)",
-                  overflow: "hidden",
-                  position: "relative",
-                  backgroundColor: "#000"
-                }}
-              >
-                <Img
-                  src={staticFile(activeScene.image)}
-                  alt="B-roll Visual"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                    ...getBrollStyles(activeScene)
-                  }}
-                />
-              </div>
-            )}
-          </div>
+      {/* ── Floating particles ── */}
+      <div
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 15,
+          pointerEvents: "none",
+          overflow: "hidden",
+        }}
+      >
+        {[...Array(25)].map((_, i) => (
+          <Particle
+            key={i}
+            index={i}
+            frame={frame}
+            width={width}
+            height={height}
+          />
+        ))}
+      </div>
 
-          {/* Bottom Panel: Subtitles and Visualizer (45% Height area) */}
-          <div className="w-full flex flex-col justify-end items-center gap-8 mb-4" style={{ height: "40%" }}>
-            <div className="w-full flex justify-center items-center my-auto">
-              <RenderHighlightedSubtitle />
-            </div>
+      {/* ── Progress bar (thin, top) ── */}
+      <div
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: `${progress * 100}%`,
+          height: "3px",
+          zIndex: 40,
+          background: "linear-gradient(90deg, #58a6ff, #00e5ff, #d500f9)",
+          boxShadow: "0 0 10px rgba(0, 229, 255, 0.6)",
+        }}
+      />
 
-            {/* Visualizer at the very bottom */}
-            <div className="w-full">
-              <BarVisualizer />
-            </div>
-          </div>
-        </div>
-      )}
+      {/* ── Impact text ── */}
+      {renderImpactText()}
     </div>
   );
-};
+};
