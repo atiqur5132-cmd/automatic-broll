@@ -24,13 +24,8 @@ jobs:
       - name: Cloud Render Shorts (9:16)
         run: npx remotion render src/index.ts YTShorts out/shorts-broll.mp4
 
-      - name: Cloud Render Widescreen (16:9)
-        run: npx remotion render src/index.ts YTVideo out/video-broll.mp4
-
-      - name: Upload Finished Artifacts
+      - name: Upload Finished Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Cloud-Rendered-Videos
-          path: |
-            out/shorts-broll.mp4
-            out/video-broll.mp4
+          name: Cloud-Rendered-Video
+          path: out/shorts-broll.mp4
