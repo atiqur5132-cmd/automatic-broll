@@ -21,11 +21,16 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y chromium-browser libgbm-dev
 
-      - name: Cloud Render MP4 Video
+      - name: Cloud Render Shorts (9:16)
         run: npx remotion render src/index.ts YTShorts out/shorts-broll.mp4
 
-      - name: Upload Finished Artifact
+      - name: Cloud Render Widescreen (16:9)
+        run: npx remotion render src/index.ts YTVideo out/video-broll.mp4
+
+      - name: Upload Finished Artifacts
         uses: actions/upload-artifact@v4
         with:
-          name: Cloud-Rendered-Video
-          path: out/shorts-broll.mp4
+          name: Cloud-Rendered-Videos
+          path: |
+            out/shorts-broll.mp4
+            out/video-broll.mp4
