@@ -8,7 +8,7 @@ export const Root = () => {
       <Composition
         id="YTShorts"
         component={MyVideo}
-        durationInFrames={9043}
+        durationInFrames={7910}
         fps={30}
         width={1080}
         height={1920}
@@ -17,7 +17,7 @@ export const Root = () => {
       <Composition
         id="YTVideo"
         component={MyVideo}
-        durationInFrames={9043}
+        durationInFrames={7910}
         fps={30}
         width={1920}
         height={1080}

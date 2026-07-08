@@ -1,3 +1,4 @@
+import React from "react";
 import {
   useCurrentFrame,
   useVideoConfig,
@@ -5,172 +6,126 @@ import {
   staticFile,
   interpolate,
   spring,
-  random,
+  Img,
 } from "remotion";
-import React from "react";
 import subtitlesData from "./subtitles.json";
 
-// ─── Visual Theme Config ─────────────────────────────────────────────
+// Theme configuration matching documentary aesthetics
 const THEME = {
-  bg: "#08090d",
-  grid: "rgba(255, 255, 255, 0.03)",
-  usBlue: "#00d2ff",
-  usBlueGlow: "rgba(0, 210, 255, 0.4)",
-  chinaRed: "#ff3366",
-  chinaRedGlow: "rgba(255, 51, 102, 0.4)",
-  gold: "#ffcc00",
-  goldGlow: "rgba(255, 204, 0, 0.4)",
-  textMain: "#ffffff",
-  textMuted: "rgba(255, 255, 255, 0.6)",
+  bgWarm: "#f4f3ef",
+  accentRed: "#d32f2f",
+  accentBlue: "#1976d2",
+  textDark: "#1a1a1a",
+  textGray: "#555555",
+  goldHighlight: "#e65100",
+  white: "#ffffff",
 };
 
-// ─── SVG Helper Components ───────────────────────────────────────────
-const ChipIcon: React.FC<{ color: string; size?: number; pulse?: boolean }> = ({
-  color,
-  size = 120,
-  pulse = false,
-}) => {
+// Word level subtitle interface
+interface SubtitleWord {
+  text: string;
+  startMs: number;
+  endMs: number;
+  confidence: number;
+}
+
+// ── GLOBAL COMPONENTS
+
+// Drifting grunge background for texture
+const UniversalBackground: React.FC = () => {
   const frame = useCurrentFrame();
-  const opacity = pulse ? interpolate(Math.sin(frame * 0.1), [-1, 1], [0.5, 1]) : 1;
+  const { width, height } = useVideoConfig();
+
+  // Create a subtle Ken Burns pan
+  const scale = interpolate(frame, [0, 8000], [1.02, 1.15], {
+    extrapolateRight: "clamp",
+  });
+  const xTranslation = interpolate(frame, [0, 8000], [0, -40], {
+    extrapolateRight: "clamp",
+  });
 
   return (
-    <svg width={size} height={size} viewBox="0 0 100 100" style={{ opacity }}>
-      {/* Outer connections */}
-      <rect x="25" y="25" width="50" height="50" fill="none" stroke={color} strokeWidth="3" rx="4" />
-      <rect x="35" y="35" width="30" height="30" fill="none" stroke={color} strokeWidth="2" />
-      <line x1="50" y1="10" x2="50" y2="25" stroke={color} strokeWidth="3" />
-      <line x1="35" y1="10" x2="35" y2="25" stroke={color} strokeWidth="3" />
-      <line x1="65" y1="10" x2="65" y2="25" stroke={color} strokeWidth="3" />
-
-      <line x1="50" y1="75" x2="50" y2="90" stroke={color} strokeWidth="3" />
-      <line x1="35" y1="75" x2="35" y2="90" stroke={color} strokeWidth="3" />
-      <line x1="65" y1="75" x2="65" y2="90" stroke={color} strokeWidth="3" />
-
-      <line x1="10" y1="50" x2="25" y2="50" stroke={color} strokeWidth="3" />
-      <line x1="10" y1="35" x2="25" y2="35" stroke={color} strokeWidth="3" />
-      <line x1="10" y1="65" x2="25" y2="65" stroke={color} strokeWidth="3" />
-
-      <line x1="75" y1="50" x2="90" y2="50" stroke={color} strokeWidth="3" />
-      <line x1="75" y1="35" x2="90" y2="35" stroke={color} strokeWidth="3" />
-      <line x1="75" y1="65" x2="90" y2="65" stroke={color} strokeWidth="3" />
-      {/* Center core */}
-      <rect x="42" y="42" width="16" height="16" fill={color} opacity="0.8" rx="2" />
-    </svg>
-  );
-};
-
-const NetworkIcon: React.FC<{ color: string; size?: number }> = ({ color, size = 120 }) => {
-  const frame = useCurrentFrame();
-  const rotate = frame * 0.4;
-  return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 100 100"
-      style={{ transform: `rotate(${rotate}deg)` }}
-    >
-      <circle cx="50" cy="50" r="8" fill={color} />
-      {/* Nodes */}
-      <circle cx="20" cy="30" r="6" fill={color} />
-      <circle cx="80" cy="30" r="6" fill={color} />
-      <circle cx="30" cy="80" r="6" fill={color} />
-      <circle cx="70" cy="80" r="6" fill={color} />
-      {/* Connections */}
-      <line x1="50" y1="50" x2="20" y2="30" stroke={color} strokeWidth="2" strokeDasharray="4 2" />
-      <line x1="50" y1="50" x2="80" y2="30" stroke={color} strokeWidth="2" strokeDasharray="4 2" />
-      <line x1="50" y1="50" x2="30" y2="80" stroke={color} strokeWidth="2" strokeDasharray="4 2" />
-      <line x1="50" y1="50" x2="70" y2="80" stroke={color} strokeWidth="2" strokeDasharray="4 2" />
-      <line x1="20" y1="30" x2="80" y2="30" stroke={color} strokeWidth="1" opacity="0.5" />
-      <line x1="30" y1="80" x2="70" y2="80" stroke={color} strokeWidth="1" opacity="0.5" />
-      <line x1="20" y1="30" x2="30" y2="80" stroke={color} strokeWidth="1" opacity="0.5" />
-      <line x1="80" y1="30" x2="70" y2="80" stroke={color} strokeWidth="1" opacity="0.5" />
-    </svg>
-  );
-};
-
-// ─── Grid Background ─────────────────────────────────────────────────
-const GridBackground: React.FC = () => {
-  const frame = useCurrentFrame();
-  const yShift = (frame * 0.5) % 40;
-  return (
-    <div
+    <Img
+      src={staticFile("grunge_background.png")}
       style={{
         position: "absolute",
-        inset: 0,
-        backgroundImage: `linear-gradient(${THEME.grid} 1px, transparent 1px), linear-gradient(90deg, ${THEME.grid} 1px, transparent 1px)`,
-        backgroundSize: "40px 40px",
-        backgroundPosition: `0px ${yShift}px`,
-        opacity: 0.8,
-        pointerEvents: "none",
+        top: 0,
+        left: 0,
+        width,
+        height,
+        objectFit: "cover",
+        transform: `scale(${scale}) translate(${xTranslation}px, 0px)`,
+        zIndex: 0,
       }}
     />
   );
 };
 
-// ─── Dynamic Subtitle Component (Pop Kinetic Window) ──────────────────
-const WordSyncSubtitles: React.FC<{ currentTime: number }> = ({ currentTime }) => {
-  const timeMs = currentTime * 1000;
-  
-  // Find current active word index
-  let activeIdx = subtitlesData.findIndex((w) => timeMs >= w.startMs && timeMs <= w.endMs);
-  if (activeIdx === -1) {
-    activeIdx = subtitlesData.findIndex((w) => w.startMs > timeMs);
-    if (activeIdx > 0) activeIdx = activeIdx - 1;
-  }
-  if (activeIdx === -1) activeIdx = 0;
+// Kinetic typography engine optimized for giant readability
+const DynamicSubtitles: React.FC<{ currentTime: number }> = ({
+  currentTime,
+}) => {
+  const { width, height } = useVideoConfig();
+  const isWidescreen = width > height;
 
-  const startIdx = Math.max(0, activeIdx - 2);
-  const endIdx = Math.min(subtitlesData.length, startIdx + 5);
-  const visibleWords = subtitlesData.slice(startIdx, endIdx);
+  const currentMs = currentTime * 1000;
+
+  // Find active words in a 3-second window
+  const activeWords = (subtitlesData as SubtitleWord[]).filter(
+    (w) => currentMs >= w.startMs - 300 && currentMs <= w.endMs + 300
+  );
+
+  // Find current active word
+  const activeWord = (subtitlesData as SubtitleWord[]).find(
+    (w) => currentMs >= w.startMs && currentMs <= w.endMs
+  );
+
+  if (activeWords.length === 0) return null;
 
   return (
     <div
       style={{
         position: "absolute",
-        bottom: "8%",
+        bottom: isWidescreen ? "80px" : "200px",
         left: 0,
         right: 0,
         display: "flex",
         justifyContent: "center",
-        alignItems: "center",
         zIndex: 50,
-        pointerEvents: "none",
+        padding: "0 40px",
       }}
     >
       <div
         style={{
+          background: "rgba(26, 26, 26, 0.9)",
+          padding: isWidescreen ? "15px 35px" : "25px 45px",
+          borderRadius: "30px",
+          border: "2px solid #333",
+          boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
           display: "flex",
-          gap: "16px",
-          padding: "16px 36px",
-          borderRadius: "24px",
-          backgroundColor: "rgba(8, 9, 13, 0.8)",
-          backdropFilter: "blur(12px)",
-          border: "1px solid rgba(255, 255, 255, 0.08)",
-          boxShadow: "0 10px 40px rgba(0, 0, 0, 0.6)",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          gap: isWidescreen ? "10px" : "15px",
+          maxWidth: isWidescreen ? "1200px" : "900px",
         }}
       >
-        {visibleWords.map((word, i) => {
-          const globalIdx = startIdx + i;
-          const isWordActive = globalIdx === activeIdx;
-          const wordAge = timeMs - word.startMs;
-          const scale = isWordActive ? interpolate(wordAge, [0, 80], [1.0, 1.2], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) : 1.0;
-
+        {activeWords.map((word, idx) => {
+          const isActive = activeWord?.text === word.text;
           return (
             <span
-              key={globalIdx}
+              key={`${word.text}-${idx}`}
               style={{
-                fontFamily: "'Space Grotesk', sans-serif",
-                fontSize: "36px",
-                fontWeight: isWordActive ? 800 : 500,
-                color: isWordActive ? THEME.gold : "rgba(255, 255, 255, 0.35)",
+                fontFamily: "Impact, 'Arial Black', sans-serif",
+                fontSize: isWidescreen ? "54px" : "68px",
                 textTransform: "uppercase",
-                letterSpacing: "2px",
-                transform: `scale(${scale})`,
-                textShadow: isWordActive ? `0 0 15px ${THEME.goldGlow}` : "none",
-                display: "inline-block",
+                letterSpacing: "1px",
+                color: isActive ? THEME.goldHighlight : "#ffffff",
+                opacity: isActive ? 1 : 0.4,
+                scale: isActive ? "1.1" : "1.0",
+                transformOrigin: "center",
               }}
             >
-              {word.text.trim()}
+              {word.text}
             </span>
           );
         })}
@@ -179,742 +134,388 @@ const WordSyncSubtitles: React.FC<{ currentTime: number }> = ({ currentTime }) =
   );
 };
 
-// ─── SCENE COMPONENTS ────────────────────────────────────────────────
+// ── SCENE 1: The Three Tier Mystery (0.0s - 24.9s)
+const Scene1ThreeTiers: React.FC<{ frame: number; isWidescreen: boolean }> = ({
+  frame,
+  isWidescreen,
+}) => {
+  const currentSec = frame / 30;
 
-// ── SCENE 1: Intro Split Screen (0.0s - 26.2s)
-const Scene1Intro: React.FC = () => {
-  const frame = useCurrentFrame();
-  const dividerPulse = interpolate(Math.sin(frame * 0.08), [-1, 1], [2, 6]);
+  // Visual offsets
+  const leftFounderY = spring({
+    frame: frame - 120,
+    fps: 30,
+    config: { damping: 15 },
+  });
+  const rightFounderY = spring({
+    frame: frame - 180,
+    fps: 30,
+    config: { damping: 15 },
+  });
 
-  return (
-    <div style={{ display: "flex", width: "100%", height: "100%", position: "relative" }}>
-      {/* US Left Side */}
-      <div
-        style={{
-          flex: 1,
-          backgroundColor: "rgba(0, 210, 255, 0.02)",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "relative",
-        }}
-      >
-        <ChipIcon color={THEME.usBlue} size={150} pulse />
-        <h2
-          style={{
-            fontFamily: "'Space Grotesk', sans-serif",
-            color: THEME.usBlue,
-            fontSize: "44px",
-            fontWeight: 800,
-            marginTop: "30px",
-            letterSpacing: "6px",
-            textShadow: `0 0 20px ${THEME.usBlueGlow}`,
-          }}
-        >
-          UNITED STATES
-        </h2>
-        <span style={{ color: THEME.textMuted, fontSize: "18px", marginTop: "8px", letterSpacing: "2px" }}>
-          RAW COMPUTING CAPABILITY
-        </span>
-      </div>
+  const headingOpacity = interpolate(frame, [0, 20], [0, 1], {
+    extrapolateRight: "clamp",
+  });
+  const headingScale = interpolate(frame, [0, 45], [0.8, 1], {
+    extrapolateRight: "clamp",
+  });
 
-      {/* Middle Neon Boundary */}
-      <div
-        style={{
-          width: `${dividerPulse}px`,
-          backgroundColor: THEME.gold,
-          boxShadow: `0 0 25px ${THEME.goldGlow}, 0 0 10px ${THEME.gold}`,
-          height: "100%",
-          zIndex: 10,
-        }}
-      />
-
-      {/* China Right Side */}
-      <div
-        style={{
-          flex: 1,
-          backgroundColor: "rgba(255, 51, 102, 0.02)",
-          display: "flex",
-          flexDirection: "column",
-          justifyContent: "center",
-          alignItems: "center",
-          position: "relative",
-        }}
-      >
-        <NetworkIcon color={THEME.chinaRed} size={150} />
-        <h2
-          style={{
-            fontFamily: "'Space Grotesk', sans-serif",
-            color: THEME.chinaRed,
-            fontSize: "44px",
-            fontWeight: 800,
-            marginTop: "30px",
-            letterSpacing: "6px",
-            textShadow: `0 0 20px ${THEME.chinaRedGlow}`,
-          }}
-        >
-          CHINA
-        </h2>
-        <span style={{ color: THEME.textMuted, fontSize: "18px", marginTop: "8px", letterSpacing: "2px" }}>
-          SPEED & COST EFFICIENCY
-        </span>
-      </div>
-
-      {/* Floating Center Overlay */}
-      <div
-        style={{
-          position: "absolute",
-          top: "15%",
-          left: "50%",
-          transform: "translateX(-50%)",
-          textAlign: "center",
-          zIndex: 20,
-        }}
-      >
-        <h1
-          style={{
-            fontFamily: "'Outfit', sans-serif",
-            fontSize: "72px",
-            fontWeight: 900,
-            color: "#ffffff",
-            letterSpacing: "8px",
-            margin: 0,
-            textShadow: "0 5px 15px rgba(0,0,0,0.5)",
-          }}
-        >
-          THE GLOBAL AI RACE
-        </h1>
-        <div
-          style={{
-            height: "4px",
-            width: "150px",
-            backgroundColor: THEME.gold,
-            margin: "15px auto",
-            boxShadow: `0 0 10px ${THEME.gold}`,
-          }}
-        />
-      </div>
-    </div>
-  );
-};
-
-// ── SCENE 2: Capability vs Cost War (26.2s - 48.2s)
-const Scene2Capability: React.FC = () => {
-  const frame = useCurrentFrame();
-  const usScale = spring({ frame, fps: 30, config: { damping: 12 } });
-  const chinaScale = spring({ frame: frame - 20, fps: 30, config: { damping: 12 } });
+  // Animated quote bubble
+  const quote1Scale = spring({ frame: frame - 150, fps: 30 });
+  const quote2Scale = spring({ frame: frame - 210, fps: 30 });
 
   return (
     <div
       style={{
-        display: "flex",
         width: "100%",
         height: "100%",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        padding: "0 80px",
-      }}
-    >
-      {/* US Capability Card */}
-      <div
-        style={{
-          width: "420px",
-          height: "450px",
-          backgroundColor: "rgba(10, 12, 18, 0.8)",
-          borderRadius: "24px",
-          border: `2px solid ${THEME.usBlue}`,
-          boxShadow: `0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px ${THEME.usBlueGlow}`,
-          padding: "40px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-between",
-          transform: `scale(${usScale})`,
-        }}
-      >
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: THEME.usBlue, fontSize: "24px", fontWeight: 700, margin: 0, letterSpacing: "3px" }}>
-          CAPABILITY GAP
-        </h3>
-        
-        {/* Stopwatch Visual */}
-        <svg width="100" height="100" viewBox="0 0 100 100">
-          <circle cx="50" cy="53" r="30" fill="none" stroke={THEME.usBlue} strokeWidth="4" />
-          <line x1="50" y1="23" x2="50" y2="15" stroke={THEME.usBlue} strokeWidth="4" />
-          <line x1="50" y1="53" x2="50" y2="35" stroke={THEME.usBlue} strokeWidth="4" transform={`rotate(${frame * 3} 50 53)`} />
-        </svg>
-
-        <div style={{ textAlign: "center" }}>
-          <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: "48px", fontWeight: 900, color: "#fff", margin: 0 }}>
-            8 MONTHS
-          </h2>
-          <span style={{ color: THEME.textMuted, fontSize: "16px", letterSpacing: "1px" }}>
-            Ahead in Raw Performance
-          </span>
-        </div>
-      </div>
-
-      {/* China Cost Card */}
-      <div
-        style={{
-          width: "420px",
-          height: "450px",
-          backgroundColor: "rgba(10, 12, 18, 0.8)",
-          borderRadius: "24px",
-          border: `2px solid ${THEME.chinaRed}`,
-          boxShadow: `0 10px 40px rgba(0, 0, 0, 0.5), 0 0 30px ${THEME.chinaRedGlow}`,
-          padding: "40px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-between",
-          transform: `scale(${chinaScale})`,
-        }}
-      >
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: THEME.chinaRed, fontSize: "24px", fontWeight: 700, margin: 0, letterSpacing: "3px" }}>
-          EFFICIENCY WAR
-        </h3>
-        
-        {/* Price Tag Visual */}
-        <svg width="100" height="100" viewBox="0 0 100 100">
-          <path d="M20 20 L60 20 L85 45 L50 80 L15 45 Z" fill="none" stroke={THEME.chinaRed} strokeWidth="4" />
-          <circle cx="35" cy="35" r="5" fill={THEME.chinaRed} />
-          <path d="M45 45 L55 55 M55 45 L45 55" stroke={THEME.chinaRed} strokeWidth="3" />
-        </svg>
-
-        <div style={{ textAlign: "center" }}>
-          <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: "48px", fontWeight: 900, color: THEME.chinaRed, margin: 0, textShadow: `0 0 15px ${THEME.chinaRedGlow}` }}>
-            60x CHEAPER
-          </h2>
-          <span style={{ color: THEME.textMuted, fontSize: "16px", letterSpacing: "1px" }}>
-            To Build and Train Models
-          </span>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// ── SCENE 3: 3D Stacked Layers (48.2s - 69.9s)
-const Scene3ThreeLayers: React.FC<{ currentTime: number }> = ({ currentTime }) => {
-  
-  // Highlighting thresholds based on times
-  const showData = currentTime >= 53.0 && currentTime < 56.0;
-  const showSoftware = currentTime >= 56.0 && currentTime < 60.0;
-  const showHardware = currentTime >= 60.0 && currentTime < 63.9;
-
-  return (
-    <div
-      style={{
         display: "flex",
-        width: "100%",
-        height: "100%",
         flexDirection: "column",
-        justifyContent: "center",
         alignItems: "center",
-        perspective: "800px",
-      }}
-    >
-      <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: "40px", fontWeight: 800, color: "#fff", marginBottom: "40px", letterSpacing: "4px" }}>
-        THE THREE BATTLEGROUNDS
-      </h2>
-
-      {/* Layer Stack */}
-      <div style={{ display: "flex", flexDirection: "column", gap: "25px", transform: "rotateX(25deg)", transformStyle: "preserve-3d" }}>
-        
-        {/* Layer 1: Data (Top) */}
-        <div
-          style={{
-            width: "600px",
-            height: "70px",
-            backgroundColor: showData ? "rgba(255, 204, 0, 0.15)" : "rgba(255,255,255,0.02)",
-            border: `2px solid ${showData ? THEME.gold : "rgba(255,255,255,0.1)"}`,
-            boxShadow: showData ? `0 0 30px ${THEME.goldGlow}` : "none",
-            borderRadius: "16px",
-            display: "flex",
-            alignItems: "center",
-            padding: "0 30px",
-            justifyContent: "space-between",
-            transform: showData ? "translateY(-15px) translateZ(20px)" : "none",
-            
-          }}
-        >
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "24px", fontWeight: 700, color: showData ? THEME.gold : "#fff" }}>
-            1. DATA LAYER
-          </span>
-          <span style={{ color: THEME.textMuted, fontSize: "16px" }}>
-            Behavioral Signals vs Scraped Text
-          </span>
-        </div>
-
-        {/* Layer 2: Software (Middle) */}
-        <div
-          style={{
-            width: "600px",
-            height: "70px",
-            backgroundColor: showSoftware ? "rgba(0, 210, 255, 0.15)" : "rgba(255,255,255,0.02)",
-            border: `2px solid ${showSoftware ? THEME.usBlue : "rgba(255,255,255,0.1)"}`,
-            boxShadow: showSoftware ? `0 0 30px ${THEME.usBlueGlow}` : "none",
-            borderRadius: "16px",
-            display: "flex",
-            alignItems: "center",
-            padding: "0 30px",
-            justifyContent: "space-between",
-            transform: showSoftware ? "translateY(-15px) translateZ(20px)" : "none",
-            
-          }}
-        >
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "24px", fontWeight: 700, color: showSoftware ? THEME.usBlue : "#fff" }}>
-            2. SOFTWARE LAYER
-          </span>
-          <span style={{ color: THEME.textMuted, fontSize: "16px" }}>
-            Brute Force Scaling vs MoE Models
-          </span>
-        </div>
-
-        {/* Layer 3: Hardware (Bottom) */}
-        <div
-          style={{
-            width: "600px",
-            height: "70px",
-            backgroundColor: showHardware ? "rgba(255, 51, 102, 0.15)" : "rgba(255,255,255,0.02)",
-            border: `2px solid ${showHardware ? THEME.chinaRed : "rgba(255,255,255,0.1)"}`,
-            boxShadow: showHardware ? `0 0 30px ${THEME.chinaRedGlow}` : "none",
-            borderRadius: "16px",
-            display: "flex",
-            alignItems: "center",
-            padding: "0 30px",
-            justifyContent: "space-between",
-            transform: showHardware ? "translateY(-15px) translateZ(20px)" : "none",
-            
-          }}
-        >
-          <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "24px", fontWeight: 700, color: showHardware ? THEME.chinaRed : "#fff" }}>
-            3. HARDWARE LAYER
-          </span>
-          <span style={{ color: THEME.textMuted, fontSize: "16px" }}>
-            ASIC Chip Hegemony & Export Bans
-          </span>
-        </div>
-
-      </div>
-    </div>
-  );
-};
-
-// ── SCENE 4: Closed Vault vs Open Box (69.9s - 94.3s)
-const Scene4Philosophies: React.FC<{ currentTime: number }> = ({ currentTime }) => {
-  const frame = useCurrentFrame();
-  const showVault = currentTime >= 73.4 && currentTime < 84.2;
-  const showOpen = currentTime >= 84.2 && currentTime < 94.3;
-
-  return (
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        height: "100%",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-        padding: "0 60px",
-      }}
-    >
-      {/* Vault Philosophy */}
-      <div
-        style={{
-          width: "440px",
-          height: "440px",
-          backgroundColor: "rgba(10, 12, 18, 0.8)",
-          borderRadius: "32px",
-          border: `2px solid ${showVault ? THEME.usBlue : "rgba(255,255,255,0.06)"}`,
-          boxShadow: showVault ? `0 0 30px ${THEME.usBlueGlow}` : "none",
-          padding: "35px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-between",
-          
-          opacity: showOpen ? 0.3 : 1.0,
-        }}
-      >
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: THEME.usBlue, fontSize: "22px", fontWeight: 700, letterSpacing: "2px" }}>
-          CLOSED VAULT (USA)
-        </h3>
-        
-        {/* Animated Vault Door */}
-        <svg width="150" height="150" viewBox="0 0 100 100">
-          <circle cx="50" cy="50" r="40" fill="none" stroke={THEME.usBlue} strokeWidth="5" />
-          <circle cx="50" cy="50" r="25" fill="none" stroke={THEME.usBlue} strokeWidth="3" />
-          {/* Vault dial locking animation */}
-          <line
-            x1="50"
-            y1="50"
-            x2="50"
-            y2="18"
-            stroke={THEME.usBlue}
-            strokeWidth="5"
-            transform={showVault ? `rotate(${Math.min(90, frame * 0.8)} 50 50)` : "none"}
-          />
-          <circle cx="50" cy="50" r="8" fill={THEME.usBlue} />
-        </svg>
-
-        <p style={{ color: THEME.textMuted, fontSize: "16px", textAlign: "center", margin: 0 }}>
-          Proprietary models, guarded weights, commercial licensing models (e.g. OpenAI).
-        </p>
-      </div>
-
-      {/* Open Box Philosophy */}
-      <div
-        style={{
-          width: "440px",
-          height: "440px",
-          backgroundColor: "rgba(10, 12, 18, 0.8)",
-          borderRadius: "32px",
-          border: `2px solid ${showOpen ? THEME.chinaRed : "rgba(255,255,255,0.06)"}`,
-          boxShadow: showOpen ? `0 0 30px ${THEME.chinaRedGlow}` : "none",
-          padding: "35px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-between",
-          
-          opacity: showVault ? 0.3 : 1.0,
-        }}
-      >
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: THEME.chinaRed, fontSize: "22px", fontWeight: 700, letterSpacing: "2px" }}>
-          OPEN BOX (CHINA)
-        </h3>
-        
-        {/* Animated Open Box with particles */}
-        <svg width="150" height="150" viewBox="0 0 100 100">
-          <path d="M20 50 L50 35 L80 50 L50 65 Z" fill="none" stroke={THEME.chinaRed} strokeWidth="4" />
-          <path d="M20 50 L20 75 L50 90 L50 65" fill="none" stroke={THEME.chinaRed} strokeWidth="4" />
-          <path d="M80 50 L80 75 L50 90 L50 65" fill="none" stroke={THEME.chinaRed} strokeWidth="4" />
-          {/* Floating particle animations */}
-          {showOpen && (
-            <>
-              <circle cx="50" cy={50 - (frame % 30)} r={3 + (frame % 3)} fill={THEME.chinaRed} opacity={1 - (frame % 30)/30} />
-              <circle cx="35" cy={45 - ((frame + 10) % 35)} r="3" fill={THEME.chinaRed} opacity={1 - ((frame + 10) % 35)/35} />
-              <circle cx="65" cy={45 - ((frame + 20) % 25)} r="4" fill={THEME.chinaRed} opacity={1 - ((frame + 20) % 25)/25} />
-            </>
-          )}
-        </svg>
-
-        <p style={{ color: THEME.textMuted, fontSize: "16px", textAlign: "center", margin: 0 }}>
-          Open-source sharing, API democratization, community integration for speed.
-        </p>
-      </div>
-    </div>
-  );
-};
-
-// ── SCENE 5: USA Silicon Dominance vs Barriers (94.3s - 117.5s)
-const Scene5Hardware: React.FC<{ currentTime: number }> = ({ currentTime }) => {
-  const showBarrier = currentTime >= 109.4;
-
-  return (
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        height: "100%",
-        justifyContent: "space-evenly",
-        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "100px 50px 250px 50px",
         position: "relative",
       }}
     >
-      {/* US H100 Silicon Grid */}
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-        <ChipIcon color={THEME.usBlue} size={160} />
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: THEME.usBlue, fontSize: "24px", fontWeight: 700, marginTop: "20px" }}>
-          NVIDIA H100 / B200
-        </h3>
-        <span style={{ color: THEME.textMuted }}>US Raw GPU Domination</span>
-      </div>
-
-      {/* Dynamic Export Restriction Fence */}
-      <div
+      {/* Top Header */}
+      <h1
         style={{
-          width: "20px",
-          height: "350px",
-          background: showBarrier ? `repeating-linear-gradient(45deg, ${THEME.chinaRed}, ${THEME.chinaRed} 10px, transparent 10px, transparent 20px)` : "rgba(255,255,255,0.05)",
-          boxShadow: showBarrier ? `0 0 20px ${THEME.chinaRedGlow}` : "none",
-          borderRadius: "10px",
-          
-          position: "relative",
+          fontFamily: "Impact, 'Arial Black', sans-serif",
+          fontSize: isWidescreen ? "130px" : "90px",
+          color: THEME.accentRed,
+          textAlign: "center",
+          textTransform: "uppercase",
+          letterSpacing: "2px",
+          opacity: headingOpacity,
+          scale: headingScale,
+          marginTop: isWidescreen ? "0" : "80px",
         }}
       >
-        {showBarrier && (
-          <span
+        AI MODEL TIERS?
+      </h1>
+
+      {/* Sub-scenarios based on timings */}
+      {currentSec < 11.7 ? (
+        // Cutout character view
+        <div
+          style={{
+            display: "flex",
+            flexDirection: isWidescreen ? "row" : "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "100px",
+            width: "100%",
+          }}
+        >
+          {/* Founder 1 (Left) */}
+          <div
             style={{
-              position: "absolute",
-              top: "50%",
-              left: "50%",
-              transform: "translate(-50%, -50%) rotate(90deg)",
-              color: "#fff",
-              fontFamily: "'Space Grotesk', sans-serif",
-              fontSize: "14px",
-              fontWeight: 800,
-              letterSpacing: "4px",
-              whiteSpace: "nowrap",
+              position: "relative",
+              transform: `translateY(${(1 - leftFounderY) * 600}px)`,
             }}
           >
-            EXPORT BAN
-          </span>
-        )}
-      </div>
+            {/* Red backdrop circle */}
+            <div
+              style={{
+                position: "absolute",
+                width: isWidescreen ? "350px" : "280px",
+                height: isWidescreen ? "350px" : "280px",
+                borderRadius: "50%",
+                backgroundColor: THEME.accentRed,
+                zIndex: -1,
+                top: 50,
+                left: 20,
+              }}
+            />
+            <Img
+              src={staticFile("tech_founder_1.png")}
+              style={{
+                height: isWidescreen ? "450px" : "350px",
+                objectFit: "contain",
+              }}
+              alt="Bezos-like figure"
+            />
+            {/* Quote Bubble */}
+            <div
+              style={{
+                position: "absolute",
+                top: -50,
+                right: -80,
+                background: THEME.white,
+                border: `3px solid ${THEME.textDark}`,
+                borderRadius: "15px",
+                padding: "15px 25px",
+                fontFamily: "Arial, sans-serif",
+                fontSize: "24px",
+                fontWeight: "bold",
+                transform: `scale(${quote1Scale})`,
+                boxShadow: "5px 5px 0px rgba(0,0,0,0.15)",
+              }}
+            >
+              "Industrial Bubble"
+            </div>
+          </div>
 
-      {/* Restricted China Silicon Grid */}
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", opacity: showBarrier ? 0.4 : 1.0,  }}>
-        <ChipIcon color={THEME.chinaRed} size={120} />
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: THEME.chinaRed, fontSize: "24px", fontWeight: 700, marginTop: "20px" }}>
-          DOMESTIC SILICON
-        </h3>
-        <span style={{ color: THEME.textMuted }}>Cut Off from Global Supply</span>
-      </div>
-    </div>
-  );
-};
-
-// ── SCENE 6: Software: Brute Force vs MoE (117.5s - 154.1s)
-const Scene6Software: React.FC<{ currentTime: number }> = ({ currentTime }) => {
-  const frame = useCurrentFrame();
-  const showMoe = currentTime >= 131.8;
-
-  return (
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        height: "100%",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-      }}
-    >
-      {/* Brute Force (USA) */}
-      <div
-        style={{
-          width: "420px",
-          height: "420px",
-          backgroundColor: "rgba(10, 12, 18, 0.8)",
-          borderRadius: "24px",
-          border: `2px solid ${!showMoe ? THEME.usBlue : "rgba(255,255,255,0.06)"}`,
-          padding: "30px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-between",
-          opacity: showMoe ? 0.3 : 1.0,
-          
-        }}
-      >
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: THEME.usBlue, fontSize: "22px", fontWeight: 700 }}>
-          US: BRUTE FORCE
-        </h3>
-        
-        {/* Massive server grid all firing */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "10px", width: "200px" }}>
-          {Array.from({ length: 25 }).map((_, idx) => {
-            const isFlicker = random(idx) > 0.1; // almost always active
+          {/* Founder 2 (Right) */}
+          <div
+            style={{
+              position: "relative",
+              transform: `translateY(${(1 - rightFounderY) * 600}px)`,
+            }}
+          >
+            <div
+              style={{
+                position: "absolute",
+                width: isWidescreen ? "350px" : "280px",
+                height: isWidescreen ? "350px" : "280px",
+                borderRadius: "50%",
+                backgroundColor: THEME.accentBlue,
+                zIndex: -1,
+                top: 50,
+                left: 20,
+              }}
+            />
+            <Img
+              src={staticFile("tech_founder_2.png")}
+              style={{
+                height: isWidescreen ? "450px" : "350px",
+                objectFit: "contain",
+              }}
+              alt="Gates-like figure"
+            />
+            <div
+              style={{
+                position: "absolute",
+                top: -50,
+                left: -80,
+                background: THEME.white,
+                border: `3px solid ${THEME.textDark}`,
+                borderRadius: "15px",
+                padding: "15px 25px",
+                fontFamily: "Arial, sans-serif",
+                fontSize: "24px",
+                fontWeight: "bold",
+                transform: `scale(${quote2Scale})`,
+                boxShadow: "-5px 5px 0px rgba(0,0,0,0.15)",
+              }}
+            >
+              "Financial Bubble"
+            </div>
+          </div>
+        </div>
+      ) : (
+        // The three boxes animation (Large, Medium, Small models comparison)
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignItems: "flex-end",
+            gap: "50px",
+            width: "100%",
+            height: "400px",
+          }}
+        >
+          {["CHEAP", "BALANCED", "PRO"].map((tier, idx) => {
+            const delay = 350 + idx * 10;
+            const boxScale = spring({ frame: frame - delay, fps: 30 });
             return (
               <div
-                key={idx}
+                key={tier}
                 style={{
-                  width: "30px",
-                  height: "30px",
-                  borderRadius: "6px",
-                  backgroundColor: isFlicker ? THEME.usBlue : "rgba(255,255,255,0.1)",
-                  boxShadow: isFlicker ? `0 0 10px ${THEME.usBlueGlow}` : "none",
+                  background:
+                    idx === 1
+                      ? THEME.accentRed
+                      : idx === 2
+                        ? THEME.accentBlue
+                        : THEME.white,
+                  color: idx === 0 ? THEME.textDark : THEME.white,
+                  border: `4px solid ${THEME.textDark}`,
+                  borderRadius: "20px",
+                  width: isWidescreen ? "260px" : "200px",
+                  height: `${180 + idx * 80}px`,
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  padding: "30px 10px",
+                  transform: `scale(${boxScale})`,
+                  boxShadow: "10px 10px 0px rgba(0,0,0,0.15)",
                 }}
-              />
+              >
+                <div
+                  style={{
+                    fontFamily: "Impact, sans-serif",
+                    fontSize: "36px",
+                  }}
+                >
+                  {tier}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "Arial, sans-serif",
+                    fontWeight: "bold",
+                    fontSize: "22px",
+                  }}
+                >
+                  {idx === 0 ? "$0.00" : idx === 1 ? "$20.00" : "$80.00"}
+                </div>
+              </div>
             );
           })}
         </div>
-
-        <span style={{ color: THEME.textMuted, fontSize: "14px", textAlign: "center" }}>
-          Heavy GPU Clusters activating 100% of compute nodes on all tasks.
-        </span>
-      </div>
-
-      {/* Mixture of Experts (China) */}
-      <div
-        style={{
-          width: "420px",
-          height: "420px",
-          backgroundColor: "rgba(10, 12, 18, 0.8)",
-          borderRadius: "24px",
-          border: `2px solid ${showMoe ? THEME.chinaRed : "rgba(255,255,255,0.06)"}`,
-          padding: "30px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-between",
-          opacity: !showMoe ? 0.3 : 1.0,
-          
-        }}
-      >
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: THEME.chinaRed, fontSize: "22px", fontWeight: 700 }}>
-          CHINA: MIXTURE OF EXPERTS
-        </h3>
-        
-        {/* Sparsely active server nodes */}
-        <div style={{ display: "grid", gridTemplateColumns: "repeat(5, 1fr)", gap: "10px", width: "200px" }}>
-          {Array.from({ length: 25 }).map((_, idx) => {
-            // Only 2 or 3 nodes active at a time
-            const group = idx % 5;
-            const activeGroup = Math.floor(frame / 10) % 5;
-            const isActive = group === activeGroup;
-
-            return (
-              <div
-                key={idx}
-                style={{
-                  width: "30px",
-                  height: "30px",
-                  borderRadius: "6px",
-                  backgroundColor: isActive ? THEME.chinaRed : "rgba(255,255,255,0.1)",
-                  boxShadow: isActive ? `0 0 10px ${THEME.chinaRedGlow}` : "none",
-                  
-                }}
-              />
-            );
-          })}
-        </div>
-
-        <span style={{ color: THEME.textMuted, fontSize: "14px", textAlign: "center" }}>
-          Routing inputs only to specific "expert" nodes, dropping cost up to 60x.
-        </span>
-      </div>
+      )}
     </div>
   );
 };
 
-// ── SCENE 7: Performance vs Cost Charts (154.1s - 176.6s)
-const Scene7EqualPerformance: React.FC<{ currentTime: number }> = ({ currentTime }) => {
-  const frame = useCurrentFrame();
-  const showCost = currentTime >= 161.7;
+// ── SCENE 2: Giga Compute Costs (24.9s - 61.3s)
+const Scene2ComputeCosts: React.FC<{
+  frame: number;
+  isWidescreen: boolean;
+}> = ({ frame, isWidescreen }) => {
 
-  // Chart bar loading animations
-  const barVal = spring({ frame, fps: 30, config: { stiffness: 100 } });
-  const costShrink = spring({ frame: frame - (161.7 - 154.1) * 30, fps: 30 });
+  // Component enters
+  const gigaScale = spring({ frame, fps: 30 });
+  const meterVal = interpolate(frame, [150, 450], [10, 100], {
+    extrapolateRight: "clamp",
+    extrapolateLeft: "clamp",
+  });
 
   return (
     <div
       style={{
-        display: "flex",
         width: "100%",
         height: "100%",
-        justifyContent: "space-evenly",
+        display: "flex",
+        flexDirection: isWidescreen ? "row" : "column",
         alignItems: "center",
-        padding: "0 60px",
+        justifyContent: "center",
+        gap: "80px",
+        padding: "100px 50px 250px 50px",
       }}
     >
-      {/* Graph 1: Performance */}
+      {/* GPU Graphic Side */}
       <div
         style={{
-          width: "440px",
-          height: "400px",
-          backgroundColor: "rgba(10, 12, 18, 0.8)",
-          borderRadius: "24px",
-          border: "1px solid rgba(255,255,255,0.08)",
-          padding: "30px",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
+          alignItems: "center",
+          justifyContent: "center",
+          scale: `${gigaScale}`,
         }}
       >
-        <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#fff", fontSize: "18px", margin: 0, letterSpacing: "1px" }}>
-          MODEL BENCHMARK PERFORMANCE
-        </h4>
-        
-        {/* Bars Container */}
-        <div style={{ display: "flex", height: "230px", alignItems: "flex-end", gap: "50px", justifyContent: "center" }}>
-          {/* US Bar */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <span style={{ color: THEME.usBlue, fontWeight: 700, marginBottom: "8px" }}>99.2%</span>
-            <div
-              style={{
-                width: "60px",
-                height: `${180 * barVal}px`,
-                backgroundColor: THEME.usBlue,
-                borderRadius: "8px 8px 0 0",
-                boxShadow: `0 0 15px ${THEME.usBlueGlow}`,
-              }}
-            />
-            <span style={{ color: "#fff", fontSize: "14px", marginTop: "8px" }}>US</span>
-          </div>
-
-          {/* China Bar */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <span style={{ color: THEME.chinaRed, fontWeight: 700, marginBottom: "8px" }}>98.8%</span>
-            <div
-              style={{
-                width: "60px",
-                height: `${178 * barVal}px`,
-                backgroundColor: THEME.chinaRed,
-                borderRadius: "8px 8px 0 0",
-                boxShadow: `0 0 15px ${THEME.chinaRedGlow}`,
-              }}
-            />
-            <span style={{ color: "#fff", fontSize: "14px", marginTop: "8px" }}>CHINA</span>
-          </div>
+        <div
+          style={{
+            position: "relative",
+          }}
+        >
+          {/* Pulsing halo */}
+          <div
+            style={{
+              position: "absolute",
+              width: "380px",
+              height: "380px",
+              borderRadius: "50%",
+              backgroundColor: "rgba(211, 47, 47, 0.2)",
+              scale: `${1.1 + Math.sin(frame * 0.1) * 0.05}`,
+              zIndex: -1,
+              top: -20,
+              left: -20,
+            }}
+          />
+          <Img
+            src={staticFile("gpu_core.png")}
+            style={{
+              width: isWidescreen ? "340px" : "280px",
+              height: isWidescreen ? "340px" : "280px",
+              objectFit: "contain",
+            }}
+            alt="GPU Core"
+          />
         </div>
+        <h2
+          style={{
+            fontFamily: "Impact, sans-serif",
+            fontSize: "64px",
+            color: THEME.textDark,
+            marginTop: "30px",
+            textAlign: "center",
+          }}
+        >
+          GPU POWER HOUSE
+        </h2>
       </div>
 
-      {/* Graph 2: Cost */}
+      {/* Stats Meter Box */}
       <div
         style={{
-          width: "440px",
-          height: "400px",
-          backgroundColor: "rgba(10, 12, 18, 0.8)",
-          borderRadius: "24px",
-          border: "1px solid rgba(255,255,255,0.08)",
-          padding: "30px",
+          background: THEME.white,
+          border: `5px solid ${THEME.textDark}`,
+          borderRadius: "20px",
+          width: isWidescreen ? "550px" : "90%",
+          padding: "40px 30px",
+          boxShadow: "15px 15px 0px rgba(0,0,0,0.15)",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
-          opacity: showCost ? 1.0 : 0.3,
-          
+          gap: "25px",
         }}
       >
-        <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#fff", fontSize: "18px", margin: 0, letterSpacing: "1px" }}>
-          TRAINING & DEPLOYMENT COST
-        </h4>
-        
-        {/* Bars Container */}
-        <div style={{ display: "flex", height: "230px", alignItems: "flex-end", gap: "50px", justifyContent: "center" }}>
-          {/* US Bar */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            <span style={{ color: THEME.usBlue, fontWeight: 700, marginBottom: "8px" }}>$10,000</span>
-            <div
-              style={{
-                width: "60px",
-                height: "180px",
-                backgroundColor: THEME.usBlue,
-                borderRadius: "8px 8px 0 0",
-                opacity: 0.8,
-              }}
-            />
-            <span style={{ color: "#fff", fontSize: "14px", marginTop: "8px" }}>US</span>
+        <div>
+          <div
+            style={{
+              fontFamily: "Arial, sans-serif",
+              fontWeight: "bold",
+              fontSize: "26px",
+              color: THEME.textGray,
+              display: "flex",
+              justifyContent: "space-between",
+            }}
+          >
+            <span>POWER CONSUMPTION</span>
+            <span style={{ color: THEME.accentRed }}>{meterVal.toFixed(0)}%</span>
           </div>
-
-          {/* China Bar */}
-          <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-            {showCost && (
-              <span style={{ color: THEME.gold, fontWeight: 800, marginBottom: "8px", textShadow: `0 0 10px ${THEME.goldGlow}` }}>
-                $166 (60x ↓)
-              </span>
-            )}
+          {/* Progress bar container */}
+          <div
+            style={{
+              width: "100%",
+              height: "30px",
+              backgroundColor: "#e0e0e0",
+              borderRadius: "15px",
+              marginTop: "10px",
+              overflow: "hidden",
+              border: `2px solid ${THEME.textDark}`,
+            }}
+          >
             <div
               style={{
-                width: "60px",
-                height: `${interpolate(costShrink, [0, 1], [180, 5])}px`,
-                backgroundColor: THEME.chinaRed,
-                borderRadius: "4px 4px 0 0",
-                boxShadow: `0 0 15px ${THEME.chinaRedGlow}`,
+                width: `${meterVal}%`,
+                height: "100%",
+                backgroundColor: THEME.accentRed,
               }}
             />
-            <span style={{ color: "#fff", fontSize: "14px", marginTop: "8px" }}>CHINA</span>
+          </div>
+        </div>
+
+        {/* Dynamic labels */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "15px",
+            fontFamily: "Impact, sans-serif",
+            fontSize: "36px",
+            color: THEME.textDark,
+          }}
+        >
+          <div style={{ opacity: frame > 100 ? 1 : 0.1 }}>
+            💸 STUPID AMOUNT OF CASH
+          </div>
+          <div style={{ opacity: frame > 250 ? 1 : 0.1 }}>
+            ⚡ CITY-SIZE ELECTRICITY
+          </div>
+          <div style={{ opacity: frame > 400 ? 1 : 0.1 }}>
+            🛑 GENUINELY EXPENSIVE
           </div>
         </div>
       </div>
@@ -922,541 +523,551 @@ const Scene7EqualPerformance: React.FC<{ currentTime: number }> = ({ currentTime
   );
 };
 
-// ── SCENE 8: Data Funnels (176.6s - 208.6s)
-const Scene8Data: React.FC<{ currentTime: number }> = ({ currentTime }) => {
-  const frame = useCurrentFrame();
-  const showChinaData = currentTime >= 189.2;
+// ── SCENE 3: The Psychology of Anchoring (61.3s - 127.9s)
+const Scene3Anchoring: React.FC<{ frame: number; isWidescreen: boolean }> = ({ frame, isWidescreen }) => {
 
-  return (
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        height: "100%",
-        justifyContent: "space-evenly",
-        alignItems: "center",
-      }}
-    >
-      {/* US Text Scrape Funnel */}
-      <div
-        style={{
-          width: "440px",
-          height: "440px",
-          backgroundColor: "rgba(10, 12, 18, 0.8)",
-          borderRadius: "28px",
-          border: `2px solid ${!showChinaData ? THEME.usBlue : "rgba(255,255,255,0.06)"}`,
-          padding: "35px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-between",
-          opacity: showChinaData ? 0.35 : 1.0,
-          
-        }}
-      >
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: THEME.usBlue, fontSize: "20px", fontWeight: 700 }}>
-          US: PUBLIC TEXT SCRAPING
-        </h3>
-        
-        {/* Funnel SVG with text elements falling in */}
-        <svg width="150" height="150" viewBox="0 0 100 100">
-          <path d="M10 20 L90 20 L60 60 L60 90 L40 90 L40 60 Z" fill="none" stroke={THEME.usBlue} strokeWidth="4" />
-          {/* Falling text tokens */}
-          <text x="35" y={25 + (frame % 40)} fill={THEME.usBlue} fontSize="12" fontWeight="bold" opacity={1 - (frame % 40)/40}>abc</text>
-          <text x="55" y={15 + ((frame + 15) % 40)} fill={THEME.usBlue} fontSize="12" fontWeight="bold" opacity={1 - ((frame + 15) % 40)/40}>TXT</text>
-        </svg>
-
-        <p style={{ color: THEME.textMuted, fontSize: "15px", textAlign: "center", margin: 0 }}>
-          Exhaustive scraping of Wikipedia, Reddit, books, and public web documents. Facing data wall.
-        </p>
-      </div>
-
-      {/* China Multimodal Horn */}
-      <div
-        style={{
-          width: "440px",
-          height: "440px",
-          backgroundColor: "rgba(10, 12, 18, 0.8)",
-          borderRadius: "28px",
-          border: `2px solid ${showChinaData ? THEME.chinaRed : "rgba(255,255,255,0.06)"}`,
-          boxShadow: showChinaData ? `0 0 30px ${THEME.chinaRedGlow}` : "none",
-          padding: "35px",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-between",
-          opacity: !showChinaData ? 0.35 : 1.0,
-          
-        }}
-      >
-        <h3 style={{ fontFamily: "'Space Grotesk', sans-serif", color: THEME.chinaRed, fontSize: "20px", fontWeight: 700 }}>
-          CHINA: MULTIMODAL APP DATA
-        </h3>
-        
-        {/* Super App interface collecting rich widgets */}
-        <svg width="150" height="150" viewBox="0 0 100 100">
-          <rect x="30" y="10" width="40" height="80" rx="8" fill="none" stroke={THEME.chinaRed} strokeWidth="4" />
-          {/* Icons landing in screen */}
-          <circle cx="50" cy="30" r="8" fill={THEME.chinaRed} opacity="0.8" />
-          <rect x="42" y="48" width="16" height="10" rx="2" fill={THEME.chinaRed} opacity="0.6" />
-          <path d="M40 70 H60 V76 H40 Z" fill={THEME.chinaRed} opacity="0.7" />
-          {/* Waves of data entering */}
-          <circle cx="20" cy="50" r={frame % 20} fill="none" stroke={THEME.chinaRed} strokeWidth="2" opacity={1 - (frame % 20)/20} />
-          <circle cx="80" cy="50" r={frame % 20} fill="none" stroke={THEME.chinaRed} strokeWidth="2" opacity={1 - (frame % 20)/20} />
-        </svg>
-
-        <p style={{ color: THEME.textMuted, fontSize: "15px", textAlign: "center", margin: 0 }}>
-          Direct behavioral data feeds from Super-Apps: payments, transport, location, voice, and services.
-        </p>
-      </div>
-    </div>
-  );
-};
-
-// ── SCENE 9 & 10: Three Columns Highlights (USA vs China Leads)
-const Scene9ThreeColumns: React.FC<{ leads: "us" | "china"; currentTime: number }> = ({ leads, currentTime }) => {
   // Slide timelines offsets
-  const usTimings = [211.5, 215.8, 218.9];
-  const chinaTimings = [231.6, 234.3, 237.4];
-  const activeTimings = leads === "us" ? usTimings : chinaTimings;
-
-  const show1 = currentTime >= activeTimings[0];
-  const show2 = currentTime >= activeTimings[1];
-  const show3 = currentTime >= activeTimings[2];
-
-  const color = leads === "us" ? THEME.usBlue : THEME.chinaRed;
-  const glow = leads === "us" ? THEME.usBlueGlow : THEME.chinaRedGlow;
+  const leftMenuX = spring({ frame, fps: 30, config: { damping: 14 } });
+  const circleHighlighter = spring({ frame: frame - 150, fps: 30 });
 
   return (
     <div
       style={{
-        display: "flex",
         width: "100%",
         height: "100%",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        padding: "0 50px",
-      }}
-    >
-      <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: "38px", fontWeight: 800, color: "#fff", marginBottom: "40px" }}>
-        {leads === "us" ? "WHERE AMERICA LEADS THE RACE" : "WHERE CHINA LEADS THE RACE"}
-      </h2>
-
-      <div style={{ display: "flex", gap: "30px", justifyContent: "center", width: "100%" }}>
-        {/* Column 1 */}
-        <div
-          style={{
-            flex: 1,
-            height: "320px",
-            backgroundColor: "rgba(10, 12, 18, 0.8)",
-            border: `2px solid ${show1 ? color : "rgba(255,255,255,0.04)"}`,
-            boxShadow: show1 ? `0 0 25px ${glow}` : "none",
-            borderRadius: "20px",
-            padding: "25px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            opacity: show1 ? 1.0 : 0.15,
-            transform: show1 ? "translateY(0)" : "translateY(20px)",
-            
-          }}
-        >
-          {leads === "us" ? (
-            // Crown SVG
-            <svg width="60" height="60" viewBox="0 0 100 100">
-              <path d="M15 75 L10 30 L35 50 L50 25 L65 50 L90 30 L85 75 Z" fill="none" stroke={color} strokeWidth="4" />
-              <line x1="15" y1="75" x2="85" y2="75" stroke={color} strokeWidth="6" />
-            </svg>
-          ) : (
-            // Down Arrow Graph SVG
-            <svg width="60" height="60" viewBox="0 0 100 100">
-              <path d="M10 20 L40 50 L60 40 L90 70 M90 70 H70 M90 70 V50" fill="none" stroke={color} strokeWidth="4" />
-            </svg>
-          )}
-          <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#fff", fontSize: "20px", fontWeight: 700, margin: 0, textAlign: "center" }}>
-            {leads === "us" ? "FIRST TO MARKET" : "COST EFFICIENCY"}
-          </h4>
-        </div>
-
-        {/* Column 2 */}
-        <div
-          style={{
-            flex: 1,
-            height: "320px",
-            backgroundColor: "rgba(10, 12, 18, 0.8)",
-            border: `2px solid ${show2 ? color : "rgba(255,255,255,0.04)"}`,
-            boxShadow: show2 ? `0 0 25px ${glow}` : "none",
-            borderRadius: "20px",
-            padding: "25px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            opacity: show2 ? 1.0 : 0.15,
-            transform: show2 ? "translateY(0)" : "translateY(20px)",
-            
-          }}
-        >
-          {leads === "us" ? (
-            // Chip SVG
-            <svg width="60" height="60" viewBox="0 0 100 100">
-              <rect x="25" y="25" width="50" height="50" fill="none" stroke={color} strokeWidth="4" rx="4" />
-              <rect x="40" y="40" width="20" height="20" fill={color} />
-            </svg>
-          ) : (
-            // Padlock Open SVG
-            <svg width="60" height="60" viewBox="0 0 100 100">
-              <rect x="25" y="45" width="50" height="40" rx="4" fill="none" stroke={color} strokeWidth="4" />
-              <path d="M35 45 V25 C35 15, 65 15, 65 25" fill="none" stroke={color} strokeWidth="4" />
-            </svg>
-          )}
-          <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#fff", fontSize: "20px", fontWeight: 700, margin: 0, textAlign: "center" }}>
-            {leads === "us" ? "ADVANCED HARDWARE" : "OPEN DISTRIBUTION"}
-          </h4>
-        </div>
-
-        {/* Column 3 */}
-        <div
-          style={{
-            flex: 1,
-            height: "320px",
-            backgroundColor: "rgba(10, 12, 18, 0.8)",
-            border: `2px solid ${show3 ? color : "rgba(255,255,255,0.04)"}`,
-            boxShadow: show3 ? `0 0 25px ${glow}` : "none",
-            borderRadius: "20px",
-            padding: "25px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "space-evenly",
-            opacity: show3 ? 1.0 : 0.15,
-            transform: show3 ? "translateY(0)" : "translateY(20px)",
-            
-          }}
-        >
-          {leads === "us" ? (
-            // Eye Shield SVG
-            <svg width="60" height="60" viewBox="0 0 100 100">
-              <path d="M50 15 C65 15, 80 10, 80 10 V45 C80 65, 50 85, 50 85 C50 85, 20 65, 20 45 V10 C20 10, 35 15, 50 15 Z" fill="none" stroke={color} strokeWidth="4" />
-            </svg>
-          ) : (
-            // Gear SVG
-            <svg width="60" height="60" viewBox="0 0 100 100">
-              <circle cx="50" cy="50" r="18" fill="none" stroke={color} strokeWidth="4" />
-              {/* Teeth */}
-              <rect x="46" y="15" width="8" height="15" fill={color} />
-              <rect x="46" y="70" width="8" height="15" fill={color} />
-              <rect x="15" y="46" width="15" height="8" fill={color} />
-              <rect x="70" y="46" width="15" height="8" fill={color} />
-            </svg>
-          )}
-          <h4 style={{ fontFamily: "'Space Grotesk', sans-serif", color: "#fff", fontSize: "20px", fontWeight: 700, margin: 0, textAlign: "center" }}>
-            {leads === "us" ? "SAFETY & OVERSIGHT" : "RAPID DEPLOYMENT"}
-          </h4>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// ── SCENE 11: World Map & Radar sweeps (250.5s - 272.9s)
-const Scene11Wildcards: React.FC<{ currentTime: number }> = ({ currentTime }) => {
-  const frame = useCurrentFrame();
-  
-  // Timings of radar sweeps
-  const sweepTaiwan = currentTime >= 254.5;
-  const sweepPacific = currentTime >= 258.6;
-  const sweepEurope = currentTime >= 260.7;
-
-  return (
-    <div
-      style={{
         display: "flex",
-        width: "100%",
-        height: "100%",
-        flexDirection: "column",
-        justifyContent: "center",
+        flexDirection: isWidescreen ? "row" : "column",
         alignItems: "center",
-        position: "relative",
+        justifyContent: "center",
+        gap: "80px",
+        padding: "100px 50px 250px 50px",
       }}
     >
-      <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: "38px", fontWeight: 800, color: "#fff", zIndex: 10, marginBottom: "20px" }}>
-        GEOPOLITICAL WILDCARDS
-      </h2>
-
-      {/* Outline stylized world map */}
-      <svg width="750" height="420" viewBox="0 0 1000 500" style={{ opacity: 0.15, position: "absolute", zIndex: 1 }}>
-        <path d="M100 250 H900 M500 50 V450" stroke="rgba(255,255,255,0.1)" strokeWidth="1" />
-        {/* Simple grid lines for mapping */}
-        <circle cx="500" cy="250" r="200" fill="none" stroke="rgba(255,255,255,0.05)" />
-      </svg>
-
-      <div style={{ position: "relative", width: "750px", height: "350px", zIndex: 10 }}>
-        {/* Radar Point 1: Taiwan */}
-        {sweepTaiwan && (
-          <div style={{ position: "absolute", left: "75%", top: "45%" }}>
-            <div
-              style={{
-                width: "12px",
-                height: "12px",
-                borderRadius: "50%",
-                backgroundColor: THEME.gold,
-                boxShadow: `0 0 15px ${THEME.gold}`,
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                top: "-14px",
-                left: "-14px",
-                width: "40px",
-                height: "40px",
-                borderRadius: "50%",
-                border: `2px solid ${THEME.gold}`,
-                
-                transform: `scale(${(frame % 30) / 10})`,
-                opacity: 1 - (frame % 30) / 30,
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                left: "20px",
-                top: "-15px",
-                backgroundColor: "rgba(10,12,18,0.9)",
-                padding: "8px 16px",
-                borderRadius: "10px",
-                border: `1px solid ${THEME.gold}`,
-                whiteSpace: "nowrap",
-              }}
-            >
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", color: THEME.gold, fontWeight: 700 }}>
-                TAIWAN CHIP SUPPLY CHAIN
-              </span>
-            </div>
-          </div>
-        )}
-
-        {/* Radar Point 2: Pacific / Data */}
-        {sweepPacific && (
-          <div style={{ position: "absolute", left: "45%", top: "60%" }}>
-            <div
-              style={{
-                width: "12px",
-                height: "12px",
-                borderRadius: "50%",
-                backgroundColor: THEME.usBlue,
-                boxShadow: `0 0 15px ${THEME.usBlue}`,
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                left: "20px",
-                top: "-15px",
-                backgroundColor: "rgba(10,12,18,0.9)",
-                padding: "8px 16px",
-                borderRadius: "10px",
-                border: `1px solid ${THEME.usBlue}`,
-                whiteSpace: "nowrap",
-              }}
-            >
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", color: THEME.usBlue, fontWeight: 700 }}>
-                DATA SECURITY / SANCTIONS
-              </span>
-            </div>
-          </div>
-        )}
-
-        {/* Radar Point 3: Europe / Regulations */}
-        {sweepEurope && (
-          <div style={{ position: "absolute", left: "20%", top: "35%" }}>
-            <div
-              style={{
-                width: "12px",
-                height: "12px",
-                borderRadius: "50%",
-                backgroundColor: THEME.chinaRed,
-                boxShadow: `0 0 15px ${THEME.chinaRed}`,
-              }}
-            />
-            <div
-              style={{
-                position: "absolute",
-                left: "20px",
-                top: "-15px",
-                backgroundColor: "rgba(10,12,18,0.9)",
-                padding: "8px 16px",
-                borderRadius: "10px",
-                border: `1px solid ${THEME.chinaRed}`,
-                whiteSpace: "nowrap",
-              }}
-            >
-              <span style={{ fontFamily: "'Space Grotesk', sans-serif", fontSize: "14px", color: THEME.chinaRed, fontWeight: 700 }}>
-                EUROPE REGULATORY BLOCKS
-              </span>
-            </div>
-          </div>
-        )}
-      </div>
-    </div>
-  );
-};
-
-// ── SCENE 12: Widescreen Balance Scale Conclusion (272.9s - 301.4s)
-const Scene12Conclusion: React.FC = () => {
-  const frame = useCurrentFrame();
-
-  // Slow tilting movement
-  const tilt = Math.sin(frame * 0.04) * 4; // tilt +/- 4 degrees
-
-  return (
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        height: "100%",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        position: "relative",
-      }}
-    >
-      <h2 style={{ fontFamily: "'Outfit', sans-serif", fontSize: "40px", fontWeight: 900, color: "#fff", marginBottom: "40px", letterSpacing: "3px" }}>
-        WHO IS ACTUALLY WINNING?
-      </h2>
-
-      {/* Balance Scale SVG */}
-      <svg
-        width="450"
-        height="300"
-        viewBox="0 0 200 150"
-        style={{ overflow: "visible", transformStyle: "preserve-3d" }}
+      {/* Left Menu Board */}
+      <div
+        style={{
+          background: THEME.white,
+          border: `5px solid ${THEME.textDark}`,
+          borderRadius: "20px",
+          width: isWidescreen ? "500px" : "90%",
+          padding: "40px",
+          boxShadow: "15px 15px 0px rgba(0,0,0,0.15)",
+          transform: `translateX(${(1 - leftMenuX) * -600}px)`,
+          position: "relative",
+        }}
       >
-        {/* Base of scale */}
-        <path d="M80 140 H120 V135 H80 Z M95 135 H105 V60 H95 Z" fill={THEME.textMuted} />
-        
-        {/* Tilting Beam assembly */}
-        <g style={{ transform: `rotate(${tilt}deg)`, transformOrigin: "100px 60px",  }}>
-          {/* Main Beam */}
-          <line x1="40" y1="60" x2="160" y2="60" stroke={THEME.textMuted} strokeWidth="4" />
-          
-          {/* Left Pan */}
-          <line x1="40" y1="60" x2="25" y2="105" stroke={THEME.usBlue} strokeWidth="1.5" />
-          <line x1="40" y1="60" x2="55" y2="105" stroke={THEME.usBlue} strokeWidth="1.5" />
-          <path d="M20 105 H60 L50 112 H30 Z" fill={THEME.usBlue} opacity="0.8" />
-          {/* Left Weight: Chip */}
-          <g transform="translate(30, 85) scale(0.4)">
-            <rect x="5" y="5" width="40" height="40" rx="4" fill="none" stroke="#fff" strokeWidth="4" />
-            <rect x="15" y="15" width="20" height="20" fill="#fff" />
-          </g>
+        {/* Highlighter circle overlay on the top item */}
+        <div
+          style={{
+            position: "absolute",
+            border: `6px solid ${THEME.accentRed}`,
+            borderRadius: "50%",
+            width: "440px",
+            height: "90px",
+            top: "135px",
+            left: "25px",
+            transform: `scale(${circleHighlighter})`,
+            pointerEvents: "none",
+            opacity: circleHighlighter,
+          }}
+        />
 
-          {/* Right Pan */}
-          <line x1="160" y1="60" x2="145" y2="105" stroke={THEME.chinaRed} strokeWidth="1.5" />
-          <line x1="160" y1="60" x2="175" y2="105" stroke={THEME.chinaRed} strokeWidth="1.5" />
-          <path d="M140 105 H180 L170 112 H150 Z" fill={THEME.chinaRed} opacity="0.8" />
-          {/* Right Weight: Connected network */}
-          <g transform="translate(150, 85) scale(0.4)">
-            <circle cx="25" cy="25" r="10" fill="#fff" />
-            <circle cx="10" cy="10" r="6" fill="#fff" />
-            <circle cx="40" cy="10" r="6" fill="#fff" />
-            <circle cx="10" cy="40" r="6" fill="#fff" />
-            <circle cx="40" cy="40" r="6" fill="#fff" />
-            <line x1="25" y1="25" x2="10" y2="10" stroke="#fff" strokeWidth="3" />
-            <line x1="25" y1="25" x2="40" y2="10" stroke="#fff" strokeWidth="3" />
-            <line x1="25" y1="25" x2="10" y2="40" stroke="#fff" strokeWidth="3" />
-            <line x1="25" y1="25" x2="40" y2="40" stroke="#fff" strokeWidth="3" />
-          </g>
-        </g>
-      </svg>
+        <h2
+          style={{
+            fontFamily: "Impact, sans-serif",
+            fontSize: "48px",
+            textAlign: "center",
+            borderBottom: `4px solid ${THEME.textDark}`,
+            paddingBottom: "15px",
+            marginBottom: "30px",
+          }}
+        >
+          MENU ANCHORING
+        </h2>
 
-      <div style={{ display: "flex", gap: "60px", marginTop: "30px" }}>
-        <span style={{ color: THEME.usBlue, fontFamily: "'Space Grotesk', sans-serif", fontSize: "18px", fontWeight: 700 }}>
-          US RAW CAPABILITY
-        </span>
-        <span style={{ color: THEME.chinaRed, fontFamily: "'Space Grotesk', sans-serif", fontSize: "18px", fontWeight: 700 }}>
-          CHINA EFFICIENCY & ECOSYSTEMS
-        </span>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "25px",
+            fontFamily: "Arial, sans-serif",
+            fontWeight: "bold",
+            fontSize: "28px",
+          }}
+        >
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <span>🥩 80$ STAKE (ANCHOR)</span>
+            <span style={{ color: THEME.accentRed }}>OUTRAGEOUS</span>
+          </div>
+          <div
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              backgroundColor: "rgba(25, 118, 210, 0.15)",
+              padding: "10px",
+              borderRadius: "10px",
+            }}
+          >
+            <span>🍝 30$ PASTA</span>
+            <span style={{ color: THEME.accentBlue }}>BEST SELLER</span>
+          </div>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <span>🥗 15$ SALAD</span>
+            <span>CHEAP</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Right Anchoring explanation */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: isWidescreen ? "flex-start" : "center",
+          justifyContent: "center",
+          maxWidth: "600px",
+        }}
+      >
+        <div
+          style={{
+            background: THEME.accentRed,
+            color: THEME.white,
+            padding: "15px 30px",
+            fontSize: "36px",
+            fontFamily: "Impact, sans-serif",
+            transform: "rotate(-3deg)",
+            boxShadow: "5px 5px 0px rgba(0,0,0,0.15)",
+          }}
+        >
+          DECOY EFFECT
+        </div>
+        <p
+          style={{
+            fontFamily: "Arial, sans-serif",
+            fontSize: "36px",
+            fontWeight: "bold",
+            color: THEME.textDark,
+            marginTop: "30px",
+            lineHeight: "1.4",
+            textAlign: isWidescreen ? "left" : "center",
+          }}
+        >
+          "The most expensive model exists only to make the middle option look
+          balanced and smart."
+        </p>
       </div>
     </div>
   );
 };
 
-// ─── MAIN COMPOSITION RENDERER ───────────────────────────────────────
+// ── SCENE 4: The Storage Trap (127.9s - 190.8s)
+const Scene4StorageTrap: React.FC<{ frame: number; isWidescreen: boolean }> = ({ frame, isWidescreen }) => {
+
+  // Animations
+  const phoneScale = spring({ frame, fps: 30 });
+  const cashSlideY = spring({ frame: frame - 150, fps: 30 });
+
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: isWidescreen ? "row" : "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "80px",
+        padding: "100px 50px 250px 50px",
+      }}
+    >
+      {/* Phone Storage graphics */}
+      <div
+        style={{
+          position: "relative",
+          scale: `${phoneScale}`,
+        }}
+      >
+        <Img
+          src={staticFile("storage_phone.png")}
+          style={{
+            width: isWidescreen ? "350px" : "280px",
+            height: isWidescreen ? "350px" : "280px",
+            objectFit: "contain",
+          }}
+          alt="Storage Phone"
+        />
+        {/* Tiers labels floating next to the phone */}
+        <div
+          style={{
+            position: "absolute",
+            top: -20,
+            right: -60,
+            background: THEME.accentBlue,
+            color: THEME.white,
+            borderRadius: "15px",
+            padding: "10px 20px",
+            fontSize: "24px",
+            fontFamily: "Impact, sans-serif",
+          }}
+        >
+          1 TB Storage
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            bottom: 40,
+            left: -60,
+            background: THEME.accentRed,
+            color: THEME.white,
+            borderRadius: "15px",
+            padding: "10px 20px",
+            fontSize: "24px",
+            fontFamily: "Impact, sans-serif",
+          }}
+        >
+          64 GB Base
+        </div>
+      </div>
+
+      {/* Cash stacks and calculations */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          transform: `translateY(${(1 - cashSlideY) * 400}px)`,
+        }}
+      >
+        <Img
+          src={staticFile("cash_stacks.png")}
+          style={{
+            width: isWidescreen ? "300px" : "220px",
+            height: isWidescreen ? "300px" : "220px",
+            objectFit: "contain",
+          }}
+          alt="Cash stacks"
+        />
+        <div
+          style={{
+            background: THEME.white,
+            border: `4px solid ${THEME.textDark}`,
+            borderRadius: "15px",
+            padding: "20px 30px",
+            fontFamily: "Arial, sans-serif",
+            fontWeight: "bold",
+            fontSize: "24px",
+            boxShadow: "8px 8px 0px rgba(0,0,0,0.15)",
+            textAlign: "center",
+            marginTop: "20px",
+          }}
+        >
+          🚨 PSYCHOLOGICAL VALUE GAP
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ── SCENE 5: Invisible Plumbing / Routing (190.8s - 229.6s)
+const Scene5Routing: React.FC<{ frame: number; isWidescreen: boolean }> = ({ frame, isWidescreen }) => {
+
+  // Animations
+  const mapScale = spring({ frame, fps: 30 });
+  const pulseRadar = interpolate(frame, [60, 200], [0.8, 1.3], {
+    extrapolateRight: "clamp",
+  });
+
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: isWidescreen ? "row" : "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: "80px",
+        padding: "100px 50px 250px 50px",
+      }}
+    >
+      {/* Globe side */}
+      <div
+        style={{
+          position: "relative",
+          scale: `${mapScale}`,
+        }}
+      >
+        <div
+          style={{
+            position: "absolute",
+            width: "350px",
+            height: "350px",
+            borderRadius: "50%",
+            border: `4px solid ${THEME.accentBlue}`,
+            scale: `${pulseRadar}`,
+            opacity: interpolate(frame, [60, 200], [1, 0]),
+            top: 0,
+            left: 0,
+          }}
+        />
+        <Img
+          src={staticFile("earth_globe.png")}
+          style={{
+            width: isWidescreen ? "350px" : "280px",
+            height: isWidescreen ? "350px" : "280px",
+            objectFit: "contain",
+          }}
+          alt="Earth Globe"
+        />
+      </div>
+
+      {/* Plumbing visual routing board */}
+      <div
+        style={{
+          background: THEME.white,
+          border: `5px solid ${THEME.textDark}`,
+          borderRadius: "20px",
+          width: isWidescreen ? "550px" : "90%",
+          padding: "45px 35px",
+          boxShadow: "15px 15px 0px rgba(0,0,0,0.15)",
+        }}
+      >
+        <h3
+          style={{
+            fontFamily: "Impact, sans-serif",
+            fontSize: "44px",
+            marginBottom: "25px",
+            color: THEME.accentBlue,
+          }}
+        >
+          EFFICIENT PLUMBING
+        </h3>
+        <p
+          style={{
+            fontFamily: "Arial, sans-serif",
+            fontSize: "26px",
+            fontWeight: "bold",
+            color: THEME.textDark,
+            lineHeight: "1.5",
+          }}
+        >
+          Route cheap, simple email requests to cheap models, and save expensive
+          power for hard research.
+        </p>
+
+        {/* Dynamic diagram mapping lines */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "15px",
+            marginTop: "30px",
+            fontFamily: "Impact, sans-serif",
+            fontSize: "26px",
+          }}
+        >
+          <div style={{ color: THEME.accentBlue }}>
+            📧 Summarize Email ➔ HAIKU / MINI
+          </div>
+          <div style={{ color: THEME.accentRed }}>
+            🔬 Code Synthesis ➔ OPUS / PRO
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ── SCENE 6: Conclusion (229.6s - 263.6s)
+const Scene6Conclusion: React.FC<{ frame: number; isWidescreen: boolean }> = ({ frame, isWidescreen }) => {
+
+  // Animations
+  const finalReveal = spring({ frame, fps: 30 });
+  const quoteScale = spring({ frame: frame - 150, fps: 30 });
+
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "100px 50px 250px 50px",
+      }}
+    >
+      {/* Top Title */}
+      <h1
+        style={{
+          fontFamily: "Impact, sans-serif",
+          fontSize: isWidescreen ? "120px" : "80px",
+          color: THEME.textDark,
+          textTransform: "uppercase",
+          letterSpacing: "1px",
+          textAlign: "center",
+          scale: `${finalReveal}`,
+        }}
+      >
+        WHO REALLY DECIDED?
+      </h1>
+
+      {/* Silhouette and conclusion text */}
+      <div
+        style={{
+          display: "flex",
+          flexDirection: isWidescreen ? "row" : "column",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "80px",
+          width: "100%",
+        }}
+      >
+        <Img
+          src={staticFile("thinking_silhouette.png")}
+          style={{
+            height: isWidescreen ? "350px" : "280px",
+            objectFit: "contain",
+            transform: `scale(${1 + Math.sin(frame * 0.05) * 0.03})`,
+          }}
+          alt="Thinking Silhouette"
+        />
+
+        <div
+          style={{
+            background: THEME.white,
+            border: `5px solid ${THEME.textDark}`,
+            borderRadius: "20px",
+            padding: "40px",
+            maxWidth: "600px",
+            boxShadow: "15px 15px 0px rgba(0,0,0,0.15)",
+            scale: `${quoteScale}`,
+          }}
+        >
+          <p
+            style={{
+              fontFamily: "Arial, sans-serif",
+              fontSize: "32px",
+              fontWeight: "bold",
+              color: THEME.textDark,
+              lineHeight: "1.4",
+              textAlign: "center",
+            }}
+          >
+            "Next time you pick between the Smart, the Fast, or the Pro model...
+            it probably wasn't your choice."
+          </p>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// ── MAIN COMPOSITION ENGINE
+
 export const MyVideo: React.FC = () => {
   const frame = useCurrentFrame();
-  const { fps } = useVideoConfig();
-  const currentTime = frame / fps;
+  const { width, height } = useVideoConfig();
+  const isWidescreen = width > height;
 
-  // Render correct scene based on time
-  const getSceneElement = () => {
-    if (currentTime < 26.2) return <Scene1Intro />;
-    if (currentTime < 48.2) return <Scene2Capability />;
-    if (currentTime < 69.9) return <Scene3ThreeLayers currentTime={currentTime} />;
-    if (currentTime < 94.3) return <Scene4Philosophies currentTime={currentTime} />;
-    if (currentTime < 117.5) return <Scene5Hardware currentTime={currentTime} />;
-    if (currentTime < 154.1) return <Scene6Software currentTime={currentTime} />;
-    if (currentTime < 176.6) return <Scene7EqualPerformance currentTime={currentTime} />;
-    if (currentTime < 208.6) return <Scene8Data currentTime={currentTime} />;
-    if (currentTime < 229.9) return <Scene9ThreeColumns leads="us" currentTime={currentTime} />;
-    if (currentTime < 250.5) return <Scene9ThreeColumns leads="china" currentTime={currentTime} />;
-    if (currentTime < 272.9) return <Scene11Wildcards currentTime={currentTime} />;
-    return <Scene12Conclusion />;
-  };
+  const currentSec = frame / 30;
+
+  // Scene triggers based on subtitles timeline
+  const scene1Duration = 24.92 * 30; // 0s - 24.92s
+  const scene2Duration = (61.38 - 24.92) * 30; // 24.92s - 61.38s
+  const scene3Duration = (127.96 - 61.38) * 30; // 61.38s - 127.96s
+  const scene4Duration = (190.87 - 127.96) * 30; // 127.96s - 190.87s
+  const scene5Duration = (229.66 - 190.87) * 30; // 190.87s - 229.66s
+
+  // Determine current active scene and local frames
+  let activeScene = <div />;
+  if (currentSec < 24.92) {
+    activeScene = (
+      <Scene1ThreeTiers frame={frame} isWidescreen={isWidescreen} />
+    );
+  } else if (currentSec >= 24.92 && currentSec < 61.38) {
+    activeScene = (
+      <Scene2ComputeCosts
+        frame={frame - scene1Duration}
+        isWidescreen={isWidescreen}
+      />
+    );
+  } else if (currentSec >= 61.38 && currentSec < 127.96) {
+    activeScene = (
+      <Scene3Anchoring
+        frame={frame - (scene1Duration + scene2Duration)}
+        isWidescreen={isWidescreen}
+      />
+    );
+  } else if (currentSec >= 127.96 && currentSec < 190.87) {
+    activeScene = (
+      <Scene4StorageTrap
+        frame={frame - (scene1Duration + scene2Duration + scene3Duration)}
+        isWidescreen={isWidescreen}
+      />
+    );
+  } else if (currentSec >= 190.87 && currentSec < 229.66) {
+    activeScene = (
+      <Scene5Routing
+        frame={
+          frame -
+          (scene1Duration +
+            scene2Duration +
+            scene3Duration +
+            scene4Duration)
+        }
+        isWidescreen={isWidescreen}
+      />
+    );
+  } else {
+    activeScene = (
+      <Scene6Conclusion
+        frame={
+          frame -
+          (scene1Duration +
+            scene2Duration +
+            scene3Duration +
+            scene4Duration +
+            scene5Duration)
+        }
+        isWidescreen={isWidescreen}
+      />
+    );
+  }
 
   return (
     <div
       style={{
-        position: "absolute",
-        inset: 0,
-        backgroundColor: THEME.bg,
+        width: "100%",
+        height: "100%",
+        backgroundColor: THEME.bgWarm,
+        position: "relative",
         overflow: "hidden",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
       }}
     >
-      {/* Audio Engine */}
-      <Audio src={staticFile("voiceover.m4a")} />
+      {/* 1. Drift background texture */}
+      <UniversalBackground />
 
-      {/* Tech Grid mesh underlayer */}
-      <GridBackground />
-
-      {/* Floating dust particles background overlay */}
-      <div
-        style={{
-          position: "absolute",
-          inset: 0,
-          background: "radial-gradient(circle at center, transparent 40%, rgba(8, 9, 13, 0.95) 100%)",
-          zIndex: 2,
-          pointerEvents: "none",
-        }}
-      />
-
-      {/* ── Visual Scene Content Renderer ── */}
-      <div style={{ position: "relative", width: "100%", height: "100%", zIndex: 10 }}>
-        {getSceneElement()}
-      </div>
-
-      {/* ── Subtitle Engine ── */}
-      <WordSyncSubtitles currentTime={currentTime} />
-
-      {/* ── Dynamic Top Progress Bar ── */}
+      {/* 2. Render active scene */}
       <div
         style={{
           position: "absolute",
           top: 0,
           left: 0,
-          width: `${(currentTime / 301.4) * 100}%`,
-          height: "6px",
-          zIndex: 99,
-          background: `linear-gradient(90deg, ${THEME.usBlue}, ${THEME.gold}, ${THEME.chinaRed})`,
-          boxShadow: `0 0 10px ${THEME.usBlue}`,
+          right: 0,
+          bottom: 0,
+          zIndex: 10,
         }}
-      />
+      >
+        {activeScene}
+      </div>
+
+      {/* 3. Sync Dynamic Subtitles */}
+      <DynamicSubtitles currentTime={currentSec} />
+
+      {/* 4. Render main voiceover track */}
+      <Audio src={staticFile("Ai Models.m4a")} />
     </div>
   );
 };
