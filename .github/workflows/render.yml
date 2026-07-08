@@ -1,6 +1,15 @@
 name: Cloud Video Renderer
 on:
   workflow_dispatch:
+    inputs:
+      composition:
+        description: 'Choose composition to render: YTVideo (16:9 Long Video) or YTShorts (9:16 Vertical Video)'
+        required: true
+        default: 'YTVideo'
+        type: choice
+        options:
+          - YTVideo
+          - YTShorts
 
 jobs:
   render:
@@ -18,11 +27,11 @@ jobs:
       - name: Install Remotion Dependencies
         run: npm ci
 
-      - name: Cloud Render Shorts (9:16)
-        run: npx remotion render src/index.ts YTShorts out/shorts-broll.mp4
+      - name: Cloud Render Video
+        run: npx remotion render src/index.ts ${{ inputs.composition }} out/rendered-video.mp4
 
       - name: Upload Finished Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: Cloud-Rendered-Video
-          path: out/shorts-broll.mp4
+          name: Cloud-Rendered-Video-${{ inputs.composition }}
+          path: out/rendered-video.mp4

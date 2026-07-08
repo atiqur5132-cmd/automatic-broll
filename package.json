@@ -6,11 +6,15 @@
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
+    "@remotion/captions": "4.0.486",
     "@remotion/cli": "4.0.486",
+    "@remotion/install-whisper-cpp": "4.0.486",
+    "@remotion/tailwind-v4": "4.0.486",
+    "pdf-parse": "^2.4.5",
+    "pdf-to-png-converter": "^4.1.1",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "remotion": "4.0.486",
-    "@remotion/tailwind-v4": "4.0.486",
     "tailwindcss": "4.0.0"
   },
   "devDependencies": {
