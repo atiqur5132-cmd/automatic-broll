@@ -6,19 +6,22 @@ import {
   staticFile,
   interpolate,
   spring,
-  Img,
+  random,
 } from "remotion";
 import subtitlesData from "./subtitles.json";
 
-// Theme configuration matching documentary aesthetics
+// Theme configuration optimized for futuristic dark tech look
 const THEME = {
-  bgWarm: "#f4f3ef",
-  accentRed: "#d32f2f",
-  accentBlue: "#1976d2",
-  textDark: "#1a1a1a",
-  textGray: "#555555",
-  goldHighlight: "#e65100",
+  bgDark: "#030712",
   white: "#ffffff",
+  textDark: "#1a1a1a",
+  bgGradient: "radial-gradient(circle, #0b1528 0%, #030712 100%)",
+  neonRed: "#ef4444",
+  neonBlue: "#3b82f6",
+  neonCyan: "#06b6d4",
+  neonGold: "#eab308",
+  textLight: "#f9fafb",
+  textGray: "#9ca3af",
 };
 
 // Word level subtitle interface
@@ -29,70 +32,80 @@ interface SubtitleWord {
   confidence: number;
 }
 
-// Visual state definition
+// Shot configuration
 interface Shot {
   startSec: number;
   endSec: number;
   title: string;
   subtitle: string;
-  image?: string;
-  layout: "center" | "split" | "fullscreen" | "decoy" | "car" | "phone";
-  badge?: string;
+  graphic:
+    | "pyramid"
+    | "logo_openai"
+    | "logo_anthropic"
+    | "logo_google"
+    | "gears"
+    | "servers"
+    | "laptop"
+    | "city_power"
+    | "recipe_chat"
+    | "menu_decoy"
+    | "anchor"
+    | "phone_storage"
+    | "car"
+    | "brain"
+    | "scale"
+    | "geopolitics"
+    | "bankruptcy";
   color?: string;
+  badge?: string;
 }
 
-// ── 100+ HIGHLY RELEVANT VISUAL SHOTS SYNCED WITH VOICEOVER
+// ── 100+ HIGHLY RELEVANT MOTION GRAPHICS SHOTS SYNCED WITH AUDIO TIMINGS
 const SHOTS: Shot[] = [
   {
     startSec: 0.0,
     endSec: 3.6,
     title: "AI MODEL TIERS",
     subtitle: "Why every AI company suddenly has three versions",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "pyramid",
   },
   {
     startSec: 3.6,
     endSec: 4.8,
     title: "THE SAME MODEL",
-    subtitle: "A single system split into three layers",
-    image: "gpu_core.png",
-    layout: "split",
+    subtitle: "A single system split into three separate layers",
+    graphic: "servers",
   },
   {
     startSec: 4.8,
     endSec: 5.82,
     title: "LARGE FLAGSHIP",
     subtitle: "The raw supercomputing powerhouse",
-    image: "gpu_core.png",
-    layout: "center",
-    color: THEME.accentRed,
+    graphic: "pyramid",
+    color: THEME.neonRed,
   },
   {
     startSec: 5.82,
     endSec: 6.56,
     title: "MEDIUM STANDARDS",
-    subtitle: "The balanced option for daily work",
-    image: "storage_phone.png",
-    layout: "center",
-    color: THEME.accentBlue,
+    subtitle: "The balanced option for daily workflow tasks",
+    graphic: "pyramid",
+    color: THEME.neonBlue,
   },
   {
     startSec: 6.56,
     endSec: 8.04,
-    title: "MINI & CHEAP",
+    title: "MINI / CHEAP TIER",
     subtitle: "The small, lightning-fast lightweight model",
-    image: "cash_stacks.png",
-    layout: "center",
-    color: THEME.goldHighlight,
+    graphic: "pyramid",
+    color: THEME.neonCyan,
   },
   {
     startSec: 8.04,
     endSec: 9.31,
     title: "OPENAI TIERS",
     subtitle: "GPT-4o ➔ GPT-4o mini ➔ GPT-3.5",
-    image: "tech_founder_1.png",
-    layout: "split",
+    graphic: "logo_openai",
     badge: "OPENAI",
   },
   {
@@ -100,8 +113,7 @@ const SHOTS: Shot[] = [
     endSec: 10.56,
     title: "ANTHROPIC TIERS",
     subtitle: "Opus ➔ Sonnet ➔ Haiku",
-    image: "tech_founder_2.png",
-    layout: "split",
+    graphic: "logo_anthropic",
     badge: "ANTHROPIC",
   },
   {
@@ -109,8 +121,7 @@ const SHOTS: Shot[] = [
     endSec: 11.75,
     title: "GOOGLE TIERS",
     subtitle: "Gemini Ultra ➔ Gemini Pro ➔ Gemini Flash",
-    image: "thinking_silhouette.png",
-    layout: "split",
+    graphic: "logo_google",
     badge: "GOOGLE",
   },
   {
@@ -118,829 +129,1505 @@ const SHOTS: Shot[] = [
     endSec: 14.02,
     title: "POLISHED STORIES",
     subtitle: "Optimized for different needs, different use cases",
-    image: "gpu_core.png",
-    layout: "center",
+    graphic: "gears",
   },
   {
     startSec: 14.02,
     endSec: 15.36,
     title: "DIFFERENT CASES",
     subtitle: "Custom-made tiers matching different tasks",
-    image: "storage_phone.png",
-    layout: "split",
+    graphic: "servers",
   },
   {
     startSec: 15.36,
     endSec: 17.67,
     title: "OPTIMIZED TECH",
     subtitle: "Or is it just a marketing illusion?",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 17.67,
     endSec: 18.91,
     title: "SOUNDS NICE",
     subtitle: "The official justification makes perfect sense",
-    image: "cash_stacks.png",
-    layout: "split",
+    graphic: "scale",
   },
   {
     startSec: 18.91,
     endSec: 20.43,
     title: "BUT IS THAT IT?",
     subtitle: "Let's check the financial reality behind AI",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 20.43,
     endSec: 22.56,
     title: "LET'S THINK",
     subtitle: "Why three instead of just one or two?",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "pyramid",
   },
   {
     startSec: 22.56,
     endSec: 24.92,
     title: "THE SILENT TRUTH",
     subtitle: "What AI executives never say out loud",
-    image: "tech_founder_1.png",
-    layout: "split",
+    graphic: "brain",
   },
   {
     startSec: 24.92,
     endSec: 27.85,
     title: "STUPID BILLS",
     subtitle: "Training massive models costs a stupid amount of money",
-    image: "cash_stacks.png",
-    layout: "center",
+    graphic: "bankruptcy",
   },
   {
     startSec: 27.85,
     endSec: 28.97,
     title: "NOT LAPTOP CASH",
     subtitle: "We're not talking about expensive laptop budgets",
-    image: "laptop.png",
-    layout: "split",
+    graphic: "laptop",
   },
   {
     startSec: 28.97,
     endSec: 31.06,
     title: "DATA CENTERS",
     subtitle: "We are talking warehouse size server rooms",
-    image: "data_center.png",
-    layout: "fullscreen",
+    graphic: "servers",
   },
   {
     startSec: 31.06,
     endSec: 32.91,
     title: "GPU HARDWARE",
     subtitle: "Filled with thousands of burning processors",
-    image: "gpu_core.png",
-    layout: "split",
+    graphic: "gears",
   },
   {
     startSec: 32.91,
     endSec: 35.38,
     title: "CITY POWER GRID",
     subtitle: "Consuming electricity like a whole city",
-    image: "data_center.png",
-    layout: "center",
+    graphic: "city_power",
   },
   {
     startSec: 35.38,
     endSec: 39.36,
     title: "TRIVIAL ANSWERS",
     subtitle: "All this power just to suggest recipe substitutions",
-    image: "thinking_silhouette.png",
-    layout: "split",
+    graphic: "recipe_chat",
   },
   {
     startSec: 39.36,
     endSec: 40.59,
     title: "FLAGSHIP MODEL",
     subtitle: "The gold standard flagship models",
-    image: "gpu_core.png",
-    layout: "center",
+    graphic: "pyramid",
+    color: THEME.neonGold,
   },
   {
     startSec: 40.59,
     endSec: 41.75,
     title: "OPUS / ULTRA",
     subtitle: "The massive neural structures",
-    image: "tech_founder_2.png",
-    layout: "split",
+    graphic: "brain",
   },
   {
     startSec: 41.75,
     endSec: 44.96,
     title: "THE BIG ONE",
     subtitle: "Whatever they name it this month",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "pyramid",
   },
   {
     startSec: 44.96,
     endSec: 46.64,
     title: "POWERFUL TECH",
     subtitle: "Genuinely capable and extremely smart",
-    image: "gpu_core.png",
-    layout: "split",
+    graphic: "gears",
   },
   {
     startSec: 46.64,
     endSec: 49.85,
     title: "INSANELY COSTLY",
     subtitle: "Genuinely expensive to compute every single time",
-    image: "cash_stacks.png",
-    layout: "center",
+    graphic: "bankruptcy",
   },
   {
     startSec: 49.85,
     endSec: 51.55,
     title: "THE ENTER KEY",
     subtitle: "Every time a user presses enter, it costs money",
-    image: "laptop.png",
-    layout: "split",
+    graphic: "laptop",
   },
   {
     startSec: 51.55,
     endSec: 54.36,
     title: "FREE FLAGSHIP?",
     subtitle: "If every single user got this for free...",
-    image: "cash_stacks.png",
-    layout: "center",
+    graphic: "scale",
   },
   {
     startSec: 54.36,
     endSec: 56.56,
     title: "BANKRUPT IN WEEKS",
     subtitle: "The company would crash instantly",
-    image: "cash_stacks.png",
-    layout: "center",
-    color: THEME.accentRed,
+    graphic: "bankruptcy",
+    color: THEME.neonRed,
   },
   {
     startSec: 56.56,
     endSec: 57.6,
     title: "SIMPLE LOGIC",
     subtitle: "As straightforward as arithmetic",
-    image: "thinking_silhouette.png",
-    layout: "split",
+    graphic: "scale",
   },
   {
     startSec: 57.6,
     endSec: 58.89,
     title: "TIER ONE",
     subtitle: "The absolute primary business tier",
-    image: "gpu_core.png",
-    layout: "center",
+    graphic: "pyramid",
   },
   {
     startSec: 58.89,
     endSec: 59.86,
     title: "THE OPERATING LOGIC",
     subtitle: "Pure server operational economics",
-    image: "cash_stacks.png",
-    layout: "split",
+    graphic: "servers",
   },
   {
     startSec: 59.86,
     endSec: 61.38,
     title: "PURE ECONOMICS",
     subtitle: "But economics alone doesn't explain three tiers",
-    image: "cash_stacks.png",
-    layout: "center",
+    graphic: "bankruptcy",
   },
   {
     startSec: 61.38,
     endSec: 63.12,
     title: "GETS INTERESTING",
     subtitle: "Costs explain two tiers, not three",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 63.12,
     endSec: 66.49,
     title: "WHY NOT TWO?",
     subtitle: "It explains rich model, cheap model, done",
-    image: "gpu_core.png",
-    layout: "split",
+    graphic: "scale",
   },
   {
     startSec: 66.49,
     endSec: 69.04,
     title: "RICH vs CHEAP",
     subtitle: "A simple two-tier pricing scale",
-    image: "cash_stacks.png",
-    layout: "split",
+    graphic: "pyramid",
   },
   {
     startSec: 69.04,
     endSec: 70.24,
     title: "THE RICH MODEL",
     subtitle: "High cost flagship layers",
-    image: "gpu_core.png",
-    layout: "center",
+    graphic: "pyramid",
+    color: THEME.neonRed,
   },
   {
     startSec: 70.24,
     endSec: 70.98,
     title: "THE CHEAP MODEL",
     subtitle: "Low cost lightweight layers",
-    image: "cash_stacks.png",
-    layout: "center",
+    graphic: "pyramid",
+    color: THEME.neonCyan,
   },
   {
     startSec: 70.98,
     endSec: 71.92,
     title: "SO WHY THREE?",
     subtitle: "Why do we always see a middle option?",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 71.92,
     endSec: 75.61,
     title: "IT'S ABOUT YOU",
     subtitle: "It stops being about servers and starts being about psychology",
-    image: "tech_founder_1.png",
-    layout: "split",
+    graphic: "brain",
   },
   {
     startSec: 75.61,
     endSec: 76.8,
     title: "HOW YOU THINK",
     subtitle: "How consumer minds process comparative options",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 76.8,
     endSec: 80.53,
     title: "CHOOSING A PLAN",
     subtitle: "The cognitive friction of buying subscriptions",
-    image: "cash_stacks.png",
-    layout: "split",
+    graphic: "scale",
   },
   {
     startSec: 80.53,
     endSec: 83.84,
     title: "RESTAURANT MENU",
     subtitle: "Think about how restaurant menus are written",
-    image: "pasta.png",
-    layout: "decoy",
+    graphic: "menu_decoy",
   },
   {
     startSec: 83.84,
     endSec: 86.72,
     title: "THE SECOND MOST",
     subtitle: "The second most expensive item sells the best",
-    image: "steak.png",
-    layout: "decoy",
+    graphic: "menu_decoy",
   },
   {
     startSec: 86.72,
     endSec: 89.44,
     title: "NOT AN ACCIDENT",
     subtitle: "This is a carefully engineered design",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 89.44,
     endSec: 91.0,
     title: "THE DECOY",
     subtitle: "Putting an outrageously priced dish at the top",
-    image: "steak.png",
-    layout: "decoy",
+    graphic: "menu_decoy",
   },
   {
     startSec: 91.0,
     endSec: 94.06,
     title: "$80 STEAK ANCHOR",
     subtitle: "The top item sets the price frame",
-    image: "steak.png",
-    layout: "decoy",
+    graphic: "menu_decoy",
   },
   {
     startSec: 94.06,
     endSec: 96.8,
     title: "NO EXPECTATION",
     subtitle: "They don't actually expect you to buy it",
-    image: "tech_founder_2.png",
-    layout: "split",
+    graphic: "scale",
   },
   {
     startSec: 96.8,
     endSec: 99.92,
     title: "LOOK REASONABLE",
     subtitle: "It exists to make the next option look like a bargain",
-    image: "pasta.png",
-    layout: "decoy",
+    graphic: "menu_decoy",
   },
   {
     startSec: 99.92,
     endSec: 101.59,
     title: "ANCHORING EFFECT",
     subtitle: "A cognitive reference point strategy",
-    image: "anchor.png",
-    layout: "split",
+    graphic: "anchor",
   },
   {
     startSec: 101.59,
     endSec: 104.09,
     title: "$80 STEAK",
     subtitle: "Establishing a high benchmark cost",
-    image: "steak.png",
-    layout: "decoy",
+    graphic: "menu_decoy",
   },
   {
     startSec: 104.09,
     endSec: 107.52,
     title: "$30 PASTA",
     subtitle: "Suddenly feels like an absolute steal",
-    image: "pasta.png",
-    layout: "decoy",
+    graphic: "menu_decoy",
   },
   {
     startSec: 107.52,
     endSec: 110.67,
     title: "AI COMPANIES DO IT",
     subtitle: "Doing the exact same menu trick",
-    image: "storage_phone.png",
-    layout: "center",
+    graphic: "phone_storage",
   },
   {
     startSec: 110.67,
     endSec: 111.85,
     title: "FLAGSHIP TIERS",
     subtitle: "The expensive flagship models",
-    image: "gpu_core.png",
-    layout: "split",
+    graphic: "pyramid",
   },
   {
     startSec: 111.85,
     endSec: 113.12,
     title: "SLOW & PRICEY",
     subtitle: "Too slow and heavy for most everyday tasks",
-    image: "cash_stacks.png",
-    layout: "split",
+    graphic: "servers",
   },
   {
     startSec: 113.12,
     endSec: 113.58,
     title: "OVERKILL",
     subtitle: "Genuinely too much capacity for simple questions",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 113.58,
     endSec: 116.0,
     title: "DAILY DRIVER?",
     subtitle: "It isn't actually meant to be your main choice",
-    image: "laptop.png",
-    layout: "split",
+    graphic: "laptop",
   },
   {
     startSec: 116.0,
     endSec: 118.72,
     title: "THE MID-TIER",
     subtitle: "Making the balanced option look perfect",
-    image: "storage_phone.png",
-    layout: "center",
+    graphic: "phone_storage",
   },
   {
     startSec: 118.72,
     endSec: 119.85,
     title: "BALANCED OPTION",
     subtitle: "The smart, sensible, obvious plan",
-    image: "storage_phone.png",
-    layout: "center",
-    color: THEME.accentBlue,
+    graphic: "phone_storage",
+    color: THEME.neonBlue,
   },
   {
     startSec: 119.85,
     endSec: 121.44,
     title: "NOT PRO POWER",
     subtitle: "You tell yourself: I don't need all that pro speed",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 121.44,
     endSec: 122.88,
     title: "MID-TIER WIN",
     subtitle: "Exactly what they wanted you to click",
-    image: "cash_stacks.png",
-    layout: "split",
+    graphic: "scale",
   },
   {
     startSec: 122.88,
     endSec: 125.51,
     title: "CONGRATULATIONS",
     subtitle: "You just ordered the decoy-pricing option",
-    image: "tech_founder_1.png",
-    layout: "split",
+    graphic: "brain",
   },
   {
     startSec: 125.51,
     endSec: 127.12,
     title: "BUDGET TIERS",
     subtitle: "And the cheap models? Not charity either",
-    image: "cash_stacks.png",
-    layout: "center",
+    graphic: "bankruptcy",
   },
   {
     startSec: 127.96,
     endSec: 133.04,
     title: "THE FREE LEVEL",
     subtitle: "Hooking you into their workflow layout",
-    image: "storage_phone.png",
-    layout: "phone",
+    graphic: "phone_storage",
   },
   {
     startSec: 133.04,
     endSec: 134.68,
     title: "FREE TRIALS",
     subtitle: "A trial run disguised as a free model",
-    image: "cash_stacks.png",
-    layout: "split",
+    graphic: "bankruptcy",
   },
   {
     startSec: 134.68,
     endSec: 137.36,
     title: "HABIT LOOPS",
     subtitle: "Forming the behavior pattern in your daily work",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 137.36,
     endSec: 139.05,
     title: "AI vs GOOGLE",
     subtitle: "Asking the model instead of searching the web",
-    image: "laptop.png",
-    layout: "split",
+    graphic: "laptop",
   },
   {
     startSec: 139.05,
     endSec: 140.37,
     title: "SECOND NATURE",
     subtitle: "Upgrading becomes a natural next choice",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 140.37,
     endSec: 142.88,
     title: "NATURAL STEP",
     subtitle: "Making upgrading feel seamless and friction-free",
-    image: "cash_stacks.png",
-    layout: "split",
+    graphic: "scale",
   },
   {
     startSec: 142.88,
     endSec: 144.83,
     title: "CAR TRIM LAYERS",
     subtitle: "The standard automotive retail strategy",
-    image: "basic_car.png",
-    layout: "car",
+    graphic: "car",
   },
   {
     startSec: 144.83,
     endSec: 147.14,
     title: "BASE MODEL",
     subtitle: "Designed just to get you from point A to B",
-    image: "basic_car.png",
-    layout: "car",
+    graphic: "car",
   },
   {
     startSec: 147.14,
     endSec: 148.64,
     title: "MID RANGE TRIM",
     subtitle: "Adding features you actually care about",
-    image: "basic_car.png",
-    layout: "car",
+    graphic: "car",
   },
   {
     startSec: 148.64,
     endSec: 151.32,
     title: "PREMIUM SPECS",
     subtitle: "Good speakers, comfortable seats, cruise control",
-    image: "basic_car.png",
-    layout: "car",
+    graphic: "car",
   },
   {
     startSec: 151.32,
     endSec: 153.44,
     title: "TOP RANGE SECS",
     subtitle: "Features 90% of drivers will never touch",
-    image: "basic_car.png",
-    layout: "car",
+    graphic: "car",
   },
   {
     startSec: 153.44,
     endSec: 157.63,
     title: "FEELING CHEAP",
     subtitle: "Because nobody wants to feel like the budget buyer",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 157.63,
     endSec: 157.9,
     title: "PHONE STORAGE",
     subtitle: "64 GB vs 256 GB vs 1 TB",
-    image: "storage_phone.png",
-    layout: "phone",
+    graphic: "phone_storage",
   },
   {
     startSec: 157.9,
     endSec: 158.96,
     title: "PRICE INCREMENTS",
     subtitle: "Never proportional to the physical cost of flash memory",
-    image: "cash_stacks.png",
-    layout: "split",
+    graphic: "bankruptcy",
   },
   {
     startSec: 158.96,
     endSec: 160.4,
     title: "MINIMAL COST",
     subtitle: "Adding more flash memory costs the manufacturer pennies",
-    image: "gpu_core.png",
-    layout: "split",
+    graphic: "gears",
   },
   {
     startSec: 160.4,
     endSec: 161.62,
     title: "PSYCHOLOGY GAP",
     subtitle: "Paying for the gap between enough and plenty",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 161.62,
     endSec: 164.08,
     title: "COMPUTE SCALES",
     subtitle: "The model performance difference is real",
-    image: "gpu_core.png",
-    layout: "split",
+    graphic: "servers",
   },
   {
     startSec: 164.08,
     endSec: 164.66,
     title: "ENGINEERED PRICING",
     subtitle: "Calculated to manipulate choices, not reflect costs",
-    image: "cash_stacks.png",
-    layout: "center",
-    color: THEME.accentRed,
+    graphic: "bankruptcy",
+    color: THEME.neonRed,
   },
   {
     startSec: 164.66,
     endSec: 167.09,
     title: "THE SILENT REASON",
     subtitle: "A quieter rationale behind model architecture",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 167.09,
     endSec: 168.55,
     title: "DIFFERENT TASKS",
     subtitle: "Simple queries don't need complex thinking engines",
-    image: "gpu_core.png",
-    layout: "split",
+    graphic: "servers",
   },
   {
     startSec: 168.55,
     endSec: 170.3,
     title: "SUMMARIZE EMAIL",
     subtitle: "Doesn't require supercomputing mainframe power",
-    image: "laptop.png",
-    layout: "split",
+    graphic: "laptop",
   },
   {
     startSec: 170.3,
     endSec: 173.42,
     title: "RESEARCH SYSTEMS",
     subtitle: "Needs the flagship horsepower to run search pipelines",
-    image: "data_center.png",
-    layout: "fullscreen",
+    graphic: "brain",
   },
   {
     startSec: 173.42,
     endSec: 174.13,
     title: "MATCHING JOBS",
     subtitle: "The tiers do serve a real mechanical function",
-    image: "gpu_core.png",
-    layout: "center",
+    graphic: "scale",
   },
   {
     startSec: 174.13,
     endSec: 175.04,
     title: "CHEAP ROUTING",
     subtitle: "Redirecting simple queries to small, cheap models",
-    image: "cash_stacks.png",
-    layout: "split",
+    graphic: "servers",
   },
   {
     startSec: 175.04,
     endSec: 176.05,
     title: "SAVING FLAGSHIP POWER",
     subtitle: "Saving heavy compute for hard complex tasks",
-    image: "gpu_core.png",
-    layout: "split",
+    graphic: "gears",
   },
   {
     startSec: 176.05,
     endSec: 179.28,
     title: "EFFICIENT PLUMBING",
     subtitle: "This part is just logical infrastructure layout",
-    image: "data_center.png",
-    layout: "fullscreen",
+    graphic: "servers",
   },
   {
     startSec: 179.34,
     endSec: 182.71,
     title: "NOT MANIPULATION",
     subtitle: "But that doesn't explain the marketing",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 182.71,
     endSec: 184.19,
     title: "NOT THE WHOLE STORY",
     subtitle: "If it were purely matching tasks to hardware...",
-    image: "gpu_core.png",
-    layout: "split",
+    graphic: "gears",
   },
   {
     startSec: 184.19,
     endSec: 186.64,
     title: "NO PRICING LAYERS",
     subtitle: "We wouldn't see three priced tiers compared on a menu",
-    image: "cash_stacks.png",
-    layout: "center",
+    graphic: "menu_decoy",
   },
   {
     startSec: 186.64,
     endSec: 188.83,
     title: "AUTOMATIC ROUTING",
     subtitle: "It would all happen invisibly behind the scenes",
-    image: "data_center.png",
-    layout: "fullscreen",
+    graphic: "servers",
   },
   {
     startSec: 188.83,
     endSec: 190.87,
     title: "INVISIBLE COMPUTING",
     subtitle: "But they want you to see, choose, and buy",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 190.87,
     endSec: 194.31,
     title: "SHOWING THE TIERS",
     subtitle: "Naming them, pricing them, letting you choose",
-    image: "storage_phone.png",
-    layout: "phone",
+    graphic: "phone_storage",
   },
   {
     startSec: 194.31,
     endSec: 194.69,
     title: "NOT COGNITIVE EFFICIENCY",
     subtitle: "This is deliberate retail layout positioning",
-    image: "cash_stacks.png",
-    layout: "split",
+    graphic: "bankruptcy",
   },
   {
     startSec: 194.69,
     endSec: 195.24,
     title: "IT'S A MENU",
     subtitle: "And menus are never neutral choices",
-    image: "steak.png",
-    layout: "decoy",
+    graphic: "menu_decoy",
   },
   {
     startSec: 195.24,
     endSec: 197.4,
     title: "DESIGNED MENUS",
     subtitle: "Engineered to drive you directly to the middle tier",
-    image: "pasta.png",
-    layout: "decoy",
+    graphic: "menu_decoy",
   },
   {
     startSec: 197.4,
     endSec: 198.94,
     title: "THE OBVIOUS CHOICE",
     subtitle: "Steering you to Sonnet, Pro, or Medium options",
-    image: "thinking_silhouette.png",
-    layout: "center",
+    graphic: "brain",
   },
   {
     startSec: 198.94,
     endSec: 200.86,
     title: "WHO CHOSE?",
     subtitle: "Ask yourself who really decided what is balanced",
-    image: "tech_founder_1.png",
-    layout: "split",
+    graphic: "scale",
   },
   {
     startSec: 200.86,
-    endSec: 263.66, // Fills out the remainder of the timeline
+    endSec: 263.66,
     title: "YOUR DECISION?",
     subtitle: "Because it probably wasn't you.",
-    image: "thinking_silhouette.png",
-    layout: "center",
-    color: THEME.accentRed,
+    graphic: "brain",
+    color: THEME.neonRed,
   },
 ];
 
-// ── GLOBAL LAYOUT WRAPPERS FOR DIFFERENT SHOT LAYOUTS
+// ── CODE-DRAWN ANIMATED VECTOR COMPONENTS
 
-const WidescreenShotLayout: React.FC<{ shot: Shot; frame: number }> = ({
-  shot,
+const MotionBackground: React.FC = () => {
+  const frame = useCurrentFrame();
+  const { width, height } = useVideoConfig();
+
+  // Draw floating coordinates and grid lines
+  const gridOffset = (frame * 0.7) % 50;
+
+  return (
+    <div
+      style={{
+        position: "absolute",
+        top: 0,
+        left: 0,
+        width,
+        height,
+        background: THEME.bgGradient,
+        zIndex: 0,
+      }}
+    >
+      {/* Horizontal grid lines */}
+      <svg width="100%" height="100%">
+        <defs>
+          <pattern
+            id="grid"
+            width="50"
+            height="50"
+            patternUnits="userSpaceOnUse"
+            x={gridOffset}
+            y={gridOffset}
+          >
+            <path
+              d="M 50 0 L 0 0 0 50"
+              fill="none"
+              stroke="rgba(59, 130, 246, 0.07)"
+              strokeWidth="1.5"
+            />
+          </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+      </svg>
+    </div>
+  );
+};
+
+// 1. Pyramid Layer Component
+const GraphicPyramid: React.FC<{ frame: number; color?: string }> = ({
   frame,
+  color,
 }) => {
-  const imageScale = spring({ frame, fps: 30, config: { damping: 15 } });
+  const scale = spring({ frame, fps: 30 });
+  const scaleOffset = 1 + Math.sin(frame * 0.08) * 0.03;
 
-  // Center alignment wrapper
-  if (shot.layout === "center") {
-    return (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "space-between",
-          padding: "100px 50px 280px 50px",
-        }}
-      >
-        <h1
-          style={{
-            fontFamily: "Impact, 'Arial Black', sans-serif",
-            fontSize: "110px",
-            color: shot.color || THEME.accentRed,
-            textTransform: "uppercase",
-            textAlign: "center",
-            marginTop: "20px",
-          }}
-        >
-          {shot.title}
-        </h1>
-        {shot.image && (
-          <div style={{ position: "relative" }}>
+  return (
+    <svg
+      width="400"
+      height="400"
+      viewBox="0 0 400 400"
+      style={{
+        transform: `scale(${scale * scaleOffset})`,
+        filter: `drop-shadow(0px 0px 20px ${color || THEME.neonCyan})`,
+      }}
+    >
+      {/* Top Pro Layer */}
+      <polygon
+        points="200,50 150,140 250,140"
+        fill={color || THEME.neonGold}
+        opacity={0.8}
+        stroke="#ffffff"
+        strokeWidth="3"
+      />
+      {/* Middle Balanced Layer */}
+      <polygon
+        points="140,150 260,150 280,240 120,240"
+        fill={color || THEME.neonBlue}
+        opacity={0.7}
+        stroke="#ffffff"
+        strokeWidth="3"
+      />
+      {/* Bottom Cheap Layer */}
+      <polygon
+        points="110,250 290,250 310,340 90,340"
+        fill={color || THEME.neonCyan}
+        opacity={0.6}
+        stroke="#ffffff"
+        strokeWidth="3"
+      />
+    </svg>
+  );
+};
+
+// 2. OpenAI Spinning Logo Component
+const GraphicOpenAI: React.FC<{ frame: number }> = ({ frame }) => {
+  const angle = frame * 1.5;
+  const pulse = 1 + Math.sin(frame * 0.08) * 0.04;
+
+  return (
+    <svg
+      width="360"
+      height="360"
+      viewBox="0 0 200 200"
+      style={{
+        transform: `rotate(${angle}deg) scale(${pulse})`,
+        filter: `drop-shadow(0 0 25px ${THEME.neonCyan})`,
+      }}
+    >
+      <circle cx="100" cy="100" r="90" fill="none" stroke={THEME.neonCyan} strokeWidth="4" />
+      {[...Array(6)].map((_, i) => {
+        const rotation = i * 60;
+        return (
+          <path
+            key={i}
+            d="M100,100 C70,70 70,130 100,100 Z"
+            fill="none"
+            stroke={THEME.neonCyan}
+            strokeWidth="3"
+            transform={`rotate(${rotation} 100 100)`}
+          />
+        );
+      })}
+    </svg>
+  );
+};
+
+// 3. Anthropic Animated logo
+const GraphicAnthropic: React.FC<{ frame: number }> = ({ frame }) => {
+  const scale = spring({ frame, fps: 30 });
+  const driftY = Math.sin(frame * 0.06) * 10;
+
+  return (
+    <svg
+      width="360"
+      height="360"
+      viewBox="0 0 200 200"
+      style={{
+        transform: `scale(${scale}) translateY(${driftY}px)`,
+        filter: `drop-shadow(0 0 25px ${THEME.neonRed})`,
+      }}
+    >
+      <circle cx="100" cy="100" r="90" fill="none" stroke={THEME.neonRed} strokeWidth="4" />
+      {/* Animated triangle/A symbol */}
+      <polygon
+        points="100,40 50,150 150,150"
+        fill="none"
+        stroke={THEME.neonRed}
+        strokeWidth="6"
+      />
+      <line x1="75" y1="110" x2="125" y2="110" stroke={THEME.neonRed} strokeWidth="6" />
+    </svg>
+  );
+};
+
+// 4. Google Colorful animated loops
+const GraphicGoogle: React.FC<{ frame: number }> = ({ frame }) => {
+  const scale = 1 + Math.sin(frame * 0.08) * 0.03;
+
+  return (
+    <svg
+      width="360"
+      height="360"
+      viewBox="0 0 200 200"
+      style={{
+        transform: `scale(${scale})`,
+        filter: "drop-shadow(0 0 20px rgba(255,255,255,0.2))",
+      }}
+    >
+      <circle cx="100" cy="100" r="90" fill="none" stroke="#fff" strokeWidth="2" opacity="0.1" />
+      {/* Glowing concentric colored loops */}
+      <circle cx="100" cy="100" r="70" fill="none" stroke="#3b82f6" strokeWidth="8" strokeDasharray="30 40" transform={`rotate(${frame * 0.8} 100 100)`} />
+      <circle cx="100" cy="100" r="50" fill="none" stroke="#ef4444" strokeWidth="8" strokeDasharray="20 30" transform={`rotate(${-frame * 1.2} 100 100)`} />
+      <circle cx="100" cy="100" r="30" fill="none" stroke="#eab308" strokeWidth="8" strokeDasharray="15 20" transform={`rotate(${frame * 1.5} 100 100)`} />
+    </svg>
+  );
+};
+
+// 5. Interlocking spinning gears
+const GraphicGears: React.FC<{ frame: number }> = ({ frame }) => {
+  const rotateLeft = frame * 1.5;
+  const rotateRight = -frame * 1.5 + 15;
+
+  return (
+    <svg
+      width="400"
+      height="350"
+      viewBox="0 0 400 350"
+      style={{
+        filter: `drop-shadow(0 0 25px ${THEME.neonBlue})`,
+      }}
+    >
+      {/* Left Gear */}
+      <g transform={`translate(150, 180) rotate(${rotateLeft})`}>
+        <circle cx="0" cy="0" r="60" fill="none" stroke={THEME.neonBlue} strokeWidth="6" />
+        {[...Array(8)].map((_, i) => (
+          <rect
+            key={i}
+            x="-12"
+            y="-80"
+            width="24"
+            height="30"
+            fill={THEME.neonBlue}
+            transform={`rotate(${i * 45})`}
+          />
+        ))}
+        <circle cx="0" cy="0" r="20" fill="none" stroke={THEME.neonBlue} strokeWidth="4" />
+      </g>
+
+      {/* Right Gear */}
+      <g transform={`translate(270, 130) rotate(${rotateRight})`}>
+        <circle cx="0" cy="0" r="45" fill="none" stroke={THEME.neonCyan} strokeWidth="5" />
+        {[...Array(8)].map((_, i) => (
+          <rect
+            key={i}
+            x="-9"
+            y="-60"
+            width="18"
+            height="20"
+            fill={THEME.neonCyan}
+            transform={`rotate(${i * 45})`}
+          />
+        ))}
+        <circle cx="0" cy="0" r="15" fill="none" stroke={THEME.neonCyan} strokeWidth="3" />
+      </g>
+    </svg>
+  );
+};
+
+// 6. Servers matrix
+const GraphicServers: React.FC<{ frame: number }> = ({ frame }) => {
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(4, 1fr)",
+        gap: "15px",
+        width: "360px",
+        height: "360px",
+        padding: "20px",
+        background: "rgba(255, 255, 255, 0.03)",
+        border: `3px solid ${THEME.neonBlue}`,
+        borderRadius: "15px",
+        boxShadow: `0 0 30px rgba(59, 130, 246, 0.2)`,
+      }}
+    >
+      {[...Array(16)].map((_, idx) => {
+        // Flicker server led light randomly
+        const status = random(`${idx}-${Math.floor(frame / 6)}`) > 0.4;
+        return (
+          <div
+            key={idx}
+            style={{
+              background: "#111",
+              border: "1.5px solid #333",
+              borderRadius: "8px",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              padding: "10px 5px",
+              position: "relative",
+            }}
+          >
             <div
               style={{
-                position: "absolute",
-                width: "350px",
-                height: "350px",
+                width: "12px",
+                height: "12px",
                 borderRadius: "50%",
-                backgroundColor: "rgba(26,26,26,0.1)",
-                zIndex: -1,
-                top: 0,
-                left: 0,
+                backgroundColor: status ? THEME.neonCyan : "#333",
+                boxShadow: status ? `0 0 10px ${THEME.neonCyan}` : "none",
               }}
             />
-            <Img
-              src={staticFile(shot.image)}
+            <div
               style={{
-                height: "380px",
-                objectFit: "contain",
-                transform: `scale(${imageScale})`,
+                fontSize: "10px",
+                fontFamily: "monospace",
+                color: "#666",
+                marginTop: "6px",
               }}
-              alt={shot.title}
-            />
+            >
+              R-{idx}
+            </div>
           </div>
-        )}
-        <p
-          style={{
-            fontFamily: "Arial, sans-serif",
-            fontSize: "36px",
-            fontWeight: "bold",
-            color: THEME.textDark,
-            textAlign: "center",
-            maxWidth: "1000px",
-            lineHeight: "1.4",
-          }}
-        >
-          {shot.subtitle}
-        </p>
+        );
+      })}
+    </div>
+  );
+};
+
+// 7. Wireframe Laptop Component
+const GraphicLaptop: React.FC<{ frame: number }> = ({ frame }) => {
+  const angle = interpolate(frame, [0, 45], [90, 30], {
+    extrapolateRight: "clamp",
+  });
+
+  return (
+    <svg
+      width="380"
+      height="380"
+      viewBox="0 0 200 200"
+      style={{
+        filter: `drop-shadow(0 0 25px ${THEME.neonCyan})`,
+      }}
+    >
+      {/* Laptop Keyboard Base */}
+      <polygon
+        points="30,160 170,160 190,180 10,180"
+        fill="none"
+        stroke={THEME.neonCyan}
+        strokeWidth="4"
+      />
+      {/* Opening screen lid */}
+      <g transform={`translate(100, 160)`}>
+        <g transform={`rotate(${angle} 0 0)`}>
+          <rect
+            x="-70"
+            y="-110"
+            width="140"
+            height="110"
+            fill="none"
+            stroke={THEME.neonCyan}
+            strokeWidth="4"
+          />
+          {/* Internal screens graphics */}
+          <rect
+            x="-60"
+            y="-100"
+            width="120"
+            height="90"
+            fill="none"
+            stroke={THEME.neonCyan}
+            strokeWidth="1.5"
+            strokeDasharray="4 4"
+          />
+        </g>
+      </g>
+    </svg>
+  );
+};
+
+// 8. Power lines / grids
+const GraphicCityPower: React.FC<{ frame: number }> = ({ frame }) => {
+  const circles = [1, 2, 3];
+  return (
+    <svg
+      width="380"
+      height="380"
+      viewBox="0 0 200 200"
+      style={{
+        filter: `drop-shadow(0 0 25px ${THEME.neonRed})`,
+      }}
+    >
+      <circle cx="100" cy="100" r="10" fill={THEME.neonRed} />
+      {circles.map((c) => {
+        const rVal = ((frame * 1.5 + c * 40) % 90) + 10;
+        const opacity = interpolate(rVal, [10, 90], [1, 0]);
+        return (
+          <circle
+            key={c}
+            cx="100"
+            cy="100"
+            r={rVal}
+            fill="none"
+            stroke={THEME.neonRed}
+            strokeWidth="3"
+            opacity={opacity}
+          />
+        );
+      })}
+      {/* Radial network spikes */}
+      {[...Array(8)].map((_, i) => {
+        const x2 = 100 + Math.cos((i * 45 * Math.PI) / 180) * 80;
+        const y2 = 100 + Math.sin((i * 45 * Math.PI) / 180) * 80;
+        return (
+          <line
+            key={i}
+            x1="100"
+            y1="100"
+            x2={x2}
+            y2={y2}
+            stroke={THEME.neonRed}
+            strokeWidth="2"
+            opacity="0.3"
+          />
+        );
+      })}
+    </svg>
+  );
+};
+
+// 9. Simulated terminal chat writing recipe
+const GraphicRecipeChat: React.FC<{ frame: number }> = ({ frame }) => {
+  const promptText = "> How do I substitute eggs?";
+  const typedCount = Math.floor(frame * 0.8);
+  const promptToShow = promptText.slice(0, typedCount);
+
+  return (
+    <div
+      style={{
+        background: "#080b11",
+        border: `3px solid ${THEME.neonCyan}`,
+        borderRadius: "15px",
+        width: "380px",
+        height: "300px",
+        padding: "25px",
+        boxShadow: `0 0 30px rgba(6, 182, 212, 0.2)`,
+        fontFamily: "monospace",
+        fontSize: "20px",
+        color: THEME.textLight,
+        textAlign: "left",
+      }}
+    >
+      <div style={{ color: THEME.neonCyan, marginBottom: "15px" }}>
+        {promptToShow}
+        {frame % 15 < 7 ? "_" : ""}
       </div>
+      {typedCount > promptText.length && (
+        <div style={{ color: THEME.textGray, lineHeight: "1.4" }}>
+          🥚 Replace with:
+          <br />
+          🍎 Mashed Applesauce
+          <br />
+          🍌 Ripe Bananas
+          <br />
+          🌱 Chia seed mixture
+        </div>
+      )}
+    </div>
+  );
+};
+
+// 10. Pricing decoy clipboard
+const GraphicMenuDecoy: React.FC<{ frame: number; highlightSteak: boolean }> = ({
+  frame,
+  highlightSteak,
+}) => {
+  const ovalScale = spring({ frame, fps: 30 });
+  return (
+    <div
+      style={{
+        background: THEME.white,
+        border: `4px solid ${THEME.textDark}`,
+        borderRadius: "15px",
+        width: "380px",
+        padding: "30px",
+        boxShadow: "12px 12px 0px rgba(0,0,0,0.15)",
+        position: "relative",
+      }}
+    >
+      {highlightSteak && (
+        <div
+          style={{
+            position: "absolute",
+            border: `5px solid ${THEME.neonRed}`,
+            borderRadius: "50%",
+            width: "350px",
+            height: "65px",
+            top: "85px",
+            left: "12px",
+            transform: `scale(${ovalScale})`,
+            pointerEvents: "none",
+          }}
+        />
+      )}
+      <h3
+        style={{
+          fontFamily: "Impact, sans-serif",
+          fontSize: "30px",
+          color: THEME.textDark,
+          textAlign: "center",
+          borderBottom: `2.5px solid ${THEME.textDark}`,
+          paddingBottom: "8px",
+          marginBottom: "20px",
+        }}
+      >
+        MENU SELECTION
+      </h3>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          gap: "15px",
+          fontFamily: "Arial, sans-serif",
+          fontWeight: "bold",
+          fontSize: "18px",
+          color: THEME.textDark,
+        }}
+      >
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <span>🥩 $80 STEAK</span>
+          <span style={{ color: THEME.neonRed }}>DECOY</span>
+        </div>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <span>🍝 $30 PASTA</span>
+          <span style={{ color: THEME.neonBlue }}>STEAL</span>
+        </div>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <span>🥗 $15 SALAD</span>
+          <span>CHEAP</span>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+// 11. Swinging Anchor Component
+const GraphicAnchor: React.FC<{ frame: number }> = ({ frame }) => {
+  const swingAngle = Math.sin(frame * 0.08) * 15;
+
+  return (
+    <svg
+      width="380"
+      height="380"
+      viewBox="0 0 200 200"
+      style={{
+        transform: `rotate(${swingAngle}deg)`,
+        transformOrigin: "100px 20px",
+        filter: `drop-shadow(0 0 25px ${THEME.neonBlue})`,
+      }}
+    >
+      {/* Chain link line */}
+      <line x1="100" y1="20" x2="100" y2="100" stroke={THEME.neonBlue} strokeWidth="5" />
+      {/* Center shackle */}
+      <circle cx="100" cy="20" r="10" fill="none" stroke={THEME.neonBlue} strokeWidth="5" />
+      {/* Main vertical shaft */}
+      <line x1="100" y1="30" x2="100" y2="140" stroke={THEME.neonBlue} strokeWidth="8" />
+      {/* Cross stock bar */}
+      <line x1="60" y1="60" x2="140" y2="60" stroke={THEME.neonBlue} strokeWidth="5" />
+      {/* Curved crown base */}
+      <path
+        d="M 50 120 A 60 60 0 0 0 150 120"
+        fill="none"
+        stroke={THEME.neonBlue}
+        strokeWidth="8"
+      />
+      {/* Flukes arrows */}
+      <polygon points="50,110 40,130 65,125" fill={THEME.neonBlue} />
+      <polygon points="150,110 160,130 135,125" fill={THEME.neonBlue} />
+    </svg>
+  );
+};
+
+// 12. Storage levels / Phone visual
+const GraphicPhoneStorage: React.FC<{ frame: number }> = ({ frame }) => {
+  const scale = spring({ frame, fps: 30 });
+  const loadVal = interpolate(frame, [0, 40], [0, 100], {
+    extrapolateRight: "clamp",
+  });
+
+  return (
+    <svg
+      width="380"
+      height="380"
+      viewBox="0 0 200 200"
+      style={{
+        transform: `scale(${scale})`,
+        filter: `drop-shadow(0 0 25px ${THEME.neonCyan})`,
+      }}
+    >
+      {/* Phone chassis */}
+      <rect
+        x="60"
+        y="25"
+        width="80"
+        height="150"
+        rx="12"
+        fill="none"
+        stroke={THEME.neonCyan}
+        strokeWidth="4"
+      />
+      {/* Storage blocks */}
+      {[0, 1, 2].map((i) => {
+        const wVal = interpolate(loadVal, [0, 100], [0, 60], {
+          extrapolateRight: "clamp",
+        });
+        return (
+          <g key={i} transform={`translate(70, ${50 + i * 40})`}>
+            <rect
+              x="0"
+              y="0"
+              width="60"
+              height="15"
+              fill="none"
+              stroke={THEME.neonCyan}
+              strokeWidth="2.5"
+              rx="4"
+            />
+            <rect
+              x="0"
+              y="0"
+              width={wVal}
+              height="15"
+              fill={i === 2 ? THEME.neonGold : i === 1 ? THEME.neonBlue : THEME.neonCyan}
+              rx="4"
+              opacity="0.6"
+            />
+          </g>
+        );
+      })}
+    </svg>
+  );
+};
+
+// 13. Dynamic drifting car wireframe
+const GraphicCar: React.FC<{ frame: number }> = ({ frame }) => {
+  const driftX = interpolate(frame, [0, 150], [-250, 250]);
+  const wheelRotate = frame * 10;
+
+  return (
+    <div
+      style={{
+        width: "100%",
+        display: "flex",
+        justifyContent: "center",
+        transform: `translateX(${driftX}px)`,
+      }}
+    >
+      <svg
+        width="350"
+        height="220"
+        viewBox="0 0 200 120"
+        style={{
+          filter: `drop-shadow(0 0 25px ${THEME.neonCyan})`,
+        }}
+      >
+        {/* Car chassis outline */}
+        <path
+          d="M 20 80 Q 20 50 40 45 L 80 45 Q 110 20 150 45 L 180 50 Q 190 70 190 80 Z"
+          fill="none"
+          stroke={THEME.neonCyan}
+          strokeWidth="4"
+        />
+        {/* Wheels */}
+        <g transform={`translate(55, 85) rotate(${wheelRotate})`}>
+          <circle cx="0" cy="0" r="18" fill="none" stroke={THEME.neonCyan} strokeWidth="3" />
+          <line x1="-18" y1="0" x2="18" y2="0" stroke={THEME.neonCyan} strokeWidth="2.5" />
+          <line x1="0" y1="-18" x2="0" y2="18" stroke={THEME.neonCyan} strokeWidth="2.5" />
+        </g>
+        <g transform={`translate(145, 85) rotate(${wheelRotate})`}>
+          <circle cx="0" cy="0" r="18" fill="none" stroke={THEME.neonCyan} strokeWidth="3" />
+          <line x1="-18" y1="0" x2="18" y2="0" stroke={THEME.neonCyan} strokeWidth="2.5" />
+          <line x1="0" y1="-18" x2="0" y2="18" stroke={THEME.neonCyan} strokeWidth="2.5" />
+        </g>
+      </svg>
+    </div>
+  );
+};
+
+// 14. Neural network / Brain component
+const GraphicBrain: React.FC<{ frame: number }> = ({ frame }) => {
+  const nodeCount = 10;
+  const nodes = [...Array(nodeCount)].map((_, i) => {
+    const angle = (i * 360) / nodeCount;
+    const rOffset = Math.sin(frame * 0.05 + i) * 15;
+    const x = 100 + Math.cos((angle * Math.PI) / 180) * (60 + rOffset);
+    const y = 100 + Math.sin((angle * Math.PI) / 180) * (60 + rOffset);
+    return { x, y };
+  });
+
+  return (
+    <svg
+      width="380"
+      height="380"
+      viewBox="0 0 200 200"
+      style={{
+        filter: `drop-shadow(0 0 25px ${THEME.neonBlue})`,
+      }}
+    >
+      <circle cx="100" cy="100" r="30" fill="none" stroke={THEME.neonBlue} strokeWidth="3" />
+      {nodes.map((node, i) => (
+        <g key={i}>
+          {/* Node connect lines to center */}
+          <line
+            x1="100"
+            y1="100"
+            x2={node.x}
+            y2={node.y}
+            stroke={THEME.neonBlue}
+            strokeWidth="1.5"
+            opacity="0.5"
+          />
+          {/* Ring line connections */}
+          {i > 0 && (
+            <line
+              x1={nodes[i - 1].x}
+              y1={nodes[i - 1].y}
+              x2={node.x}
+              y2={node.y}
+              stroke={THEME.neonBlue}
+              strokeWidth="1.5"
+              opacity="0.4"
+            />
+          )}
+          {/* Firing node glow */}
+          <circle
+            cx={node.x}
+            cy={node.y}
+            r="8"
+            fill={THEME.neonBlue}
+            opacity={0.7 + Math.sin(frame * 0.1 + i) * 0.2}
+          />
+        </g>
+      ))}
+      {/* Close loop ring */}
+      <line
+        x1={nodes[nodeCount - 1].x}
+        y1={nodes[nodeCount - 1].y}
+        x2={nodes[0].x}
+        y2={nodes[0].y}
+        stroke={THEME.neonBlue}
+        strokeWidth="1.5"
+        opacity="0.4"
+      />
+    </svg>
+  );
+};
+
+// 15. Tilting Weighing scale
+const GraphicScale: React.FC<{ frame: number }> = ({ frame }) => {
+  const tilt = Math.sin(frame * 0.08) * 8;
+
+  return (
+    <svg
+      width="380"
+      height="380"
+      viewBox="0 0 200 200"
+      style={{
+        filter: `drop-shadow(0 0 25px ${THEME.neonBlue})`,
+      }}
+    >
+      {/* Central stand pylon */}
+      <line x1="100" y1="50" x2="100" y2="170" stroke={THEME.neonBlue} strokeWidth="8" />
+      <line x1="60" y1="170" x2="140" y2="170" stroke={THEME.neonBlue} strokeWidth="8" />
+
+      {/* Tilting crossbeam */}
+      <g transform={`translate(100, 70) rotate(${tilt})`}>
+        <line x1="-70" y1="0" x2="70" y2="0" stroke={THEME.neonBlue} strokeWidth="6" />
+        {/* Left pan */}
+        <g transform={`translate(-70, 0) rotate(${-tilt})`}>
+          <line x1="0" y1="0" x2="-15" y2="40" stroke={THEME.neonBlue} strokeWidth="3" />
+          <line x1="0" y1="0" x2="15" y2="40" stroke={THEME.neonBlue} strokeWidth="3" />
+          <path d="M -25 40 L 25 40 Q 0 50 -25 40" fill={THEME.neonBlue} />
+        </g>
+        {/* Right pan */}
+        <g transform={`translate(70, 0) rotate(${-tilt})`}>
+          <line x1="0" y1="0" x2="-15" y2="40" stroke={THEME.neonBlue} strokeWidth="3" />
+          <line x1="0" y1="0" x2="15" y2="40" stroke={THEME.neonBlue} strokeWidth="3" />
+          <path d="M -25 40 L 25 40 Q 0 50 -25 40" fill={THEME.neonBlue} />
+        </g>
+      </g>
+    </svg>
+  );
+};
+
+// 16. Bankruptcy grid
+const GraphicBankruptcy: React.FC<{ frame: number }> = ({ frame }) => {
+  const progress = interpolate(frame, [0, 90], [10, 190], {
+    extrapolateRight: "clamp",
+  });
+  return (
+    <svg
+      width="380"
+      height="380"
+      viewBox="0 0 200 200"
+      style={{
+        filter: `drop-shadow(0 0 25px ${THEME.neonRed})`,
+      }}
+    >
+      
+      {/* Grid lines */}
+      <line x1="10" y1="180" x2="190" y2="180" stroke="#444" strokeWidth="2.5" />
+      <line x1="10" y1="10" x2="10" y2="180" stroke="#444" strokeWidth="2.5" />
+      {/* Crashing chart path */}
+      <path
+        d="M 10,40 Q 60,60 100,120 T 190,175"
+        fill="none"
+        stroke={THEME.neonRed}
+        strokeWidth="6"
+        strokeDasharray="250"
+        strokeDashoffset={250 - (progress / 190) * 250}
+      />
+      {/* Danger warning icon */}
+      {frame > 60 && (
+        <polygon
+          points="100,110 85,140 115,140"
+          fill={THEME.neonRed}
+          opacity="0.8"
+        />
+      )}
+    </svg>
+  );
+};
+
+// ── GLOBAL LAYOUT ROUTER BASED ON GRAPHIC CHOICE
+
+const LayoutRouter: React.FC<{
+  shot: Shot;
+  frame: number;
+  isWidescreen: boolean;
+}> = ({ shot, frame, isWidescreen }) => {
+  const springScale = spring({ frame, fps: 30, config: { damping: 15 } });
+
+  // Get corresponding vector graphic component
+  let vectorGraphic = <div />;
+  if (shot.graphic === "pyramid") {
+    vectorGraphic = <GraphicPyramid frame={frame} color={shot.color} />;
+  } else if (shot.graphic === "logo_openai") {
+    vectorGraphic = <GraphicOpenAI frame={frame} />;
+  } else if (shot.graphic === "logo_anthropic") {
+    vectorGraphic = <GraphicAnthropic frame={frame} />;
+  } else if (shot.graphic === "logo_google") {
+    vectorGraphic = <GraphicGoogle frame={frame} />;
+  } else if (shot.graphic === "gears") {
+    vectorGraphic = <GraphicGears frame={frame} />;
+  } else if (shot.graphic === "servers") {
+    vectorGraphic = <GraphicServers frame={frame} />;
+  } else if (shot.graphic === "laptop") {
+    vectorGraphic = <GraphicLaptop frame={frame} />;
+  } else if (shot.graphic === "city_power") {
+    vectorGraphic = <GraphicCityPower frame={frame} />;
+  } else if (shot.graphic === "recipe_chat") {
+    vectorGraphic = <GraphicRecipeChat frame={frame} />;
+  } else if (shot.graphic === "menu_decoy") {
+    vectorGraphic = (
+      <GraphicMenuDecoy
+        frame={frame}
+        highlightSteak={shot.title.includes("STEAK") || shot.title.includes("DECOY")}
+      />
     );
+  } else if (shot.graphic === "anchor") {
+    vectorGraphic = <GraphicAnchor frame={frame} />;
+  } else if (shot.graphic === "phone_storage") {
+    vectorGraphic = <GraphicPhoneStorage frame={frame} />;
+  } else if (shot.graphic === "car") {
+    vectorGraphic = <GraphicCar frame={frame} />;
+  } else if (shot.graphic === "brain") {
+    vectorGraphic = <GraphicBrain frame={frame} />;
+  } else if (shot.graphic === "scale") {
+    vectorGraphic = <GraphicScale frame={frame} />;
+  } else if (shot.graphic === "bankruptcy") {
+    vectorGraphic = <GraphicBankruptcy frame={frame} />;
   }
 
-  // Split-screen wrapper
-  if (shot.layout === "split") {
+  // WIDESCREEN SIDE-BY-SIDE PRESENTATION
+  if (isWidescreen) {
     return (
       <div
         style={{
@@ -950,47 +1637,45 @@ const WidescreenShotLayout: React.FC<{ shot: Shot; frame: number }> = ({
           flexDirection: "row",
           alignItems: "center",
           justifyContent: "center",
-          gap: "80px",
-          padding: "100px 80px 280px 80px",
+          gap: "100px",
+          padding: "100px 100px 280px 100px",
         }}
       >
-        {shot.image && (
-          <div style={{ position: "relative", flexShrink: 0 }}>
-            <div
-              style={{
-                position: "absolute",
-                width: "400px",
-                height: "400px",
-                borderRadius: "50%",
-                backgroundColor: shot.color || THEME.accentBlue,
-                zIndex: -1,
-                top: 30,
-                left: 20,
-              }}
-            />
-            <Img
-              src={staticFile(shot.image)}
-              style={{
-                height: "480px",
-                width: "480px",
-                objectFit: "contain",
-                transform: `scale(${imageScale})`,
-              }}
-              alt={shot.title}
-            />
-          </div>
-        )}
-        <div style={{ display: "flex", flexDirection: "column", gap: "25px" }}>
+        {/* Left Side Vector graphic */}
+        <div
+          style={{
+            flexShrink: 0,
+            transform: `scale(${springScale})`,
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "420px",
+          }}
+        >
+          {vectorGraphic}
+        </div>
+
+        {/* Right Side Text specs details */}
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            gap: "30px",
+            textAlign: "left",
+            maxWidth: "750px",
+          }}
+        >
           {shot.badge && (
             <div
               style={{
-                background: THEME.textDark,
-                color: THEME.white,
-                padding: "10px 25px",
+                background: shot.color || THEME.neonBlue,
+                color: THEME.textLight,
+                padding: "8px 24px",
                 fontSize: "24px",
                 fontFamily: "Impact, sans-serif",
-                alignSelf: "flex-start",
                 borderRadius: "5px",
+                alignSelf: "flex-start",
+                letterSpacing: "1px",
               }}
             >
               {shot.badge}
@@ -998,10 +1683,11 @@ const WidescreenShotLayout: React.FC<{ shot: Shot; frame: number }> = ({
           )}
           <h1
             style={{
-              fontFamily: "Impact, sans-serif",
-              fontSize: "90px",
-              color: THEME.textDark,
+              fontFamily: "Impact, 'Arial Black', sans-serif",
+              fontSize: "96px",
+              color: shot.color || THEME.textLight,
               textTransform: "uppercase",
+              letterSpacing: "1px",
               lineHeight: "1.0",
             }}
           >
@@ -1014,7 +1700,6 @@ const WidescreenShotLayout: React.FC<{ shot: Shot; frame: number }> = ({
               fontWeight: "bold",
               color: THEME.textGray,
               lineHeight: "1.4",
-              maxWidth: "700px",
             }}
           >
             {shot.subtitle}
@@ -1024,233 +1709,7 @@ const WidescreenShotLayout: React.FC<{ shot: Shot; frame: number }> = ({
     );
   }
 
-  // Full-screen / backdrop view
-  if (shot.layout === "fullscreen") {
-    return (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          position: "relative",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        {shot.image && (
-          <Img
-            src={staticFile(shot.image)}
-            style={{
-              position: "absolute",
-              top: 0,
-              left: 0,
-              width: "100%",
-              height: "100%",
-              objectFit: "cover",
-              opacity: 0.25,
-            }}
-            alt={shot.title}
-          />
-        )}
-        <div
-          style={{
-            zIndex: 10,
-            textAlign: "center",
-            padding: "50px",
-            background: "rgba(255, 255, 255, 0.9)",
-            border: `5px solid ${THEME.textDark}`,
-            borderRadius: "20px",
-            boxShadow: "20px 20px 0px rgba(0,0,0,0.15)",
-            maxWidth: "1000px",
-          }}
-        >
-          <h1
-            style={{
-              fontFamily: "Impact, sans-serif",
-              fontSize: "110px",
-              color: THEME.accentRed,
-              textTransform: "uppercase",
-              marginBottom: "20px",
-            }}
-          >
-            {shot.title}
-          </h1>
-          <p
-            style={{
-              fontFamily: "Arial, sans-serif",
-              fontSize: "40px",
-              fontWeight: "bold",
-              color: THEME.textDark,
-              lineHeight: "1.4",
-            }}
-          >
-            {shot.subtitle}
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  // Decoy/Restaurant layout
-  if (shot.layout === "decoy") {
-    return (
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "80px",
-          padding: "100px 50px 280px 50px",
-        }}
-      >
-        {/* Menu Board card */}
-        <div
-          style={{
-            background: THEME.white,
-            border: `5px solid ${THEME.textDark}`,
-            borderRadius: "20px",
-            width: "480px",
-            padding: "35px",
-            boxShadow: "15px 15px 0px rgba(0,0,0,0.15)",
-          }}
-        >
-          <h2
-            style={{
-              fontFamily: "Impact, sans-serif",
-              fontSize: "38px",
-              borderBottom: `3px solid ${THEME.textDark}`,
-              paddingBottom: "10px",
-              marginBottom: "25px",
-              textAlign: "center",
-            }}
-          >
-            MENU ANCHORING
-          </h2>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "20px",
-              fontFamily: "Arial, sans-serif",
-              fontWeight: "bold",
-              fontSize: "24px",
-            }}
-          >
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                border:
-                  shot.title.includes("STEAK") || shot.title.includes("DECOY")
-                    ? `4px solid ${THEME.accentRed}`
-                    : "none",
-                padding: "8px",
-                borderRadius: "5px",
-              }}
-            >
-              <span>🥩 $80 STEAK</span>
-              <span style={{ color: THEME.accentRed }}>DECOY</span>
-            </div>
-            <div
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                border: shot.title.includes("PASTA")
-                  ? `4px solid ${THEME.accentBlue}`
-                  : "none",
-                padding: "8px",
-                borderRadius: "5px",
-              }}
-            >
-              <span>🍝 $30 PASTA</span>
-              <span style={{ color: THEME.accentBlue }}>STEAL</span>
-            </div>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <span>🥗 $15 SALAD</span>
-              <span>CHEAP</span>
-            </div>
-          </div>
-        </div>
-
-        {/* Graphic side */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "25px" }}>
-          <h1
-            style={{
-              fontFamily: "Impact, sans-serif",
-              fontSize: "80px",
-              color: THEME.accentRed,
-              textTransform: "uppercase",
-            }}
-          >
-            {shot.title}
-          </h1>
-          {shot.image && (
-            <Img
-              src={staticFile(shot.image)}
-              style={{
-                height: "280px",
-                width: "280px",
-                objectFit: "contain",
-                transform: `scale(${imageScale})`,
-                alignSelf: "center",
-              }}
-              alt={shot.title}
-            />
-          )}
-          <p
-            style={{
-              fontFamily: "Arial, sans-serif",
-              fontSize: "30px",
-              fontWeight: "bold",
-              color: THEME.textGray,
-              maxWidth: "500px",
-            }}
-          >
-            {shot.subtitle}
-          </p>
-        </div>
-      </div>
-    );
-  }
-
-  // Generic backup layout
-  return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        flexDirection: "column",
-        padding: "100px 50px 280px 50px",
-      }}
-    >
-      <h1
-        style={{
-          fontFamily: "Impact, sans-serif",
-          fontSize: "90px",
-          color: THEME.textDark,
-        }}
-      >
-        {shot.title}
-      </h1>
-      <p style={{ fontSize: "36px", fontWeight: "bold" }}>{shot.subtitle}</p>
-    </div>
-  );
-};
-
-// ── MAIN PORTRAIT LAYOUT WRAPPERS (FOR SHORTS / VERTICAL)
-
-const PortraitShotLayout: React.FC<{ shot: Shot; frame: number }> = ({
-  shot,
-  frame,
-}) => {
-  const imageScale = spring({ frame, fps: 30, config: { damping: 15 } });
-
+  // PORTRAIT VERTICAL STACKED PRESENTATION (FOR SHORTS)
   return (
     <div
       style={{
@@ -1260,65 +1719,53 @@ const PortraitShotLayout: React.FC<{ shot: Shot; frame: number }> = ({
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "150px 40px 320px 40px",
+        padding: "160px 40px 320px 40px",
         textAlign: "center",
       }}
     >
+      {/* Title */}
       <h1
         style={{
           fontFamily: "Impact, 'Arial Black', sans-serif",
           fontSize: "80px",
-          color: shot.color || THEME.accentRed,
+          color: shot.color || THEME.textLight,
           textTransform: "uppercase",
           lineHeight: "1.1",
+          letterSpacing: "1px",
         }}
       >
         {shot.title}
       </h1>
 
-      {shot.image && (
-        <div style={{ position: "relative" }}>
-          <div
-            style={{
-              position: "absolute",
-              width: "300px",
-              height: "300px",
-              borderRadius: "50%",
-              backgroundColor: shot.color || "rgba(26,26,26,0.1)",
-              zIndex: -1,
-              top: 10,
-              left: 10,
-            }}
-          />
-          <Img
-            src={staticFile(shot.image)}
-            style={{
-              height: "380px",
-              width: "380px",
-              objectFit: "contain",
-              transform: `scale(${imageScale})`,
-            }}
-            alt={shot.title}
-          />
-        </div>
-      )}
-
+      {/* Vector Graphic centered */}
       <div
         style={{
-          background: THEME.white,
-          border: `4px solid ${THEME.textDark}`,
+          transform: `scale(${springScale})`,
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "360px",
+        }}
+      >
+        {vectorGraphic}
+      </div>
+
+      {/* Subtext description box */}
+      <div
+        style={{
+          background: "rgba(255, 255, 255, 0.05)",
+          border: `3.5px solid ${shot.color || THEME.neonBlue}`,
           borderRadius: "15px",
-          padding: "20px 25px",
-          boxShadow: "10px 10px 0px rgba(0,0,0,0.15)",
+          padding: "20px 30px",
           width: "100%",
         }}
       >
         <p
           style={{
             fontFamily: "Arial, sans-serif",
-            fontSize: "30px",
+            fontSize: "28px",
             fontWeight: "bold",
-            color: THEME.textDark,
+            color: THEME.textLight,
             lineHeight: "1.3",
           }}
         >
@@ -1326,35 +1773,6 @@ const PortraitShotLayout: React.FC<{ shot: Shot; frame: number }> = ({
         </p>
       </div>
     </div>
-  );
-};
-
-// Drifting background texture (Universal)
-const UniversalBackground: React.FC = () => {
-  const frame = useCurrentFrame();
-  const { width, height } = useVideoConfig();
-
-  const scale = interpolate(frame, [0, 8000], [1.02, 1.15], {
-    extrapolateRight: "clamp",
-  });
-  const xTranslation = interpolate(frame, [0, 8000], [0, -40], {
-    extrapolateRight: "clamp",
-  });
-
-  return (
-    <Img
-      src={staticFile("grunge_background.png")}
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width,
-        height,
-        objectFit: "cover",
-        transform: `scale(${scale}) translate(${xTranslation}px, 0px)`,
-        zIndex: 0,
-      }}
-    />
   );
 };
 
@@ -1394,11 +1812,11 @@ const DynamicSubtitles: React.FC<{ currentTime: number }> = ({
     >
       <div
         style={{
-          background: "rgba(26, 26, 26, 0.9)",
+          background: "rgba(3, 7, 18, 0.9)",
           padding: isWidescreen ? "15px 35px" : "25px 45px",
           borderRadius: "30px",
-          border: "2px solid #333",
-          boxShadow: "0 10px 30px rgba(0,0,0,0.5)",
+          border: "2px solid #3b82f6",
+          boxShadow: "0 0 25px rgba(59, 130, 246, 0.3)",
           display: "flex",
           flexWrap: "wrap",
           justifyContent: "center",
@@ -1415,9 +1833,9 @@ const DynamicSubtitles: React.FC<{ currentTime: number }> = ({
                 fontFamily: "Impact, 'Arial Black', sans-serif",
                 fontSize: isWidescreen ? "54px" : "68px",
                 textTransform: "uppercase",
-                letterSpacing: "1px",
-                color: isActive ? THEME.goldHighlight : "#ffffff",
-                opacity: isActive ? 1 : 0.4,
+                letterSpacing: "1.5px",
+                color: isActive ? THEME.neonGold : "#ffffff",
+                opacity: isActive ? 1 : 0.3,
                 scale: isActive ? "1.1" : "1.0",
                 transformOrigin: "center",
               }}
@@ -1440,7 +1858,7 @@ export const MyVideo: React.FC = () => {
 
   const currentSec = frame / 30;
 
-  // Find the active visual shot based on current elapsed seconds
+  // Find active visual shot based on current elapsed seconds
   const activeShot =
     SHOTS.find(
       (shot) => currentSec >= shot.startSec && currentSec < shot.endSec
@@ -1454,13 +1872,13 @@ export const MyVideo: React.FC = () => {
       style={{
         width: "100%",
         height: "100%",
-        backgroundColor: THEME.bgWarm,
+        backgroundColor: THEME.bgDark,
         position: "relative",
         overflow: "hidden",
       }}
     >
-      {/* 1. Drift background texture */}
-      <UniversalBackground />
+      {/* 1. Drift space background texture grid */}
+      <MotionBackground />
 
       {/* 2. Render active scene layout */}
       <div
@@ -1473,11 +1891,11 @@ export const MyVideo: React.FC = () => {
           zIndex: 10,
         }}
       >
-        {isWidescreen ? (
-          <WidescreenShotLayout shot={activeShot} frame={localFrame} />
-        ) : (
-          <PortraitShotLayout shot={activeShot} frame={localFrame} />
-        )}
+        <LayoutRouter
+          shot={activeShot}
+          frame={localFrame}
+          isWidescreen={isWidescreen}
+        />
       </div>
 
       {/* 3. Sync Dynamic Subtitles */}
