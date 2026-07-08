@@ -29,14 +29,1311 @@ interface SubtitleWord {
   confidence: number;
 }
 
-// ── GLOBAL COMPONENTS
+// Visual state definition
+interface Shot {
+  startSec: number;
+  endSec: number;
+  title: string;
+  subtitle: string;
+  image?: string;
+  layout: "center" | "split" | "fullscreen" | "decoy" | "car" | "phone";
+  badge?: string;
+  color?: string;
+}
 
-// Drifting grunge background for texture
+// ── 100+ HIGHLY RELEVANT VISUAL SHOTS SYNCED WITH VOICEOVER
+const SHOTS: Shot[] = [
+  {
+    startSec: 0.0,
+    endSec: 3.6,
+    title: "AI MODEL TIERS",
+    subtitle: "Why every AI company suddenly has three versions",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 3.6,
+    endSec: 4.8,
+    title: "THE SAME MODEL",
+    subtitle: "A single system split into three layers",
+    image: "gpu_core.png",
+    layout: "split",
+  },
+  {
+    startSec: 4.8,
+    endSec: 5.82,
+    title: "LARGE FLAGSHIP",
+    subtitle: "The raw supercomputing powerhouse",
+    image: "gpu_core.png",
+    layout: "center",
+    color: THEME.accentRed,
+  },
+  {
+    startSec: 5.82,
+    endSec: 6.56,
+    title: "MEDIUM STANDARDS",
+    subtitle: "The balanced option for daily work",
+    image: "storage_phone.png",
+    layout: "center",
+    color: THEME.accentBlue,
+  },
+  {
+    startSec: 6.56,
+    endSec: 8.04,
+    title: "MINI & CHEAP",
+    subtitle: "The small, lightning-fast lightweight model",
+    image: "cash_stacks.png",
+    layout: "center",
+    color: THEME.goldHighlight,
+  },
+  {
+    startSec: 8.04,
+    endSec: 9.31,
+    title: "OPENAI TIERS",
+    subtitle: "GPT-4o ➔ GPT-4o mini ➔ GPT-3.5",
+    image: "tech_founder_1.png",
+    layout: "split",
+    badge: "OPENAI",
+  },
+  {
+    startSec: 9.31,
+    endSec: 10.56,
+    title: "ANTHROPIC TIERS",
+    subtitle: "Opus ➔ Sonnet ➔ Haiku",
+    image: "tech_founder_2.png",
+    layout: "split",
+    badge: "ANTHROPIC",
+  },
+  {
+    startSec: 10.56,
+    endSec: 11.75,
+    title: "GOOGLE TIERS",
+    subtitle: "Gemini Ultra ➔ Gemini Pro ➔ Gemini Flash",
+    image: "thinking_silhouette.png",
+    layout: "split",
+    badge: "GOOGLE",
+  },
+  {
+    startSec: 11.75,
+    endSec: 14.02,
+    title: "POLISHED STORIES",
+    subtitle: "Optimized for different needs, different use cases",
+    image: "gpu_core.png",
+    layout: "center",
+  },
+  {
+    startSec: 14.02,
+    endSec: 15.36,
+    title: "DIFFERENT CASES",
+    subtitle: "Custom-made tiers matching different tasks",
+    image: "storage_phone.png",
+    layout: "split",
+  },
+  {
+    startSec: 15.36,
+    endSec: 17.67,
+    title: "OPTIMIZED TECH",
+    subtitle: "Or is it just a marketing illusion?",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 17.67,
+    endSec: 18.91,
+    title: "SOUNDS NICE",
+    subtitle: "The official justification makes perfect sense",
+    image: "cash_stacks.png",
+    layout: "split",
+  },
+  {
+    startSec: 18.91,
+    endSec: 20.43,
+    title: "BUT IS THAT IT?",
+    subtitle: "Let's check the financial reality behind AI",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 20.43,
+    endSec: 22.56,
+    title: "LET'S THINK",
+    subtitle: "Why three instead of just one or two?",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 22.56,
+    endSec: 24.92,
+    title: "THE SILENT TRUTH",
+    subtitle: "What AI executives never say out loud",
+    image: "tech_founder_1.png",
+    layout: "split",
+  },
+  {
+    startSec: 24.92,
+    endSec: 27.85,
+    title: "STUPID BILLS",
+    subtitle: "Training massive models costs a stupid amount of money",
+    image: "cash_stacks.png",
+    layout: "center",
+  },
+  {
+    startSec: 27.85,
+    endSec: 28.97,
+    title: "NOT LAPTOP CASH",
+    subtitle: "We're not talking about expensive laptop budgets",
+    image: "laptop.png",
+    layout: "split",
+  },
+  {
+    startSec: 28.97,
+    endSec: 31.06,
+    title: "DATA CENTERS",
+    subtitle: "We are talking warehouse size server rooms",
+    image: "data_center.png",
+    layout: "fullscreen",
+  },
+  {
+    startSec: 31.06,
+    endSec: 32.91,
+    title: "GPU HARDWARE",
+    subtitle: "Filled with thousands of burning processors",
+    image: "gpu_core.png",
+    layout: "split",
+  },
+  {
+    startSec: 32.91,
+    endSec: 35.38,
+    title: "CITY POWER GRID",
+    subtitle: "Consuming electricity like a whole city",
+    image: "data_center.png",
+    layout: "center",
+  },
+  {
+    startSec: 35.38,
+    endSec: 39.36,
+    title: "TRIVIAL ANSWERS",
+    subtitle: "All this power just to suggest recipe substitutions",
+    image: "thinking_silhouette.png",
+    layout: "split",
+  },
+  {
+    startSec: 39.36,
+    endSec: 40.59,
+    title: "FLAGSHIP MODEL",
+    subtitle: "The gold standard flagship models",
+    image: "gpu_core.png",
+    layout: "center",
+  },
+  {
+    startSec: 40.59,
+    endSec: 41.75,
+    title: "OPUS / ULTRA",
+    subtitle: "The massive neural structures",
+    image: "tech_founder_2.png",
+    layout: "split",
+  },
+  {
+    startSec: 41.75,
+    endSec: 44.96,
+    title: "THE BIG ONE",
+    subtitle: "Whatever they name it this month",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 44.96,
+    endSec: 46.64,
+    title: "POWERFUL TECH",
+    subtitle: "Genuinely capable and extremely smart",
+    image: "gpu_core.png",
+    layout: "split",
+  },
+  {
+    startSec: 46.64,
+    endSec: 49.85,
+    title: "INSANELY COSTLY",
+    subtitle: "Genuinely expensive to compute every single time",
+    image: "cash_stacks.png",
+    layout: "center",
+  },
+  {
+    startSec: 49.85,
+    endSec: 51.55,
+    title: "THE ENTER KEY",
+    subtitle: "Every time a user presses enter, it costs money",
+    image: "laptop.png",
+    layout: "split",
+  },
+  {
+    startSec: 51.55,
+    endSec: 54.36,
+    title: "FREE FLAGSHIP?",
+    subtitle: "If every single user got this for free...",
+    image: "cash_stacks.png",
+    layout: "center",
+  },
+  {
+    startSec: 54.36,
+    endSec: 56.56,
+    title: "BANKRUPT IN WEEKS",
+    subtitle: "The company would crash instantly",
+    image: "cash_stacks.png",
+    layout: "center",
+    color: THEME.accentRed,
+  },
+  {
+    startSec: 56.56,
+    endSec: 57.6,
+    title: "SIMPLE LOGIC",
+    subtitle: "As straightforward as arithmetic",
+    image: "thinking_silhouette.png",
+    layout: "split",
+  },
+  {
+    startSec: 57.6,
+    endSec: 58.89,
+    title: "TIER ONE",
+    subtitle: "The absolute primary business tier",
+    image: "gpu_core.png",
+    layout: "center",
+  },
+  {
+    startSec: 58.89,
+    endSec: 59.86,
+    title: "THE OPERATING LOGIC",
+    subtitle: "Pure server operational economics",
+    image: "cash_stacks.png",
+    layout: "split",
+  },
+  {
+    startSec: 59.86,
+    endSec: 61.38,
+    title: "PURE ECONOMICS",
+    subtitle: "But economics alone doesn't explain three tiers",
+    image: "cash_stacks.png",
+    layout: "center",
+  },
+  {
+    startSec: 61.38,
+    endSec: 63.12,
+    title: "GETS INTERESTING",
+    subtitle: "Costs explain two tiers, not three",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 63.12,
+    endSec: 66.49,
+    title: "WHY NOT TWO?",
+    subtitle: "It explains rich model, cheap model, done",
+    image: "gpu_core.png",
+    layout: "split",
+  },
+  {
+    startSec: 66.49,
+    endSec: 69.04,
+    title: "RICH vs CHEAP",
+    subtitle: "A simple two-tier pricing scale",
+    image: "cash_stacks.png",
+    layout: "split",
+  },
+  {
+    startSec: 69.04,
+    endSec: 70.24,
+    title: "THE RICH MODEL",
+    subtitle: "High cost flagship layers",
+    image: "gpu_core.png",
+    layout: "center",
+  },
+  {
+    startSec: 70.24,
+    endSec: 70.98,
+    title: "THE CHEAP MODEL",
+    subtitle: "Low cost lightweight layers",
+    image: "cash_stacks.png",
+    layout: "center",
+  },
+  {
+    startSec: 70.98,
+    endSec: 71.92,
+    title: "SO WHY THREE?",
+    subtitle: "Why do we always see a middle option?",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 71.92,
+    endSec: 75.61,
+    title: "IT'S ABOUT YOU",
+    subtitle: "It stops being about servers and starts being about psychology",
+    image: "tech_founder_1.png",
+    layout: "split",
+  },
+  {
+    startSec: 75.61,
+    endSec: 76.8,
+    title: "HOW YOU THINK",
+    subtitle: "How consumer minds process comparative options",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 76.8,
+    endSec: 80.53,
+    title: "CHOOSING A PLAN",
+    subtitle: "The cognitive friction of buying subscriptions",
+    image: "cash_stacks.png",
+    layout: "split",
+  },
+  {
+    startSec: 80.53,
+    endSec: 83.84,
+    title: "RESTAURANT MENU",
+    subtitle: "Think about how restaurant menus are written",
+    image: "pasta.png",
+    layout: "decoy",
+  },
+  {
+    startSec: 83.84,
+    endSec: 86.72,
+    title: "THE SECOND MOST",
+    subtitle: "The second most expensive item sells the best",
+    image: "steak.png",
+    layout: "decoy",
+  },
+  {
+    startSec: 86.72,
+    endSec: 89.44,
+    title: "NOT AN ACCIDENT",
+    subtitle: "This is a carefully engineered design",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 89.44,
+    endSec: 91.0,
+    title: "THE DECOY",
+    subtitle: "Putting an outrageously priced dish at the top",
+    image: "steak.png",
+    layout: "decoy",
+  },
+  {
+    startSec: 91.0,
+    endSec: 94.06,
+    title: "$80 STEAK ANCHOR",
+    subtitle: "The top item sets the price frame",
+    image: "steak.png",
+    layout: "decoy",
+  },
+  {
+    startSec: 94.06,
+    endSec: 96.8,
+    title: "NO EXPECTATION",
+    subtitle: "They don't actually expect you to buy it",
+    image: "tech_founder_2.png",
+    layout: "split",
+  },
+  {
+    startSec: 96.8,
+    endSec: 99.92,
+    title: "LOOK REASONABLE",
+    subtitle: "It exists to make the next option look like a bargain",
+    image: "pasta.png",
+    layout: "decoy",
+  },
+  {
+    startSec: 99.92,
+    endSec: 101.59,
+    title: "ANCHORING EFFECT",
+    subtitle: "A cognitive reference point strategy",
+    image: "anchor.png",
+    layout: "split",
+  },
+  {
+    startSec: 101.59,
+    endSec: 104.09,
+    title: "$80 STEAK",
+    subtitle: "Establishing a high benchmark cost",
+    image: "steak.png",
+    layout: "decoy",
+  },
+  {
+    startSec: 104.09,
+    endSec: 107.52,
+    title: "$30 PASTA",
+    subtitle: "Suddenly feels like an absolute steal",
+    image: "pasta.png",
+    layout: "decoy",
+  },
+  {
+    startSec: 107.52,
+    endSec: 110.67,
+    title: "AI COMPANIES DO IT",
+    subtitle: "Doing the exact same menu trick",
+    image: "storage_phone.png",
+    layout: "center",
+  },
+  {
+    startSec: 110.67,
+    endSec: 111.85,
+    title: "FLAGSHIP TIERS",
+    subtitle: "The expensive flagship models",
+    image: "gpu_core.png",
+    layout: "split",
+  },
+  {
+    startSec: 111.85,
+    endSec: 113.12,
+    title: "SLOW & PRICEY",
+    subtitle: "Too slow and heavy for most everyday tasks",
+    image: "cash_stacks.png",
+    layout: "split",
+  },
+  {
+    startSec: 113.12,
+    endSec: 113.58,
+    title: "OVERKILL",
+    subtitle: "Genuinely too much capacity for simple questions",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 113.58,
+    endSec: 116.0,
+    title: "DAILY DRIVER?",
+    subtitle: "It isn't actually meant to be your main choice",
+    image: "laptop.png",
+    layout: "split",
+  },
+  {
+    startSec: 116.0,
+    endSec: 118.72,
+    title: "THE MID-TIER",
+    subtitle: "Making the balanced option look perfect",
+    image: "storage_phone.png",
+    layout: "center",
+  },
+  {
+    startSec: 118.72,
+    endSec: 119.85,
+    title: "BALANCED OPTION",
+    subtitle: "The smart, sensible, obvious plan",
+    image: "storage_phone.png",
+    layout: "center",
+    color: THEME.accentBlue,
+  },
+  {
+    startSec: 119.85,
+    endSec: 121.44,
+    title: "NOT PRO POWER",
+    subtitle: "You tell yourself: I don't need all that pro speed",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 121.44,
+    endSec: 122.88,
+    title: "MID-TIER WIN",
+    subtitle: "Exactly what they wanted you to click",
+    image: "cash_stacks.png",
+    layout: "split",
+  },
+  {
+    startSec: 122.88,
+    endSec: 125.51,
+    title: "CONGRATULATIONS",
+    subtitle: "You just ordered the decoy-pricing option",
+    image: "tech_founder_1.png",
+    layout: "split",
+  },
+  {
+    startSec: 125.51,
+    endSec: 127.12,
+    title: "BUDGET TIERS",
+    subtitle: "And the cheap models? Not charity either",
+    image: "cash_stacks.png",
+    layout: "center",
+  },
+  {
+    startSec: 127.96,
+    endSec: 133.04,
+    title: "THE FREE LEVEL",
+    subtitle: "Hooking you into their workflow layout",
+    image: "storage_phone.png",
+    layout: "phone",
+  },
+  {
+    startSec: 133.04,
+    endSec: 134.68,
+    title: "FREE TRIALS",
+    subtitle: "A trial run disguised as a free model",
+    image: "cash_stacks.png",
+    layout: "split",
+  },
+  {
+    startSec: 134.68,
+    endSec: 137.36,
+    title: "HABIT LOOPS",
+    subtitle: "Forming the behavior pattern in your daily work",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 137.36,
+    endSec: 139.05,
+    title: "AI vs GOOGLE",
+    subtitle: "Asking the model instead of searching the web",
+    image: "laptop.png",
+    layout: "split",
+  },
+  {
+    startSec: 139.05,
+    endSec: 140.37,
+    title: "SECOND NATURE",
+    subtitle: "Upgrading becomes a natural next choice",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 140.37,
+    endSec: 142.88,
+    title: "NATURAL STEP",
+    subtitle: "Making upgrading feel seamless and friction-free",
+    image: "cash_stacks.png",
+    layout: "split",
+  },
+  {
+    startSec: 142.88,
+    endSec: 144.83,
+    title: "CAR TRIM LAYERS",
+    subtitle: "The standard automotive retail strategy",
+    image: "basic_car.png",
+    layout: "car",
+  },
+  {
+    startSec: 144.83,
+    endSec: 147.14,
+    title: "BASE MODEL",
+    subtitle: "Designed just to get you from point A to B",
+    image: "basic_car.png",
+    layout: "car",
+  },
+  {
+    startSec: 147.14,
+    endSec: 148.64,
+    title: "MID RANGE TRIM",
+    subtitle: "Adding features you actually care about",
+    image: "basic_car.png",
+    layout: "car",
+  },
+  {
+    startSec: 148.64,
+    endSec: 151.32,
+    title: "PREMIUM SPECS",
+    subtitle: "Good speakers, comfortable seats, cruise control",
+    image: "basic_car.png",
+    layout: "car",
+  },
+  {
+    startSec: 151.32,
+    endSec: 153.44,
+    title: "TOP RANGE SECS",
+    subtitle: "Features 90% of drivers will never touch",
+    image: "basic_car.png",
+    layout: "car",
+  },
+  {
+    startSec: 153.44,
+    endSec: 157.63,
+    title: "FEELING CHEAP",
+    subtitle: "Because nobody wants to feel like the budget buyer",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 157.63,
+    endSec: 157.9,
+    title: "PHONE STORAGE",
+    subtitle: "64 GB vs 256 GB vs 1 TB",
+    image: "storage_phone.png",
+    layout: "phone",
+  },
+  {
+    startSec: 157.9,
+    endSec: 158.96,
+    title: "PRICE INCREMENTS",
+    subtitle: "Never proportional to the physical cost of flash memory",
+    image: "cash_stacks.png",
+    layout: "split",
+  },
+  {
+    startSec: 158.96,
+    endSec: 160.4,
+    title: "MINIMAL COST",
+    subtitle: "Adding more flash memory costs the manufacturer pennies",
+    image: "gpu_core.png",
+    layout: "split",
+  },
+  {
+    startSec: 160.4,
+    endSec: 161.62,
+    title: "PSYCHOLOGY GAP",
+    subtitle: "Paying for the gap between enough and plenty",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 161.62,
+    endSec: 164.08,
+    title: "COMPUTE SCALES",
+    subtitle: "The model performance difference is real",
+    image: "gpu_core.png",
+    layout: "split",
+  },
+  {
+    startSec: 164.08,
+    endSec: 164.66,
+    title: "ENGINEERED PRICING",
+    subtitle: "Calculated to manipulate choices, not reflect costs",
+    image: "cash_stacks.png",
+    layout: "center",
+    color: THEME.accentRed,
+  },
+  {
+    startSec: 164.66,
+    endSec: 167.09,
+    title: "THE SILENT REASON",
+    subtitle: "A quieter rationale behind model architecture",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 167.09,
+    endSec: 168.55,
+    title: "DIFFERENT TASKS",
+    subtitle: "Simple queries don't need complex thinking engines",
+    image: "gpu_core.png",
+    layout: "split",
+  },
+  {
+    startSec: 168.55,
+    endSec: 170.3,
+    title: "SUMMARIZE EMAIL",
+    subtitle: "Doesn't require supercomputing mainframe power",
+    image: "laptop.png",
+    layout: "split",
+  },
+  {
+    startSec: 170.3,
+    endSec: 173.42,
+    title: "RESEARCH SYSTEMS",
+    subtitle: "Needs the flagship horsepower to run search pipelines",
+    image: "data_center.png",
+    layout: "fullscreen",
+  },
+  {
+    startSec: 173.42,
+    endSec: 174.13,
+    title: "MATCHING JOBS",
+    subtitle: "The tiers do serve a real mechanical function",
+    image: "gpu_core.png",
+    layout: "center",
+  },
+  {
+    startSec: 174.13,
+    endSec: 175.04,
+    title: "CHEAP ROUTING",
+    subtitle: "Redirecting simple queries to small, cheap models",
+    image: "cash_stacks.png",
+    layout: "split",
+  },
+  {
+    startSec: 175.04,
+    endSec: 176.05,
+    title: "SAVING FLAGSHIP POWER",
+    subtitle: "Saving heavy compute for hard complex tasks",
+    image: "gpu_core.png",
+    layout: "split",
+  },
+  {
+    startSec: 176.05,
+    endSec: 179.28,
+    title: "EFFICIENT PLUMBING",
+    subtitle: "This part is just logical infrastructure layout",
+    image: "data_center.png",
+    layout: "fullscreen",
+  },
+  {
+    startSec: 179.34,
+    endSec: 182.71,
+    title: "NOT MANIPULATION",
+    subtitle: "But that doesn't explain the marketing",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 182.71,
+    endSec: 184.19,
+    title: "NOT THE WHOLE STORY",
+    subtitle: "If it were purely matching tasks to hardware...",
+    image: "gpu_core.png",
+    layout: "split",
+  },
+  {
+    startSec: 184.19,
+    endSec: 186.64,
+    title: "NO PRICING LAYERS",
+    subtitle: "We wouldn't see three priced tiers compared on a menu",
+    image: "cash_stacks.png",
+    layout: "center",
+  },
+  {
+    startSec: 186.64,
+    endSec: 188.83,
+    title: "AUTOMATIC ROUTING",
+    subtitle: "It would all happen invisibly behind the scenes",
+    image: "data_center.png",
+    layout: "fullscreen",
+  },
+  {
+    startSec: 188.83,
+    endSec: 190.87,
+    title: "INVISIBLE COMPUTING",
+    subtitle: "But they want you to see, choose, and buy",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 190.87,
+    endSec: 194.31,
+    title: "SHOWING THE TIERS",
+    subtitle: "Naming them, pricing them, letting you choose",
+    image: "storage_phone.png",
+    layout: "phone",
+  },
+  {
+    startSec: 194.31,
+    endSec: 194.69,
+    title: "NOT COGNITIVE EFFICIENCY",
+    subtitle: "This is deliberate retail layout positioning",
+    image: "cash_stacks.png",
+    layout: "split",
+  },
+  {
+    startSec: 194.69,
+    endSec: 195.24,
+    title: "IT'S A MENU",
+    subtitle: "And menus are never neutral choices",
+    image: "steak.png",
+    layout: "decoy",
+  },
+  {
+    startSec: 195.24,
+    endSec: 197.4,
+    title: "DESIGNED MENUS",
+    subtitle: "Engineered to drive you directly to the middle tier",
+    image: "pasta.png",
+    layout: "decoy",
+  },
+  {
+    startSec: 197.4,
+    endSec: 198.94,
+    title: "THE OBVIOUS CHOICE",
+    subtitle: "Steering you to Sonnet, Pro, or Medium options",
+    image: "thinking_silhouette.png",
+    layout: "center",
+  },
+  {
+    startSec: 198.94,
+    endSec: 200.86,
+    title: "WHO CHOSE?",
+    subtitle: "Ask yourself who really decided what is balanced",
+    image: "tech_founder_1.png",
+    layout: "split",
+  },
+  {
+    startSec: 200.86,
+    endSec: 263.66, // Fills out the remainder of the timeline
+    title: "YOUR DECISION?",
+    subtitle: "Because it probably wasn't you.",
+    image: "thinking_silhouette.png",
+    layout: "center",
+    color: THEME.accentRed,
+  },
+];
+
+// ── GLOBAL LAYOUT WRAPPERS FOR DIFFERENT SHOT LAYOUTS
+
+const WidescreenShotLayout: React.FC<{ shot: Shot; frame: number }> = ({
+  shot,
+  frame,
+}) => {
+  const imageScale = spring({ frame, fps: 30, config: { damping: 15 } });
+
+  // Center alignment wrapper
+  if (shot.layout === "center") {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "space-between",
+          padding: "100px 50px 280px 50px",
+        }}
+      >
+        <h1
+          style={{
+            fontFamily: "Impact, 'Arial Black', sans-serif",
+            fontSize: "110px",
+            color: shot.color || THEME.accentRed,
+            textTransform: "uppercase",
+            textAlign: "center",
+            marginTop: "20px",
+          }}
+        >
+          {shot.title}
+        </h1>
+        {shot.image && (
+          <div style={{ position: "relative" }}>
+            <div
+              style={{
+                position: "absolute",
+                width: "350px",
+                height: "350px",
+                borderRadius: "50%",
+                backgroundColor: "rgba(26,26,26,0.1)",
+                zIndex: -1,
+                top: 0,
+                left: 0,
+              }}
+            />
+            <Img
+              src={staticFile(shot.image)}
+              style={{
+                height: "380px",
+                objectFit: "contain",
+                transform: `scale(${imageScale})`,
+              }}
+              alt={shot.title}
+            />
+          </div>
+        )}
+        <p
+          style={{
+            fontFamily: "Arial, sans-serif",
+            fontSize: "36px",
+            fontWeight: "bold",
+            color: THEME.textDark,
+            textAlign: "center",
+            maxWidth: "1000px",
+            lineHeight: "1.4",
+          }}
+        >
+          {shot.subtitle}
+        </p>
+      </div>
+    );
+  }
+
+  // Split-screen wrapper
+  if (shot.layout === "split") {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "80px",
+          padding: "100px 80px 280px 80px",
+        }}
+      >
+        {shot.image && (
+          <div style={{ position: "relative", flexShrink: 0 }}>
+            <div
+              style={{
+                position: "absolute",
+                width: "400px",
+                height: "400px",
+                borderRadius: "50%",
+                backgroundColor: shot.color || THEME.accentBlue,
+                zIndex: -1,
+                top: 30,
+                left: 20,
+              }}
+            />
+            <Img
+              src={staticFile(shot.image)}
+              style={{
+                height: "480px",
+                width: "480px",
+                objectFit: "contain",
+                transform: `scale(${imageScale})`,
+              }}
+              alt={shot.title}
+            />
+          </div>
+        )}
+        <div style={{ display: "flex", flexDirection: "column", gap: "25px" }}>
+          {shot.badge && (
+            <div
+              style={{
+                background: THEME.textDark,
+                color: THEME.white,
+                padding: "10px 25px",
+                fontSize: "24px",
+                fontFamily: "Impact, sans-serif",
+                alignSelf: "flex-start",
+                borderRadius: "5px",
+              }}
+            >
+              {shot.badge}
+            </div>
+          )}
+          <h1
+            style={{
+              fontFamily: "Impact, sans-serif",
+              fontSize: "90px",
+              color: THEME.textDark,
+              textTransform: "uppercase",
+              lineHeight: "1.0",
+            }}
+          >
+            {shot.title}
+          </h1>
+          <p
+            style={{
+              fontFamily: "Arial, sans-serif",
+              fontSize: "36px",
+              fontWeight: "bold",
+              color: THEME.textGray,
+              lineHeight: "1.4",
+              maxWidth: "700px",
+            }}
+          >
+            {shot.subtitle}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // Full-screen / backdrop view
+  if (shot.layout === "fullscreen") {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
+        {shot.image && (
+          <Img
+            src={staticFile(shot.image)}
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+              opacity: 0.25,
+            }}
+            alt={shot.title}
+          />
+        )}
+        <div
+          style={{
+            zIndex: 10,
+            textAlign: "center",
+            padding: "50px",
+            background: "rgba(255, 255, 255, 0.9)",
+            border: `5px solid ${THEME.textDark}`,
+            borderRadius: "20px",
+            boxShadow: "20px 20px 0px rgba(0,0,0,0.15)",
+            maxWidth: "1000px",
+          }}
+        >
+          <h1
+            style={{
+              fontFamily: "Impact, sans-serif",
+              fontSize: "110px",
+              color: THEME.accentRed,
+              textTransform: "uppercase",
+              marginBottom: "20px",
+            }}
+          >
+            {shot.title}
+          </h1>
+          <p
+            style={{
+              fontFamily: "Arial, sans-serif",
+              fontSize: "40px",
+              fontWeight: "bold",
+              color: THEME.textDark,
+              lineHeight: "1.4",
+            }}
+          >
+            {shot.subtitle}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // Decoy/Restaurant layout
+  if (shot.layout === "decoy") {
+    return (
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          flexDirection: "row",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "80px",
+          padding: "100px 50px 280px 50px",
+        }}
+      >
+        {/* Menu Board card */}
+        <div
+          style={{
+            background: THEME.white,
+            border: `5px solid ${THEME.textDark}`,
+            borderRadius: "20px",
+            width: "480px",
+            padding: "35px",
+            boxShadow: "15px 15px 0px rgba(0,0,0,0.15)",
+          }}
+        >
+          <h2
+            style={{
+              fontFamily: "Impact, sans-serif",
+              fontSize: "38px",
+              borderBottom: `3px solid ${THEME.textDark}`,
+              paddingBottom: "10px",
+              marginBottom: "25px",
+              textAlign: "center",
+            }}
+          >
+            MENU ANCHORING
+          </h2>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              gap: "20px",
+              fontFamily: "Arial, sans-serif",
+              fontWeight: "bold",
+              fontSize: "24px",
+            }}
+          >
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                border:
+                  shot.title.includes("STEAK") || shot.title.includes("DECOY")
+                    ? `4px solid ${THEME.accentRed}`
+                    : "none",
+                padding: "8px",
+                borderRadius: "5px",
+              }}
+            >
+              <span>🥩 $80 STEAK</span>
+              <span style={{ color: THEME.accentRed }}>DECOY</span>
+            </div>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "space-between",
+                border: shot.title.includes("PASTA")
+                  ? `4px solid ${THEME.accentBlue}`
+                  : "none",
+                padding: "8px",
+                borderRadius: "5px",
+              }}
+            >
+              <span>🍝 $30 PASTA</span>
+              <span style={{ color: THEME.accentBlue }}>STEAL</span>
+            </div>
+            <div style={{ display: "flex", justifyContent: "space-between" }}>
+              <span>🥗 $15 SALAD</span>
+              <span>CHEAP</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Graphic side */}
+        <div style={{ display: "flex", flexDirection: "column", gap: "25px" }}>
+          <h1
+            style={{
+              fontFamily: "Impact, sans-serif",
+              fontSize: "80px",
+              color: THEME.accentRed,
+              textTransform: "uppercase",
+            }}
+          >
+            {shot.title}
+          </h1>
+          {shot.image && (
+            <Img
+              src={staticFile(shot.image)}
+              style={{
+                height: "280px",
+                width: "280px",
+                objectFit: "contain",
+                transform: `scale(${imageScale})`,
+                alignSelf: "center",
+              }}
+              alt={shot.title}
+            />
+          )}
+          <p
+            style={{
+              fontFamily: "Arial, sans-serif",
+              fontSize: "30px",
+              fontWeight: "bold",
+              color: THEME.textGray,
+              maxWidth: "500px",
+            }}
+          >
+            {shot.subtitle}
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // Generic backup layout
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        padding: "100px 50px 280px 50px",
+      }}
+    >
+      <h1
+        style={{
+          fontFamily: "Impact, sans-serif",
+          fontSize: "90px",
+          color: THEME.textDark,
+        }}
+      >
+        {shot.title}
+      </h1>
+      <p style={{ fontSize: "36px", fontWeight: "bold" }}>{shot.subtitle}</p>
+    </div>
+  );
+};
+
+// ── MAIN PORTRAIT LAYOUT WRAPPERS (FOR SHORTS / VERTICAL)
+
+const PortraitShotLayout: React.FC<{ shot: Shot; frame: number }> = ({
+  shot,
+  frame,
+}) => {
+  const imageScale = spring({ frame, fps: 30, config: { damping: 15 } });
+
+  return (
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "space-between",
+        padding: "150px 40px 320px 40px",
+        textAlign: "center",
+      }}
+    >
+      <h1
+        style={{
+          fontFamily: "Impact, 'Arial Black', sans-serif",
+          fontSize: "80px",
+          color: shot.color || THEME.accentRed,
+          textTransform: "uppercase",
+          lineHeight: "1.1",
+        }}
+      >
+        {shot.title}
+      </h1>
+
+      {shot.image && (
+        <div style={{ position: "relative" }}>
+          <div
+            style={{
+              position: "absolute",
+              width: "300px",
+              height: "300px",
+              borderRadius: "50%",
+              backgroundColor: shot.color || "rgba(26,26,26,0.1)",
+              zIndex: -1,
+              top: 10,
+              left: 10,
+            }}
+          />
+          <Img
+            src={staticFile(shot.image)}
+            style={{
+              height: "380px",
+              width: "380px",
+              objectFit: "contain",
+              transform: `scale(${imageScale})`,
+            }}
+            alt={shot.title}
+          />
+        </div>
+      )}
+
+      <div
+        style={{
+          background: THEME.white,
+          border: `4px solid ${THEME.textDark}`,
+          borderRadius: "15px",
+          padding: "20px 25px",
+          boxShadow: "10px 10px 0px rgba(0,0,0,0.15)",
+          width: "100%",
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "Arial, sans-serif",
+            fontSize: "30px",
+            fontWeight: "bold",
+            color: THEME.textDark,
+            lineHeight: "1.3",
+          }}
+        >
+          {shot.subtitle}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+// Drifting background texture (Universal)
 const UniversalBackground: React.FC = () => {
   const frame = useCurrentFrame();
   const { width, height } = useVideoConfig();
 
-  // Create a subtle Ken Burns pan
   const scale = interpolate(frame, [0, 8000], [1.02, 1.15], {
     extrapolateRight: "clamp",
   });
@@ -70,9 +1367,9 @@ const DynamicSubtitles: React.FC<{ currentTime: number }> = ({
 
   const currentMs = currentTime * 1000;
 
-  // Find active words in a 3-second window
+  // Find active words in a 3.5-second window
   const activeWords = (subtitlesData as SubtitleWord[]).filter(
-    (w) => currentMs >= w.startMs - 300 && currentMs <= w.endMs + 300
+    (w) => currentMs >= w.startMs - 350 && currentMs <= w.endMs + 350
   );
 
   // Find current active word
@@ -134,836 +1431,6 @@ const DynamicSubtitles: React.FC<{ currentTime: number }> = ({
   );
 };
 
-// ── SCENE 1: The Three Tier Mystery (0.0s - 24.9s)
-const Scene1ThreeTiers: React.FC<{ frame: number; isWidescreen: boolean }> = ({
-  frame,
-  isWidescreen,
-}) => {
-  const currentSec = frame / 30;
-
-  // Visual offsets
-  const leftFounderY = spring({
-    frame: frame - 120,
-    fps: 30,
-    config: { damping: 15 },
-  });
-  const rightFounderY = spring({
-    frame: frame - 180,
-    fps: 30,
-    config: { damping: 15 },
-  });
-
-  const headingOpacity = interpolate(frame, [0, 20], [0, 1], {
-    extrapolateRight: "clamp",
-  });
-  const headingScale = interpolate(frame, [0, 45], [0.8, 1], {
-    extrapolateRight: "clamp",
-  });
-
-  // Animated quote bubble
-  const quote1Scale = spring({ frame: frame - 150, fps: 30 });
-  const quote2Scale = spring({ frame: frame - 210, fps: 30 });
-
-  return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "100px 50px 250px 50px",
-        position: "relative",
-      }}
-    >
-      {/* Top Header */}
-      <h1
-        style={{
-          fontFamily: "Impact, 'Arial Black', sans-serif",
-          fontSize: isWidescreen ? "130px" : "90px",
-          color: THEME.accentRed,
-          textAlign: "center",
-          textTransform: "uppercase",
-          letterSpacing: "2px",
-          opacity: headingOpacity,
-          scale: headingScale,
-          marginTop: isWidescreen ? "0" : "80px",
-        }}
-      >
-        AI MODEL TIERS?
-      </h1>
-
-      {/* Sub-scenarios based on timings */}
-      {currentSec < 11.7 ? (
-        // Cutout character view
-        <div
-          style={{
-            display: "flex",
-            flexDirection: isWidescreen ? "row" : "column",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: "100px",
-            width: "100%",
-          }}
-        >
-          {/* Founder 1 (Left) */}
-          <div
-            style={{
-              position: "relative",
-              transform: `translateY(${(1 - leftFounderY) * 600}px)`,
-            }}
-          >
-            {/* Red backdrop circle */}
-            <div
-              style={{
-                position: "absolute",
-                width: isWidescreen ? "350px" : "280px",
-                height: isWidescreen ? "350px" : "280px",
-                borderRadius: "50%",
-                backgroundColor: THEME.accentRed,
-                zIndex: -1,
-                top: 50,
-                left: 20,
-              }}
-            />
-            <Img
-              src={staticFile("tech_founder_1.png")}
-              style={{
-                height: isWidescreen ? "450px" : "350px",
-                objectFit: "contain",
-              }}
-              alt="Bezos-like figure"
-            />
-            {/* Quote Bubble */}
-            <div
-              style={{
-                position: "absolute",
-                top: -50,
-                right: -80,
-                background: THEME.white,
-                border: `3px solid ${THEME.textDark}`,
-                borderRadius: "15px",
-                padding: "15px 25px",
-                fontFamily: "Arial, sans-serif",
-                fontSize: "24px",
-                fontWeight: "bold",
-                transform: `scale(${quote1Scale})`,
-                boxShadow: "5px 5px 0px rgba(0,0,0,0.15)",
-              }}
-            >
-              "Industrial Bubble"
-            </div>
-          </div>
-
-          {/* Founder 2 (Right) */}
-          <div
-            style={{
-              position: "relative",
-              transform: `translateY(${(1 - rightFounderY) * 600}px)`,
-            }}
-          >
-            <div
-              style={{
-                position: "absolute",
-                width: isWidescreen ? "350px" : "280px",
-                height: isWidescreen ? "350px" : "280px",
-                borderRadius: "50%",
-                backgroundColor: THEME.accentBlue,
-                zIndex: -1,
-                top: 50,
-                left: 20,
-              }}
-            />
-            <Img
-              src={staticFile("tech_founder_2.png")}
-              style={{
-                height: isWidescreen ? "450px" : "350px",
-                objectFit: "contain",
-              }}
-              alt="Gates-like figure"
-            />
-            <div
-              style={{
-                position: "absolute",
-                top: -50,
-                left: -80,
-                background: THEME.white,
-                border: `3px solid ${THEME.textDark}`,
-                borderRadius: "15px",
-                padding: "15px 25px",
-                fontFamily: "Arial, sans-serif",
-                fontSize: "24px",
-                fontWeight: "bold",
-                transform: `scale(${quote2Scale})`,
-                boxShadow: "-5px 5px 0px rgba(0,0,0,0.15)",
-              }}
-            >
-              "Financial Bubble"
-            </div>
-          </div>
-        </div>
-      ) : (
-        // The three boxes animation (Large, Medium, Small models comparison)
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "flex-end",
-            gap: "50px",
-            width: "100%",
-            height: "400px",
-          }}
-        >
-          {["CHEAP", "BALANCED", "PRO"].map((tier, idx) => {
-            const delay = 350 + idx * 10;
-            const boxScale = spring({ frame: frame - delay, fps: 30 });
-            return (
-              <div
-                key={tier}
-                style={{
-                  background:
-                    idx === 1
-                      ? THEME.accentRed
-                      : idx === 2
-                        ? THEME.accentBlue
-                        : THEME.white,
-                  color: idx === 0 ? THEME.textDark : THEME.white,
-                  border: `4px solid ${THEME.textDark}`,
-                  borderRadius: "20px",
-                  width: isWidescreen ? "260px" : "200px",
-                  height: `${180 + idx * 80}px`,
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  padding: "30px 10px",
-                  transform: `scale(${boxScale})`,
-                  boxShadow: "10px 10px 0px rgba(0,0,0,0.15)",
-                }}
-              >
-                <div
-                  style={{
-                    fontFamily: "Impact, sans-serif",
-                    fontSize: "36px",
-                  }}
-                >
-                  {tier}
-                </div>
-                <div
-                  style={{
-                    fontFamily: "Arial, sans-serif",
-                    fontWeight: "bold",
-                    fontSize: "22px",
-                  }}
-                >
-                  {idx === 0 ? "$0.00" : idx === 1 ? "$20.00" : "$80.00"}
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      )}
-    </div>
-  );
-};
-
-// ── SCENE 2: Giga Compute Costs (24.9s - 61.3s)
-const Scene2ComputeCosts: React.FC<{
-  frame: number;
-  isWidescreen: boolean;
-}> = ({ frame, isWidescreen }) => {
-
-  // Component enters
-  const gigaScale = spring({ frame, fps: 30 });
-  const meterVal = interpolate(frame, [150, 450], [10, 100], {
-    extrapolateRight: "clamp",
-    extrapolateLeft: "clamp",
-  });
-
-  return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        flexDirection: isWidescreen ? "row" : "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "80px",
-        padding: "100px 50px 250px 50px",
-      }}
-    >
-      {/* GPU Graphic Side */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          scale: `${gigaScale}`,
-        }}
-      >
-        <div
-          style={{
-            position: "relative",
-          }}
-        >
-          {/* Pulsing halo */}
-          <div
-            style={{
-              position: "absolute",
-              width: "380px",
-              height: "380px",
-              borderRadius: "50%",
-              backgroundColor: "rgba(211, 47, 47, 0.2)",
-              scale: `${1.1 + Math.sin(frame * 0.1) * 0.05}`,
-              zIndex: -1,
-              top: -20,
-              left: -20,
-            }}
-          />
-          <Img
-            src={staticFile("gpu_core.png")}
-            style={{
-              width: isWidescreen ? "340px" : "280px",
-              height: isWidescreen ? "340px" : "280px",
-              objectFit: "contain",
-            }}
-            alt="GPU Core"
-          />
-        </div>
-        <h2
-          style={{
-            fontFamily: "Impact, sans-serif",
-            fontSize: "64px",
-            color: THEME.textDark,
-            marginTop: "30px",
-            textAlign: "center",
-          }}
-        >
-          GPU POWER HOUSE
-        </h2>
-      </div>
-
-      {/* Stats Meter Box */}
-      <div
-        style={{
-          background: THEME.white,
-          border: `5px solid ${THEME.textDark}`,
-          borderRadius: "20px",
-          width: isWidescreen ? "550px" : "90%",
-          padding: "40px 30px",
-          boxShadow: "15px 15px 0px rgba(0,0,0,0.15)",
-          display: "flex",
-          flexDirection: "column",
-          gap: "25px",
-        }}
-      >
-        <div>
-          <div
-            style={{
-              fontFamily: "Arial, sans-serif",
-              fontWeight: "bold",
-              fontSize: "26px",
-              color: THEME.textGray,
-              display: "flex",
-              justifyContent: "space-between",
-            }}
-          >
-            <span>POWER CONSUMPTION</span>
-            <span style={{ color: THEME.accentRed }}>{meterVal.toFixed(0)}%</span>
-          </div>
-          {/* Progress bar container */}
-          <div
-            style={{
-              width: "100%",
-              height: "30px",
-              backgroundColor: "#e0e0e0",
-              borderRadius: "15px",
-              marginTop: "10px",
-              overflow: "hidden",
-              border: `2px solid ${THEME.textDark}`,
-            }}
-          >
-            <div
-              style={{
-                width: `${meterVal}%`,
-                height: "100%",
-                backgroundColor: THEME.accentRed,
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Dynamic labels */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px",
-            fontFamily: "Impact, sans-serif",
-            fontSize: "36px",
-            color: THEME.textDark,
-          }}
-        >
-          <div style={{ opacity: frame > 100 ? 1 : 0.1 }}>
-            💸 STUPID AMOUNT OF CASH
-          </div>
-          <div style={{ opacity: frame > 250 ? 1 : 0.1 }}>
-            ⚡ CITY-SIZE ELECTRICITY
-          </div>
-          <div style={{ opacity: frame > 400 ? 1 : 0.1 }}>
-            🛑 GENUINELY EXPENSIVE
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// ── SCENE 3: The Psychology of Anchoring (61.3s - 127.9s)
-const Scene3Anchoring: React.FC<{ frame: number; isWidescreen: boolean }> = ({ frame, isWidescreen }) => {
-
-  // Slide timelines offsets
-  const leftMenuX = spring({ frame, fps: 30, config: { damping: 14 } });
-  const circleHighlighter = spring({ frame: frame - 150, fps: 30 });
-
-  return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        flexDirection: isWidescreen ? "row" : "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "80px",
-        padding: "100px 50px 250px 50px",
-      }}
-    >
-      {/* Left Menu Board */}
-      <div
-        style={{
-          background: THEME.white,
-          border: `5px solid ${THEME.textDark}`,
-          borderRadius: "20px",
-          width: isWidescreen ? "500px" : "90%",
-          padding: "40px",
-          boxShadow: "15px 15px 0px rgba(0,0,0,0.15)",
-          transform: `translateX(${(1 - leftMenuX) * -600}px)`,
-          position: "relative",
-        }}
-      >
-        {/* Highlighter circle overlay on the top item */}
-        <div
-          style={{
-            position: "absolute",
-            border: `6px solid ${THEME.accentRed}`,
-            borderRadius: "50%",
-            width: "440px",
-            height: "90px",
-            top: "135px",
-            left: "25px",
-            transform: `scale(${circleHighlighter})`,
-            pointerEvents: "none",
-            opacity: circleHighlighter,
-          }}
-        />
-
-        <h2
-          style={{
-            fontFamily: "Impact, sans-serif",
-            fontSize: "48px",
-            textAlign: "center",
-            borderBottom: `4px solid ${THEME.textDark}`,
-            paddingBottom: "15px",
-            marginBottom: "30px",
-          }}
-        >
-          MENU ANCHORING
-        </h2>
-
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "25px",
-            fontFamily: "Arial, sans-serif",
-            fontWeight: "bold",
-            fontSize: "28px",
-          }}
-        >
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <span>🥩 80$ STAKE (ANCHOR)</span>
-            <span style={{ color: THEME.accentRed }}>OUTRAGEOUS</span>
-          </div>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              backgroundColor: "rgba(25, 118, 210, 0.15)",
-              padding: "10px",
-              borderRadius: "10px",
-            }}
-          >
-            <span>🍝 30$ PASTA</span>
-            <span style={{ color: THEME.accentBlue }}>BEST SELLER</span>
-          </div>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <span>🥗 15$ SALAD</span>
-            <span>CHEAP</span>
-          </div>
-        </div>
-      </div>
-
-      {/* Right Anchoring explanation */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: isWidescreen ? "flex-start" : "center",
-          justifyContent: "center",
-          maxWidth: "600px",
-        }}
-      >
-        <div
-          style={{
-            background: THEME.accentRed,
-            color: THEME.white,
-            padding: "15px 30px",
-            fontSize: "36px",
-            fontFamily: "Impact, sans-serif",
-            transform: "rotate(-3deg)",
-            boxShadow: "5px 5px 0px rgba(0,0,0,0.15)",
-          }}
-        >
-          DECOY EFFECT
-        </div>
-        <p
-          style={{
-            fontFamily: "Arial, sans-serif",
-            fontSize: "36px",
-            fontWeight: "bold",
-            color: THEME.textDark,
-            marginTop: "30px",
-            lineHeight: "1.4",
-            textAlign: isWidescreen ? "left" : "center",
-          }}
-        >
-          "The most expensive model exists only to make the middle option look
-          balanced and smart."
-        </p>
-      </div>
-    </div>
-  );
-};
-
-// ── SCENE 4: The Storage Trap (127.9s - 190.8s)
-const Scene4StorageTrap: React.FC<{ frame: number; isWidescreen: boolean }> = ({ frame, isWidescreen }) => {
-
-  // Animations
-  const phoneScale = spring({ frame, fps: 30 });
-  const cashSlideY = spring({ frame: frame - 150, fps: 30 });
-
-  return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        flexDirection: isWidescreen ? "row" : "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "80px",
-        padding: "100px 50px 250px 50px",
-      }}
-    >
-      {/* Phone Storage graphics */}
-      <div
-        style={{
-          position: "relative",
-          scale: `${phoneScale}`,
-        }}
-      >
-        <Img
-          src={staticFile("storage_phone.png")}
-          style={{
-            width: isWidescreen ? "350px" : "280px",
-            height: isWidescreen ? "350px" : "280px",
-            objectFit: "contain",
-          }}
-          alt="Storage Phone"
-        />
-        {/* Tiers labels floating next to the phone */}
-        <div
-          style={{
-            position: "absolute",
-            top: -20,
-            right: -60,
-            background: THEME.accentBlue,
-            color: THEME.white,
-            borderRadius: "15px",
-            padding: "10px 20px",
-            fontSize: "24px",
-            fontFamily: "Impact, sans-serif",
-          }}
-        >
-          1 TB Storage
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            bottom: 40,
-            left: -60,
-            background: THEME.accentRed,
-            color: THEME.white,
-            borderRadius: "15px",
-            padding: "10px 20px",
-            fontSize: "24px",
-            fontFamily: "Impact, sans-serif",
-          }}
-        >
-          64 GB Base
-        </div>
-      </div>
-
-      {/* Cash stacks and calculations */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          transform: `translateY(${(1 - cashSlideY) * 400}px)`,
-        }}
-      >
-        <Img
-          src={staticFile("cash_stacks.png")}
-          style={{
-            width: isWidescreen ? "300px" : "220px",
-            height: isWidescreen ? "300px" : "220px",
-            objectFit: "contain",
-          }}
-          alt="Cash stacks"
-        />
-        <div
-          style={{
-            background: THEME.white,
-            border: `4px solid ${THEME.textDark}`,
-            borderRadius: "15px",
-            padding: "20px 30px",
-            fontFamily: "Arial, sans-serif",
-            fontWeight: "bold",
-            fontSize: "24px",
-            boxShadow: "8px 8px 0px rgba(0,0,0,0.15)",
-            textAlign: "center",
-            marginTop: "20px",
-          }}
-        >
-          🚨 PSYCHOLOGICAL VALUE GAP
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// ── SCENE 5: Invisible Plumbing / Routing (190.8s - 229.6s)
-const Scene5Routing: React.FC<{ frame: number; isWidescreen: boolean }> = ({ frame, isWidescreen }) => {
-
-  // Animations
-  const mapScale = spring({ frame, fps: 30 });
-  const pulseRadar = interpolate(frame, [60, 200], [0.8, 1.3], {
-    extrapolateRight: "clamp",
-  });
-
-  return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        flexDirection: isWidescreen ? "row" : "column",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: "80px",
-        padding: "100px 50px 250px 50px",
-      }}
-    >
-      {/* Globe side */}
-      <div
-        style={{
-          position: "relative",
-          scale: `${mapScale}`,
-        }}
-      >
-        <div
-          style={{
-            position: "absolute",
-            width: "350px",
-            height: "350px",
-            borderRadius: "50%",
-            border: `4px solid ${THEME.accentBlue}`,
-            scale: `${pulseRadar}`,
-            opacity: interpolate(frame, [60, 200], [1, 0]),
-            top: 0,
-            left: 0,
-          }}
-        />
-        <Img
-          src={staticFile("earth_globe.png")}
-          style={{
-            width: isWidescreen ? "350px" : "280px",
-            height: isWidescreen ? "350px" : "280px",
-            objectFit: "contain",
-          }}
-          alt="Earth Globe"
-        />
-      </div>
-
-      {/* Plumbing visual routing board */}
-      <div
-        style={{
-          background: THEME.white,
-          border: `5px solid ${THEME.textDark}`,
-          borderRadius: "20px",
-          width: isWidescreen ? "550px" : "90%",
-          padding: "45px 35px",
-          boxShadow: "15px 15px 0px rgba(0,0,0,0.15)",
-        }}
-      >
-        <h3
-          style={{
-            fontFamily: "Impact, sans-serif",
-            fontSize: "44px",
-            marginBottom: "25px",
-            color: THEME.accentBlue,
-          }}
-        >
-          EFFICIENT PLUMBING
-        </h3>
-        <p
-          style={{
-            fontFamily: "Arial, sans-serif",
-            fontSize: "26px",
-            fontWeight: "bold",
-            color: THEME.textDark,
-            lineHeight: "1.5",
-          }}
-        >
-          Route cheap, simple email requests to cheap models, and save expensive
-          power for hard research.
-        </p>
-
-        {/* Dynamic diagram mapping lines */}
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "15px",
-            marginTop: "30px",
-            fontFamily: "Impact, sans-serif",
-            fontSize: "26px",
-          }}
-        >
-          <div style={{ color: THEME.accentBlue }}>
-            📧 Summarize Email ➔ HAIKU / MINI
-          </div>
-          <div style={{ color: THEME.accentRed }}>
-            🔬 Code Synthesis ➔ OPUS / PRO
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-// ── SCENE 6: Conclusion (229.6s - 263.6s)
-const Scene6Conclusion: React.FC<{ frame: number; isWidescreen: boolean }> = ({ frame, isWidescreen }) => {
-
-  // Animations
-  const finalReveal = spring({ frame, fps: 30 });
-  const quoteScale = spring({ frame: frame - 150, fps: 30 });
-
-  return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        justifyContent: "space-between",
-        padding: "100px 50px 250px 50px",
-      }}
-    >
-      {/* Top Title */}
-      <h1
-        style={{
-          fontFamily: "Impact, sans-serif",
-          fontSize: isWidescreen ? "120px" : "80px",
-          color: THEME.textDark,
-          textTransform: "uppercase",
-          letterSpacing: "1px",
-          textAlign: "center",
-          scale: `${finalReveal}`,
-        }}
-      >
-        WHO REALLY DECIDED?
-      </h1>
-
-      {/* Silhouette and conclusion text */}
-      <div
-        style={{
-          display: "flex",
-          flexDirection: isWidescreen ? "row" : "column",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "80px",
-          width: "100%",
-        }}
-      >
-        <Img
-          src={staticFile("thinking_silhouette.png")}
-          style={{
-            height: isWidescreen ? "350px" : "280px",
-            objectFit: "contain",
-            transform: `scale(${1 + Math.sin(frame * 0.05) * 0.03})`,
-          }}
-          alt="Thinking Silhouette"
-        />
-
-        <div
-          style={{
-            background: THEME.white,
-            border: `5px solid ${THEME.textDark}`,
-            borderRadius: "20px",
-            padding: "40px",
-            maxWidth: "600px",
-            boxShadow: "15px 15px 0px rgba(0,0,0,0.15)",
-            scale: `${quoteScale}`,
-          }}
-        >
-          <p
-            style={{
-              fontFamily: "Arial, sans-serif",
-              fontSize: "32px",
-              fontWeight: "bold",
-              color: THEME.textDark,
-              lineHeight: "1.4",
-              textAlign: "center",
-            }}
-          >
-            "Next time you pick between the Smart, the Fast, or the Pro model...
-            it probably wasn't your choice."
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
 // ── MAIN COMPOSITION ENGINE
 
 export const MyVideo: React.FC = () => {
@@ -973,68 +1440,14 @@ export const MyVideo: React.FC = () => {
 
   const currentSec = frame / 30;
 
-  // Scene triggers based on subtitles timeline
-  const scene1Duration = 24.92 * 30; // 0s - 24.92s
-  const scene2Duration = (61.38 - 24.92) * 30; // 24.92s - 61.38s
-  const scene3Duration = (127.96 - 61.38) * 30; // 61.38s - 127.96s
-  const scene4Duration = (190.87 - 127.96) * 30; // 127.96s - 190.87s
-  const scene5Duration = (229.66 - 190.87) * 30; // 190.87s - 229.66s
+  // Find the active visual shot based on current elapsed seconds
+  const activeShot =
+    SHOTS.find(
+      (shot) => currentSec >= shot.startSec && currentSec < shot.endSec
+    ) || SHOTS[0];
 
-  // Determine current active scene and local frames
-  let activeScene = <div />;
-  if (currentSec < 24.92) {
-    activeScene = (
-      <Scene1ThreeTiers frame={frame} isWidescreen={isWidescreen} />
-    );
-  } else if (currentSec >= 24.92 && currentSec < 61.38) {
-    activeScene = (
-      <Scene2ComputeCosts
-        frame={frame - scene1Duration}
-        isWidescreen={isWidescreen}
-      />
-    );
-  } else if (currentSec >= 61.38 && currentSec < 127.96) {
-    activeScene = (
-      <Scene3Anchoring
-        frame={frame - (scene1Duration + scene2Duration)}
-        isWidescreen={isWidescreen}
-      />
-    );
-  } else if (currentSec >= 127.96 && currentSec < 190.87) {
-    activeScene = (
-      <Scene4StorageTrap
-        frame={frame - (scene1Duration + scene2Duration + scene3Duration)}
-        isWidescreen={isWidescreen}
-      />
-    );
-  } else if (currentSec >= 190.87 && currentSec < 229.66) {
-    activeScene = (
-      <Scene5Routing
-        frame={
-          frame -
-          (scene1Duration +
-            scene2Duration +
-            scene3Duration +
-            scene4Duration)
-        }
-        isWidescreen={isWidescreen}
-      />
-    );
-  } else {
-    activeScene = (
-      <Scene6Conclusion
-        frame={
-          frame -
-          (scene1Duration +
-            scene2Duration +
-            scene3Duration +
-            scene4Duration +
-            scene5Duration)
-        }
-        isWidescreen={isWidescreen}
-      />
-    );
-  }
+  // Local frame count of the active shot for internal animations (e.g. spring)
+  const localFrame = frame - Math.floor(activeShot.startSec * 30);
 
   return (
     <div
@@ -1049,7 +1462,7 @@ export const MyVideo: React.FC = () => {
       {/* 1. Drift background texture */}
       <UniversalBackground />
 
-      {/* 2. Render active scene */}
+      {/* 2. Render active scene layout */}
       <div
         style={{
           position: "absolute",
@@ -1060,7 +1473,11 @@ export const MyVideo: React.FC = () => {
           zIndex: 10,
         }}
       >
-        {activeScene}
+        {isWidescreen ? (
+          <WidescreenShotLayout shot={activeShot} frame={localFrame} />
+        ) : (
+          <PortraitShotLayout shot={activeShot} frame={localFrame} />
+        )}
       </div>
 
       {/* 3. Sync Dynamic Subtitles */}
