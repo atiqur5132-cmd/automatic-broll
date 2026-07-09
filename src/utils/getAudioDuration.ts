@@ -1,19 +1,13 @@
-import { Input, ALL_FORMATS, UrlSource } from "mediabunny";
+import { getAudioDurationInSeconds } from "@remotion/media-utils";
 
 export const getAudioDuration = async (src: string): Promise<number> => {
   try {
-    const input = new Input({
-      formats: ALL_FORMATS,
-      source: new UrlSource(src, {
-        getRetryDelay: () => null,
-      }),
-    });
-    const duration = await input.computeDuration();
+    const duration = await getAudioDurationInSeconds(src);
     if (duration && duration > 0) {
       return duration;
     }
   } catch {
-    // fallback if UrlSource fails in CLI environment
+    // fallback if CLI/static environment fails to probe URL
   }
-  return 263.664; // Exact duration of public/Ai Models.m4a and voiceover.wav
+  return 290.20; // Exact duration of public/voiceover.wav (8706 frames @ 30fps)
 };

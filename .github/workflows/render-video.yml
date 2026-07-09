@@ -5,29 +5,31 @@ on:
 
 jobs:
   render:
+    name: Render Video
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "npm"
+          cache: 'npm'
 
-      - name: Install dependencies
+      - name: Install system dependencies (FFmpeg & Chrome dependencies)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
+      - name: Install npm dependencies
         run: npm ci
 
-      - name: Ensure Remotion browser
-        run: npx remotion browser ensure
-
       - name: Render video
-        run: npx remotion render MyVideo out/video.mp4 --concurrency=2
+        run: npx remotion render MyVideo out/video.mp4
 
-      - name: Upload Video Artifact
+      - name: Upload finished video artifact
         uses: actions/upload-artifact@v4
         with:
-          name: rendered-video
+          name: healthcare-ai-video
           path: out/video.mp4
-          retention-days: 7

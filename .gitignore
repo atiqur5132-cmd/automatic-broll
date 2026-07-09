@@ -3,9 +3,13 @@ dist
 .DS_Store
 .env
 
-# Ignore the output video from Git but not videos you import into src/.
+# Ignore output video
 out
 
-# Large temporary folders
-whisper.cpp
-Cloud-Rendered-Video-v3
+# Large temporary/model folders
+whisper/
+whisper.cpp/
+Cloud-Rendered-Video/
+Cloud-Rendered-Video-v2/
+Cloud-Rendered-Video-v3/
+transcript.json

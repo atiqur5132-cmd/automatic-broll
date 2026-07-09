@@ -1,126 +1,88 @@
 import React from "react";
-import { AbsoluteFill, useCurrentFrame, interpolate, Easing } from "remotion";
+import { useCurrentFrame, interpolate } from "remotion";
 
-export interface CinematicBackgroundProps {
-  primaryColor?: string;
+export const CinematicBackground: React.FC<{
+  themeColor?: string;
   secondaryColor?: string;
-  accentColor?: string;
-}
-
-export const CinematicBackground: React.FC<CinematicBackgroundProps> = ({
-  primaryColor = "#0f172a",
-  secondaryColor = "#1e1b4b",
-  accentColor = "#38bdf8",
+}> = ({
+  themeColor = "rgba(14, 165, 233, 0.18)", // cyan glow
+  secondaryColor = "rgba(139, 92, 246, 0.15)", // violet glow
 }) => {
   const frame = useCurrentFrame();
 
-  // Floating ambient light orb 1 (slow drift & breathing)
-  const orb1X = interpolate(frame, [0, 900], [20, 75], {
-    easing: Easing.inOut(Easing.sin),
-    extrapolateLeft: "extend",
-    extrapolateRight: "extend",
-  });
-  const orb1Y = interpolate(frame, [0, 900], [15, 65], {
-    easing: Easing.inOut(Easing.sin),
-    extrapolateLeft: "extend",
-    extrapolateRight: "extend",
-  });
-  const orb1Scale = interpolate(frame, [0, 450, 900], [1, 1.15, 1], {
-    extrapolateLeft: "extend",
-    extrapolateRight: "extend",
-  });
+  // Floating ambient glow 1
+  const glow1X = interpolate(frame % 900, [0, 450, 900], [20, 75, 20]);
+  const glow1Y = interpolate(frame % 700, [0, 350, 700], [25, 65, 25]);
 
-  // Floating ambient light orb 2 (opposite slow drift)
-  const orb2X = interpolate(frame, [0, 900], [80, 25], {
-    easing: Easing.inOut(Easing.sin),
-    extrapolateLeft: "extend",
-    extrapolateRight: "extend",
-  });
-  const orb2Y = interpolate(frame, [0, 900], [80, 20], {
-    easing: Easing.inOut(Easing.sin),
-    extrapolateLeft: "extend",
-    extrapolateRight: "extend",
-  });
+  // Floating ambient glow 2
+  const glow2X = interpolate(frame % 800, [0, 400, 800], [80, 25, 80]);
+  const glow2Y = interpolate(frame % 600, [0, 300, 600], [75, 30, 75]);
 
-  // Subtle global hue pulse
-  const glowOpacity = interpolate(frame, [0, 150, 300], [0.35, 0.55, 0.35], {
-    extrapolateLeft: "extend",
-    extrapolateRight: "extend",
-  });
+  // Grid line drift
+  const gridOffsetY = (frame * 0.4) % 60;
 
   return (
-    <AbsoluteFill
+    <div
       style={{
-        backgroundColor: primaryColor,
+        position: "absolute",
+        inset: 0,
+        backgroundColor: "#070913", // Deep rich dark navy
         overflow: "hidden",
+        pointerEvents: "none",
       }}
     >
-      {/* Deep gradient base */}
+      {/* Dynamic ambient gradient glow 1 */}
       <div
         style={{
           position: "absolute",
-          inset: 0,
-          background: `radial-gradient(circle at 50% 50%, ${secondaryColor} 0%, ${primaryColor} 85%)`,
+          top: `${glow1Y}%`,
+          left: `${glow1X}%`,
+          width: "900px",
+          height: "900px",
+          transform: "translate(-50%, -50%)",
+          background: `radial-gradient(circle, ${themeColor} 0%, rgba(0,0,0,0) 70%)`,
+          filter: "blur(40px)",
         }}
       />
 
-      {/* Moving Ambient Orb 1 */}
+      {/* Dynamic ambient gradient glow 2 */}
       <div
         style={{
           position: "absolute",
-          left: `${orb1X}%`,
-          top: `${orb1Y}%`,
-          width: 900,
-          height: 900,
-          marginLeft: -450,
-          marginTop: -450,
-          borderRadius: "50%",
-          background: `radial-gradient(circle, ${accentColor}40 0%, transparent 70%)`,
-          scale: orb1Scale,
-          opacity: glowOpacity,
+          top: `${glow2Y}%`,
+          left: `${glow2X}%`,
+          width: "850px",
+          height: "850px",
+          transform: "translate(-50%, -50%)",
+          background: `radial-gradient(circle, ${secondaryColor} 0%, rgba(0,0,0,0) 70%)`,
+          filter: "blur(50px)",
         }}
       />
 
-      {/* Moving Ambient Orb 2 */}
-      <div
-        style={{
-          position: "absolute",
-          left: `${orb2X}%`,
-          top: `${orb2Y}%`,
-          width: 800,
-          height: 800,
-          marginLeft: -400,
-          marginTop: -400,
-          borderRadius: "50%",
-          background: `radial-gradient(circle, ${secondaryColor}80 0%, transparent 75%)`,
-          opacity: 0.6,
-        }}
-      />
-
-      {/* Subtle grid pattern overlay for cinematic depth */}
+      {/* Subtle modern cyber grid overlay */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           backgroundImage: `
-            linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px)
+            linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px)
           `,
           backgroundSize: "60px 60px",
-          opacity: 0.4,
+          backgroundPosition: `0px ${gridOffsetY}px`,
+          opacity: 0.7,
         }}
       />
 
-      {/* Subtle animated Vignette edge shadow */}
+      {/* Subtle radial vignette */}
       <div
         style={{
           position: "absolute",
           inset: 0,
           background:
-            "radial-gradient(circle at 50% 50%, transparent 55%, rgba(0, 0, 0, 0.65) 100%)",
-          pointerEvents: "none",
+            "radial-gradient(circle at 50% 50%, transparent 40%, rgba(4, 6, 12, 0.75) 100%)",
         }}
       />
-    </AbsoluteFill>
+    </div>
   );
 };
