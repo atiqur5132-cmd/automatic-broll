@@ -1,50 +1,29 @@
-import { Composition, CalculateMetadataFunction, staticFile } from "remotion";
-import { getAudioDurationInSeconds } from "@remotion/media-utils";
+import React from "react";
+import { Composition, CalculateMetadataFunction } from "remotion";
 import { MyVideo } from "./MyVideo";
+import { getAudioDuration } from "./utils/getAudioDuration";
 
 const calculateMetadata: CalculateMetadataFunction<Record<string, unknown>> = async () => {
-  try {
-    const durationInSeconds = await getAudioDurationInSeconds(
-      staticFile("Ai Models.m4a")
-    );
-    return {
-      durationInFrames: Math.ceil(durationInSeconds * 30),
-      width: 1920,
-      height: 1080,
-      fps: 30,
-    };
-  } catch {
-    // Fallback to exact detected length of Ai Models.m4a (263.33s @ 30fps = 7900 frames)
-    return {
-      durationInFrames: 7900,
-      width: 1920,
-      height: 1080,
-      fps: 30,
-    };
-  }
+  const durationInSeconds = await getAudioDuration("voiceover.wav");
+  const durationInFrames = Math.ceil(durationInSeconds * 30);
+  return {
+    durationInFrames,
+    fps: 30,
+    width: 1920,
+    height: 1080,
+  };
 };
 
-export const Root = () => {
+export const Root: React.FC = () => {
   return (
     <>
-      {/* 16:9 ratio composition - primary HD video */}
       <Composition
-        id="YTVideo"
+        id="MyVideo"
         component={MyVideo}
-        durationInFrames={7900}
+        durationInFrames={7910}
         fps={30}
         width={1920}
         height={1080}
-        calculateMetadata={calculateMetadata}
-      />
-      {/* 9:16 ratio composition */}
-      <Composition
-        id="YTShorts"
-        component={MyVideo}
-        durationInFrames={7900}
-        fps={30}
-        width={1080}
-        height={1920}
         calculateMetadata={calculateMetadata}
       />
     </>
