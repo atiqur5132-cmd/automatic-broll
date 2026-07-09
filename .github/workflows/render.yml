@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       composition:
-        description: 'Choose composition to render: YTVideo (16:9 Long Video) or YTShorts (9:16 Vertical Video)'
+        description: 'Choose composition to render: YTVideo (16:9 HD Video) or YTShorts (9:16 Vertical Shorts)'
         required: true
         default: 'YTVideo'
         type: choice
@@ -27,6 +27,12 @@ jobs:
       - name: Install Remotion Dependencies
         run: npm ci
 
+      - name: Ensure Remotion Browser (Chromium)
+        run: npx remotion browser ensure
+
+      - name: Verify Audio Sync & Composition Requirements
+        run: npm run verify
+
       - name: Cloud Render Video
         run: npx remotion render src/index.ts ${{ inputs.composition }} out/rendered-video.mp4
 
@@ -35,3 +41,4 @@ jobs:
         with:
           name: Cloud-Rendered-Video-${{ inputs.composition }}
           path: out/rendered-video.mp4
+          retention-days: 7

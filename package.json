@@ -8,8 +8,11 @@
   "dependencies": {
     "@remotion/captions": "4.0.486",
     "@remotion/cli": "4.0.486",
+    "@remotion/google-fonts": "^4.0.486",
     "@remotion/install-whisper-cpp": "4.0.486",
+    "@remotion/media-utils": "^4.0.486",
     "@remotion/tailwind-v4": "4.0.486",
+    "lucide-react": "^1.23.0",
     "pdf-parse": "^2.4.5",
     "pdf-to-png-converter": "^4.1.1",
     "react": "19.2.3",
@@ -29,7 +32,8 @@
     "dev": "remotion studio",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
-    "lint": "eslint src && tsc"
+    "lint": "eslint src && tsc",
+    "verify": "npx tsx src/verify.ts"
   },
   "sideEffects": [
     "*.css"

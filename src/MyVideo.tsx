@@ -8,7 +8,18 @@ import {
   spring,
   random,
 } from "remotion";
-import subtitlesData from "./subtitles.json";
+import { loadFont as loadSpaceGrotesk } from "@remotion/google-fonts/SpaceGrotesk";
+import { loadFont as loadPlusJakartaSans } from "@remotion/google-fonts/PlusJakartaSans";
+
+const { fontFamily: displayFont } = loadSpaceGrotesk("normal", {
+  weights: ["700"],
+  subsets: ["latin"],
+});
+
+const { fontFamily: bodyFont } = loadPlusJakartaSans("normal", {
+  weights: ["500", "600"],
+  subsets: ["latin"],
+});
 
 // Theme configuration optimized for futuristic dark tech look
 const THEME = {
@@ -24,13 +35,58 @@ const THEME = {
   textGray: "#9ca3af",
 };
 
-// Word level subtitle interface
-interface SubtitleWord {
+// Kinetic typography helper with staggered reveal & blur-to-focus
+const AnimatedText: React.FC<{
   text: string;
-  startMs: number;
-  endMs: number;
-  confidence: number;
-}
+  frame: number;
+  fontSize?: number;
+  color?: string;
+  isTitle?: boolean;
+}> = ({ text, frame, fontSize = 48, color = THEME.white, isTitle = true }) => {
+  const words = text.split(" ");
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        gap: "0.3em",
+        fontFamily: isTitle ? displayFont : bodyFont,
+        fontWeight: isTitle ? 700 : 500,
+        fontSize,
+        color,
+        lineHeight: 1.15,
+        textShadow: isTitle ? `0 0 35px ${color}44` : "none",
+        letterSpacing: isTitle ? "-0.02em" : "0em",
+      }}
+    >
+      {words.map((word, i) => {
+        const progress = spring({
+          frame: Math.max(0, frame - i * 2),
+          fps: 30,
+          config: { damping: 14, stiffness: 130 },
+        });
+        const opacity = interpolate(progress, [0, 1], [0, 1]);
+        const translateY = interpolate(progress, [0, 1], [22, 0]);
+        const blur = interpolate(progress, [0, 1], [10, 0]);
+        const scale = interpolate(progress, [0, 1], [0.9, 1]);
+
+        return (
+          <span
+            key={i}
+            style={{
+              opacity,
+              transform: `translateY(${translateY}px) scale(${scale})`,
+              filter: `blur(${blur}px)`,
+              display: "inline-block",
+            }}
+          >
+            {word}
+          </span>
+        );
+      })}
+    </div>
+  );
+};
 
 // Shot configuration
 interface Shot {
@@ -776,8 +832,83 @@ const SHOTS: Shot[] = [
   },
   {
     startSec: 200.86,
-    endSec: 263.66,
-    title: "YOUR DECISION?",
+    endSec: 204.0,
+    title: "REAL UTILITY",
+    subtitle: "Less about tricking anyone, more about efficiency",
+    graphic: "scale",
+    color: THEME.neonCyan,
+  },
+  {
+    startSec: 204.0,
+    endSec: 208.5,
+    title: "FUNCTIONAL TIERS",
+    subtitle: "Tiers actually serve a technical architectural purpose",
+    graphic: "gears",
+  },
+  {
+    startSec: 208.5,
+    endSec: 214.0,
+    title: "SIMPLE REQUESTS",
+    subtitle: "Routing daily, lightweight tasks to cost-effective models",
+    graphic: "recipe_chat",
+  },
+  {
+    startSec: 214.0,
+    endSec: 219.5,
+    title: "HEAVY FIREPOWER",
+    subtitle: "Reserving flagship supercomputing for complex reasoning",
+    graphic: "servers",
+    color: THEME.neonRed,
+  },
+  {
+    startSec: 219.5,
+    endSec: 226.8,
+    title: "NEATLY PRICED?",
+    subtitle: "If it were purely technical, why three distinct price steps?",
+    graphic: "pyramid",
+  },
+  {
+    startSec: 226.8,
+    endSec: 233.5,
+    title: "THE BEHAVIORAL NUDGE",
+    subtitle: "Pricing structures built around consumer psychology",
+    graphic: "brain",
+    color: THEME.neonBlue,
+  },
+  {
+    startSec: 233.5,
+    endSec: 240.0,
+    title: "NAMED & PRICED",
+    subtitle: "Displaying all options side by side on purpose",
+    graphic: "menu_decoy",
+  },
+  {
+    startSec: 240.0,
+    endSec: 247.5,
+    title: "STEERING TO MIDDLE",
+    subtitle: "Driving consumer choice directly to the target tier",
+    graphic: "menu_decoy",
+    color: THEME.neonGold,
+  },
+  {
+    startSec: 247.5,
+    endSec: 254.0,
+    title: "NEXT TIME YOU CHOOSE",
+    subtitle: "When you select between Flash, Pro, and Ultra...",
+    graphic: "phone_storage",
+  },
+  {
+    startSec: 254.0,
+    endSec: 258.5,
+    title: "WHO DECIDED?",
+    subtitle: "Who really shaped what feels balanced to you?",
+    graphic: "scale",
+    color: THEME.neonRed,
+  },
+  {
+    startSec: 258.5,
+    endSec: 263.33,
+    title: "THE ARCHITECT'S PLAN",
     subtitle: "Because it probably wasn't you.",
     graphic: "brain",
     color: THEME.neonRed,
@@ -1626,7 +1757,11 @@ const LayoutRouter: React.FC<{
     vectorGraphic = <GraphicBankruptcy frame={frame} />;
   }
 
-  // WIDESCREEN SIDE-BY-SIDE PRESENTATION
+  // Continuous camera drift for full-screen motion
+  const kenBurnsScale = interpolate(frame, [0, 300], [1, 1.05]);
+  const driftY = Math.sin(frame * 0.03) * 8;
+
+  // WIDESCREEN FULL-BLEED CINEMATIC PRESENTATION
   if (isWidescreen) {
     return (
       <div
@@ -1636,33 +1771,34 @@ const LayoutRouter: React.FC<{
           display: "flex",
           flexDirection: "row",
           alignItems: "center",
-          justifyContent: "center",
-          gap: "100px",
-          padding: "100px 100px 280px 100px",
+          justifyContent: "space-between",
+          padding: "80px 120px",
+          transform: `scale(${kenBurnsScale}) translateY(${driftY}px)`,
         }}
       >
-        {/* Left Side Vector graphic */}
+        {/* Left Side Large Vector graphic */}
         <div
           style={{
-            flexShrink: 0,
+            flex: "1 1 55%",
             transform: `scale(${springScale})`,
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            width: "420px",
+            height: "100%",
           }}
         >
           {vectorGraphic}
         </div>
 
-        {/* Right Side Text specs details */}
+        {/* Right Side Typography & Concept Specs */}
         <div
           style={{
+            flex: "1 1 45%",
             display: "flex",
             flexDirection: "column",
-            gap: "30px",
+            gap: "28px",
             textAlign: "left",
-            maxWidth: "750px",
+            maxWidth: "780px",
           }}
         >
           {shot.badge && (
@@ -1670,40 +1806,33 @@ const LayoutRouter: React.FC<{
               style={{
                 background: shot.color || THEME.neonBlue,
                 color: THEME.textLight,
-                padding: "8px 24px",
-                fontSize: "24px",
-                fontFamily: "Impact, sans-serif",
-                borderRadius: "5px",
+                padding: "8px 22px",
+                fontSize: "20px",
+                fontFamily: displayFont,
+                fontWeight: 700,
+                borderRadius: "30px",
                 alignSelf: "flex-start",
-                letterSpacing: "1px",
+                letterSpacing: "0.08em",
+                boxShadow: `0 0 20px ${shot.color || THEME.neonBlue}66`,
               }}
             >
               {shot.badge}
             </div>
           )}
-          <h1
-            style={{
-              fontFamily: "Impact, 'Arial Black', sans-serif",
-              fontSize: "96px",
-              color: shot.color || THEME.textLight,
-              textTransform: "uppercase",
-              letterSpacing: "1px",
-              lineHeight: "1.0",
-            }}
-          >
-            {shot.title}
-          </h1>
-          <p
-            style={{
-              fontFamily: "Arial, sans-serif",
-              fontSize: "36px",
-              fontWeight: "bold",
-              color: THEME.textGray,
-              lineHeight: "1.4",
-            }}
-          >
-            {shot.subtitle}
-          </p>
+          <AnimatedText
+            text={shot.title}
+            frame={frame}
+            fontSize={78}
+            color={shot.color || THEME.textLight}
+            isTitle={true}
+          />
+          <AnimatedText
+            text={shot.subtitle}
+            frame={frame - 4}
+            fontSize={32}
+            color={THEME.textGray}
+            isTitle={false}
+          />
         </div>
       </div>
     );
@@ -1719,23 +1848,18 @@ const LayoutRouter: React.FC<{
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "space-between",
-        padding: "160px 40px 320px 40px",
+        padding: "120px 50px 140px 50px",
         textAlign: "center",
+        transform: `scale(${kenBurnsScale})`,
       }}
     >
-      {/* Title */}
-      <h1
-        style={{
-          fontFamily: "Impact, 'Arial Black', sans-serif",
-          fontSize: "80px",
-          color: shot.color || THEME.textLight,
-          textTransform: "uppercase",
-          lineHeight: "1.1",
-          letterSpacing: "1px",
-        }}
-      >
-        {shot.title}
-      </h1>
+      <AnimatedText
+        text={shot.title}
+        frame={frame}
+        fontSize={66}
+        color={shot.color || THEME.textLight}
+        isTitle={true}
+      />
 
       {/* Vector Graphic centered */}
       <div
@@ -1744,107 +1868,20 @@ const LayoutRouter: React.FC<{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          height: "360px",
+          flexGrow: 1,
+          width: "100%",
         }}
       >
         {vectorGraphic}
       </div>
 
-      {/* Subtext description box */}
-      <div
-        style={{
-          background: "rgba(255, 255, 255, 0.05)",
-          border: `3.5px solid ${shot.color || THEME.neonBlue}`,
-          borderRadius: "15px",
-          padding: "20px 30px",
-          width: "100%",
-        }}
-      >
-        <p
-          style={{
-            fontFamily: "Arial, sans-serif",
-            fontSize: "28px",
-            fontWeight: "bold",
-            color: THEME.textLight,
-            lineHeight: "1.3",
-          }}
-        >
-          {shot.subtitle}
-        </p>
-      </div>
-    </div>
-  );
-};
-
-// Kinetic typography engine optimized for giant readability
-const DynamicSubtitles: React.FC<{ currentTime: number }> = ({
-  currentTime,
-}) => {
-  const { width, height } = useVideoConfig();
-  const isWidescreen = width > height;
-
-  const currentMs = currentTime * 1000;
-
-  // Find active words in a 3.5-second window
-  const activeWords = (subtitlesData as SubtitleWord[]).filter(
-    (w) => currentMs >= w.startMs - 350 && currentMs <= w.endMs + 350
-  );
-
-  // Find current active word
-  const activeWord = (subtitlesData as SubtitleWord[]).find(
-    (w) => currentMs >= w.startMs && currentMs <= w.endMs
-  );
-
-  if (activeWords.length === 0) return null;
-
-  return (
-    <div
-      style={{
-        position: "absolute",
-        bottom: isWidescreen ? "80px" : "200px",
-        left: 0,
-        right: 0,
-        display: "flex",
-        justifyContent: "center",
-        zIndex: 50,
-        padding: "0 40px",
-      }}
-    >
-      <div
-        style={{
-          background: "rgba(3, 7, 18, 0.9)",
-          padding: isWidescreen ? "15px 35px" : "25px 45px",
-          borderRadius: "30px",
-          border: "2px solid #3b82f6",
-          boxShadow: "0 0 25px rgba(59, 130, 246, 0.3)",
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "center",
-          gap: isWidescreen ? "10px" : "15px",
-          maxWidth: isWidescreen ? "1200px" : "900px",
-        }}
-      >
-        {activeWords.map((word, idx) => {
-          const isActive = activeWord?.text === word.text;
-          return (
-            <span
-              key={`${word.text}-${idx}`}
-              style={{
-                fontFamily: "Impact, 'Arial Black', sans-serif",
-                fontSize: isWidescreen ? "54px" : "68px",
-                textTransform: "uppercase",
-                letterSpacing: "1.5px",
-                color: isActive ? THEME.neonGold : "#ffffff",
-                opacity: isActive ? 1 : 0.3,
-                scale: isActive ? "1.1" : "1.0",
-                transformOrigin: "center",
-              }}
-            >
-              {word.text}
-            </span>
-          );
-        })}
-      </div>
+      <AnimatedText
+        text={shot.subtitle}
+        frame={frame - 4}
+        fontSize={32}
+        color={THEME.textGray}
+        isTitle={false}
+      />
     </div>
   );
 };
@@ -1898,10 +1935,7 @@ export const MyVideo: React.FC = () => {
         />
       </div>
 
-      {/* 3. Sync Dynamic Subtitles */}
-      <DynamicSubtitles currentTime={currentSec} />
-
-      {/* 4. Render main voiceover track */}
+      {/* 3. Render main voiceover track (no on-screen subtitles rendered) */}
       <Audio src={staticFile("Ai Models.m4a")} />
     </div>
   );
