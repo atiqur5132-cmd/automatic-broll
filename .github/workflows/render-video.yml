@@ -23,7 +23,7 @@ jobs:
         run: npx remotion browser ensure
 
       - name: Render video
-        run: npx remotion render MyVideo out/video.mp4
+        run: npx remotion render MyVideo out/video.mp4 --concurrency=4
 
       - name: Upload Video Artifact
         uses: actions/upload-artifact@v4

@@ -1,10 +1,10 @@
 import React from "react";
-import { Composition, CalculateMetadataFunction } from "remotion";
+import { Composition, CalculateMetadataFunction, staticFile } from "remotion";
 import { MyVideo } from "./MyVideo";
 import { getAudioDuration } from "./utils/getAudioDuration";
 
 const calculateMetadata: CalculateMetadataFunction<Record<string, unknown>> = async () => {
-  const durationInSeconds = await getAudioDuration("voiceover.wav");
+  const durationInSeconds = await getAudioDuration(staticFile("voiceover.wav"));
   const durationInFrames = Math.ceil(durationInSeconds * 30);
   return {
     durationInFrames,

@@ -87,11 +87,6 @@ const WordReveal: React.FC<{
     easing: Easing.bezier(0.16, 1, 0.3, 1),
   });
 
-  const blur = interpolate(wordFrame, [0, 12], [12, 0], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
-
   const scale = interpolate(wordFrame, [0, 16], [0.88, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
@@ -109,7 +104,6 @@ const WordReveal: React.FC<{
         opacity,
         translate: `0px ${translateY}px`,
         scale,
-        filter: `blur(${blur}px)`,
         textShadow: `0 10px 30px rgba(0, 0, 0, 0.6), 0 0 40px ${accentColor}40`,
       }}
     >

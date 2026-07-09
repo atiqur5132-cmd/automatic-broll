@@ -76,7 +76,6 @@ export const CinematicBackground: React.FC<CinematicBackgroundProps> = ({
           marginTop: -450,
           borderRadius: "50%",
           background: `radial-gradient(circle, ${accentColor}40 0%, transparent 70%)`,
-          filter: "blur(90px)",
           scale: orb1Scale,
           opacity: glowOpacity,
         }}
@@ -94,7 +93,6 @@ export const CinematicBackground: React.FC<CinematicBackgroundProps> = ({
           marginTop: -400,
           borderRadius: "50%",
           background: `radial-gradient(circle, ${secondaryColor}80 0%, transparent 75%)`,
-          filter: "blur(110px)",
           opacity: 0.6,
         }}
       />
