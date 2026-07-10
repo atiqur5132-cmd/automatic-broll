@@ -8,8 +8,8 @@ import { displayFontFamily, bodyFontFamily } from "../fonts";
 export const ForegroundBeatCard: React.FC<{ beat: ForegroundBeat }> = ({ beat }) => {
   const frame = useCurrentFrame();
 
-  // Entrance animations relative to start of beat
-  const localFrame = Math.max(0, frame - beat.fromFrame);
+  // Inside a <Sequence>, useCurrentFrame() starts at 0 for each beat
+  const localFrame = frame;
 
   const containerOpacity = interpolate(localFrame, [0, 8], [0, 1], {
     extrapolateLeft: "clamp",
