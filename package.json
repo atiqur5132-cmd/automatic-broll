@@ -29,6 +29,7 @@
   },
   "scripts": {
     "dev": "remotion studio",
+    "render": "remotion render MyVideo out/video.mp4 --concurrency=2 --log=info",
     "build": "remotion bundle",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc"

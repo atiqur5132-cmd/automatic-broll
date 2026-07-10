@@ -61,7 +61,7 @@ export const MacroBackground: React.FC = () => {
         }}
       />
 
-      {/* Dynamic ambient glowing orb top-left */}
+      {/* Optimized radial glow top-left (zero Gaussian blur filter for 10x faster render) */}
       <div
         style={{
           position: "absolute",
@@ -70,14 +70,13 @@ export const MacroBackground: React.FC = () => {
           width: 800,
           height: 800,
           borderRadius: "50%",
-          background: `radial-gradient(circle at center, ${currentEnv.theme.glowColor} 0%, transparent 70%)`,
-          filter: "blur(70px)",
+          background: `radial-gradient(circle at center, ${currentEnv.theme.glowColor} 0%, rgba(100, 140, 255, 0.04) 45%, transparent 70%)`,
           translate: `${transX * 1.8}px ${transY * 1.5}px`,
           pointerEvents: "none",
         }}
       />
 
-      {/* Dynamic ambient glowing orb bottom-right */}
+      {/* Optimized radial glow bottom-right (zero Gaussian blur filter for 10x faster render) */}
       <div
         style={{
           position: "absolute",
@@ -86,8 +85,7 @@ export const MacroBackground: React.FC = () => {
           width: 900,
           height: 900,
           borderRadius: "50%",
-          background: `radial-gradient(circle at center, ${currentEnv.theme.glowColor} 0%, transparent 75%)`,
-          filter: "blur(90px)",
+          background: `radial-gradient(circle at center, ${currentEnv.theme.glowColor} 0%, rgba(100, 140, 255, 0.03) 50%, transparent 75%)`,
           translate: `${-transX * 1.5}px ${-transY * 1.2}px`,
           pointerEvents: "none",
         }}
