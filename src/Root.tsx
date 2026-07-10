@@ -2,12 +2,13 @@ import React from "react";
 import { Composition, CalculateMetadataFunction, staticFile } from "remotion";
 import { MyVideo } from "./MyVideo";
 import { getAudioDuration } from "./utils/getAudioDuration";
+import "./index.css";
 
 const calculateMetadata: CalculateMetadataFunction<Record<string, unknown>> = async () => {
   const durationInSeconds = await getAudioDuration(staticFile("voiceover.wav"));
   const durationInFrames = Math.ceil(durationInSeconds * 30);
   return {
-    durationInFrames,
+    durationInFrames: durationInFrames > 0 ? durationInFrames : 8983,
     fps: 30,
     width: 1920,
     height: 1080,
@@ -20,7 +21,7 @@ export const Root: React.FC = () => {
       <Composition
         id="MyVideo"
         component={MyVideo}
-        durationInFrames={8706}
+        durationInFrames={8983}
         fps={30}
         width={1920}
         height={1080}

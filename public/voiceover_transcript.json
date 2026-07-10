@@ -1,0 +1,681 @@
+{
+	"systeminfo": "AVX = 1 | AVX2 = 1 | AVX512 = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | METAL = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 0 | VSX = 0 | CUDA = 0 | COREML = 0 | OPENVINO = 0",
+	"model": {
+		"type": "tiny",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 384,
+			"head": 6,
+			"layer": 4
+		},
+		"text": {
+			"ctx": 448,
+			"state": 384,
+			"head": 6,
+			"layer": 4
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "D:\\automatic-broll\\whisper\\ggml-tiny.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:05,120"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 5120
+			},
+			"text": " It's one AM. Someone's lying in bed, phone lighting up their face, typing out something they"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:05,120",
+				"to": "00:00:09,920"
+			},
+			"offsets": {
+				"from": 5120,
+				"to": 9920
+			},
+			"text": " haven't told anyone else. A health scare, a relationship falling apart, a question about money,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:09,920",
+				"to": "00:00:16,480"
+			},
+			"offsets": {
+				"from": 9920,
+				"to": 16480
+			},
+			"text": " they're too embarrassed to ask a real person. They hit enter. The AI responds, calm, patient,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:16,480",
+				"to": "00:00:21,440"
+			},
+			"offsets": {
+				"from": 16480,
+				"to": 21440
+			},
+			"text": " non-judgmental. It feels like a diary that talks back. It feels private. It is not."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:21,440",
+				"to": "00:00:25,040"
+			},
+			"offsets": {
+				"from": 21440,
+				"to": 25040
+			},
+			"text": " Here's what most people don't think about in that moment. That conversation doesn't just"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:25,040",
+				"to": "00:00:29,760"
+			},
+			"offsets": {
+				"from": 25040,
+				"to": 29760
+			},
+			"text": " disappear into the void after you close the tab. It goes somewhere. It's stored somewhere."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:29,760",
+				"to": "00:00:34,080"
+			},
+			"offsets": {
+				"from": 29760,
+				"to": 34080
+			},
+			"text": " And depending on which company built the chatbot you're using, it may already be on its way into"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:34,080",
+				"to": "00:00:39,440"
+			},
+			"offsets": {
+				"from": 34080,
+				"to": 39440
+			},
+			"text": " the next version of that very model. In late 2025, researchers at Stanford's Institute for"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:39,440",
+				"to": "00:00:44,800"
+			},
+			"offsets": {
+				"from": 39440,
+				"to": 44800
+			},
+			"text": " Human-Centered AI sat down and did something almost nobody had bothered to do properly. They read the"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:44,800",
+				"to": "00:00:50,160"
+			},
+			"offsets": {
+				"from": 44800,
+				"to": 50160
+			},
+			"text": " actual privacy policies, not the marketing pages, the legal fine print, across six of the biggest"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:50,160",
+				"to": "00:00:57,600"
+			},
+			"offsets": {
+				"from": 50160,
+				"to": 57600
+			},
+			"text": " AI companies in the US, Amazon, and Thropic, Google, Meta, Microsoft, and Open AI, they found the"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:57,600",
+				"to": "00:01:02,880"
+			},
+			"offsets": {
+				"from": 57600,
+				"to": 62880
+			},
+			"text": " same pattern repeating. By default, on a standard consumer account, your conversations can be used to"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:02,880",
+				"to": "00:01:08,000"
+			},
+			"offsets": {
+				"from": 62880,
+				"to": 68000
+			},
+			"text": " train the next model, not because you agreed to it in some meaningful informed way, because you"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:08,000",
+				"to": "00:01:13,200"
+			},
+			"offsets": {
+				"from": 68000,
+				"to": 73200
+			},
+			"text": " didn't opt out. And in most cases, finding the opt out means digging through settings menus,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:13,200",
+				"to": "00:01:17,920"
+			},
+			"offsets": {
+				"from": 73200,
+				"to": 77920
+			},
+			"text": " most users never open. Now here's the part that makes this more than just a background fact."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:17,920",
+				"to": "00:01:23,440"
+			},
+			"offsets": {
+				"from": 77920,
+				"to": 83440
+			},
+			"text": " Around August of 2025, several major players quietly shifted their default settings,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:23,440",
+				"to": "00:01:28,320"
+			},
+			"offsets": {
+				"from": 83440,
+				"to": 88320
+			},
+			"text": " almost in the same window of time, and Thropic moved to retaining conversations for up to five"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:28,320",
+				"to": "00:01:33,120"
+			},
+			"offsets": {
+				"from": 88320,
+				"to": 93120
+			},
+			"text": " years for users who don't opt out. Google began holding on to review chat data for as long as"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:33,120",
+				"to": "00:01:38,080"
+			},
+			"offsets": {
+				"from": 93120,
+				"to": 98080
+			},
+			"text": " three years. Open AI adjusted its own retention and training defaults to, none of this arrived"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:38,080",
+				"to": "00:01:42,960"
+			},
+			"offsets": {
+				"from": 98080,
+				"to": 102960
+			},
+			"text": " with a press conference. It arrived the way most policy changes do now, buried in an updated"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:42,960",
+				"to": "00:01:48,160"
+			},
+			"offsets": {
+				"from": 102960,
+				"to": 108160
+			},
+			"text": " terms of service link that almost nobody clicks. So naturally, people assume there's a workaround,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:48,160",
+				"to": "00:01:54,000"
+			},
+			"offsets": {
+				"from": 108160,
+				"to": 114000
+			},
+			"text": " just pay for it, upgrade to chat GPT plus, get Gemini advanced. Surely if you're paying real money"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:54,000",
+				"to": "00:01:58,720"
+			},
+			"offsets": {
+				"from": 114000,
+				"to": 118720
+			},
+			"text": " every month, your conversations are treated differently, right? Not really. This is one of the more"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:58,720",
+				"to": "00:02:04,160"
+			},
+			"offsets": {
+				"from": 118720,
+				"to": 124160
+			},
+			"text": " persistent myths floating around right now, paying for a consumer subscription does not automatically"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:04,160",
+				"to": "00:02:08,800"
+			},
+			"offsets": {
+				"from": 124160,
+				"to": 128800
+			},
+			"text": " pull your data out of the training pipeline. The tiers that actually come with a contractual"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:08,800",
+				"to": "00:02:14,160"
+			},
+			"offsets": {
+				"from": 128800,
+				"to": 134160
+			},
+			"text": " guarantee assigned agreement that says your data will not be used to train future models are the"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:14,160",
+				"to": "00:02:20,240"
+			},
+			"offsets": {
+				"from": 134160,
+				"to": 140240
+			},
+			"text": " business enterprise and API tiers. The ones built for companies, not individuals. If you're a regular"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:20,240",
+				"to": "00:02:25,360"
+			},
+			"offsets": {
+				"from": 140240,
+				"to": 145360
+			},
+			"text": " person paying $20 a month for the premium app on your phone, you are in most cases still in the"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:25,360",
+				"to": "00:02:30,320"
+			},
+			"offsets": {
+				"from": 145360,
+				"to": 150320
+			},
+			"text": " same data pool as the free users. You just got a faster response time and a higher usage limit,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:30,320",
+				"to": "00:02:36,560"
+			},
+			"offsets": {
+				"from": 150320,
+				"to": 156560
+			},
+			"text": " not privacy, and it goes further than training data. In May of 2026, a class action lawsuit was"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:36,560",
+				"to": "00:02:42,880"
+			},
+			"offsets": {
+				"from": 156560,
+				"to": 162880
+			},
+			"text": " filed against open AI, alleging that chat GPT's website had met his Facebook pixel and Google"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:42,880",
+				"to": "00:02:48,080"
+			},
+			"offsets": {
+				"from": 162880,
+				"to": 168080
+			},
+			"text": " analytics tracking code embedded in it, and that this code was quietly sending user query topics,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:48,080",
+				"to": "00:02:52,080"
+			},
+			"offsets": {
+				"from": 168080,
+				"to": 172080
+			},
+			"text": " account identifiers, and email addresses to meta and Google in real time."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:52,080",
+				"to": "00:02:55,840"
+			},
+			"offsets": {
+				"from": 172080,
+				"to": 175840
+			},
+			"text": " A similar complaint had already been filed against perplexity months earlier."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:55,840",
+				"to": "00:03:00,320"
+			},
+			"offsets": {
+				"from": 175840,
+				"to": 180320
+			},
+			"text": " Whether these specific cases hold up in court is genuinely still an open question,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:00,320",
+				"to": "00:03:05,840"
+			},
+			"offsets": {
+				"from": 180320,
+				"to": 185840
+			},
+			"text": " legal experts are split, but the underlying mechanism they describe isn't in dispute."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:05,840",
+				"to": "00:03:10,720"
+			},
+			"offsets": {
+				"from": 185840,
+				"to": 190720
+			},
+			"text": " Tracking pixels are standard tools used across almost the entire internet for advertising and"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:10,720",
+				"to": "00:03:15,280"
+			},
+			"offsets": {
+				"from": 190720,
+				"to": 195280
+			},
+			"text": " analytics. What's different here is what they're now sitting next to, not what shoes you almost"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:15,280",
+				"to": "00:03:19,440"
+			},
+			"offsets": {
+				"from": 195280,
+				"to": 199440
+			},
+			"text": " bought, what symptoms you were worried about, what debt you're hiding from your spouse. This is the"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:19,440",
+				"to": "00:03:23,840"
+			},
+			"offsets": {
+				"from": 199440,
+				"to": 203840
+			},
+			"text": " same surveillance driven business model that built the modern internet just quietly extended"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:23,840",
+				"to": "00:03:29,440"
+			},
+			"offsets": {
+				"from": 203840,
+				"to": 209440
+			},
+			"text": " into the one place people talk more honestly than almost anywhere else. And training data and"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:29,440",
+				"to": "00:03:34,320"
+			},
+			"offsets": {
+				"from": 209440,
+				"to": 214320
+			},
+			"text": " ad trackers are only part of the picture. These companies also state in their own policies"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:34,320",
+				"to": "00:03:39,520"
+			},
+			"offsets": {
+				"from": 214320,
+				"to": 219520
+			},
+			"text": " that authorized employees and third party contractors can review actual chat transcripts,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:39,520",
+				"to": "00:03:44,560"
+			},
+			"offsets": {
+				"from": 219520,
+				"to": 224560
+			},
+			"text": " not just anonymized patterns, real conversations. This happens for safety monitoring,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:44,560",
+				"to": "00:03:49,440"
+			},
+			"offsets": {
+				"from": 224560,
+				"to": 229440
+			},
+			"text": " abuse investigation, and legal compliance, which means in certain circumstances,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:49,440",
+				"to": "00:03:54,800"
+			},
+			"offsets": {
+				"from": 229440,
+				"to": 234800
+			},
+			"text": " a real human being sitting at a company you've never met anyone from might read the exact words"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:54,800",
+				"to": "00:03:59,840"
+			},
+			"offsets": {
+				"from": 234800,
+				"to": 239840
+			},
+			"text": " you typed into that app at 1 a.m. Zoom out for a second. 10 years ago, the biggest privacy"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:59,840",
+				"to": "00:04:05,200"
+			},
+			"offsets": {
+				"from": 239840,
+				"to": 245200
+			},
+			"text": " conversation was about your search history. What you googled that already felt invasive enough,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:05,200",
+				"to": "00:04:09,040"
+			},
+			"offsets": {
+				"from": 245200,
+				"to": 249040
+			},
+			"text": " but think about what people actually type into an AI chat bot today that they'd never"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:09,040",
+				"to": "00:04:13,920"
+			},
+			"offsets": {
+				"from": 249040,
+				"to": 253920
+			},
+			"text": " type into a search bar. Full medical symptoms laid out in paragraphs, draft messages to an"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:13,920",
+				"to": "00:04:18,720"
+			},
+			"offsets": {
+				"from": 253920,
+				"to": 258720
+			},
+			"text": " ex they're still not over, screenshots of pay stubs asking for financial advice, legal troubles"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:18,720",
+				"to": "00:04:22,960"
+			},
+			"offsets": {
+				"from": 258720,
+				"to": 262960
+			},
+			"text": " they haven't told a lawyer yet, let alone a friend. This isn't a search history anymore. It's"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:22,960",
+				"to": "00:04:28,720"
+			},
+			"offsets": {
+				"from": 262960,
+				"to": 268720
+			},
+			"text": " closer to the most complete, most unfiltered psychological archive of a person that has ever existed"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:28,720",
+				"to": "00:04:33,920"
+			},
+			"offsets": {
+				"from": 268720,
+				"to": 273920
+			},
+			"text": " anywhere for anyone. So the real question was never really about who owns the words in your chat"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:33,920",
+				"to": "00:04:38,720"
+			},
+			"offsets": {
+				"from": 273920,
+				"to": 278720
+			},
+			"text": " window. That's the small version of the question. The bigger one is this when that archive gets subpoenaed"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:38,720",
+				"to": "00:04:44,480"
+			},
+			"offsets": {
+				"from": 278720,
+				"to": 284480
+			},
+			"text": " in a lawsuit or leaked in a breach or quietly repackaged into an advertising product five years"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:44,480",
+				"to": "00:04:49,440"
+			},
+			"offsets": {
+				"from": 284480,
+				"to": 289440
+			},
+			"text": " from now, who's actually going to be in the room deciding what happens to it. And will you even"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:49,440",
+				"to": "00:04:53,760"
+			},
+			"offsets": {
+				"from": 289440,
+				"to": 293760
+			},
+			"text": " know what's happening? You didn't sign up to write the most honest diary of your life. You just"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:53,760",
+				"to": "00:04:59,200"
+			},
+			"offsets": {
+				"from": 293760,
+				"to": 299200
+			},
+			"text": " wanted an answer, but somewhere that diary already exists. The only question left is who's reading it."
+		}
+	]
+}

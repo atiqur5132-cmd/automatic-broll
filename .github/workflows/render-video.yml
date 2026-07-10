@@ -31,5 +31,5 @@ jobs:
       - name: Upload finished video artifact
         uses: actions/upload-artifact@v4
         with:
-          name: healthcare-ai-video
+          name: ai-privacy-video
           path: out/video.mp4
