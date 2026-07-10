@@ -53,9 +53,10 @@ export const AnimatedIcon: React.FC<AnimatedIconProps> = ({
         justifyContent: "center",
         padding: "20px",
         borderRadius: "24px",
-        background: "rgba(20, 26, 43, 0.85)",
+        background: "rgba(255, 255, 255, 0.04)",
         border: `1px solid ${color}44`,
         boxShadow: `0 12px 35px ${color}25, inset 0 1px 0 rgba(255, 255, 255, 0.1)`,
+        backdropFilter: "blur(12px)",
       }}
     >
       <IconComponent size={size} color={color} strokeWidth={1.8} />

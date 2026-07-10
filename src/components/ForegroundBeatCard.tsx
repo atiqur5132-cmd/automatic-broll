@@ -68,8 +68,9 @@ export const ForegroundBeatCard: React.FC<{ beat: ForegroundBeat }> = ({ beat })
           gap: 14,
           padding: "10px 24px",
           borderRadius: 999,
-          background: "rgba(15, 23, 42, 0.85)",
+          background: "rgba(255, 255, 255, 0.04)",
           border: `1px solid ${beat.accentColor}44`,
+          backdropFilter: "blur(10px)",
           boxShadow: "0 4px 20px rgba(0,0,0,0.3)",
         }}
       >
