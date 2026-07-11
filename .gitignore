@@ -9,7 +9,6 @@ out
 # Temporary/scratch files
 scratch/
 process_audio.mjs
-public/edited_audio.wav
 public/voiceover_16k.wav
 
 # Large temporary/model folders
