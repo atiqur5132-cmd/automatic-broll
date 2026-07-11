@@ -7,18 +7,18 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 console.log("=== GEMINI 3.5 PRO DELAY B-ROLL VERIFICATION REPORT ===\n");
 
 // 1. Asset loading check
-const wavPath = path.join(__dirname, "public", "voiceover.wav");
+const wavPath = path.join(__dirname, "public", "edited_audio.wav");
 if (fs.existsSync(wavPath)) {
   const stats = fs.statSync(wavPath);
-  console.log(`[PASS] Asset Loading: public/voiceover.wav exists (${(stats.size / 1024 / 1024).toFixed(2)} MB)`);
+  console.log(`[PASS] Asset Loading: public/edited_audio.wav exists (${(stats.size / 1024 / 1024).toFixed(2)} MB)`);
 } else {
-  console.error(`[FAIL] Asset Loading: public/voiceover.wav not found!`);
+  console.error(`[FAIL] Asset Loading: public/edited_audio.wav not found!`);
 }
 
 // 2. Audio-composition sync check
-const exactAudioDurationSeconds = 261.00;
+const exactAudioDurationSeconds = 251.38;
 const fps = 30;
-const expectedFrames = Math.ceil(exactAudioDurationSeconds * fps); // 7830 frames
+const expectedFrames = Math.ceil(exactAudioDurationSeconds * fps); // 7542 frames
 
 console.log(`[PASS] Exact Audio Duration: ${exactAudioDurationSeconds.toFixed(2)} seconds`);
 console.log(`[PASS] FPS: ${fps}`);
@@ -28,10 +28,10 @@ console.log(`[PASS] Composition Duration (calculateMetadata / Root): ${expectedF
 const filesToCheck = [
   "src/MyVideo.tsx",
   "src/components/BackgroundLayers.tsx",
-  "src/components/NameCard.tsx",
-  "src/components/beats/BeatVisuals1To9.tsx",
-  "src/components/beats/BeatVisuals10To18.tsx",
-  "src/components/beats/BeatVisuals19To27.tsx",
+  "src/components/design/Vectors3D.tsx",
+  "src/components/beats/RedesignedBeats0To14.tsx",
+  "src/components/beats/RedesignedBeats15To29.tsx",
+  "src/components/beats/RedesignedBeats30To44.tsx",
 ];
 
 let debugLabelFound = false;

@@ -2,7 +2,6 @@ import React from "react";
 import { AbsoluteFill, Sequence, staticFile } from "remotion";
 import { Audio } from "@remotion/media";
 import { BackgroundLayers } from "./components/BackgroundLayers";
-import { NameCard } from "./components/NameCard";
 import {
   Beat0, Beat1, Beat2, Beat3, Beat4, Beat5, Beat6, Beat7, Beat8, Beat9, Beat10,
   Beat11, Beat12, Beat13, Beat14, Beat15, Beat16, Beat17, Beat18, Beat19, Beat20,
@@ -21,7 +20,6 @@ export const MyVideo: React.FC = () => {
       <BackgroundLayers />
 
       {/* Foreground Beat Layer: Strictly Driven by Transcript Timestamps */}
-      
       {/* Segment 0: 0.00s -> 5.44s (Frames 0 - 163) */}
       <Sequence durationInFrames={163}>
         <Beat0 />
@@ -35,13 +33,11 @@ export const MyVideo: React.FC = () => {
       {/* Segment 2: 12.32s -> 18.56s (Frames 370 - 557) */}
       <Sequence from={370} durationInFrames={187}>
         <Beat2 />
-        <NameCard name="OpenAI" role="AI Research Lab" borderColor="#00F0FF" />
       </Sequence>
 
       {/* Segment 3: 18.56s -> 23.76s (Frames 557 - 713) */}
       <Sequence from={557} durationInFrames={156}>
         <Beat3 />
-        <NameCard name="OpenRouter" role="AI Model Marketplace" borderColor="#FFB800" />
       </Sequence>
 
       {/* Segment 4: 23.76s -> 28.96s (Frames 713 - 869) */}
@@ -52,7 +48,6 @@ export const MyVideo: React.FC = () => {
       {/* Segment 5: 28.96s -> 35.52s (Frames 869 - 1066) */}
       <Sequence from={869} durationInFrames={197}>
         <Beat5 />
-        <NameCard name="OpenRouter" role="AI Model Marketplace" borderColor="#FFB800" />
       </Sequence>
 
       {/* Segment 6: 35.52s -> 40.96s (Frames 1066 - 1229) */}
@@ -83,7 +78,6 @@ export const MyVideo: React.FC = () => {
       {/* Segment 11: 64.56s -> 70.40s (Frames 1937 - 2112) */}
       <Sequence from={1937} durationInFrames={175}>
         <Beat11 />
-        <NameCard name="Xiaomi" role="Phone & Gadget Maker" borderColor="#FF5A5F" />
       </Sequence>
 
       {/* Segment 12: 70.40s -> 78.32s (Frames 2112 - 2350) */}
@@ -99,7 +93,6 @@ export const MyVideo: React.FC = () => {
       {/* Segment 14: 84.00s -> 91.92s (Frames 2520 - 2758) */}
       <Sequence from={2520} durationInFrames={238}>
         <Beat14 />
-        <NameCard name="Z.ai" role="GLM-5.2 Model" borderColor="#FF5A5F" />
       </Sequence>
 
       {/* Segment 15: 91.92s -> 97.12s (Frames 2758 - 2914) */}
@@ -130,7 +123,6 @@ export const MyVideo: React.FC = () => {
       {/* Segment 20: 119.84s -> 125.04s (Frames 3595 - 3751) */}
       <Sequence from={3595} durationInFrames={156}>
         <Beat20 />
-        <NameCard name="Coinbase" role="Crypto Exchange" borderColor="#FFB800" />
       </Sequence>
 
       {/* Segment 21: 125.04s -> 129.68s (Frames 3751 - 3890) */}
@@ -191,7 +183,6 @@ export const MyVideo: React.FC = () => {
       {/* Segment 32: 187.20s -> 192.56s (Frames 5616 - 5777) */}
       <Sequence from={5616} durationInFrames={161}>
         <Beat32 />
-        <NameCard name="Coinbase" role="Crypto Exchange" borderColor="#FFB800" />
       </Sequence>
 
       {/* Segment 33: 192.56s -> 196.72s (Frames 5777 - 5902) */}
