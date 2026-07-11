@@ -1,0 +1,1176 @@
+{
+	"systeminfo": "AVX = 1 | AVX2 = 1 | AVX512 = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | METAL = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 0 | VSX = 0 | CUDA = 0 | COREML = 0 | OPENVINO = 0",
+	"model": {
+		"type": "tiny",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 384,
+			"head": 6,
+			"layer": 4
+		},
+		"text": {
+			"ctx": 448,
+			"state": 384,
+			"head": 6,
+			"layer": 4
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "D:\\automatic-broll\\whisper\\ggml-tiny.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:04,160"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 4160
+			},
+			"text": " On May 19th, 2026, Sundar Pechai stood on stage"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:04,160",
+				"to": "00:00:06,160"
+			},
+			"offsets": {
+				"from": 4160,
+				"to": 6160
+			},
+			"text": " at Google I/O and made a promise."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:06,160",
+				"to": "00:00:08,160"
+			},
+			"offsets": {
+				"from": 6160,
+				"to": 8160
+			},
+			"text": " Gemini 3.5 Pro."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:08,160",
+				"to": "00:00:11,480"
+			},
+			"offsets": {
+				"from": 8160,
+				"to": 11480
+			},
+			"text": " Google's next flagship AI model would launch in June,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:11,480",
+				"to": "00:00:13,960"
+			},
+			"offsets": {
+				"from": 11480,
+				"to": 13960
+			},
+			"text": " the audience clapped, then he added one more line,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:13,960",
+				"to": "00:00:16,880"
+			},
+			"offsets": {
+				"from": 13960,
+				"to": 16880
+			},
+			"text": " \"Give us until next month, and the room audibly growned.\""
+		},
+		{
+			"timestamps": {
+				"from": "00:00:16,880",
+				"to": "00:00:19,520"
+			},
+			"offsets": {
+				"from": 16880,
+				"to": 19520
+			},
+			"text": " That grown turned out to be the most accurate reaction"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:19,520",
+				"to": "00:00:20,360"
+			},
+			"offsets": {
+				"from": 19520,
+				"to": 20360
+			},
+			"text": " of the year."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:20,360",
+				"to": "00:00:23,480"
+			},
+			"offsets": {
+				"from": 20360,
+				"to": 23480
+			},
+			"text": " June came, June went, \"No Gemini 3.5 Pro.\""
+		},
+		{
+			"timestamps": {
+				"from": "00:00:23,480",
+				"to": "00:00:25,880"
+			},
+			"offsets": {
+				"from": 23480,
+				"to": 25880
+			},
+			"text": " As of late June, the model was still locked"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:25,880",
+				"to": "00:00:29,080"
+			},
+			"offsets": {
+				"from": 25880,
+				"to": 29080
+			},
+			"text": " inside a limited Vertex AI enterprise preview."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:29,080",
+				"to": "00:00:32,240"
+			},
+			"offsets": {
+				"from": 29080,
+				"to": 32240
+			},
+			"text": " Available only to a handful of approved customers and testers,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:32,240",
+				"to": "00:00:35,080"
+			},
+			"offsets": {
+				"from": 32240,
+				"to": 35080
+			},
+			"text": " Google quietly pushed the public launch to July,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:35,080",
+				"to": "00:00:37,080"
+			},
+			"offsets": {
+				"from": 35080,
+				"to": 37080
+			},
+			"text": " citing the need to fix efficiency,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:37,080",
+				"to": "00:00:41,080"
+			},
+			"offsets": {
+				"from": 37080,
+				"to": 41080
+			},
+			"text": " and improve performance on long, complex, multi-step tasks."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:41,080",
+				"to": "00:00:43,720"
+			},
+			"offsets": {
+				"from": 41080,
+				"to": 43720
+			},
+			"text": " On paper, that sounds like routine engineering."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:43,720",
+				"to": "00:00:45,680"
+			},
+			"offsets": {
+				"from": 43720,
+				"to": 45680
+			},
+			"text": " Models slip their deadlines all the time,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:45,680",
+				"to": "00:00:47,800"
+			},
+			"offsets": {
+				"from": 45680,
+				"to": 47800
+			},
+			"text": " but this delay didn't happen in isolation."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:47,800",
+				"to": "00:00:50,360"
+			},
+			"offsets": {
+				"from": 47800,
+				"to": 50360
+			},
+			"text": " Between June 18th and June 24th,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:50,360",
+				"to": "00:00:52,280"
+			},
+			"offsets": {
+				"from": 50360,
+				"to": 52280
+			},
+			"text": " in the span of just 10 days,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:52,280",
+				"to": "00:00:55,040"
+			},
+			"offsets": {
+				"from": 52280,
+				"to": 55040
+			},
+			"text": " four senior DeepMind researchers walked out the door,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:55,040",
+				"to": "00:00:56,640"
+			},
+			"offsets": {
+				"from": 55040,
+				"to": 56640
+			},
+			"text": " and these weren't junior engineers."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:56,640",
+				"to": "00:01:00,440"
+			},
+			"offsets": {
+				"from": 56640,
+				"to": 60440
+			},
+			"text": " Noam Shazir, the co-lead of Gemini, left for open AI."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:00,440",
+				"to": "00:01:02,520"
+			},
+			"offsets": {
+				"from": 60440,
+				"to": 62520
+			},
+			"text": " This is a man who co-authored the paper"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:02,520",
+				"to": "00:01:04,680"
+			},
+			"offsets": {
+				"from": 62520,
+				"to": 64680
+			},
+			"text": " that introduced the transformer architecture."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:04,680",
+				"to": "00:01:07,640"
+			},
+			"offsets": {
+				"from": 64680,
+				"to": 67640
+			},
+			"text": " The exact technology every modern AI model,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:07,640",
+				"to": "00:01:10,040"
+			},
+			"offsets": {
+				"from": 67640,
+				"to": 70040
+			},
+			"text": " including Gemini itself, is built on."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:10,040",
+				"to": "00:01:14,240"
+			},
+			"offsets": {
+				"from": 70040,
+				"to": 74240
+			},
+			"text": " Google had paid $2.7 billion just two years earlier"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:14,240",
+				"to": "00:01:15,680"
+			},
+			"offsets": {
+				"from": 74240,
+				"to": 75680
+			},
+			"text": " to bring him back into the company."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:15,680",
+				"to": "00:01:19,400"
+			},
+			"offsets": {
+				"from": 75680,
+				"to": 79400
+			},
+			"text": " He lasted 22 months, alongside him, John Jumper,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:19,400",
+				"to": "00:01:21,720"
+			},
+			"offsets": {
+				"from": 79400,
+				"to": 81720
+			},
+			"text": " a Nobel laureate, left for anthropic."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:21,720",
+				"to": "00:01:24,600"
+			},
+			"offsets": {
+				"from": 81720,
+				"to": 84600
+			},
+			"text": " Two more senior researchers, Jonas Adler,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:24,600",
+				"to": "00:01:28,120"
+			},
+			"offsets": {
+				"from": 84600,
+				"to": 88120
+			},
+			"text": " and Alexander Pritzel, also joined anthropic in the same week."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:28,120",
+				"to": "00:01:29,760"
+			},
+			"offsets": {
+				"from": 88120,
+				"to": 89760
+			},
+			"text": " The market noticed immediately."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:29,760",
+				"to": "00:01:34,400"
+			},
+			"offsets": {
+				"from": 89760,
+				"to": 94400
+			},
+			"text": " Alphabet's stock dropped, wiping out roughly $225 billion"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:34,400",
+				"to": "00:01:35,400"
+			},
+			"offsets": {
+				"from": 94400,
+				"to": 95400
+			},
+			"text": " in a matter of days."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:35,400",
+				"to": "00:01:38,160"
+			},
+			"offsets": {
+				"from": 95400,
+				"to": 98160
+			},
+			"text": " Now here's why this story matters beyond just headlines."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:38,160",
+				"to": "00:01:41,440"
+			},
+			"offsets": {
+				"from": 98160,
+				"to": 101440
+			},
+			"text": " Gemini 3.5 Pro wasn't just another update."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:41,440",
+				"to": "00:01:45,240"
+			},
+			"offsets": {
+				"from": 101440,
+				"to": 105240
+			},
+			"text": " Google promised it would ship with a 2 million token context window,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:45,240",
+				"to": "00:01:48,280"
+			},
+			"offsets": {
+				"from": 105240,
+				"to": 108280
+			},
+			"text": " double what Gemini 3.5 Flash offers,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:48,280",
+				"to": "00:01:51,120"
+			},
+			"offsets": {
+				"from": 108280,
+				"to": 111120
+			},
+			"text": " and the largest of any major frontier model at the time."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:51,120",
+				"to": "00:01:54,440"
+			},
+			"offsets": {
+				"from": 111120,
+				"to": 114440
+			},
+			"text": " That means the ability to process entire code bases."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:54,440",
+				"to": "00:01:58,280"
+			},
+			"offsets": {
+				"from": 114440,
+				"to": 118280
+			},
+			"text": " Years of financial records, or hours of video in a single prompt,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:58,280",
+				"to": "00:02:01,520"
+			},
+			"offsets": {
+				"from": 118280,
+				"to": 121520
+			},
+			"text": " alongside that, a new reasoning mode called Deep Think,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:01,520",
+				"to": "00:02:04,240"
+			},
+			"offsets": {
+				"from": 121520,
+				"to": 124240
+			},
+			"text": " Google's direct answer to Claude's extended thinking,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:04,240",
+				"to": "00:02:06,000"
+			},
+			"offsets": {
+				"from": 124240,
+				"to": 126000
+			},
+			"text": " and open AI's reasoning models,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:06,000",
+				"to": "00:02:09,720"
+			},
+			"offsets": {
+				"from": 126000,
+				"to": 129720
+			},
+			"text": " locked behind a premium $250 a month subscription tier."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:09,720",
+				"to": "00:02:12,160"
+			},
+			"offsets": {
+				"from": 129720,
+				"to": 132160
+			},
+			"text": " This was supposed to be Google's statement moment."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:12,160",
+				"to": "00:02:14,600"
+			},
+			"offsets": {
+				"from": 132160,
+				"to": 134600
+			},
+			"text": " Instead, it became a credibility test,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:14,600",
+				"to": "00:02:17,720"
+			},
+			"offsets": {
+				"from": 134600,
+				"to": 137720
+			},
+			"text": " because while Gemini 3.5 Pro sat in preview,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:17,720",
+				"to": "00:02:19,360"
+			},
+			"offsets": {
+				"from": 137720,
+				"to": 139360
+			},
+			"text": " the rest of the industry didn't wait."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:19,360",
+				"to": "00:02:21,600"
+			},
+			"offsets": {
+				"from": 139360,
+				"to": 141600
+			},
+			"text": " Claude Sonnet 5 had already launched,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:21,600",
+				"to": "00:02:24,440"
+			},
+			"offsets": {
+				"from": 141600,
+				"to": 144440
+			},
+			"text": " and become the default model across Anthropics platform."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:24,440",
+				"to": "00:02:28,360"
+			},
+			"offsets": {
+				"from": 144440,
+				"to": 148360
+			},
+			"text": " GPT 5.6 was shipping preview versions to partners."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:28,360",
+				"to": "00:02:30,720"
+			},
+			"offsets": {
+				"from": 148360,
+				"to": 150720
+			},
+			"text": " Chinese labs were moving just as fast,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:30,720",
+				"to": "00:02:34,520"
+			},
+			"offsets": {
+				"from": 150720,
+				"to": 154520
+			},
+			"text": " with models like GLM 5.2, and Xiaomi's MIMO,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:34,520",
+				"to": "00:02:36,680"
+			},
+			"offsets": {
+				"from": 154520,
+				"to": 156680
+			},
+			"text": " showing that cheaper open alternatives"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:36,680",
+				"to": "00:02:38,480"
+			},
+			"offsets": {
+				"from": 156680,
+				"to": 158480
+			},
+			"text": " were closing the gap on performance."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:38,480",
+				"to": "00:02:41,720"
+			},
+			"offsets": {
+				"from": 158480,
+				"to": 161720
+			},
+			"text": " So the question being asked across the industry right now is simple."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:41,720",
+				"to": "00:02:43,960"
+			},
+			"offsets": {
+				"from": 161720,
+				"to": 163960
+			},
+			"text": " Is this just a normal scheduling delay"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:43,960",
+				"to": "00:02:46,000"
+			},
+			"offsets": {
+				"from": 163960,
+				"to": 166000
+			},
+			"text": " that Google will recover from in a few weeks,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:46,000",
+				"to": "00:02:47,680"
+			},
+			"offsets": {
+				"from": 166000,
+				"to": 167680
+			},
+			"text": " or is it a sign of something deeper?"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:47,680",
+				"to": "00:02:49,960"
+			},
+			"offsets": {
+				"from": 167680,
+				"to": 169960
+			},
+			"text": " A talent war that Google is quietly losing"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:49,960",
+				"to": "00:02:52,920"
+			},
+			"offsets": {
+				"from": 169960,
+				"to": 172920
+			},
+			"text": " to Anthropic and open AI to be fair to Google,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:52,920",
+				"to": "00:02:55,400"
+			},
+			"offsets": {
+				"from": 172920,
+				"to": 175400
+			},
+			"text": " a launch slipping a few weeks isn't unusual."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:55,400",
+				"to": "00:03:00,000"
+			},
+			"offsets": {
+				"from": 175400,
+				"to": 180000
+			},
+			"text": " Gemini Ultra 1.5 slipped by three months earlier this same year,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:00,000",
+				"to": "00:03:02,440"
+			},
+			"offsets": {
+				"from": 180000,
+				"to": 182440
+			},
+			"text": " and still turned out to be a strong model when it landed."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:02,440",
+				"to": "00:03:05,520"
+			},
+			"offsets": {
+				"from": 182440,
+				"to": 185520
+			},
+			"text": " Google also still holds massive structural advantages,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:05,520",
+				"to": "00:03:08,680"
+			},
+			"offsets": {
+				"from": 185520,
+				"to": 188680
+			},
+			"text": " in-house compute at a scale few competitors can match,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:08,680",
+				"to": "00:03:12,200"
+			},
+			"offsets": {
+				"from": 188680,
+				"to": 192200
+			},
+			"text": " built in distribution through search, Android, and workspace."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:12,200",
+				"to": "00:03:14,320"
+			},
+			"offsets": {
+				"from": 192200,
+				"to": 194320
+			},
+			"text": " A cloud business already deeply embedded"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:14,320",
+				"to": "00:03:16,120"
+			},
+			"offsets": {
+				"from": 194320,
+				"to": 196120
+			},
+			"text": " across enterprise AI adoption,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:16,120",
+				"to": "00:03:18,240"
+			},
+			"offsets": {
+				"from": 196120,
+				"to": 198240
+			},
+			"text": " but narrative matters in this industry."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:18,240",
+				"to": "00:03:20,400"
+			},
+			"offsets": {
+				"from": 198240,
+				"to": 200400
+			},
+			"text": " Maybe more than it should, and right now,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:20,400",
+				"to": "00:03:22,240"
+			},
+			"offsets": {
+				"from": 200400,
+				"to": 202240
+			},
+			"text": " the narrative isn't in Google's favor."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:22,240",
+				"to": "00:03:24,560"
+			},
+			"offsets": {
+				"from": 202240,
+				"to": 204560
+			},
+			"text": " In the same month, Google lost key researchers"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:24,560",
+				"to": "00:03:25,920"
+			},
+			"offsets": {
+				"from": 204560,
+				"to": 205920
+			},
+			"text": " and missed a deadline."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:25,920",
+				"to": "00:03:27,840"
+			},
+			"offsets": {
+				"from": 205920,
+				"to": 207840
+			},
+			"text": " Anthropic picked up a Nobel laureate."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:27,840",
+				"to": "00:03:30,600"
+			},
+			"offsets": {
+				"from": 207840,
+				"to": 210600
+			},
+			"text": " Open AI picked up the co-inventor of the transformer,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:30,600",
+				"to": "00:03:33,440"
+			},
+			"offsets": {
+				"from": 210600,
+				"to": 213440
+			},
+			"text": " the very technology Google's own model depends on."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:33,440",
+				"to": "00:03:36,960"
+			},
+			"offsets": {
+				"from": 213440,
+				"to": 216960
+			},
+			"text": " If Gemini 3.5 Pro finally launches in July,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:36,960",
+				"to": "00:03:39,240"
+			},
+			"offsets": {
+				"from": 216960,
+				"to": 219240
+			},
+			"text": " and actually delivers on everything promised,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:39,240",
+				"to": "00:03:42,960"
+			},
+			"offsets": {
+				"from": 219240,
+				"to": 222960
+			},
+			"text": " the 2 million token window, real deep-think performance,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:42,960",
+				"to": "00:03:46,760"
+			},
+			"offsets": {
+				"from": 222960,
+				"to": 226760
+			},
+			"text": " a gente capability that genuinely competes with cloud and GPT,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:46,760",
+				"to": "00:03:49,480"
+			},
+			"offsets": {
+				"from": 226760,
+				"to": 229480
+			},
+			"text": " this entire story gets forgotten in a matter of weeks."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:49,480",
+				"to": "00:03:51,280"
+			},
+			"offsets": {
+				"from": 229480,
+				"to": 231280
+			},
+			"text": " Nobody remembers a rough June."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:51,280",
+				"to": "00:03:53,680"
+			},
+			"offsets": {
+				"from": 231280,
+				"to": 233680
+			},
+			"text": " If July ships something genuinely impressive,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:53,680",
+				"to": "00:03:56,560"
+			},
+			"offsets": {
+				"from": 233680,
+				"to": 236560
+			},
+			"text": " but if it slips again, or if it launches and under-delivers,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:56,560",
+				"to": "00:03:58,360"
+			},
+			"offsets": {
+				"from": 236560,
+				"to": 238360
+			},
+			"text": " then the harder question doesn't go away."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:58,360",
+				"to": "00:04:01,040"
+			},
+			"offsets": {
+				"from": 238360,
+				"to": 241040
+			},
+			"text": " Can Google still hold the frontier of AI research,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:01,040",
+				"to": "00:04:03,240"
+			},
+			"offsets": {
+				"from": 241040,
+				"to": 243240
+			},
+			"text": " or is the center of gravity quietly shifting"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:03,240",
+				"to": "00:04:04,920"
+			},
+			"offsets": {
+				"from": 243240,
+				"to": 244920
+			},
+			"text": " to Anthropic and open AI?"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:04,920",
+				"to": "00:04:08,960"
+			},
+			"offsets": {
+				"from": 244920,
+				"to": 248960
+			},
+			"text": " Right now, in July, 2026, that question is still open,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:08,960",
+				"to": "00:04:12,440"
+			},
+			"offsets": {
+				"from": 248960,
+				"to": 252440
+			},
+			"text": " and the entire AI industry is watching to see which way it breaks."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:12,440",
+				"to": "00:04:15,680"
+			},
+			"offsets": {
+				"from": 252440,
+				"to": 255680
+			},
+			"text": " That's the story of Gemini 3.5 Pro's delay,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:15,680",
+				"to": "00:04:19,520"
+			},
+			"offsets": {
+				"from": 255680,
+				"to": 259520
+			},
+			"text": " and why 10 days in June may end up defining Google's AI year."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:19,520",
+				"to": "00:04:21,520"
+			},
+			"offsets": {
+				"from": 259520,
+				"to": 261520
+			},
+			"text": " Word Count is around 700,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:21,520",
+				"to": "00:04:24,200"
+			},
+			"offsets": {
+				"from": 261520,
+				"to": 264200
+			},
+			"text": " which lands you close to five minutes at a natural pace."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:24,200",
+				"to": "00:04:26,640"
+			},
+			"offsets": {
+				"from": 264200,
+				"to": 266640
+			},
+			"text": " If you want it stretched to a fuller seven minutes,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:26,640",
+				"to": "00:04:28,800"
+			},
+			"offsets": {
+				"from": 266640,
+				"to": 268800
+			},
+			"text": " I can expand the shazir background,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:28,800",
+				"to": "00:04:32,880"
+			},
+			"offsets": {
+				"from": 268800,
+				"to": 272880
+			},
+			"text": " add the deep-think versus cloud/GPT reasoning comparison"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:32,880",
+				"to": "00:04:35,640"
+			},
+			"offsets": {
+				"from": 272880,
+				"to": 275640
+			},
+			"text": " in more depth, or add a section on how Chinese models"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:35,640",
+				"to": "00:04:36,720"
+			},
+			"offsets": {
+				"from": 275640,
+				"to": 276720
+			},
+			"text": " are pressuring pricing."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:36,720",
+				"to": "00:04:39,240"
+			},
+			"offsets": {
+				"from": 276720,
+				"to": 279240
+			},
+			"text": " Let me know which direction, and I'll extend it."
+		}
+	]
+}
