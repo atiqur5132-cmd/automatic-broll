@@ -61,8 +61,7 @@ export const BackgroundLayers: React.FC = () => {
           width: 900,
           height: 900,
           borderRadius: "50%",
-          background: accentGlow,
-          filter: "blur(140px)",
+          background: `radial-gradient(circle, ${accentGlow} 0%, transparent 70%)`,
           pointerEvents: "none",
         }}
       />
@@ -74,8 +73,7 @@ export const BackgroundLayers: React.FC = () => {
           width: 1000,
           height: 1000,
           borderRadius: "50%",
-          background: secondaryGlow,
-          filter: "blur(160px)",
+          background: `radial-gradient(circle, ${secondaryGlow} 0%, transparent 70%)`,
           pointerEvents: "none",
         }}
       />
