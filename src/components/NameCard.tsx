@@ -5,20 +5,20 @@ import { displayFontFamily, bodyFontFamily } from "../fonts";
 export interface NameCardProps {
   name: string;
   role?: string;
+  borderColor?: string;
 }
 
-export const NameCard: React.FC<NameCardProps> = ({ name, role }) => {
+export const NameCard: React.FC<NameCardProps> = ({ name, role, borderColor = "#FFB800" }) => {
   const frame = useCurrentFrame();
   const { fps, durationInFrames } = useVideoConfig();
 
-  // Entrance animation (fade + slide up + blur clear)
+  // Slide-from-left entrance
   const enterProgress = interpolate(frame, [0, Math.round(fps * 0.6)], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
     easing: Easing.bezier(0.16, 1, 0.3, 1),
   });
 
-  // Exit animation (fade out + subtle slide)
   const exitProgress = interpolate(
     frame,
     [durationInFrames - Math.round(fps * 0.5), durationInFrames],
@@ -31,8 +31,8 @@ export const NameCard: React.FC<NameCardProps> = ({ name, role }) => {
   );
 
   const combinedOpacity = enterProgress * exitProgress;
-  const translateY = interpolate(enterProgress, [0, 1], [36, 0]) +
-    interpolate(exitProgress, [0, 1], [18, 0]);
+  const translateX = interpolate(enterProgress, [0, 1], [-100, 0]) +
+    interpolate(exitProgress, [0, 1], [0, -50]);
 
   return (
     <div
@@ -41,26 +41,26 @@ export const NameCard: React.FC<NameCardProps> = ({ name, role }) => {
         left: 100,
         bottom: 110,
         opacity: combinedOpacity,
-        transform: `translateY(${translateY}px)`,
+        transform: `translateX(${translateX}px)`,
         display: "flex",
         flexDirection: "column",
-        gap: 8,
-        padding: "24px 36px",
-        background: "rgba(11, 16, 29, 0.82)",
+        gap: 6,
+        padding: "20px 32px",
+        background: "rgba(13, 14, 18, 0.88)",
         backdropFilter: "blur(20px)",
-        borderLeft: "5px solid #4f6ef7",
+        borderLeft: `5px solid ${borderColor}`,
         borderRadius: "0 18px 18px 0",
-        boxShadow: "0 20px 45px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08)",
+        boxShadow: "0 20px 45px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.08)",
         zIndex: 50,
       }}
     >
       <div
         style={{
           fontFamily: displayFontFamily,
-          fontSize: 44,
+          fontSize: 40,
           fontWeight: 800,
           color: "#ffffff",
-          letterSpacing: "-0.02em",
+          letterSpacing: "-0.01em",
           lineHeight: 1.1,
         }}
       >
@@ -70,11 +70,10 @@ export const NameCard: React.FC<NameCardProps> = ({ name, role }) => {
         <div
           style={{
             fontFamily: bodyFontFamily,
-            fontSize: 22,
-            fontWeight: 500,
+            fontSize: 20,
+            fontWeight: 600,
             color: "#94a3b8",
-            letterSpacing: "0.04em",
-            textTransform: "uppercase",
+            letterSpacing: "0.02em",
           }}
         >
           {role}

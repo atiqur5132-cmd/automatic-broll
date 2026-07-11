@@ -24,10 +24,10 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Render Remotion Composition
-        run: npx remotion render MyVideo out/gemini_35_pro_delay.mp4 --concurrency=4 --gl=egl
+        run: npx remotion render MyVideo out/video.mp4 --concurrency=4 --gl=egl
 
       - name: Upload Video Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: gemini_35_pro_delay
-          path: out/gemini_35_pro_delay.mp4
+          name: rendered-video
+          path: out/video.mp4

@@ -9,5 +9,5 @@ export const getAudioDuration = async (src: string): Promise<number> => {
   } catch {
     // fallback if environment probing fails
   }
-  return 261.00; // Exact duration of public/voiceover.wav (7830 frames @ 30fps)
+  return 251.38; // Exact duration of public/edited_audio.wav (7542 frames @ 30fps)
 };

@@ -4,46 +4,42 @@ import { AbsoluteFill, useCurrentFrame, interpolate } from "remotion";
 export const BackgroundLayers: React.FC = () => {
   const frame = useCurrentFrame();
 
-  // Determine current macro setting based on frame
-  const driftX = interpolate(frame, [0, 7830], [0, 120]);
-  const driftY = Math.sin(frame / 60) * 25;
-  const zoom = interpolate(frame, [0, 7830], [1, 1.08]);
+  const driftX = interpolate(frame, [0, 7542], [0, 100]);
+  const driftY = Math.sin(frame / 60) * 20;
+  const zoom = interpolate(frame, [0, 7542], [1, 1.05]);
 
-  let bgGradient = "radial-gradient(circle at 50% 30%, #1a1e36 0%, #080a12 70%, #030408 100%)";
-  let accentGlow = "rgba(79, 110, 247, 0.18)";
-  let secondaryGlow = "rgba(147, 83, 211, 0.12)";
+  let bgGradient = "radial-gradient(circle at 50% 30%, #11131a 0%, #08090d 70%, #050508 100%)";
+  let accentGlow = "rgba(255, 184, 0, 0.12)"; // Amber
+  let secondaryGlow = "rgba(0, 240, 255, 0.06)"; // Cyan
 
-  if (frame >= 611 && frame < 1434) {
-    bgGradient = "radial-gradient(circle at 60% 40%, #0f2231 0%, #070e16 70%, #020408 100%)";
-    accentGlow = "rgba(14, 165, 233, 0.22)";
-    secondaryGlow = "rgba(15, 118, 110, 0.14)";
-  } else if (frame >= 1434 && frame < 2644) {
-    bgGradient = "radial-gradient(circle at 40% 35%, #2a151b 0%, #11090d 70%, #050204 100%)";
-    accentGlow = "rgba(244, 63, 94, 0.20)";
-    secondaryGlow = "rgba(245, 158, 11, 0.14)";
-  } else if (frame >= 2644 && frame < 2945) {
-    bgGradient = "radial-gradient(circle at 50% 50%, #311018 0%, #0f0508 70%, #040102 100%)";
-    accentGlow = "rgba(225, 29, 72, 0.28)";
-    secondaryGlow = "rgba(159, 18, 57, 0.18)";
-  } else if (frame >= 2945 && frame < 4038) {
-    bgGradient = "radial-gradient(circle at 50% 35%, #182242 0%, #080c18 70%, #03050a 100%)";
-    accentGlow = "rgba(59, 130, 246, 0.24)";
-    secondaryGlow = "rgba(234, 179, 8, 0.16)";
-  } else if (frame >= 4038 && frame < 5188) {
-    bgGradient = "radial-gradient(circle at 65% 45%, #1e1338 0%, #0b0716 70%, #04020a 100%)";
-    accentGlow = "rgba(168, 85, 247, 0.24)";
-    secondaryGlow = "rgba(6, 182, 212, 0.18)";
-  } else if (frame >= 5188 && frame < 6403) {
-    bgGradient = "radial-gradient(circle at 45% 40%, #0f2926 0%, #061110 70%, #020606 100%)";
-    accentGlow = "rgba(16, 185, 129, 0.22)";
-    secondaryGlow = "rgba(59, 130, 246, 0.15)";
-  } else if (frame >= 6403) {
-    bgGradient = "radial-gradient(circle at 50% 40%, #1c1d3b 0%, #0a0a14 70%, #030308 100%)";
-    accentGlow = "rgba(99, 102, 241, 0.22)";
-    secondaryGlow = "rgba(251, 191, 36, 0.16)";
+  if (frame >= 869 && frame < 1937) {
+    // Environment 2: Timeline / Data Flow
+    bgGradient = "radial-gradient(circle at 40% 40%, #0d121f 0%, #060912 70%, #030408 100%)";
+    accentGlow = "rgba(0, 240, 255, 0.15)"; // Cyan
+    secondaryGlow = "rgba(255, 90, 95, 0.1)"; // Crimson
+  } else if (frame >= 1937 && frame < 3595) {
+    // Environment 3: Device / Tokens Dashboard
+    bgGradient = "radial-gradient(circle at 60% 35%, #1f0f13 0%, #0d0709 70%, #050204 100%)";
+    accentGlow = "rgba(255, 90, 95, 0.18)"; // Crimson
+    secondaryGlow = "rgba(255, 184, 0, 0.08)"; // Amber
+  } else if (frame >= 3595 && frame < 4745) {
+    // Environment 4: Coinbase Routing Dashboard
+    bgGradient = "radial-gradient(circle at 50% 50%, #0a1b24 0%, #050e12 70%, #020608 100%)";
+    accentGlow = "rgba(0, 240, 255, 0.16)"; // Cyan
+    secondaryGlow = "rgba(255, 184, 0, 0.12)"; // Amber
+  } else if (frame >= 4745 && frame < 6048) {
+    // Environment 5: Pricing / Market Shift Analysis
+    bgGradient = "radial-gradient(circle at 35% 45%, #1c1810 0%, #0a0906 70%, #040402 100%)";
+    accentGlow = "rgba(255, 184, 0, 0.15)"; // Amber
+    secondaryGlow = "rgba(255, 90, 95, 0.08)"; // Crimson
+  } else if (frame >= 6048) {
+    // Environment 6: Outro / Question Environment
+    bgGradient = "radial-gradient(circle at 50% 40%, #0e1220 0%, #070912 70%, #030408 100%)";
+    accentGlow = "rgba(0, 240, 255, 0.14)"; // Cyan
+    secondaryGlow = "rgba(255, 184, 0, 0.1)"; // Amber
   }
 
-  const gridOffset = (frame * 0.4) % 80;
+  const gridOffset = (frame * 0.5) % 80;
 
   return (
     <AbsoluteFill
@@ -53,49 +49,78 @@ export const BackgroundLayers: React.FC = () => {
         transform: `scale(${zoom}) translate(${-driftX * 0.1}px, ${driftY * 0.1}px)`,
       }}
     >
+      {/* Glow 1 */}
       <div
         style={{
           position: "absolute",
-          top: "-15%",
-          left: `${20 + Math.sin(frame / 70) * 15}%`,
-          width: 900,
-          height: 900,
+          top: "-20%",
+          left: `${15 + Math.sin(frame / 90) * 10}%`,
+          width: 1000,
+          height: 1000,
           borderRadius: "50%",
           background: `radial-gradient(circle, ${accentGlow} 0%, transparent 70%)`,
           pointerEvents: "none",
         }}
       />
+      {/* Glow 2 */}
       <div
         style={{
           position: "absolute",
-          bottom: "-20%",
-          right: `${15 + Math.cos(frame / 80) * 18}%`,
-          width: 1000,
-          height: 1000,
+          bottom: "-25%",
+          right: `${10 + Math.cos(frame / 100) * 12}%`,
+          width: 1100,
+          height: 1100,
           borderRadius: "50%",
           background: `radial-gradient(circle, ${secondaryGlow} 0%, transparent 70%)`,
           pointerEvents: "none",
         }}
       />
+
+      {/* Grid Pattern */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          backgroundImage: `
-            linear-gradient(to right, rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.025) 1px, transparent 1px)
+          background: `
+            linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px)
           `,
           backgroundSize: "80px 80px",
           backgroundPosition: `0px ${gridOffset}px`,
-          opacity: 0.65,
+          opacity: 0.7,
           pointerEvents: "none",
         }}
       />
-      {[...Array(12)].map((_, i) => {
-        const x = ((i * 157 + frame * (0.3 + (i % 3) * 0.2)) % 1920);
-        const y = ((i * 89 + Math.sin(frame / 40 + i) * 30) % 1080);
-        const size = 3 + (i % 4) * 2;
-        const opacity = 0.15 + (i % 3) * 0.1;
+
+      {/* Subtle Noise Texture Overlay using SVG */}
+      <svg
+        style={{
+          position: "absolute",
+          inset: 0,
+          opacity: 0.04,
+          pointerEvents: "none",
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        <filter id="noiseFilter">
+          <feTurbulence
+            type="fractalNoise"
+            baseFrequency="0.8"
+            numOctaves="3"
+            stitchTiles="stitch"
+          />
+        </filter>
+        <rect width="100%" height="100%" filter="url(#noiseFilter)" />
+      </svg>
+
+      {/* Floating Particles (Data Packets) */}
+      {[...Array(15)].map((_, i) => {
+        const x = ((i * 127 + frame * (0.2 + (i % 3) * 0.15)) % 1920);
+        const y = ((i * 79 + Math.sin(frame / 50 + i) * 20) % 1080);
+        const size = 3 + (i % 3) * 2;
+        const opacity = 0.1 + (i % 3) * 0.12;
+        const color = i % 2 === 0 ? "#00F0FF" : "#FF5A5F";
         return (
           <div
             key={i}
@@ -106,18 +131,20 @@ export const BackgroundLayers: React.FC = () => {
               width: size,
               height: size,
               borderRadius: "50%",
-              backgroundColor: "rgba(255, 255, 255, 0.7)",
+              backgroundColor: color,
               opacity,
-              boxShadow: "0 0 12px rgba(255, 255, 255, 0.5)",
+              boxShadow: `0 0 10px ${color}`,
             }}
           />
         );
       })}
+
+      {/* Vignette */}
       <div
         style={{
           position: "absolute",
           inset: 0,
-          background: "radial-gradient(circle at 50% 50%, transparent 65%, rgba(0, 0, 0, 0.6) 100%)",
+          background: "radial-gradient(circle at 50% 50%, transparent 60%, rgba(0, 0, 0, 0.65) 100%)",
           pointerEvents: "none",
         }}
       />

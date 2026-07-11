@@ -5,10 +5,10 @@ import { getAudioDuration } from "./utils/getAudioDuration";
 import "./index.css";
 
 const calculateMetadata: CalculateMetadataFunction<Record<string, unknown>> = async () => {
-  const durationInSeconds = await getAudioDuration(staticFile("voiceover.wav"));
+  const durationInSeconds = await getAudioDuration(staticFile("edited_audio.wav"));
   const durationInFrames = Math.ceil(durationInSeconds * 30);
   return {
-    durationInFrames: durationInFrames > 0 ? durationInFrames : 7830,
+    durationInFrames: durationInFrames > 0 ? durationInFrames : 7542,
     fps: 30,
     width: 1920,
     height: 1080,
@@ -20,7 +20,7 @@ export const Root: React.FC = () => {
     <Composition
       id="MyVideo"
       component={MyVideo}
-      durationInFrames={7830}
+      durationInFrames={7542}
       fps={30}
       width={1920}
       height={1080}
