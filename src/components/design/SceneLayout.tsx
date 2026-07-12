@@ -10,9 +10,9 @@ interface SceneLayoutProps {
 }
 
 /**
- * Clean, cinematic documentary frame layout.
- * No top/corner HUD badges, no dashboard clutter.
- * Focuses 100% on high-impact visual storytelling matching the voiceover.
+ * Clean, distraction-free 1920x1080 Full-Screen Documentary Layout.
+ * Zero tiny top/bottom clutter text.
+ * Allows the main visual component to occupy the entire screen edge-to-edge.
  */
 export const SceneLayout: React.FC<SceneLayoutProps> = ({
   title,
@@ -22,13 +22,7 @@ export const SceneLayout: React.FC<SceneLayoutProps> = ({
 }) => {
   const frame = useCurrentFrame();
 
-  const fadeIn = interpolate(frame, [0, 12], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-    easing: Easing.bezier(0.16, 1, 0.3, 1),
-  });
-
-  const translateY = interpolate(frame, [0, 12], [18, 0], {
+  const fadeIn = interpolate(frame, [0, 10], [0, 1], {
     extrapolateLeft: "clamp",
     extrapolateRight: "clamp",
     easing: Easing.bezier(0.16, 1, 0.3, 1),
@@ -39,64 +33,67 @@ export const SceneLayout: React.FC<SceneLayoutProps> = ({
       style={{
         position: "absolute",
         inset: 0,
+        width: 1920,
+        height: 1080,
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center",
-        padding: "100px 140px",
+        padding: "70px 90px",
         boxSizing: "border-box",
         opacity: fadeIn,
-        transform: `translateY(${translateY}px)`,
         fontFamily: displayFontFamily,
         color: "#FFFFFF",
       }}
     >
+      {/* Optional Clean Topic Header (Only if title provided, no tiny metadata) */}
       {title && (
         <div
           style={{
-            fontSize: 28,
-            fontWeight: 700,
-            letterSpacing: "0.15em",
-            textTransform: "uppercase",
-            color: accentColor,
-            marginBottom: 24,
+            marginBottom: "36px",
             textAlign: "center",
           }}
         >
-          {title}
+          <div
+            style={{
+              fontSize: 26,
+              fontWeight: 800,
+              letterSpacing: "0.2em",
+              color: accentColor,
+              textTransform: "uppercase",
+            }}
+          >
+            {title}
+          </div>
+          {subtitle && (
+            <div
+              style={{
+                fontSize: 38,
+                fontWeight: 900,
+                color: "#FFFFFF",
+                marginTop: 8,
+                letterSpacing: "-0.01em",
+              }}
+            >
+              {subtitle}
+            </div>
+          )}
         </div>
       )}
 
-      {children && (
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "100%",
-            margin: "12px 0",
-          }}
-        >
-          {children}
-        </div>
-      )}
-
-      {subtitle && (
-        <div
-          style={{
-            fontSize: 36,
-            fontWeight: 600,
-            color: "rgba(255, 255, 255, 0.9)",
-            textAlign: "center",
-            lineHeight: 1.35,
-            maxWidth: 1300,
-            marginTop: 28,
-          }}
-        >
-          {subtitle}
-        </div>
-      )}
+      {/* Full-Screen Edge-to-Edge Content Container */}
+      <div
+        style={{
+          flex: 1,
+          width: "100%",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        {children}
+      </div>
     </div>
   );
 };

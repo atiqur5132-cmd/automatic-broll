@@ -2,248 +2,105 @@ import React from "react";
 import { SceneLayout } from "../design/SceneLayout";
 import { CinematicNumber, CinematicComparison } from "../design/DocumentaryCards";
 import {
-  DocumentaryLogoCard,
-  DocumentaryVSCard,
-  Documentary3DDocument,
-  DocumentaryKineticQuote,
-} from "../design/DocumentaryOpenAIWarCards";
+  LeaderboardParadoxCard,
+  XiaomiBrandCard,
+  InverseCorrelationChart,
+  TwoLeaderboardsCard,
+} from "../design/XiaomiDecouplingCards";
 
-// Beat 0: Frames 0 -> 220
+// ACT 1: THE PARADOX (Beats 0 to 5)
 export const Beat0: React.FC = () => (
-  <SceneLayout
-    title="THE DEFINING CONFLICT OF THE AI ERA"
-    subtitle="Imagine a technology so powerful that the people building it are terrified of what it might become"
-    accentColor="#00F0FF"
-  >
-    <DocumentaryKineticQuote
-      quote="TERRIFIED OF WHAT IT MIGHT BECOME"
-      author="PROLOGUE"
-      highlightWord="TERRIFIED"
-    />
+  <SceneLayout title="ACT I: THE PARADOX" subtitle="THE SINGLE MOST USED AI MODEL IN THE WORLD">
+    <LeaderboardParadoxCard usageRank="#1 IN WORLD USAGE" benchmarkRank="???" />
   </SceneLayout>
 );
 
-// Beat 1: Frames 220 -> 440
 export const Beat1: React.FC = () => (
-  <SceneLayout
-    title="A BITTER FEUD FOR CONTROL"
-    subtitle="Creators turning against each other, locked in a philosophical civil war"
-    accentColor="#FFD700"
-  >
-    <div style={{ fontSize: 96, fontWeight: 900, color: "#FFFFFF", textAlign: "center", textShadow: "0 0 50px rgba(255,215,0,0.4)" }}>
-      THE OPENAI CIVIL WAR
-    </div>
+  <SceneLayout title="GLOBAL MARKETPLACE SCALE" subtitle="BILLIONS OF REQUESTS EVERY SINGLE WEEK">
+    <CinematicNumber value="BILLIONS" label="WEEKLY PRODUCTION REQUESTS" accentColor="#10B981" />
   </SceneLayout>
 );
 
-// Beat 2: Frames 440 -> 680
 export const Beat2: React.FC = () => (
-  <SceneLayout
-    title="NOT JUST A CORPORATE RIVALRY"
-    subtitle="A deeply personal and philosophical battle over the future of intelligence"
-    accentColor="#FF5A5F"
-  >
-    <CinematicComparison
-      leftValue="COMMERCIAL"
-      leftLabel="SPEED & AGGRESSIVE SCALE"
-      leftColor="#10A37F"
-      rightValue="PHILOSOPHY"
-      rightLabel="SAFETY & CONSTITUTIONAL AI"
-      rightColor="#D97757"
-    />
+  <SceneLayout title="THE BENCHMARK TEST" subtitle="TESTED ON PhD LEVEL REASONING">
+    <LeaderboardParadoxCard usageRank="#1 IN WORLD USAGE" benchmarkRank="SERIOUS BENCHMARK TEST" />
   </SceneLayout>
 );
 
-// Beat 3: Frames 680 -> 930
 export const Beat3: React.FC = () => (
-  <SceneLayout
-    title="THE JUGGERNAUT"
-    subtitle="Sam Altman and OpenAI, backed by Microsoft Azure compute clusters"
-    accentColor="#10A37F"
-  >
-    <DocumentaryLogoCard
-      name="OpenAI"
-      logoUrl="https://cdn.simpleicons.org/openai/white"
-      brandColor="#10A37F"
-      subtitle="SAM ALTMAN • MICROSOFT AZURE BACKED"
-      scale={1.1}
-    />
+  <SceneLayout title="SHOCKING PARADOX" subtitle="DOES NOT EVEN CRACK THE GLOBAL TOP 10">
+    <LeaderboardParadoxCard usageRank="#1 IN WORLD USAGE" benchmarkRank="#10 ON BENCHMARKS" />
   </SceneLayout>
 );
 
-// Beat 4: Frames 930 -> 1160
 export const Beat4: React.FC = () => (
-  <SceneLayout
-    title="THE ULTIMATE PRIZE"
-    subtitle="Moving fast, breaking barriers, and chasing Artificial General Intelligence"
-    accentColor="#00F0FF"
-  >
-    <CinematicNumber
-      value="A G I"
-      label="ARTIFICIAL GENERAL INTELLIGENCE"
-      accentColor="#00F0FF"
-    />
+  <SceneLayout title="RANKING REALITY" subtitle="SITTING AROUND 10th PLACE GLOBAL">
+    <CinematicNumber value="10th" label="PLACE ON GLOBAL REASONING BENCHMARKS" accentColor="#FF5A5F" />
   </SceneLayout>
 );
 
-// Beat 5: Frames 1160 -> 1400
 export const Beat5: React.FC = () => (
-  <SceneLayout
-    title="THE DEFECTORS"
-    subtitle="Dario Amodei and Anthropic, built by OpenAI's own defecting researchers"
-    accentColor="#D97757"
-  >
-    <DocumentaryLogoCard
-      name="Anthropic"
-      logoUrl="https://cdn.simpleicons.org/anthropic/white"
-      brandColor="#D97757"
-      subtitle="DARIO AMODEI • SAFETY BEFORE SCALE"
-      scale={1.1}
-    />
-  </SceneLayout>
-);
-
-// Beat 6: Frames 1400 -> 1630
-export const Beat6: React.FC = () => (
-  <SceneLayout
-    title="WHERE IT ALL BEGAN • 2016"
-    subtitle="A shared San Francisco group house became the battleground for intense debates over AGI"
-    accentColor="#FFD700"
-  >
-    <Documentary3DDocument
-      header="THE SAN FRANCISCO GROUP HOUSE"
-      bodyText="Home to Dario Amodei, Daniela Amodei, and Holden Karnofsky. Frequent visitor: Greg Brockman."
-      highlightText="WHERE THE IDEOLOGICAL SCHISM BEGAN"
-    />
-  </SceneLayout>
-);
-
-// Beat 7: Frames 1630 -> 1860
-export const Beat7: React.FC = () => (
-  <SceneLayout
-    title="THE EARLY DIVIDE"
-    subtitle="Internal debates over who should control the most powerful AI systems"
-    accentColor="#FF5A5F"
-  >
-    <DocumentaryVSCard
-      leftName="DARIO AMODEI"
-      leftLogo="https://cdn.simpleicons.org/anthropic/white"
-      leftColor="#D97757"
-      leftTag="SAFETY & GOVERNANCE"
-      rightName="GREG BROCKMAN"
-      rightLogo="https://cdn.simpleicons.org/openai/white"
-      rightColor="#10A37F"
-      rightTag="SPEED & DEPLOYMENT"
-    />
-  </SceneLayout>
-);
-
-// Beat 8: Frames 1860 -> 2100
-export const Beat8: React.FC = () => (
-  <SceneLayout
-    title="HOUSE OF DEBATES"
-    subtitle="Late night arguments over the geopolitical consequences of superintelligence"
-    accentColor="#00F0FF"
-  >
-    <DocumentaryKineticQuote
-      quote="INTENSE DEBATES OVER THE FUTURE OF AGI"
-      author="SAN FRANCISCO • 2016"
-      highlightWord="AGI"
-    />
-  </SceneLayout>
-);
-
-// Beat 9: Frames 2100 -> 2340
-export const Beat9: React.FC = () => (
-  <SceneLayout
-    title="THE NUCLEAR PROPOSAL"
-    subtitle="Brockman floated selling AGI to UN Security Council nuclear powers"
-    accentColor="#FF5A5F"
-  >
-    <Documentary3DDocument
-      header="UN SECURITY COUNCIL PROPOSAL"
-      bodyText="Floated idea: Transferring AGI control to international nuclear superpowers."
-      highlightText="SELLING AGI TO NUCLEAR POWERS"
-      markerColor="rgba(255, 90, 95, 0.55)"
-    />
-  </SceneLayout>
-);
-
-// Beat 10: Frames 2340 -> 2570
-export const Beat10: React.FC = () => (
-  <SceneLayout
-    title="DARIO'S REACTION"
-    subtitle="Dario Amodei considered the proposal fundamentally dangerous"
-    accentColor="#FFD700"
-  >
-    <DocumentaryKineticQuote
-      quote="That proposal is tantamount to treason."
-      author="DARIO AMODEI"
-      highlightWord="treason"
-    />
-  </SceneLayout>
-);
-
-// Beat 11: Frames 2570 -> 2800
-export const Beat11: React.FC = () => (
-  <SceneLayout
-    title="LEADERSHIP SHAKEUP • 2018"
-    subtitle="Elon Musk exited OpenAI and Sam Altman took full executive control"
-    accentColor="#10A37F"
-  >
-    <DocumentaryLogoCard
-      name="OpenAI"
-      logoUrl="https://cdn.simpleicons.org/openai/white"
-      brandColor="#10A37F"
-      subtitle="2018: SAM ALTMAN TAKES THE REINS"
-    />
-  </SceneLayout>
-);
-
-// Beat 12: Frames 2800 -> 3030
-export const Beat12: React.FC = () => (
-  <SceneLayout
-    title="THE GPT BLOCKADE"
-    subtitle="Dario blocked Brockman from GPT project; Daniela threatened to step down"
-    accentColor="#FF5A5F"
-  >
-    <Documentary3DDocument
-      header="THE GPT MODEL STANDOFF"
-      bodyText="Internal conflicts boil over: Dario blocks Brockman from core language model team."
-      highlightText="DANIELA THREATENS TO RESIGN"
-    />
-  </SceneLayout>
-);
-
-// Beat 13: Frames 3030 -> 3260
-export const Beat13: React.FC = () => (
-  <SceneLayout
-    title="COMMERCIAL PIVOT"
-    subtitle="OpenAI transitioned from a pure non-profit to a capped-profit commercial entity"
-    accentColor="#00F0FF"
-  >
+  <SceneLayout title="WHY DOES IT MAKE SENSE?" subtitle="SMARTEST vs MOST USED">
     <CinematicComparison
-      leftValue="NON-PROFIT"
-      leftLabel="2015 FOUNDING CHARTER"
-      leftColor="#00F0FF"
-      rightValue="CAPPED PROFIT"
-      rightLabel="COMMERCIAL RESTRUCTURING"
-      rightColor="#FFD700"
+      leftValue="SMARTEST"
+      leftLabel="10th in Real Usage"
+      rightValue="MOST USED"
+      rightLabel="#1 in Production"
     />
   </SceneLayout>
 );
 
-// Beat 14: Frames 3260 -> 3500
+// ACT 2: XIAOMI & THE DECOUPLING (Beats 6 to 14)
+export const Beat6: React.FC = () => (
+  <SceneLayout title="ACT II: THE BUILDER" subtitle="XIAOMI AI WORKHORSE">
+    <XiaomiBrandCard />
+  </SceneLayout>
+);
+
+export const Beat7: React.FC = () => (
+  <SceneLayout title="THE BIGGER PATTERN" subtitle="COMPARING TWO DIFFERENT RANKINGS">
+    <TwoLeaderboardsCard />
+  </SceneLayout>
+);
+
+export const Beat8: React.FC = () => (
+  <SceneLayout title="RANKING #1: INTELLIGENCE" subtitle="HOW WELL A MODEL REASONS ON HARD TESTS">
+    <CinematicNumber value="IQ" label="HARD BENCHMARK REASONING TESTS" accentColor="#00F0FF" />
+  </SceneLayout>
+);
+
+export const Beat9: React.FC = () => (
+  <SceneLayout title="RANKING #2: USAGE SCALE" subtitle="HOW MANY ACTUAL TOKENS RUN EVERY WEEK">
+    <CinematicNumber value="SCALE" label="ACTUAL TOKENS RUN IN REAL PRODUCTION" accentColor="#10B981" />
+  </SceneLayout>
+);
+
+export const Beat10: React.FC = () => (
+  <SceneLayout title="PRODUCTION EVERY WEEK" subtitle="RUNNING CONTINUOUSLY 24/7">
+    <XiaomiBrandCard />
+  </SceneLayout>
+);
+
+export const Beat11: React.FC = () => (
+  <SceneLayout title="THE UNCOMFORTABLE TRUTH" subtitle="THE TWO RANKINGS BARELY AGREE">
+    <InverseCorrelationChart />
+  </SceneLayout>
+);
+
+export const Beat12: React.FC = () => (
+  <SceneLayout title="RESEARCH FINDING" subtitle="BENCHMARK SCORE vs REAL-WORLD ADOPTION">
+    <InverseCorrelationChart />
+  </SceneLayout>
+);
+
+export const Beat13: React.FC = () => (
+  <SceneLayout title="INVERSE CORRELATION" subtitle="BETTER PAPER SCORE = LESS SCALE">
+    <LeaderboardParadoxCard usageRank="#1 DAILY WORKHORSE" benchmarkRank="LOWER BENCHMARK" />
+  </SceneLayout>
+);
+
 export const Beat14: React.FC = () => (
-  <SceneLayout
-    title="THE $1 BILLION PARTNERSHIP"
-    subtitle="Massive computing deal with Microsoft Azure to fuel the compute needed for AGI"
-    accentColor="#00A4EF"
-  >
-    <CinematicNumber
-      value="$1,000,000,000"
-      label="MICROSOFT AZURE COMPUTE INFUSION"
-      accentColor="#00A4EF"
-    />
+  <SceneLayout title="THE WHY" subtitle="WHAT PEOPLE ACTUALLY USE AI FOR">
+    <CinematicNumber value="WHY?" label="WHAT ARE DEVELOPERS USING AI FOR?" accentColor="#FFD700" />
   </SceneLayout>
 );

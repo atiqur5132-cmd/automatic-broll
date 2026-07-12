@@ -22,16 +22,18 @@ export const CinematicNumber: React.FC<{
         justifyContent: "center",
         transform: `scale(${scale})`,
         textAlign: "center",
+        width: "100%",
+        padding: "40px 60px",
       }}
     >
       <div
         style={{
-          fontSize: 130,
+          fontSize: 185,
           fontWeight: 900,
           color: accentColor,
           lineHeight: 1,
           letterSpacing: "-0.04em",
-          textShadow: `0 0 50px ${accentColor}66, 0 10px 30px rgba(0,0,0,0.8)`,
+          textShadow: `0 0 70px ${accentColor}88, 0 15px 40px rgba(0,0,0,0.9)`,
         }}
       >
         {value}
@@ -39,11 +41,12 @@ export const CinematicNumber: React.FC<{
       {label && (
         <div
           style={{
-            fontSize: 32,
-            fontWeight: 700,
+            fontSize: 40,
+            fontWeight: 800,
             color: "#FFFFFF",
-            marginTop: 20,
-            letterSpacing: "0.02em",
+            marginTop: 30,
+            letterSpacing: "0.04em",
+            maxWidth: 1500,
           }}
         >
           {label}
@@ -68,206 +71,93 @@ export const CinematicComparison: React.FC<{
   rightValue,
   rightLabel,
   rightColor = "#00F0FF",
-  separator = "➜",
+  separator = "VS",
 }) => {
   return (
     <div
       style={{
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 60,
+        alignItems: "stretch",
+        justifyContent: "space-between",
         width: "100%",
+        height: 580,
+        gap: 50,
       }}
     >
-      {/* Left Item */}
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-        <div style={{ fontSize: 96, fontWeight: 900, color: leftColor, lineHeight: 1 }}>
+      {/* Left Full-Screen Panel */}
+      <div
+        style={{
+          flex: 1,
+          background: "linear-gradient(145deg, rgba(255, 90, 95, 0.16) 0%, rgba(255, 90, 95, 0.04) 100%)",
+          border: "2px solid #FF5A5F",
+          borderRadius: "32px",
+          padding: "50px 40px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          boxShadow: "0 30px 80px rgba(0,0,0,0.7), 0 0 50px rgba(255, 90, 95, 0.25)",
+        }}
+      >
+        <div style={{ fontSize: 110, fontWeight: 900, color: leftColor, lineHeight: 1 }}>
           {leftValue}
         </div>
-        <div style={{ fontSize: 26, fontWeight: 700, color: "rgba(255,255,255,0.85)", marginTop: 16 }}>
+        <div style={{ fontSize: 32, fontWeight: 800, color: "rgba(255,255,255,0.9)", marginTop: 24 }}>
           {leftLabel}
         </div>
       </div>
 
-      {/* Separator */}
-      <div style={{ fontSize: 44, fontWeight: 800, color: "rgba(255,255,255,0.35)" }}>
-        {separator}
+      {/* Center Separator Badge */}
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          alignSelf: "center",
+        }}
+      >
+        <div
+          style={{
+            fontSize: 36,
+            fontWeight: 900,
+            color: "#FFD700",
+            background: "rgba(255, 215, 0, 0.15)",
+            border: "2px solid #FFD700",
+            borderRadius: "50%",
+            width: 100,
+            height: 100,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            boxShadow: "0 0 40px rgba(255, 215, 0, 0.4)",
+          }}
+        >
+          {separator}
+        </div>
       </div>
 
-      {/* Right Item */}
-      <div style={{ display: "flex", flexDirection: "column", alignItems: "center", textAlign: "center" }}>
-        <div style={{ fontSize: 96, fontWeight: 900, color: rightColor, lineHeight: 1 }}>
+      {/* Right Full-Screen Panel */}
+      <div
+        style={{
+          flex: 1,
+          background: "linear-gradient(145deg, rgba(0, 240, 255, 0.16) 0%, rgba(0, 240, 255, 0.04) 100%)",
+          border: "2px solid #00F0FF",
+          borderRadius: "32px",
+          padding: "50px 40px",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          textAlign: "center",
+          boxShadow: "0 30px 80px rgba(0,0,0,0.7), 0 0 50px rgba(0, 240, 255, 0.25)",
+        }}
+      >
+        <div style={{ fontSize: 110, fontWeight: 900, color: rightColor, lineHeight: 1 }}>
           {rightValue}
         </div>
-        <div style={{ fontSize: 26, fontWeight: 700, color: "rgba(255,255,255,0.85)", marginTop: 16 }}>
+        <div style={{ fontSize: 32, fontWeight: 800, color: "rgba(255,255,255,0.9)", marginTop: 24 }}>
           {rightLabel}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export const CinematicBarChart: React.FC<{
-  westernShare: number;
-  chineseShare: number;
-  westernLabel?: string;
-  chineseLabel?: string;
-}> = ({
-  westernShare,
-  chineseShare,
-  westernLabel = "WESTERN LABS (OPENAI / ANTHROPIC)",
-  chineseLabel = "CHINESE PROVIDERS (XIAOMI / Z.AI)",
-}) => {
-  const frame = useCurrentFrame();
-  const progress = interpolate(frame, [0, 20], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-    easing: Easing.bezier(0.16, 1, 0.3, 1),
-  });
-
-  return (
-    <div
-      style={{
-        width: "100%",
-        maxWidth: 1300,
-        display: "flex",
-        flexDirection: "column",
-        gap: 40,
-        padding: "20px 0",
-      }}
-    >
-      {/* Western Bar */}
-      <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 24, fontWeight: 700 }}>
-          <span style={{ color: "#00F0FF" }}>{westernLabel}</span>
-          <span style={{ color: "#00F0FF" }}>{westernShare.toFixed(1)}%</span>
-        </div>
-        <div
-          style={{
-            width: "100%",
-            height: 48,
-            borderRadius: 14,
-            backgroundColor: "rgba(255,255,255,0.08)",
-            overflow: "hidden",
-          }}
-        >
-          <div
-            style={{
-              width: `${westernShare * progress}%`,
-              height: "100%",
-              background: "linear-gradient(90deg, #0080FF 0%, #00F0FF 100%)",
-              boxShadow: "0 0 24px rgba(0,240,255,0.5)",
-              borderRadius: 14,
-            }}
-          />
-        </div>
-      </div>
-
-      {/* Chinese Bar */}
-      <div style={{ display: "flex", flexDirection: "column", gap: 14 }}>
-        <div style={{ display: "flex", justifyContent: "space-between", fontSize: 24, fontWeight: 700 }}>
-          <span style={{ color: "#FF5A5F" }}>{chineseLabel}</span>
-          <span style={{ color: "#FF5A5F" }}>{chineseShare.toFixed(1)}%</span>
-        </div>
-        <div
-          style={{
-            width: "100%",
-            height: 48,
-            borderRadius: 14,
-            backgroundColor: "rgba(255,255,255,0.08)",
-            overflow: "hidden",
-          }}
-        >
-          <div
-            style={{
-              width: `${chineseShare * progress}%`,
-              height: "100%",
-              background: "linear-gradient(90deg, #FF3366 0%, #FF5A5F 100%)",
-              boxShadow: "0 0 24px rgba(255,90,95,0.5)",
-              borderRadius: 14,
-            }}
-          />
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export const CinematicRouterFlow: React.FC = () => {
-  return (
-    <div
-      style={{
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        gap: 36,
-        width: "100%",
-        maxWidth: 1380,
-      }}
-    >
-      <div
-        style={{
-          padding: "36px 44px",
-          borderRadius: 20,
-          background: "rgba(255,255,255,0.05)",
-          border: "1px solid rgba(255,255,255,0.2)",
-          textAlign: "center",
-        }}
-      >
-        <div style={{ fontSize: 22, fontWeight: 700, color: "rgba(255,255,255,0.7)", marginBottom: 8 }}>
-          INCOMING TASKS
-        </div>
-        <div style={{ fontSize: 32, fontWeight: 800, color: "#FFFFFF" }}>
-          100% of Workload
-        </div>
-      </div>
-
-      <div style={{ fontSize: 36, color: "rgba(255,255,255,0.4)" }}>➜</div>
-
-      <div
-        style={{
-          padding: "40px 48px",
-          borderRadius: 20,
-          background: "linear-gradient(135deg, rgba(0,240,255,0.15) 0%, rgba(0,240,255,0.04) 100%)",
-          border: "2px solid #00F0FF",
-          boxShadow: "0 0 40px rgba(0,240,255,0.3)",
-          textAlign: "center",
-        }}
-      >
-        <div style={{ fontSize: 18, fontWeight: 800, color: "#00F0FF", letterSpacing: "0.12em", marginBottom: 10 }}>
-          COINBASE AUTOMATED ROUTER
-        </div>
-        <div style={{ fontSize: 34, fontWeight: 800, color: "#FFFFFF" }}>
-          Complexity & Cost Assessment
-        </div>
-      </div>
-
-      <div style={{ fontSize: 36, color: "rgba(255,255,255,0.4)" }}>➜</div>
-
-      <div style={{ display: "flex", flexDirection: "column", gap: 20 }}>
-        <div
-          style={{
-            padding: "22px 32px",
-            borderRadius: 16,
-            background: "rgba(16, 185, 129, 0.15)",
-            border: "1px solid #10B981",
-          }}
-        >
-          <div style={{ fontSize: 18, fontWeight: 700, color: "#10B981" }}>90% EVERYDAY TASKS</div>
-          <div style={{ fontSize: 24, fontWeight: 800, color: "#FFFFFF" }}>Routed to Efficient Models</div>
-        </div>
-
-        <div
-          style={{
-            padding: "22px 32px",
-            borderRadius: 16,
-            background: "rgba(255, 184, 0, 0.15)",
-            border: "1px solid #FFB800",
-          }}
-        >
-          <div style={{ fontSize: 18, fontWeight: 700, color: "#FFB800" }}>10% EDGE CASES</div>
-          <div style={{ fontSize: 24, fontWeight: 800, color: "#FFFFFF" }}>Routed to Frontier Models</div>
         </div>
       </div>
     </div>
