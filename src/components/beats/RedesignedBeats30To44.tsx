@@ -1,205 +1,249 @@
 import React from "react";
 import { SceneLayout } from "../design/SceneLayout";
 import { CinematicNumber, CinematicComparison } from "../design/DocumentaryCards";
+import {
+  DocumentaryLogoCard,
+  DocumentaryVSCard,
+  Documentary3DDocument,
+  DocumentaryKineticQuote,
+  DocumentaryMultiLogoGrid,
+} from "../design/DocumentaryOpenAIWarCards";
 
-// Beat 30: 175.36s -> 182.16s
-// Audio: "that premium pricing gets a lot harder to justify across the board."
+// Beat 30: Frames 6960 -> 7190
 export const Beat30: React.FC = () => (
   <SceneLayout
-    title="HARDER TO JUSTIFY PREMIUMS"
-    subtitle="Re-evaluating AI software spending across the entire tech industry"
+    title="THE HEALTHY ALTERNATIVE"
+    subtitle="Amodei likened OpenAI to a tobacco company, positioning Anthropic as the responsible choice"
     accentColor="#FF5A5F"
   >
-    <CinematicNumber value="INDUSTRY SHIFT" label="ENTERPRISE AI BUDGET OPTIMIZATION" accentColor="#FF5A5F" />
+    <CinematicComparison
+      leftValue="TOBACCO"
+      leftLabel="ADDICTIVE & COMMERCIAL SPEED"
+      leftColor="#FF5A5F"
+      rightValue="HEALTHY"
+      rightLabel="CONSTITUTIONAL SAFETY"
+      rightColor="#00F0FF"
+    />
   </SceneLayout>
 );
 
-// Beat 31: 182.16s -> 187.20s
-// Audio: "Now before you go, if this kind of shift is something you want to actually track as it unfolds..."
+// Beat 31: Frames 7190 -> 7420
 export const Beat31: React.FC = () => (
   <SceneLayout
-    title="TRACKING AI SHIFTS IN REAL TIME"
-    subtitle="Stay ahead of structural AI industry moves before they hit mainstream headlines"
-    accentColor="#00F0FF"
+    title="RIPPLE EFFECTS"
+    subtitle="The shockwaves of the 2020 schism continued to destabilize OpenAI's safety teams"
+    accentColor="#FFD700"
   >
-    <CinematicNumber value="REAL-TIME TELEMETRY" label="DATA-FIRST INDUSTRY BREAKDOWNS" accentColor="#00F0FF" />
+    <DocumentaryKineticQuote
+      quote="The ripple effects of the 2020 schism didn't stop there."
+      author="THE SAFETY CRISIS CONTINUES"
+      highlightWord="schism"
+    />
   </SceneLayout>
 );
 
-// Beat 32: 187.20s -> 192.56s
-// Audio: "instead of catching it three months later in a headline, that's exactly what this channel is for."
+// Beat 32: Frames 7420 -> 7650
 export const Beat32: React.FC = () => (
   <SceneLayout
-    title="BEFORE THE HEADLINES"
-    subtitle="Analyzing developer API telemetry and enterprise architectures as they happen"
-    accentColor="#10B981"
+    title="THE SECOND EXODUS"
+    subtitle="Over the next few years, OpenAI faced a massive wave of safety researcher departures"
+    accentColor="#FF5A5F"
   >
-    <CinematicComparison
-      leftValue="3 MONTHS LATER"
-      leftLabel="MAINSTREAM HEADLINES"
-      leftColor="#FF5A5F"
-      rightValue="REAL-TIME"
-      rightLabel="THIS CHANNEL"
-      rightColor="#10B981"
-      separator="VS"
+    <CinematicNumber
+      value="SAFETY EXODUS"
+      label="TOP RESEARCHERS RESIGN IN PROTEST"
+      accentColor="#FF5A5F"
     />
   </SceneLayout>
 );
 
-// Beat 33: 192.56s -> 196.72s
-// Audio: "I'm breaking down these AI industry moves as they happen. So if that's useful to you..."
+// Beat 33: Frames 7650 -> 7880
 export const Beat33: React.FC = () => (
   <SceneLayout
-    title="AI INDUSTRY BREAKDOWNS"
-    subtitle="Clear visual essays on the technology and economics reshaping our industry"
-    accentColor="#00F0FF"
+    title="JAN LEIKE RESIGNATION"
+    subtitle="Co-leader of the Superalignment team abruptly resigned over safety trade-offs"
+    accentColor="#FFB800"
   >
-    <CinematicNumber value="DEEP DIVES" label="TECH, INFRASTRUCTURE & ECONOMICS" accentColor="#00F0FF" />
+    <Documentary3DDocument
+      header="JAN LEIKE RESIGNATION DOSSIER"
+      bodyText="Stated publicly that OpenAI's leadership priorities had fundamentally shifted."
+      highlightText="PRIORITIZING SHINY NEW PRODUCTS OVER SAFETY"
+    />
   </SceneLayout>
 );
 
-// Beat 34: 196.72s -> 201.60s
-// Audio: "subscribing means you won't miss the next one because here's what I keep coming back to."
+// Beat 34: Frames 7880 -> 8110
 export const Beat34: React.FC = () => (
   <SceneLayout
-    title="JOIN THE COMMUNITY"
-    subtitle="Subscribe so you won't miss our next data-driven AI breakdown"
-    accentColor="#FFB800"
+    title="DANIEL KOKOTAJLO"
+    subtitle="Forfeited roughly 85% of his family's net worth in unvested stock"
+    accentColor="#FF5A5F"
   >
-    <CinematicNumber value="SUBSCRIBE" label="NEVER MISS AN EPISODE" accentColor="#FFB800" />
+    <CinematicNumber
+      value="85% FORFEITED"
+      label="FAMILY NET WORTH SACRIFICED TO REFUSE SILENCING NDA"
+      accentColor="#FF5A5F"
+    />
   </SceneLayout>
 );
 
-// Beat 35: 201.60s -> 205.44s
-// Audio: "Raw performance probably still matters for the hardest problems out there..."
+// Beat 35: Frames 8110 -> 8340
 export const Beat35: React.FC = () => (
   <SceneLayout
-    title="THE TOP 10% OF WORKLOADS"
-    subtitle="Frontier models remain irreplaceable for breakthrough math and scientific research"
+    title="THE WARNING MESSAGE"
+    subtitle="Why Daniel gave up millions in unvested equity just to warn the public"
     accentColor="#00F0FF"
   >
-    <CinematicNumber value="FRONTIER CAPABILITY" label="MAXIMUM IQ FOR COMPLEX PROBLEMS" accentColor="#00F0FF" />
+    <DocumentaryKineticQuote
+      quote="Fears that OpenAI wasn't ready to handle AGI."
+      author="DANIEL KOKOTAJLO — FORMER RESEARCHER"
+      highlightWord="ready"
+    />
   </SceneLayout>
 );
 
-// Beat 36: 205.44s -> 210.24s
-// Audio: "but for the huge, unglamorous majority of everyday AI work, the stuff that actually runs the world's businesses..."
+// Beat 36: Frames 8340 -> 8570
 export const Beat36: React.FC = () => (
   <SceneLayout
-    title="THE OTHER 90% OF EVERYDAY WORK"
-    subtitle="The routine tasks that actually run production business software"
-    accentColor="#10B981"
+    title="LEOPOLD ASCHENBRENNER FIRED"
+    subtitle="Fired after drafting internal memos warning of critical security vulnerabilities"
+    accentColor="#FF5A5F"
   >
-    <CinematicNumber value="EVERYDAY AI" label="DATA EXTRACTION, SUMMARIES & ROUTINE LOGIC" accentColor="#10B981" />
+    <Documentary3DDocument
+      header="SECURITY WARNING MEMO"
+      bodyText="Aschenbrenner warned foreign espionage could compromise frontier model weights."
+      highlightText="SECURITY PRACTICES EGREGIOUSLY INSUFFICIENT"
+      markerColor="rgba(255, 50, 80, 0.6)"
+    />
   </SceneLayout>
 );
 
-// Beat 37: 210.24s -> 215.04s
-// Audio: "cost efficiency might end up mattering just as much. Maybe more."
+// Beat 37: Frames 8570 -> 8800
 export const Beat37: React.FC = () => (
   <SceneLayout
-    title="THE EQUALIZER"
-    subtitle="At enterprise scale, cost efficiency matters just as much as raw capability"
-    accentColor="#FFB800"
+    title="THE PROXY WAR"
+    subtitle="We are now witnessing a proxy war for the future of human intelligence"
+    accentColor="#FFD700"
   >
-    <CinematicComparison
-      leftValue="RAW IQ"
-      leftLabel="FRONTIER CAPABILITY"
-      leftColor="#00F0FF"
-      rightValue="COST / TASK"
-      rightLabel="ECONOMIC EFFICIENCY"
-      rightColor="#FFB800"
-      separator="="
+    <DocumentaryKineticQuote
+      quote="A proxy war for the future of human intelligence."
+      author="MONUMENTAL STAKES"
+      highlightWord="war"
     />
   </SceneLayout>
 );
 
-// Beat 38: 215.04s -> 218.96s
-// Audio: "So the real question isn't who builds the smartest model anymore."
+// Beat 38: Frames 8800 -> 9030
 export const Beat38: React.FC = () => (
   <SceneLayout
-    title="BEYOND BENCHMARK IQ"
-    subtitle="The race is no longer just about who builds the smartest model"
+    title="SORA SHUTDOWN"
+    subtitle="OpenAI shut down its Sora video app, which was burning $1 million a day"
     accentColor="#FF5A5F"
   >
-    <CinematicNumber value="VALUE PER DOLLAR" label="THE NEW COMPETITIVE BATTLEGROUND" accentColor="#FF5A5F" />
-  </SceneLayout>
-);
-
-// Beat 39: 218.96s -> 223.76s
-// Audio: "It's whether smart enough and dramatically cheaper quietly becomes the thing that actually wins this race."
-export const Beat39: React.FC = () => (
-  <SceneLayout
-    title="THE WINNING FORMULA?"
-    subtitle="Could smart enough and dramatically cheaper quietly win the global AI race?"
-    accentColor="#10B981"
-  >
-    <CinematicComparison
-      leftValue="SMART ENOUGH"
-      leftLabel="95% FRONTIER QUALITY"
-      leftColor="#00F0FF"
-      rightValue="-80% COST"
-      rightLabel="DRAMATICALLY CHEAPER"
-      rightColor="#10B981"
-      separator="+"
+    <DocumentaryLogoCard
+      name="Sora Video App"
+      logoUrl="https://cdn.simpleicons.org/openai/white"
+      brandColor="#FF5A5F"
+      subtitle="SHUT DOWN • BURNING $1,000,000 / DAY"
     />
   </SceneLayout>
 );
 
-// Beat 40: 223.76s -> 229.36s
-// Audio: "What do you think? Is that a race the big US labs can still win on their current pricing?"
+// Beat 39: Frames 9030 -> 9260
+export const Beat39: React.FC = () => (
+  <SceneLayout
+    title="REDIRECTING COMPUTE"
+    subtitle="Redirecting massive computing clusters to fight off Anthropic's enterprise rise"
+    accentColor="#00F0FF"
+  >
+    <DocumentaryVSCard
+      leftName="SORA COMPUTE"
+      leftLogo="https://cdn.simpleicons.org/openai/white"
+      leftColor="#10A37F"
+      leftTag="REPURPOSED GPUs"
+      rightName="ENTERPRISE DOMINANCE"
+      rightLogo="https://cdn.simpleicons.org/anthropic/white"
+      rightColor="#D97757"
+      rightTag="CLAUDE 3.5 RISE"
+    />
+  </SceneLayout>
+);
+
+// Beat 40: Frames 9260 -> 9490
 export const Beat40: React.FC = () => (
   <SceneLayout
-    title="WHAT DO YOU THINK?"
-    subtitle="Can US frontier labs win on their current pricing models?"
-    accentColor="#00F0FF"
+    title="TWO ARENAS OF VICTORY"
+    subtitle="Who will win in the enterprise market versus the court of public opinion?"
+    accentColor="#FFD700"
   >
-    <CinematicNumber value="YOUR TAKE" label="FRONTIER CAPABILITY VS PRICE ROUTING" accentColor="#00F0FF" />
+    <CinematicComparison
+      leftValue="MARKET"
+      leftLabel="REVENUE & ENTERPRISE DEPLOYMENT"
+      leftColor="#10A37F"
+      rightValue="TRUST"
+      rightLabel="PUBLIC SAFETY & ALIGNMENT"
+      rightColor="#D97757"
+    />
   </SceneLayout>
 );
 
-// Beat 41: 229.36s -> 235.20s
-// Audio: "Let me know down in the comments. I want to see where people actually stand on this."
+// Beat 41: Frames 9490 -> 9720
 export const Beat41: React.FC = () => (
   <SceneLayout
-    title="LET ME KNOW IN THE COMMENTS"
-    subtitle="Where do you stand on open frontier models vs premium APIs?"
-    accentColor="#FFB800"
+    title="STORY OF HUMAN NATURE"
+    subtitle="Amodei on the terrifying responsibility of building superintelligence"
+    accentColor="#00F0FF"
   >
-    <CinematicNumber value="COMMENT BELOW" label="JOIN THE COMMUNITY DEBATE" accentColor="#FFB800" />
+    <DocumentaryKineticQuote
+      quote="A story about human nature, broken trust, and terrifying responsibility."
+      author="DARIO AMODEI"
+      highlightWord="trust"
+    />
   </SceneLayout>
 );
 
-// Beat 42: 235.20s -> 240.96s
-// Audio: "Thanks for watching. See you in the next one."
+// Beat 42: Frames 9720 -> 9950
 export const Beat42: React.FC = () => (
   <SceneLayout
-    title="THANKS FOR WATCHING"
-    subtitle="See you in the next deep dive"
+    title="FIVE MAJOR TITANS"
+    subtitle="Five major corporations currently deciding the fate of economy, geopolitics, and society"
     accentColor="#00F0FF"
   >
-    <CinematicNumber value="THANK YOU" label="AI INDUSTRY TELEMETRY" accentColor="#00F0FF" />
+    <DocumentaryMultiLogoGrid />
   </SceneLayout>
 );
 
-// Beat 43: 240.96s -> 246.32s
+// Beat 43: Frames 9950 -> 10070
 export const Beat43: React.FC = () => (
   <SceneLayout
-    title="SUBSCRIBE FOR MORE"
-    subtitle="Weekly data-driven essays on AI infrastructure and economics"
+    title="THE TWO LEADERS AT WAR"
+    subtitle="Two ideological visions locked in a battle for the soul of AI"
     accentColor="#FF5A5F"
   >
-    <CinematicNumber value="SUBSCRIBE" label="NEVER MISS AN EPISODE" accentColor="#FF5A5F" />
+    <DocumentaryVSCard
+      leftName="OPENAI"
+      leftLogo="https://cdn.simpleicons.org/openai/white"
+      leftColor="#10A37F"
+      leftTag="SAM ALTMAN • SPEED"
+      rightName="ANTHROPIC"
+      rightLogo="https://cdn.simpleicons.org/anthropic/white"
+      rightColor="#D97757"
+      rightTag="DARIO AMODEI • SAFETY"
+    />
   </SceneLayout>
 );
 
-// Beat 44: 246.32s -> 251.38s
+// Beat 44: Frames 10070 -> 10184
 export const Beat44: React.FC = () => (
   <SceneLayout
-    title="REPORT ARCHIVED"
-    subtitle="Data sourced from OpenRouter developer telemetry"
-    accentColor="#00F0FF"
+    title="THE FINAL QUESTION"
+    subtitle="As superintelligence approaches, which vision of the future will win?"
+    accentColor="#FFD700"
   >
-    <CinematicNumber value="END OF REPORT" label="SEE YOU IN THE NEXT BREAKDOWN" accentColor="#00F0FF" />
+    <DocumentaryKineticQuote
+      quote="WHICH VISION OF THE FUTURE WILL WIN?"
+      author="THE OPENAI vs ANTHROPIC WAR"
+      highlightWord="WIN"
+    />
   </SceneLayout>
 );

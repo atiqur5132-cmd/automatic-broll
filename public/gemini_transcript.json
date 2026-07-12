@@ -31,497 +31,783 @@
 		{
 			"timestamps": {
 				"from": "00:00:00,000",
-				"to": "00:00:05,440"
+				"to": "00:00:05,680"
 			},
 			"offsets": {
 				"from": 0,
-				"to": 5440
+				"to": 5680
 			},
-			"text": " less than 2%. That's what Chinese AI companies controlled on one of the world's biggest AI"
+			"text": " Imagine a technology so powerful, that the people building it are terrified of what it might become."
 		},
 		{
 			"timestamps": {
-				"from": "00:00:05,440",
-				"to": "00:00:12,320"
+				"from": "00:00:05,680",
+				"to": "00:00:11,520"
 			},
 			"offsets": {
-				"from": 5440,
-				"to": 12320
+				"from": 5680,
+				"to": 11520
 			},
-			"text": " marketplaces about a year ago. Today, somewhere around 45%. And there's one number in here that's"
+			"text": " Now, imagine those same creators turning against each other, locked in a bitter feud to control it."
 		},
 		{
 			"timestamps": {
-				"from": "00:00:12,320",
-				"to": "00:00:18,560"
+				"from": "00:00:11,520",
+				"to": "00:00:15,760"
 			},
 			"offsets": {
-				"from": 12320,
-				"to": 18560
+				"from": 11520,
+				"to": 15760
 			},
-			"text": " even stranger than that. A phone company now processes more AI traffic than open AI does on the"
+			"text": " Welcome to the defining conflict of the AI era."
 		},
 		{
 			"timestamps": {
-				"from": "00:00:18,560",
-				"to": "00:00:23,760"
+				"from": "00:00:15,760",
+				"to": "00:00:19,600"
 			},
 			"offsets": {
-				"from": 18560,
-				"to": 23760
+				"from": 15760,
+				"to": 19600
 			},
-			"text": " exact same platform. I'm going to break down how that happened. And there's a real world example"
+			"text": " This isn't just a corporate rivalry about who has the smartest chatbot."
 		},
 		{
 			"timestamps": {
-				"from": "00:00:23,760",
-				"to": "00:00:28,960"
+				"from": "00:00:19,600",
+				"to": "00:00:23,280"
 			},
 			"offsets": {
-				"from": 23760,
-				"to": 28960
+				"from": 19600,
+				"to": 23280
 			},
-			"text": " coming up in a minute that shows exactly why this is starting to scare Western AI companies."
+			"text": " It is a deeply personal and philosophical war."
 		},
 		{
 			"timestamps": {
-				"from": "00:00:28,960",
-				"to": "00:00:35,520"
+				"from": "00:00:23,280",
+				"to": "00:00:29,920"
 			},
 			"offsets": {
-				"from": 28960,
-				"to": 35520
+				"from": 23280,
+				"to": 29920
 			},
-			"text": " Let's get into it. So here's the timeline. A year ago, on open router, think of it as a marketplace"
+			"text": " On one side, we have Sam Altman and OpenAI, the juggernaut backed by Microsoft Azure,"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:35,520",
-				"to": "00:00:40,960"
+				"from": "00:00:29,920",
+				"to": "00:00:36,480"
 			},
 			"offsets": {
-				"from": 35520,
-				"to": 40960
+				"from": 29920,
+				"to": 36480
 			},
-			"text": " where developers plug their apps into different AI models. Chinese providers were basically"
+			"text": " moving fast, breaking barriers, and chasing the ultimate prize of artificial general intelligence,"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:40,960",
-				"to": "00:00:47,200"
+				"from": "00:00:36,480",
+				"to": "00:00:37,840"
 			},
 			"offsets": {
-				"from": 40960,
-				"to": 47200
+				"from": 36480,
+				"to": 37840
 			},
-			"text": " invisible less than 2% of all traffic. Western models had the whole table. Then, month after month,"
+			"text": " or AGI."
 		},
 		{
 			"timestamps": {
-				"from": "00:00:47,200",
-				"to": "00:00:53,360"
+				"from": "00:00:37,840",
+				"to": "00:00:45,120"
 			},
 			"offsets": {
-				"from": 47200,
-				"to": 53360
+				"from": 37840,
+				"to": 45120
 			},
-			"text": " quietly, that started flipping. No single dramatic launch. No one headline moment, just a steady"
+			"text": " On the other side, we have Dario Amade and Anthropic, a company built by OpenAI's own defectors,"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:53,360",
-				"to": "00:00:58,480"
+				"from": "00:00:45,120",
+				"to": "00:00:47,520"
 			},
 			"offsets": {
-				"from": 53360,
-				"to": 58480
+				"from": 45120,
+				"to": 47520
 			},
-			"text": " bleed until Chinese providers were suddenly commanding close to half of everything running through"
+			"text": " determined to put safety before scale."
 		},
 		{
 			"timestamps": {
-				"from": "00:00:58,480",
-				"to": "00:01:04,560"
+				"from": "00:00:47,520",
+				"to": "00:00:51,440"
 			},
 			"offsets": {
-				"from": 58480,
-				"to": 64560
+				"from": 47520,
+				"to": 51440
 			},
-			"text": " that platform. When a shift moves that fast, it's worth asking, who actually did this and why did"
+			"text": " To understand the rivalry, we have to go back to 2016."
 		},
 		{
 			"timestamps": {
-				"from": "00:01:04,560",
-				"to": "00:01:10,400"
+				"from": "00:00:51,440",
+				"to": "00:00:56,720"
 			},
 			"offsets": {
-				"from": 64560,
-				"to": 70400
+				"from": 51440,
+				"to": 56720
 			},
-			"text": " it work? The name that jumps out first is Xiaomi. Yes, the phone and gadget company. On open"
+			"text": " The tensions began in a San Francisco group house, which was home to Dario Amadei,"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:10,400",
-				"to": "00:01:18,320"
+				"from": "00:00:56,720",
+				"to": "00:00:59,760"
 			},
 			"offsets": {
-				"from": 70400,
-				"to": 78320
+				"from": 56720,
+				"to": 59760
 			},
-			"text": " router, Xiaomi alone is processing 4.21 trillion tokens every single week. That's a 21.1% market"
+			"text": " his sister Daniela, and Holden Karnofsky."
 		},
 		{
 			"timestamps": {
-				"from": "00:01:18,320",
-				"to": "00:01:24,000"
+				"from": "00:00:59,760",
+				"to": "00:01:03,680"
 			},
 			"offsets": {
-				"from": 78320,
-				"to": 84000
+				"from": 59760,
+				"to": 63680
 			},
-			"text": " share bigger than open AI slice on that same platform. Sit with that for a second because it's"
+			"text": " OpenAI co-founder Greg Brockman was a frequent visitor,"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:24,000",
-				"to": "00:01:31,920"
+				"from": "00:01:03,680",
+				"to": "00:01:08,320"
 			},
 			"offsets": {
-				"from": 84000,
-				"to": 91920
+				"from": 63680,
+				"to": 68320
 			},
-			"text": " genuinely a strange sentence to say out loud. Alongside Xiaomi, there's Z.AI's GLM 5.2, which has become"
+			"text": " and the house became a battleground for intense debates over the future of AGI."
 		},
 		{
 			"timestamps": {
-				"from": "00:01:31,920",
-				"to": "00:01:37,120"
+				"from": "00:01:08,320",
+				"to": "00:01:14,400"
 			},
 			"offsets": {
-				"from": 91920,
-				"to": 97120
+				"from": 68320,
+				"to": 74400
 			},
-			"text": " the center of a much bigger argument whether China is actually catching up to the US and AI"
+			"text": " At one point, Brockman actually floated the idea of selling AGI to the UN Security Council's"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:37,120",
-				"to": "00:01:44,320"
+				"from": "00:01:14,400",
+				"to": "00:01:15,680"
 			},
 			"offsets": {
-				"from": 97120,
-				"to": 104320
+				"from": 74400,
+				"to": 75680
 			},
-			"text": " or maybe already has in the ways that matter for real businesses. GLM 5.2 isn't necessarily beating"
+			"text": " nuclear powers."
 		},
 		{
 			"timestamps": {
-				"from": "00:01:44,320",
-				"to": "00:01:49,920"
+				"from": "00:01:15,680",
+				"to": "00:01:20,560"
 			},
 			"offsets": {
-				"from": 104320,
-				"to": 109920
+				"from": 75680,
+				"to": 80560
 			},
-			"text": " the top US models on every benchmark. What it's doing is getting close enough for a lot less money."
+			"text": " Dario Amadei's reaction, he considered the proposal \"tent amount to treason.\""
 		},
 		{
 			"timestamps": {
-				"from": "00:01:49,920",
-				"to": "00:01:54,880"
+				"from": "00:01:20,560",
+				"to": "00:01:26,320"
 			},
 			"offsets": {
-				"from": 109920,
-				"to": 114880
+				"from": 80560,
+				"to": 86320
 			},
-			"text": " And once close enough is on the table, price stops being a footnote and starts being the whole"
+			"text": " By 2018, Elon Musk exited OpenAI, and Sam Altman took the reins."
 		},
 		{
 			"timestamps": {
-				"from": "00:01:54,880",
-				"to": "00:01:59,840"
+				"from": "00:01:26,320",
+				"to": "00:01:28,800"
 			},
 			"offsets": {
-				"from": 114880,
-				"to": 119840
+				"from": 86320,
+				"to": 88800
 			},
-			"text": " decision. Here's the part that makes this real instead of theoretical. And it's the example that made"
+			"text": " The internal conflicts began to boil over."
 		},
 		{
 			"timestamps": {
-				"from": "00:01:59,840",
-				"to": "00:02:05,040"
+				"from": "00:01:28,800",
+				"to": "00:01:33,920"
 			},
 			"offsets": {
-				"from": 119840,
-				"to": 125040
+				"from": 88800,
+				"to": 93920
 			},
-			"text": " me want to make this video in the first place. Coinbase shifted the big chunk of its AI workload"
+			"text": " Dario even blocked Brockman from working on the critical GPT language model project,"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:05,040",
-				"to": "00:02:09,680"
+				"from": "00:01:33,920",
+				"to": "00:01:40,240"
 			},
 			"offsets": {
-				"from": 125040,
-				"to": 129680
+				"from": 93920,
+				"to": 100240
 			},
-			"text": " over to these cheaper Chinese models. They didn't just switch manually, task by task,"
+			"text": " and Daniela, who was co-leading it, threatened to step down rather than let Brockman join."
 		},
 		{
 			"timestamps": {
-				"from": "00:02:09,680",
-				"to": "00:02:15,280"
+				"from": "00:01:40,240",
+				"to": "00:01:44,720"
 			},
 			"offsets": {
-				"from": 129680,
-				"to": 135280
+				"from": 100240,
+				"to": 104720
 			},
-			"text": " they built automated routing, a system that looks at each job coming in and decides which model"
+			"text": " OpenAI was originally founded as a non-profit dedicated to safe research,"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:15,280",
-				"to": "00:02:21,520"
+				"from": "00:01:45,280",
+				"to": "00:01:51,200"
 			},
 			"offsets": {
-				"from": 135280,
-				"to": 141520
+				"from": 105280,
+				"to": 111200
 			},
-			"text": " should handle it based on how complex the task is and what it costs to run the outcome. Their AI"
+			"text": " but it transitioned to a capped profit model, and signed a massive $1 billion partnership with"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:21,520",
-				"to": "00:02:26,960"
+				"from": "00:01:51,200",
+				"to": "00:01:55,280"
 			},
 			"offsets": {
-				"from": 141520,
-				"to": 146960
+				"from": 111200,
+				"to": 115280
 			},
-			"text": " spending dropped by roughly half. Not their usage. Their usage actually went up. Spending went"
+			"text": " Microsoft to access the computing power needed for AGI."
 		},
 		{
 			"timestamps": {
-				"from": "00:02:26,960",
-				"to": "00:02:32,080"
+				"from": "00:01:55,280",
+				"to": "00:02:00,240"
 			},
 			"offsets": {
-				"from": 146960,
-				"to": 152080
+				"from": 115280,
+				"to": 120240
 			},
-			"text": " down while usage went up. Read that twice if you need to because that combination is exactly what"
+			"text": " For Dario, Daniela, and the safety team, this was the beginning of the end."
 		},
 		{
 			"timestamps": {
-				"from": "00:02:32,080",
-				"to": "00:02:38,160"
+				"from": "00:02:00,240",
+				"to": "00:02:05,680"
 			},
 			"offsets": {
-				"from": 152080,
-				"to": 158160
+				"from": 120240,
+				"to": 125680
 			},
-			"text": " should worry every company still paying premium prices for every single AI task no matter how small"
+			"text": " The breaking point arrived in 2020, when Altman accused the Amadei's of plotting against him"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:38,160",
-				"to": "00:02:44,240"
+				"from": "00:02:05,680",
+				"to": "00:02:06,400"
 			},
 			"offsets": {
-				"from": 158160,
-				"to": 164240
+				"from": 125680,
+				"to": 126400
 			},
-			"text": " and that's really the shift underneath all of this. For a long time, the unspoken rule in AI was"
+			"text": " to the board."
 		},
 		{
 			"timestamps": {
-				"from": "00:02:44,240",
-				"to": "00:02:49,920"
+				"from": "00:02:06,400",
+				"to": "00:02:11,040"
 			},
 			"offsets": {
-				"from": 164240,
-				"to": 169920
+				"from": 126400,
+				"to": 131040
 			},
-			"text": " If you want the best output, you pay for the best model every time for everything that rule is"
+			"text": " The trust was completely broken, as Dario Amadei would later put it in an interview."
 		},
 		{
 			"timestamps": {
-				"from": "00:02:49,920",
-				"to": "00:02:55,360"
+				"from": "00:02:12,000",
+				"to": "00:02:16,080"
 			},
 			"offsets": {
-				"from": 169920,
-				"to": 175360
+				"from": 132000,
+				"to": 136080
 			},
-			"text": " breaking. When a cheaper model can handle most of your everyday workload just fine, the question stops"
+			"text": " At the end of the day, why argue with someone when you don't have the same vision,"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:55,360",
-				"to": "00:03:02,160"
+				"from": "00:02:16,080",
+				"to": "00:02:17,280"
 			},
 			"offsets": {
-				"from": 175360,
-				"to": 182160
+				"from": 136080,
+				"to": 137280
 			},
-			"text": " being which model is the smartest and becomes which model is smart enough for this job at this price."
+			"text": " and you don't trust them?"
 		},
 		{
 			"timestamps": {
-				"from": "00:03:02,160",
-				"to": "00:03:07,200"
+				"from": "00:02:17,280",
+				"to": "00:02:22,000"
 			},
 			"offsets": {
-				"from": 182160,
-				"to": 187200
+				"from": 137280,
+				"to": 142000
 			},
-			"text": " That's an uncomfortable question for companies whose entire pricing structure assumes you'll pay"
+			"text": " Dario, Daniela, and nine other crucial employees decided to walk away."
 		},
 		{
 			"timestamps": {
-				"from": "00:03:07,200",
-				"to": "00:03:12,560"
+				"from": "00:02:22,000",
+				"to": "00:02:24,720"
 			},
 			"offsets": {
-				"from": 187200,
-				"to": 192560
+				"from": 142000,
+				"to": 144720
 			},
-			"text": " a premium by default. If more businesses start doing what Coinbase did, routing routine work to"
+			"text": " This wasn't just a standard tech industry spin-off."
 		},
 		{
 			"timestamps": {
-				"from": "00:03:12,560",
-				"to": "00:03:16,720"
+				"from": "00:02:24,720",
+				"to": "00:02:30,720"
 			},
 			"offsets": {
-				"from": 192560,
-				"to": 196720
+				"from": 144720,
+				"to": 150720
 			},
-			"text": " cheaper models and saving the expensive ones only for the hardest problems,"
+			"text": " It was a cohesive exodus driven by a belief that OpenAI's commercial incentives were"
 		},
 		{
 			"timestamps": {
-				"from": "00:03:16,720",
-				"to": "00:03:21,600"
+				"from": "00:02:30,720",
+				"to": "00:02:32,640"
 			},
 			"offsets": {
-				"from": 196720,
-				"to": 201600
+				"from": 150720,
+				"to": 152640
 			},
-			"text": " that premium pricing gets a lot harder to justify across the board. Now before you go,"
+			"text": " overtaking its commitment to safety."
 		},
 		{
 			"timestamps": {
-				"from": "00:03:21,600",
-				"to": "00:03:25,440"
+				"from": "00:02:32,640",
+				"to": "00:02:37,120"
 			},
 			"offsets": {
-				"from": 201600,
-				"to": 205440
+				"from": 152640,
+				"to": 157120
 			},
-			"text": " if this kind of shift is something you want to actually track as it unfolds,"
+			"text": " They believed the capped profit structure simply wasn't enough to hold the company's original"
 		},
 		{
 			"timestamps": {
-				"from": "00:03:25,440",
-				"to": "00:03:30,240"
+				"from": "00:02:37,120",
+				"to": "00:02:42,240"
 			},
 			"offsets": {
-				"from": 205440,
-				"to": 210240
+				"from": 157120,
+				"to": 162240
 			},
-			"text": " instead of catching it three months later in a headline, that's exactly what this channel is for."
+			"text": " mission in place under extreme commercial pressure, so they founded Antropic."
 		},
 		{
 			"timestamps": {
-				"from": "00:03:30,240",
-				"to": "00:03:35,040"
+				"from": "00:02:42,240",
+				"to": "00:02:49,040"
 			},
 			"offsets": {
-				"from": 210240,
-				"to": 215040
+				"from": 162240,
+				"to": 169040
 			},
-			"text": " I'm breaking down these AI industry moves as they happen. So if that's useful to you,"
+			"text": " Before leaving, Dario wrote a memo arguing that the ideal AI company should be 75% for the public"
 		},
 		{
 			"timestamps": {
-				"from": "00:03:35,040",
-				"to": "00:03:38,960"
+				"from": "00:02:49,040",
+				"to": "00:02:51,680"
 			},
 			"offsets": {
-				"from": 215040,
-				"to": 218960
+				"from": 169040,
+				"to": 171680
 			},
-			"text": " subscribing means you won't miss the next one because here's what I keep coming back to."
+			"text": " good and 25% for the market."
 		},
 		{
 			"timestamps": {
-				"from": "00:03:38,960",
-				"to": "00:03:43,760"
+				"from": "00:02:51,680",
+				"to": "00:02:57,200"
 			},
 			"offsets": {
-				"from": 218960,
-				"to": 223760
+				"from": 171680,
+				"to": 177200
 			},
-			"text": " Raw performance probably still matters for the hardest problems out there, but for the huge,"
+			"text": " Daniela Amadei, operating as president, became the backbone of this new institution."
 		},
 		{
 			"timestamps": {
-				"from": "00:03:43,760",
-				"to": "00:03:49,360"
+				"from": "00:02:57,200",
+				"to": "00:03:02,880"
 			},
 			"offsets": {
-				"from": 223760,
-				"to": 229360
+				"from": 177200,
+				"to": 182880
 			},
-			"text": " unglamorous majority of everyday AI work, the stuff that actually runs the world's businesses,"
+			"text": " She implemented a rigorous mission alignment filter for hiring, even turning away top technical"
 		},
 		{
 			"timestamps": {
-				"from": "00:03:49,360",
-				"to": "00:03:55,200"
+				"from": "00:03:02,880",
+				"to": "00:03:07,520"
 			},
 			"offsets": {
-				"from": 229360,
-				"to": 235200
+				"from": 182880,
+				"to": 187520
 			},
-			"text": " cost efficiency might end up mattering just as much. Maybe more. So the real question isn't who builds"
+			"text": " talent if they didn't deeply resonate with Antropic's safety first mission."
 		},
 		{
 			"timestamps": {
-				"from": "00:03:55,200",
-				"to": "00:04:00,960"
+				"from": "00:03:07,520",
+				"to": "00:03:13,600"
 			},
 			"offsets": {
-				"from": 235200,
-				"to": 240960
+				"from": 187520,
+				"to": 193600
 			},
-			"text": " the smartest model anymore. It's whether smart enough and dramatically cheaper quietly becomes the"
+			"text": " They spent their first 18 months in absolute stealth, focusing purely on the science of AI"
 		},
 		{
 			"timestamps": {
-				"from": "00:04:00,960",
-				"to": "00:04:06,320"
+				"from": "00:03:13,600",
+				"to": "00:03:16,480"
 			},
 			"offsets": {
-				"from": 240960,
-				"to": 246320
+				"from": 193600,
+				"to": 196480
 			},
-			"text": " thing that actually wins this race. What do you think? Is that a race the big US labs can still win"
+			"text": " alignment rather than rushing a product to market."
 		},
 		{
 			"timestamps": {
-				"from": "00:04:06,320",
-				"to": "00:04:10,480"
+				"from": "00:03:16,480",
+				"to": "00:03:22,560"
 			},
 			"offsets": {
-				"from": 246320,
-				"to": 250480
+				"from": 196480,
+				"to": 202560
 			},
-			"text": " on their current pricing? Let me know down in the comments. I want to see where people actually"
+			"text": " Today, the war is fought on two distinct fronts, business architecture and technical philosophy."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:22,560",
+				"to": "00:03:28,720"
+			},
+			"offsets": {
+				"from": 202560,
+				"to": 208720
+			},
+			"text": " OpenAI relies heavily on a technique called reinforcement learning from human feedback,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:28,720",
+				"to": "00:03:36,320"
+			},
+			"offsets": {
+				"from": 208720,
+				"to": 216320
+			},
+			"text": " or RLHF, driven by an aggressive market strategy and deeply intertwined with Microsoft Azure."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:36,320",
+				"to": "00:03:41,040"
+			},
+			"offsets": {
+				"from": 216320,
+				"to": 221040
+			},
+			"text": " And Thropic, however, pioneered something called constitutional AI."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:41,040",
+				"to": "00:03:46,640"
+			},
+			"offsets": {
+				"from": 221040,
+				"to": 226640
+			},
+			"text": " Instead of relying purely on implicit human feedback, they give their AI models a literal"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:46,640",
+				"to": "00:03:54,400"
+			},
+			"offsets": {
+				"from": 226640,
+				"to": 234400
+			},
+			"text": " rulebook, a 1,200-word constitution, drawing from documents like the UN Declaration of Human Rights,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:54,400",
+				"to": "00:03:58,640"
+			},
+			"offsets": {
+				"from": 234400,
+				"to": 238640
+			},
+			"text": " and Thropic positioned itself as the healthy alternative to OpenAI."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:58,640",
+				"to": "00:04:03,840"
+			},
+			"offsets": {
+				"from": 238640,
+				"to": 243840
+			},
+			"text": " With Dario Amadei even going so far as to liken OpenAI to a tobacco company,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:03,840",
+				"to": "00:04:07,680"
+			},
+			"offsets": {
+				"from": 243840,
+				"to": 247680
+			},
+			"text": " but the ripple effects of the 2020 schism didn't stop there."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:07,680",
+				"to": "00:04:13,520"
+			},
+			"offsets": {
+				"from": 247680,
+				"to": 253520
+			},
+			"text": " Over the next few years, OpenAI faced a massive exodus of its remaining safety researchers,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:13,520",
+				"to": "00:04:19,200"
+			},
+			"offsets": {
+				"from": 253520,
+				"to": 259200
+			},
+			"text": " key figures like Jan Lika, who co-led the super-alignment team, abruptly resigned,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:19,760",
+				"to": "00:04:25,600"
+			},
+			"offsets": {
+				"from": 259760,
+				"to": 265600
+			},
+			"text": " stating that OpenAI was prioritizing \"shiny new products\" over safety guardrails,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:25,600",
+				"to": "00:04:31,840"
+			},
+			"offsets": {
+				"from": 265600,
+				"to": 271840
+			},
+			"text": " \"researcher Daniel Kokotajlo left, forfeiting roughly 85% of his family's net worth in"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:31,840",
+				"to": "00:04:37,520"
+			},
+			"offsets": {
+				"from": 271840,
+				"to": 277520
+			},
+			"text": " unvested stock, just so he could refuse to sign a restrictive non-disparagement agreement,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:37,520",
+				"to": "00:04:42,320"
+			},
+			"offsets": {
+				"from": 277520,
+				"to": 282320
+			},
+			"text": " and speak freely about his fears that OpenAI wasn't ready to handle AGI.\""
+		},
+		{
+			"timestamps": {
+				"from": "00:04:42,320",
+				"to": "00:04:46,880"
+			},
+			"offsets": {
+				"from": 282320,
+				"to": 286880
+			},
+			"text": " Lia pulled Ashenbrenner was fired after raising internal security concerns,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:46,880",
+				"to": "00:04:52,240"
+			},
+			"offsets": {
+				"from": 286880,
+				"to": 292240
+			},
+			"text": " and writing a memo warning that OpenAI's practices were \"agregiously insufficient.\""
+		},
+		{
+			"timestamps": {
+				"from": "00:04:52,240",
+				"to": "00:04:56,000"
+			},
+			"offsets": {
+				"from": 292240,
+				"to": 296000
+			},
+			"text": " \"We are now witnessing a proxy war for the future of human intelligence."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:56,000",
+				"to": "00:04:57,680"
+			},
+			"offsets": {
+				"from": 296000,
+				"to": 297680
+			},
+			"text": " The stakes are monumental.\""
+		},
+		{
+			"timestamps": {
+				"from": "00:04:57,680",
+				"to": "00:05:02,480"
+			},
+			"offsets": {
+				"from": 297680,
+				"to": 302480
+			},
+			"text": " OpenAI recently shut down its highly anticipated Sora video app,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:02,480",
+				"to": "00:05:08,000"
+			},
+			"offsets": {
+				"from": 302480,
+				"to": 308000
+			},
+			"text": " which was burning a million dollars a day, partly to redirect its massive computing power"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:08,000",
+				"to": "00:05:11,520"
+			},
+			"offsets": {
+				"from": 308000,
+				"to": 311520
+			},
+			"text": " to fight off and Thropic's growing dominance in the enterprise market."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:11,520",
+				"to": "00:05:15,840"
+			},
+			"offsets": {
+				"from": 311520,
+				"to": 315840
+			},
+			"text": " We'll see who wins in the market, and we'll see who wins in the court of public opinion."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:16,400",
+				"to": "00:05:22,960"
+			},
+			"offsets": {
+				"from": 316400,
+				"to": 322960
+			},
+			"text": " Amode recently said, \"This isn't just a story about two tech companies, it's a story about human nature,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:22,960",
+				"to": "00:05:28,640"
+			},
+			"offsets": {
+				"from": 322960,
+				"to": 328640
+			},
+			"text": " broken trust, and the terrifying responsibility of building the most consequential technology"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:28,640",
+				"to": "00:05:33,360"
+			},
+			"offsets": {
+				"from": 328640,
+				"to": 333360
+			},
+			"text": " in history. Five major companies are currently deciding the fate of our economy,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:33,360",
+				"to": "00:05:39,360"
+			},
+			"offsets": {
+				"from": 333360,
+				"to": 339360
+			},
+			"text": " geopolitics, and society, and two of the leaders are at war, which vision of the future will win,"
 		}
 	]
 }

@@ -8,8 +8,9 @@ out
 
 # Temporary/scratch files
 scratch/
-process_audio.mjs
 public/voiceover_16k.wav
+public/ElevenLabs_*.wav
+public/voiceover*.wav
 
 # Large temporary/model folders
 whisper/

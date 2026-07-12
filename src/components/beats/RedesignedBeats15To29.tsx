@@ -1,213 +1,253 @@
 import React from "react";
 import { SceneLayout } from "../design/SceneLayout";
 import { CinematicNumber, CinematicComparison } from "../design/DocumentaryCards";
-import { RouterNetwork3D, ServerBlade3D } from "../design/Vectors3D";
+import {
+  DocumentaryLogoCard,
+  DocumentaryVSCard,
+  Documentary3DDocument,
+  DocumentaryKineticQuote,
+} from "../design/DocumentaryOpenAIWarCards";
 
-// Beat 15: 91.92s -> 97.12s
+// Beat 15: Frames 3500 -> 3740
 export const Beat15: React.FC = () => (
   <SceneLayout
-    title="CATCHING UP WHERE IT MATTERS"
-    subtitle="Enterprise value is measured by cost per solved task, not academic leaderboards"
-    accentColor="#10B981"
-  >
-    <CinematicComparison
-      leftValue="THEORY"
-      leftLabel="SYNTHETIC LEADERBOARDS"
-      leftColor="#00F0FF"
-      rightValue="BUSINESS ROI"
-      rightLabel="RELIABILITY, LATENCY & COST"
-      rightColor="#10B981"
-      separator="VS"
-    />
-  </SceneLayout>
-);
-
-// Beat 16: 97.12s -> 104.32s
-export const Beat16: React.FC = () => (
-  <SceneLayout
-    title="CLOSE ENOUGH AT A FRACTION OF THE COST"
-    subtitle="Delivering top-tier practical reasoning without premium API rates"
-    accentColor="#FFB800"
-  >
-    <CinematicComparison
-      leftValue="100% IQ"
-      leftLabel="PREMIUM US FRONTIER PRICING"
-      leftColor="#00F0FF"
-      rightValue="95% IQ"
-      rightLabel="FRACTION OF THE COST"
-      rightColor="#FFB800"
-      separator="VS"
-    />
-  </SceneLayout>
-);
-
-// Beat 17: 104.32s -> 109.92s
-export const Beat17: React.FC = () => (
-  <SceneLayout
-    title="THE TIPPING POINT"
-    subtitle="When capability delta shrinks to <5%, token price becomes the decisive metric"
+    title="BEGINNING OF THE END"
+    subtitle="For Dario, Daniela, and the safety team, commercial pressures broke the original mission"
     accentColor="#FF5A5F"
   >
-    <CinematicNumber value="PRICE IS KING" label="WHEN QUALITY IS CLOSE ENOUGH" accentColor="#FF5A5F" />
+    <DocumentaryKineticQuote
+      quote="This was the beginning of the end."
+      author="THE SAFETY TEAM"
+      highlightWord="end"
+    />
   </SceneLayout>
 );
 
-// Beat 18: 109.92s -> 114.88s
-export const Beat18: React.FC = () => (
+// Beat 16: Frames 3740 -> 3970
+export const Beat16: React.FC = () => (
   <SceneLayout
-    title="REAL-WORLD ENTERPRISE CASE STUDY"
-    subtitle="The concrete example that shows how companies are applying this today"
+    title="THE 2020 BREAKING POINT"
+    subtitle="Altman accused the Amodeis of plotting against him to the board"
+    accentColor="#FFD700"
+  >
+    <Documentary3DDocument
+      header="THE 2020 BOARDROOM RIFT"
+      bodyText="Trust was completely shattered inside executive leadership meetings."
+      highlightText="ALTMAN ACCUSES AMODEIS TO THE BOARD"
+      markerColor="rgba(255, 90, 95, 0.55)"
+    />
+  </SceneLayout>
+);
+
+// Beat 17: Frames 3970 -> 4200
+export const Beat17: React.FC = () => (
+  <SceneLayout
+    title="TRUST DESTROYED"
+    subtitle="Dario Amodei on why staying at OpenAI was no longer possible"
     accentColor="#00F0FF"
   >
-    <CinematicNumber value="REAL WORLD PROOF" label="FROM THEORY TO PRODUCTION" accentColor="#00F0FF" />
+    <DocumentaryKineticQuote
+      quote="Why argue when you don't have the same vision and don't trust them?"
+      author="DARIO AMODEI"
+      highlightWord="trust"
+    />
   </SceneLayout>
 );
 
-// Beat 19: 114.88s -> 119.84s
-export const Beat19: React.FC = () => (
+// Beat 18: Frames 4200 -> 4430
+export const Beat18: React.FC = () => (
   <SceneLayout
-    title="CASE STUDY: COINBASE"
-    subtitle="Shifted major production AI workloads to cost-efficient open models"
+    title="THE COHESIVE EXODUS"
+    subtitle="Dario, Daniela, and nine other crucial employees walked away together"
     accentColor="#FFB800"
   >
-    <ServerBlade3D
-      title="COINBASE"
-      subtitle="Production multi-model architecture scaling API throughput"
+    <CinematicNumber
+      value="11 DEFECTORS"
+      label="CORE SAFETY EXODUS FROM OPENAI"
       accentColor="#FFB800"
     />
   </SceneLayout>
 );
 
-// Beat 20: 119.84s -> 125.04s
+// Beat 19: Frames 4430 -> 4660
+export const Beat19: React.FC = () => (
+  <SceneLayout
+    title="WHY THEY LEFT"
+    subtitle="Driven by a belief that commercial incentives were overtaking commitment to safety"
+    accentColor="#FF5A5F"
+  >
+    <DocumentaryVSCard
+      leftName="COMMERCIAL INCENTIVES"
+      leftLogo="https://cdn.simpleicons.org/openai/white"
+      leftColor="#10A37F"
+      leftTag="MARKET PRESSURE"
+      rightName="SAFETY COMMITMENT"
+      rightLogo="https://cdn.simpleicons.org/anthropic/white"
+      rightColor="#D97757"
+      rightTag="MISSION FIRST"
+    />
+  </SceneLayout>
+);
+
+// Beat 20: Frames 4660 -> 4890
 export const Beat20: React.FC = () => (
   <SceneLayout
-    title="THE AUTOMATED MODEL ROUTER"
-    subtitle="No manual switching — an intelligent 3D routing pipeline inspects and assigns every prompt"
-    accentColor="#00F0FF"
+    title="FOUNDING ANTHROPIC"
+    subtitle="Believing capped-profit wasn't enough to withstand extreme market pressure"
+    accentColor="#D97757"
   >
-    <RouterNetwork3D />
+    <DocumentaryLogoCard
+      name="Anthropic"
+      logoUrl="https://cdn.simpleicons.org/anthropic/white"
+      brandColor="#D97757"
+      subtitle="FOUNDED IN 2021 • SAFETY FIRST AI LAB"
+      scale={1.15}
+    />
   </SceneLayout>
 );
 
-// Beat 21: 125.04s -> 129.68s
+// Beat 21: Frames 4890 -> 5120
 export const Beat21: React.FC = () => (
   <SceneLayout
-    title="ROUTING BY COMPLEXITY & COST"
-    subtitle="Simple jobs hit efficient models; extreme edge cases hit frontier APIs"
-    accentColor="#10B981"
+    title="THE DARIO MEMO"
+    subtitle="Dario wrote a memo defining the ideal corporate structure for an AI lab"
+    accentColor="#00F0FF"
   >
     <CinematicComparison
-      leftValue="90%"
-      leftLabel="ROUTINE WORK ➜ EFFICIENT MODELS"
-      leftColor="#10B981"
-      rightValue="10%"
-      rightLabel="EDGE CASES ➜ FRONTIER MODELS"
-      rightColor="#FFB800"
-      separator="+"
+      leftValue="75%"
+      leftLabel="PUBLIC BENEFIT GOOD"
+      leftColor="#00F0FF"
+      rightValue="25%"
+      rightLabel="MARKET & INVESTOR RETURN"
+      rightColor="#FFD700"
     />
   </SceneLayout>
 );
 
-// Beat 22: 129.68s -> 135.28s
+// Beat 22: Frames 5120 -> 5350
 export const Beat22: React.FC = () => (
   <SceneLayout
-    title="COINBASE FINANCIAL OUTCOME"
-    subtitle="Total token volume surged while monthly cloud AI bill dropped in half"
-    accentColor="#10B981"
+    title="DANIELA AMODEI • PRESIDENT"
+    subtitle="Operating as president, she became the operational backbone of Anthropic"
+    accentColor="#D97757"
   >
-    <CinematicComparison
-      leftValue="-50%"
-      leftLabel="TOTAL AI SPEND"
-      leftColor="#10B981"
-      rightValue="+UP"
-      rightLabel="TOTAL AI USAGE"
-      rightColor="#00F0FF"
-      separator="&"
+    <DocumentaryKineticQuote
+      quote="Building an institution rooted in safety and rigorous alignment."
+      author="DANIELA AMODEI — PRESIDENT"
+      highlightWord="safety"
     />
   </SceneLayout>
 );
 
-// Beat 23: 135.28s -> 141.52s
+// Beat 23: Frames 5350 -> 5580
 export const Beat23: React.FC = () => (
   <SceneLayout
-    title="SPENDING DOWN. USAGE UP."
-    subtitle="Why paying default premium prices across the board is unsustainable"
+    title="THE MISSION FILTER"
+    subtitle="Turning away top technical talent if they didn't deeply resonate with safety"
     accentColor="#FF5A5F"
   >
-    <CinematicNumber value="-50% SPEND / +USAGE" label="THE NEW ENTERPRISE ROI STANDARD" accentColor="#FF5A5F" />
-  </SceneLayout>
-);
-
-// Beat 24: 141.52s -> 146.96s
-export const Beat24: React.FC = () => (
-  <SceneLayout
-    title="TASK-LEVEL ROUTING"
-    subtitle="Match the cost of the model directly to the economic value of the task"
-    accentColor="#FFB800"
-  >
-    <CinematicNumber value="GRANULAR ROUTING" label="RIGHT-SIZING EVERY AI WORKLOAD" accentColor="#FFB800" />
-  </SceneLayout>
-);
-
-// Beat 25: 146.96s -> 152.08s
-export const Beat25: React.FC = () => (
-  <SceneLayout
-    title="THE OLD RULE"
-    subtitle='"Pay for the biggest, most expensive model every time for everything"'
-    accentColor="#FF5A5F"
-  >
-    <CinematicNumber value="1 MODEL FOR ALL" label="LEGACY ENTERPRISE PARADIGM (BROKEN)" accentColor="#FF5A5F" />
-  </SceneLayout>
-);
-
-// Beat 26: 152.08s -> 158.16s
-export const Beat26: React.FC = () => (
-  <SceneLayout
-    title="THAT RULE IS BREAKING"
-    subtitle="Efficient models now handle 90% of daily production tasks effortlessly"
-    accentColor="#10B981"
-  >
-    <CinematicNumber value="SMART ENOUGH" label="DECOUPLING DAILY WORKLOADS FROM FRONTIER PRICING" accentColor="#10B981" />
-  </SceneLayout>
-);
-
-// Beat 27: 158.16s -> 164.24s
-export const Beat27: React.FC = () => (
-  <SceneLayout
-    title="THE NEW QUESTION"
-    subtitle="Shifting from pure leaderboard rank to practical cost-efficiency"
-    accentColor="#00F0FF"
-  >
-    <CinematicComparison
-      leftValue="SMARTEST?"
-      leftLabel="OLD QUESTION"
-      leftColor="#FF5A5F"
-      rightValue="BEST ROI?"
-      rightLabel="NEW QUESTION"
-      rightColor="#00F0FF"
-      separator="➜"
+    <Documentary3DDocument
+      header="RIGOROUS MISSION FILTER"
+      bodyText="Anthropic turned down world-class engineers if they did not share safety-first ethics."
+      highlightText="REJECTING TALENT WITHOUT MISSION FIT"
     />
   </SceneLayout>
 );
 
-// Beat 28: 164.24s -> 169.92s
-export const Beat28: React.FC = () => (
+// Beat 24: Frames 5580 -> 5810
+export const Beat24: React.FC = () => (
   <SceneLayout
-    title="THE MARGIN SQUEEZE"
-    subtitle="Challenging high default pricing as enterprise customers adopt dynamic routing"
-    accentColor="#FFB800"
+    title="18 MONTHS IN STEALTH"
+    subtitle="Focusing purely on the science of AI alignment rather than rushing a product"
+    accentColor="#00F0FF"
   >
-    <CinematicNumber value="MARGIN PRESSURE" label="DEFAULT PREMIUM PRICING CHALLENGED" accentColor="#FFB800" />
+    <CinematicNumber
+      value="18 MONTHS"
+      label="ABSOLUTE STEALTH ALIGNMENT RESEARCH"
+      accentColor="#00F0FF"
+    />
   </SceneLayout>
 );
 
-// Beat 29: 169.92s -> 175.36s
+// Beat 25: Frames 5810 -> 6040
+export const Beat25: React.FC = () => (
+  <SceneLayout
+    title="WAR ON TWO FRONTS"
+    subtitle="Fought across business architecture and fundamental technical philosophy"
+    accentColor="#FFD700"
+  >
+    <DocumentaryVSCard
+      leftName="BUSINESS ARCHITECTURE"
+      leftLogo="https://cdn.simpleicons.org/openai/white"
+      leftColor="#10A37F"
+      leftTag="RLHF & SPEED"
+      rightName="TECHNICAL PHILOSOPHY"
+      rightLogo="https://cdn.simpleicons.org/anthropic/white"
+      rightColor="#D97757"
+      rightTag="CONSTITUTIONAL AI"
+    />
+  </SceneLayout>
+);
+
+// Beat 26: Frames 6040 -> 6270
+export const Beat26: React.FC = () => (
+  <SceneLayout
+    title="OPENAI STRATEGY • RLHF"
+    subtitle="Reinforcement Learning from Human Feedback driven by aggressive market deployment"
+    accentColor="#10A37F"
+  >
+    <DocumentaryLogoCard
+      name="OpenAI RLHF"
+      logoUrl="https://cdn.simpleicons.org/openai/white"
+      brandColor="#10A37F"
+      subtitle="HUMAN FEEDBACK LOOPS + SPEED"
+    />
+  </SceneLayout>
+);
+
+// Beat 27: Frames 6270 -> 6500
+export const Beat27: React.FC = () => (
+  <SceneLayout
+    title="THE MICROSOFT ENGINE"
+    subtitle="Deeply intertwined with Microsoft Azure's global supercomputer infrastructure"
+    accentColor="#00A4EF"
+  >
+    <DocumentaryLogoCard
+      name="Microsoft Azure"
+      logoUrl="https://cdn.simpleicons.org/microsoft/white"
+      brandColor="#00A4EF"
+      subtitle="GLOBAL SUPERCOMPUTING CLUSTERS"
+    />
+  </SceneLayout>
+);
+
+// Beat 28: Frames 6500 -> 6730
+export const Beat28: React.FC = () => (
+  <SceneLayout
+    title="ANTHROPIC'S BREAKTHROUGH"
+    subtitle="Pioneering a revolutionary AI alignment framework: Constitutional AI"
+    accentColor="#D97757"
+  >
+    <DocumentaryLogoCard
+      name="Anthropic"
+      logoUrl="https://cdn.simpleicons.org/anthropic/white"
+      brandColor="#D97757"
+      subtitle="CONSTITUTIONAL AI ARCHITECTURE"
+    />
+  </SceneLayout>
+);
+
+// Beat 29: Frames 6730 -> 6960
 export const Beat29: React.FC = () => (
   <SceneLayout
-    title="THE ENTERPRISE BLUEPRINT"
-    subtitle="Routine work ➜ Efficient models | Extreme edge cases ➜ Frontier APIs"
+    title="THE LITERAL RULEBOOK"
+    subtitle="A 1,200-word constitution drawing from the UN Declaration of Human Rights"
     accentColor="#00F0FF"
   >
-    <RouterNetwork3D />
+    <Documentary3DDocument
+      header="THE 1,200-WORD CONSTITUTION"
+      bodyText="Giving AI models explicit principles from the UN Declaration of Human Rights."
+      highlightText="EMBEDDING HUMAN RIGHTS INTO CODE"
+    />
   </SceneLayout>
 );

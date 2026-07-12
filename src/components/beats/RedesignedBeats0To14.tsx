@@ -1,203 +1,249 @@
 import React from "react";
 import { SceneLayout } from "../design/SceneLayout";
 import { CinematicNumber, CinematicComparison } from "../design/DocumentaryCards";
-import { IsometricBarChart3D, ServerBlade3D } from "../design/Vectors3D";
+import {
+  DocumentaryLogoCard,
+  DocumentaryVSCard,
+  Documentary3DDocument,
+  DocumentaryKineticQuote,
+} from "../design/DocumentaryOpenAIWarCards";
 
-// Beat 0: 0.00s -> 5.44s
+// Beat 0: Frames 0 -> 220
 export const Beat0: React.FC = () => (
   <SceneLayout
-    title="1 YEAR AGO ON OPENROUTER"
-    subtitle="Chinese AI providers controlled less than 2% of total platform traffic"
-    accentColor="#FF5A5F"
+    title="THE DEFINING CONFLICT OF THE AI ERA"
+    subtitle="Imagine a technology so powerful that the people building it are terrified of what it might become"
+    accentColor="#00F0FF"
   >
-    <CinematicNumber value="< 2.0%" label="CHINESE AI MARKET SHARE" accentColor="#FF5A5F" />
+    <DocumentaryKineticQuote
+      quote="TERRIFIED OF WHAT IT MIGHT BECOME"
+      author="PROLOGUE"
+      highlightWord="TERRIFIED"
+    />
   </SceneLayout>
 );
 
-// Beat 1: 5.44s -> 12.32s
+// Beat 1: Frames 220 -> 440
 export const Beat1: React.FC = () => (
   <SceneLayout
-    title="THE 12-MONTH SHIFT"
-    subtitle="From under 2% to commanding nearly half of all developer API traffic"
-    accentColor="#00F0FF"
+    title="A BITTER FEUD FOR CONTROL"
+    subtitle="Creators turning against each other, locked in a philosophical civil war"
+    accentColor="#FFD700"
   >
-    <CinematicComparison
-      leftValue="< 2%"
-      leftLabel="1 YEAR AGO"
-      leftColor="#FF5A5F"
-      rightValue="45%"
-      rightLabel="TODAY"
-      rightColor="#00F0FF"
-    />
+    <div style={{ fontSize: 96, fontWeight: 900, color: "#FFFFFF", textAlign: "center", textShadow: "0 0 50px rgba(255,215,0,0.4)" }}>
+      THE OPENAI CIVIL WAR
+    </div>
   </SceneLayout>
 );
 
-// Beat 2: 12.32s -> 18.56s
+// Beat 2: Frames 440 -> 680
 export const Beat2: React.FC = () => (
   <SceneLayout
-    title="PLATFORM ANOMALY"
-    subtitle="A smartphone maker processes more AI traffic than OpenAI on the same platform"
-    accentColor="#FFB800"
+    title="NOT JUST A CORPORATE RIVALRY"
+    subtitle="A deeply personal and philosophical battle over the future of intelligence"
+    accentColor="#FF5A5F"
   >
     <CinematicComparison
-      leftValue="XIAOMI"
-      leftLabel="PHONE & GADGET MAKER"
-      leftColor="#FFB800"
-      rightValue="OPENAI"
-      rightLabel="FRONTIER AI LAB"
-      rightColor="#10B981"
-      separator="VS"
+      leftValue="COMMERCIAL"
+      leftLabel="SPEED & AGGRESSIVE SCALE"
+      leftColor="#10A37F"
+      rightValue="PHILOSOPHY"
+      rightLabel="SAFETY & CONSTITUTIONAL AI"
+      rightColor="#D97757"
     />
   </SceneLayout>
 );
 
-// Beat 3: 18.56s -> 23.76s
+// Beat 3: Frames 680 -> 930
 export const Beat3: React.FC = () => (
   <SceneLayout
-    title="DEEP DIVE BREAKDOWN"
-    subtitle="Breaking down the numbers, the models, and how enterprise routing works"
-    accentColor="#00F0FF"
+    title="THE JUGGERNAUT"
+    subtitle="Sam Altman and OpenAI, backed by Microsoft Azure compute clusters"
+    accentColor="#10A37F"
   >
-    <CinematicNumber value="HOW IT HAPPENED" label="THE DATA & CASE STUDY" accentColor="#00F0FF" />
+    <DocumentaryLogoCard
+      name="OpenAI"
+      logoUrl="https://cdn.simpleicons.org/openai/white"
+      brandColor="#10A37F"
+      subtitle="SAM ALTMAN • MICROSOFT AZURE BACKED"
+      scale={1.1}
+    />
   </SceneLayout>
 );
 
-// Beat 4: 23.76s -> 28.96s
+// Beat 4: Frames 930 -> 1160
 export const Beat4: React.FC = () => (
   <SceneLayout
-    title="WHY WESTERN LABS ARE WORRIED"
-    subtitle="When open models become 'close enough' at a fraction of the price"
-    accentColor="#FF5A5F"
-  >
-    <CinematicNumber value="THE MARGIN THREAT" label="SCALE VS DEFAULT PREMIUM PRICING" accentColor="#FF5A5F" />
-  </SceneLayout>
-);
-
-// Beat 5: 28.96s -> 35.52s
-export const Beat5: React.FC = () => (
-  <SceneLayout
-    title="OPENROUTER MARKETPLACE"
-    subtitle="Connecting developers and production apps to every major AI API"
+    title="THE ULTIMATE PRIZE"
+    subtitle="Moving fast, breaking barriers, and chasing Artificial General Intelligence"
     accentColor="#00F0FF"
   >
-    <ServerBlade3D
-      title="OPENROUTER"
-      subtitle="The global API marketplace connecting developers to every major AI model"
+    <CinematicNumber
+      value="A G I"
+      label="ARTIFICIAL GENERAL INTELLIGENCE"
       accentColor="#00F0FF"
     />
   </SceneLayout>
 );
 
-// Beat 6: 35.52s -> 40.96s
-export const Beat6: React.FC = () => (
+// Beat 5: Frames 1160 -> 1400
+export const Beat5: React.FC = () => (
   <SceneLayout
-    title="1 YEAR AGO — TRAFFIC SHARE"
-    subtitle="Western models held almost 100% of marketplace API calls"
-    accentColor="#FF5A5F"
+    title="THE DEFECTORS"
+    subtitle="Dario Amodei and Anthropic, built by OpenAI's own defecting researchers"
+    accentColor="#D97757"
   >
-    <IsometricBarChart3D westernShare={98.5} chineseShare={1.5} />
+    <DocumentaryLogoCard
+      name="Anthropic"
+      logoUrl="https://cdn.simpleicons.org/anthropic/white"
+      brandColor="#D97757"
+      subtitle="DARIO AMODEI • SAFETY BEFORE SCALE"
+      scale={1.1}
+    />
   </SceneLayout>
 );
 
-// Beat 7: 40.96s -> 47.20s
+// Beat 6: Frames 1400 -> 1630
+export const Beat6: React.FC = () => (
+  <SceneLayout
+    title="WHERE IT ALL BEGAN • 2016"
+    subtitle="A shared San Francisco group house became the battleground for intense debates over AGI"
+    accentColor="#FFD700"
+  >
+    <Documentary3DDocument
+      header="THE SAN FRANCISCO GROUP HOUSE"
+      bodyText="Home to Dario Amodei, Daniela Amodei, and Holden Karnofsky. Frequent visitor: Greg Brockman."
+      highlightText="WHERE THE IDEOLOGICAL SCHISM BEGAN"
+    />
+  </SceneLayout>
+);
+
+// Beat 7: Frames 1630 -> 1860
 export const Beat7: React.FC = () => (
   <SceneLayout
-    title="THE STEADY 12-MONTH FLIP"
-    subtitle="Quietly, month after month, developer traffic shifted toward efficient alternatives"
+    title="THE EARLY DIVIDE"
+    subtitle="Internal debates over who should control the most powerful AI systems"
+    accentColor="#FF5A5F"
+  >
+    <DocumentaryVSCard
+      leftName="DARIO AMODEI"
+      leftLogo="https://cdn.simpleicons.org/anthropic/white"
+      leftColor="#D97757"
+      leftTag="SAFETY & GOVERNANCE"
+      rightName="GREG BROCKMAN"
+      rightLogo="https://cdn.simpleicons.org/openai/white"
+      rightColor="#10A37F"
+      rightTag="SPEED & DEPLOYMENT"
+    />
+  </SceneLayout>
+);
+
+// Beat 8: Frames 1860 -> 2100
+export const Beat8: React.FC = () => (
+  <SceneLayout
+    title="HOUSE OF DEBATES"
+    subtitle="Late night arguments over the geopolitical consequences of superintelligence"
+    accentColor="#00F0FF"
+  >
+    <DocumentaryKineticQuote
+      quote="INTENSE DEBATES OVER THE FUTURE OF AGI"
+      author="SAN FRANCISCO • 2016"
+      highlightWord="AGI"
+    />
+  </SceneLayout>
+);
+
+// Beat 9: Frames 2100 -> 2340
+export const Beat9: React.FC = () => (
+  <SceneLayout
+    title="THE NUCLEAR PROPOSAL"
+    subtitle="Brockman floated selling AGI to UN Security Council nuclear powers"
+    accentColor="#FF5A5F"
+  >
+    <Documentary3DDocument
+      header="UN SECURITY COUNCIL PROPOSAL"
+      bodyText="Floated idea: Transferring AGI control to international nuclear superpowers."
+      highlightText="SELLING AGI TO NUCLEAR POWERS"
+      markerColor="rgba(255, 90, 95, 0.55)"
+    />
+  </SceneLayout>
+);
+
+// Beat 10: Frames 2340 -> 2570
+export const Beat10: React.FC = () => (
+  <SceneLayout
+    title="DARIO'S REACTION"
+    subtitle="Dario Amodei considered the proposal fundamentally dangerous"
+    accentColor="#FFD700"
+  >
+    <DocumentaryKineticQuote
+      quote="That proposal is tantamount to treason."
+      author="DARIO AMODEI"
+      highlightWord="treason"
+    />
+  </SceneLayout>
+);
+
+// Beat 11: Frames 2570 -> 2800
+export const Beat11: React.FC = () => (
+  <SceneLayout
+    title="LEADERSHIP SHAKEUP • 2018"
+    subtitle="Elon Musk exited OpenAI and Sam Altman took full executive control"
+    accentColor="#10A37F"
+  >
+    <DocumentaryLogoCard
+      name="OpenAI"
+      logoUrl="https://cdn.simpleicons.org/openai/white"
+      brandColor="#10A37F"
+      subtitle="2018: SAM ALTMAN TAKES THE REINS"
+    />
+  </SceneLayout>
+);
+
+// Beat 12: Frames 2800 -> 3030
+export const Beat12: React.FC = () => (
+  <SceneLayout
+    title="THE GPT BLOCKADE"
+    subtitle="Dario blocked Brockman from GPT project; Daniela threatened to step down"
+    accentColor="#FF5A5F"
+  >
+    <Documentary3DDocument
+      header="THE GPT MODEL STANDOFF"
+      bodyText="Internal conflicts boil over: Dario blocks Brockman from core language model team."
+      highlightText="DANIELA THREATENS TO RESIGN"
+    />
+  </SceneLayout>
+);
+
+// Beat 13: Frames 3030 -> 3260
+export const Beat13: React.FC = () => (
+  <SceneLayout
+    title="COMMERCIAL PIVOT"
+    subtitle="OpenAI transitioned from a pure non-profit to a capped-profit commercial entity"
     accentColor="#00F0FF"
   >
     <CinematicComparison
-      leftValue="98.5%"
-      leftLabel="WESTERN MONOPOLY"
+      leftValue="NON-PROFIT"
+      leftLabel="2015 FOUNDING CHARTER"
       leftColor="#00F0FF"
-      rightValue="STEADY RISE"
-      rightLabel="CHINESE OPEN MODELS"
-      rightColor="#FFB800"
+      rightValue="CAPPED PROFIT"
+      rightLabel="COMMERCIAL RESTRUCTURING"
+      rightColor="#FFD700"
     />
   </SceneLayout>
 );
 
-// Beat 8: 47.20s -> 53.36s
-export const Beat8: React.FC = () => (
-  <SceneLayout
-    title="NO SINGLE HEADLINE MOMENT"
-    subtitle="Driven by engineers optimizing daily API costs across production workloads"
-    accentColor="#FFB800"
-  >
-    <CinematicNumber value="STEADY MIGRATION" label="COST-DRIVEN ADOPTION AT SCALE" accentColor="#FFB800" />
-  </SceneLayout>
-);
-
-// Beat 9: 53.36s -> 58.48s
-export const Beat9: React.FC = () => (
-  <SceneLayout
-    title="TODAY'S MARKETPLACE SHARE"
-    subtitle="Chinese providers now command nearly half of all traffic on OpenRouter"
-    accentColor="#00F0FF"
-  >
-    <IsometricBarChart3D westernShare={55.0} chineseShare={45.0} />
-  </SceneLayout>
-);
-
-// Beat 10: 58.48s -> 64.56s
-export const Beat10: React.FC = () => (
-  <SceneLayout
-    title="WHO DID THIS & WHY?"
-    subtitle="Investigating the top companies and models driving the shift"
-    accentColor="#00F0FF"
-  >
-    <CinematicNumber value="WHO & WHY?" label="THE CATALYSTS BEHIND THE 45% SHIFT" accentColor="#00F0FF" />
-  </SceneLayout>
-);
-
-// Beat 11: 64.56s -> 70.40s
-export const Beat11: React.FC = () => (
-  <SceneLayout
-    title="THE SURPRISE LEADER"
-    subtitle="Yes, the global smartphone and consumer electronics powerhouse"
-    accentColor="#FF5A5F"
-  >
-    <CinematicNumber value="XIAOMI" label="CONSUMER HARDWARE & AI POWERHOUSE" accentColor="#FF5A5F" />
-  </SceneLayout>
-);
-
-// Beat 12: 70.40s -> 78.32s
-export const Beat12: React.FC = () => (
-  <SceneLayout
-    title="XIAOMI ON OPENROUTER"
-    subtitle="Bigger than OpenAI's total weekly token volume on the platform"
-    accentColor="#FFB800"
-  >
-    <ServerBlade3D
-      title="4.21 TRILLION TOKENS / WK"
-      subtitle="Commanding a 21.1% market share on OpenRouter — exceeding traditional frontier labs"
-      accentColor="#FFB800"
-    />
-  </SceneLayout>
-);
-
-// Beat 13: 78.32s -> 84.00s
-export const Beat13: React.FC = () => (
-  <SceneLayout
-    title="SIT WITH THAT FOR A SECOND"
-    subtitle="A consumer phone brand out-processing traditional US frontier labs"
-    accentColor="#00F0FF"
-  >
-    <CinematicNumber value="21.1% SHARE" label="HARDWARE SCALE MEETS OPEN AI" accentColor="#00F0FF" />
-  </SceneLayout>
-);
-
-// Beat 14: 84.00s -> 91.92s
+// Beat 14: Frames 3260 -> 3500
 export const Beat14: React.FC = () => (
   <SceneLayout
-    title="MODEL SPOTLIGHT"
-    subtitle="The model at the center of the open-weight efficiency debate"
-    accentColor="#10B981"
+    title="THE $1 BILLION PARTNERSHIP"
+    subtitle="Massive computing deal with Microsoft Azure to fuel the compute needed for AGI"
+    accentColor="#00A4EF"
   >
-    <ServerBlade3D
-      title="Z.AI — GLM-5.2"
-      subtitle="The open frontier model pushing practical business reasoning at low cost"
-      accentColor="#10B981"
+    <CinematicNumber
+      value="$1,000,000,000"
+      label="MICROSOFT AZURE COMPUTE INFUSION"
+      accentColor="#00A4EF"
     />
   </SceneLayout>
 );
