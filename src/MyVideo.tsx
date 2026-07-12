@@ -2,27 +2,19 @@ import React from "react";
 import { AbsoluteFill, staticFile } from "remotion";
 import { Audio } from "@remotion/media";
 import { BackgroundLayers } from "./components/BackgroundLayers";
-import { DocumentaryPart1 } from "./components/parts/DocumentaryPart1";
-import { DocumentaryPart2 } from "./components/parts/DocumentaryPart2";
-import { DocumentaryPart3 } from "./components/parts/DocumentaryPart3";
+import { MuseSparkMasterTimeline } from "./components/cinematic/MuseSparkMasterTimeline";
 
 export const MyVideo: React.FC = () => {
   return (
-    <AbsoluteFill style={{ backgroundColor: "#0B0C10" }}>
-      {/* Voiceover Audio Track (Exact 217.04 sec / 6511 frames) */}
+    <AbsoluteFill style={{ backgroundColor: "#080A10" }}>
+      {/* Voiceover Audio Track (Natural Muse Spark 1.1 Audio - Exact 197.5 sec / 5925 frames) */}
       <Audio src={staticFile("edited_audio.wav")} volume={1.0} />
 
       {/* Atmospheric Background Layer */}
       <BackgroundLayers />
 
-      {/* Part 1: Items 0 to 24 (0.00s -> 76.00s) */}
-      <DocumentaryPart1 />
-
-      {/* Part 2: Items 25 to 42 (76.00s -> 134.00s) */}
-      <DocumentaryPart2 />
-
-      {/* Part 3: Items 43 to 70 (134.00s -> 217.04s) */}
-      <DocumentaryPart3 />
+      {/* Master Cinematic Acts Timeline (Word & Millisecond Accurate Sync) */}
+      <MuseSparkMasterTimeline />
     </AbsoluteFill>
   );
 };

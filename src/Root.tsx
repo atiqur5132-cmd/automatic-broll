@@ -8,7 +8,7 @@ const calculateMetadata: CalculateMetadataFunction<Record<string, unknown>> = as
   const durationInSeconds = await getAudioDuration(staticFile("edited_audio.wav"));
   const durationInFrames = Math.ceil(durationInSeconds * 30);
   return {
-    durationInFrames: durationInFrames > 0 ? durationInFrames : 7542,
+    durationInFrames: durationInFrames > 0 ? durationInFrames : 5925,
     fps: 30,
     width: 1920,
     height: 1080,
@@ -20,7 +20,7 @@ export const Root: React.FC = () => {
     <Composition
       id="MyVideo"
       component={MyVideo}
-      durationInFrames={7542}
+      durationInFrames={5925}
       fps={30}
       width={1920}
       height={1080}

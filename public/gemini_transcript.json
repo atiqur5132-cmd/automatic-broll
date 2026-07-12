@@ -31,783 +31,695 @@
 		{
 			"timestamps": {
 				"from": "00:00:00,000",
-				"to": "00:00:04,850"
+				"to": "00:00:05,910"
 			},
 			"offsets": {
 				"from": 0,
-				"to": 4850
+				"to": 5910
 			},
-			"text": " Right now, there's an AI model that is, by raw usage, the single most used"
+			"text": " The AI race just took a massive, unexpected turn and open AI and anthropic"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:04,850",
-				"to": "00:00:09,580"
+				"from": "00:00:05,910",
+				"to": "00:00:06,800"
 			},
 			"offsets": {
-				"from": 4850,
-				"to": 9580
+				"from": 5910,
+				"to": 6800
 			},
-			"text": " model on one of the world's biggest AI marketplaces, billions of requests a"
+			"text": " should be worried."
 		},
 		{
 			"timestamps": {
-				"from": "00:00:09,580",
-				"to": "00:00:10,000"
+				"from": "00:00:06,800",
+				"to": "00:00:12,480"
 			},
 			"offsets": {
-				"from": 9580,
-				"to": 10000
+				"from": 6800,
+				"to": 12480
 			},
-			"text": " week."
+			"text": " Metages quietly dropped Mu's Spark 1.1 and it is completely redefining what a"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:10,000",
-				"to": "00:00:14,160"
+				"from": "00:00:12,480",
+				"to": "00:00:13,680"
 			},
 			"offsets": {
-				"from": 10000,
-				"to": 14160
+				"from": 12480,
+				"to": 13680
 			},
-			"text": " And if you put that exact same model through a serious intelligence benchmark,"
+			"text": " multimodal reasoning"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:14,160",
-				"to": "00:00:18,600"
+				"from": "00:00:13,680",
+				"to": "00:00:18,050"
 			},
 			"offsets": {
-				"from": 14160,
-				"to": 18600
+				"from": 13680,
+				"to": 18050
 			},
-			"text": " the kind that tests deep reasoning, PhD level problems, it doesn't even crack"
+			"text": " agent can do. We are just talking about another chat bot that writes poetry or"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:18,600",
-				"to": "00:00:20,000"
+				"from": "00:00:18,050",
+				"to": "00:00:19,920"
 			},
 			"offsets": {
-				"from": 18600,
-				"to": 20000
+				"from": 18050,
+				"to": 19920
 			},
-			"text": " the global top 10."
+			"text": " summarizes PDFs."
 		},
 		{
 			"timestamps": {
-				"from": "00:00:20,000",
-				"to": "00:00:22,000"
+				"from": "00:00:19,920",
+				"to": "00:00:25,400"
 			},
 			"offsets": {
-				"from": 20000,
-				"to": 22000
+				"from": 19920,
+				"to": 25400
 			},
-			"text": " It sits around 10th place."
+			"text": " Mu's Spark 1.1 is built to take over your screen, navigate complex software,"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:22,000",
-				"to": "00:00:26,200"
+				"from": "00:00:25,400",
+				"to": "00:00:26,160"
 			},
 			"offsets": {
-				"from": 22000,
-				"to": 26200
+				"from": 25400,
+				"to": 26160
 			},
-			"text": " So the model everyone's actually using isn't the model that's actually the"
+			"text": " and solve enterprise"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:26,200",
-				"to": "00:00:27,000"
+				"from": "00:00:26,160",
+				"to": "00:00:30,740"
 			},
 			"offsets": {
-				"from": 26200,
-				"to": 27000
+				"from": 26160,
+				"to": 30740
 			},
-			"text": " smartest."
+			"text": " level problems natively. Today we're breaking down the raw benchmarks, the"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:27,000",
-				"to": "00:00:29,000"
+				"from": "00:00:30,740",
+				"to": "00:00:32,160"
 			},
 			"offsets": {
-				"from": 27000,
-				"to": 29000
+				"from": 30740,
+				"to": 32160
 			},
-			"text": " That sentence shouldn't make sense."
+			"text": " insane real-world"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:29,000",
-				"to": "00:00:31,000"
+				"from": "00:00:32,160",
+				"to": "00:00:37,100"
 			},
 			"offsets": {
-				"from": 29000,
-				"to": 31000
+				"from": 32160,
+				"to": 37100
 			},
-			"text": " Let's figure out why it does."
+			"text": " X demos, and the economic shift that is about to disrupt the entire developer"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:31,000",
-				"to": "00:00:35,700"
+				"from": "00:00:37,100",
+				"to": "00:00:38,080"
 			},
 			"offsets": {
-				"from": 31000,
-				"to": 35700
+				"from": 37100,
+				"to": 38080
 			},
-			"text": " The model in question comes from Xiaomi, yes, the phone company, and it's not"
+			"text": " landscape."
 		},
 		{
 			"timestamps": {
-				"from": "00:00:35,700",
-				"to": "00:00:37,000"
+				"from": "00:00:38,080",
+				"to": "00:00:42,150"
 			},
 			"offsets": {
-				"from": 35700,
-				"to": 37000
+				"from": 38080,
+				"to": 42150
 			},
-			"text": " an isolated fluke."
+			"text": " Let's dive in. Let's look at the data first, because the numbers coming out of"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:37,000",
-				"to": "00:00:41,040"
+				"from": "00:00:42,150",
+				"to": "00:00:42,400"
 			},
 			"offsets": {
-				"from": 37000,
-				"to": 41040
+				"from": 42150,
+				"to": 42400
 			},
-			"text": " This is part of a much bigger pattern that shows up the moment you compare two"
+			"text": " early"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:41,040",
-				"to": "00:00:43,000"
+				"from": "00:00:42,400",
+				"to": "00:00:48,190"
 			},
 			"offsets": {
-				"from": 41040,
-				"to": 43000
+				"from": 42400,
+				"to": 48190
 			},
-			"text": " different rankings side by side."
+			"text": " evaluations are staggering. On the latest Valve's AI benchmarks, which evaluate"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:43,000",
-				"to": "00:00:47,820"
+				"from": "00:00:48,190",
+				"to": "00:00:48,560"
 			},
 			"offsets": {
-				"from": 43000,
-				"to": 47820
+				"from": 48190,
+				"to": 48560
 			},
-			"text": " One ranking measures intelligence, how well a model reasons, how it performs on"
+			"text": " deep,"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:47,820",
-				"to": "00:00:49,000"
+				"from": "00:00:48,560",
+				"to": "00:00:54,260"
 			},
 			"offsets": {
-				"from": 47820,
-				"to": 49000
+				"from": 48560,
+				"to": 54260
 			},
-			"text": " hard benchmark tests."
+			"text": " domain-specific reasoning, Mu's Spark 1.1 absolutely crushed industry heavy"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:49,000",
-				"to": "00:00:54,000"
+				"from": "00:00:54,260",
+				"to": "00:00:54,880"
 			},
 			"offsets": {
-				"from": 49000,
-				"to": 54000
+				"from": 54260,
+				"to": 54880
 			},
-			"text": " The other measures usage, how many actual tokens people are running through it"
+			"text": "weights like"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:54,000",
-				"to": "00:00:56,000"
+				"from": "00:00:54,880",
+				"to": "00:01:00,000"
 			},
 			"offsets": {
-				"from": 54000,
-				"to": 56000
+				"from": 54880,
+				"to": 60000
 			},
-			"text": " in real production every single week."
+			"text": " Claude, Fable, Five, and Grock. In complex medical documentation and precision"
 		},
 		{
 			"timestamps": {
-				"from": "00:00:56,000",
-				"to": "00:01:00,060"
+				"from": "00:01:00,000",
+				"to": "00:01:01,200"
 			},
 			"offsets": {
-				"from": 56000,
-				"to": 60060
+				"from": 60000,
+				"to": 61200
 			},
-			"text": " And here's the uncomfortable part, those two rankings barely agree with each"
+			"text": " tax workflows,"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:00,060",
-				"to": "00:01:01,000"
+				"from": "00:01:01,200",
+				"to": "00:01:06,480"
 			},
 			"offsets": {
-				"from": 60060,
-				"to": 61000
+				"from": 61200,
+				"to": 66480
 			},
-			"text": " other anymore."
+			"text": " it didn't just win. It maintained a near-zero hallucination rate. For a long"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:01,000",
-				"to": "00:01:05,640"
+				"from": "00:01:06,480",
+				"to": "00:01:07,040"
 			},
 			"offsets": {
-				"from": 61000,
-				"to": 65640
+				"from": 66480,
+				"to": 67040
 			},
-			"text": " Some research on this even found the relationship between a model's benchmark"
+			"text": " time,"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:05,640",
-				"to": "00:01:09,000"
+				"from": "00:01:07,040",
+				"to": "00:01:11,360"
 			},
 			"offsets": {
-				"from": 65640,
-				"to": 69000
+				"from": 67040,
+				"to": 71360
 			},
-			"text": " score and its real world market share is close to an inverse correlation."
+			"text": " the narrative was that open weights or cost-effective models couldn't compete"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:09,000",
-				"to": "00:01:13,340"
+				"from": "00:01:11,360",
+				"to": "00:01:12,320"
 			},
 			"offsets": {
-				"from": 69000,
-				"to": 73340
+				"from": 71360,
+				"to": 72320
 			},
-			"text": " The better a model scores on paper, in some cases, the less likely it is to be"
+			"text": " with elite"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:13,340",
-				"to": "00:01:16,000"
+				"from": "00:01:12,320",
+				"to": "00:01:16,600"
 			},
 			"offsets": {
-				"from": 73340,
-				"to": 76000
+				"from": 72320,
+				"to": 76600
 			},
-			"text": " the one people are actually running at scale."
+			"text": " close source intelligence. Metages shattered that myth. But how does this"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:16,000",
-				"to": "00:01:18,000"
+				"from": "00:01:16,600",
+				"to": "00:01:18,320"
 			},
 			"offsets": {
-				"from": 76000,
-				"to": 78000
+				"from": 76600,
+				"to": 78320
 			},
-			"text": " So why would that happen?"
+			"text": " translate to actual"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:18,000",
-				"to": "00:01:22,000"
+				"from": "00:01:18,320",
+				"to": "00:01:23,120"
 			},
 			"offsets": {
-				"from": 78000,
-				"to": 82000
+				"from": 78320,
+				"to": 83120
 			},
-			"text": " The answer comes down to what people are actually using AI for."
+			"text": " real-world utility? This is where things get wild. The defining feature of Mu's"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:22,000",
-				"to": "00:01:27,350"
+				"from": "00:01:23,120",
+				"to": "00:01:24,560"
 			},
 			"offsets": {
-				"from": 82000,
-				"to": 87350
+				"from": 83120,
+				"to": 84560
 			},
-			"text": " A couple of years ago, most AI usage was scattered, writing, research, general"
+			"text": " Spark 1.1"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:27,350",
-				"to": "00:01:29,000"
+				"from": "00:01:24,560",
+				"to": "00:01:29,290"
 			},
 			"offsets": {
-				"from": 87350,
-				"to": 89000
+				"from": 84560,
+				"to": 89290
 			},
-			"text": " question answering."
+			"text": " Is its hyper-advanced computer use capability? Over on X, developers are"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:29,000",
-				"to": "00:01:33,880"
+				"from": "00:01:29,290",
+				"to": "00:01:30,480"
 			},
 			"offsets": {
-				"from": 89000,
-				"to": 93880
+				"from": 89290,
+				"to": 90480
 			},
-			"text": " Today, coding has taken over as the single largest use case, making up more"
+			"text": " showcasing what this looks"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:33,880",
-				"to": "00:01:37,000"
+				"from": "00:01:30,480",
+				"to": "00:01:36,160"
 			},
 			"offsets": {
-				"from": 93880,
-				"to": 97000
+				"from": 90480,
+				"to": 96160
 			},
-			"text": " than half of all activity on major AI platforms."
+			"text": " like in a wild. Unlike older systems that frequently miss click or lose context"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:37,000",
-				"to": "00:01:39,000"
+				"from": "00:01:36,160",
+				"to": "00:01:37,520"
 			},
 			"offsets": {
-				"from": 97000,
-				"to": 99000
+				"from": 96160,
+				"to": 97520
 			},
-			"text": " And here's the thing about coding tasks."
+			"text": ", Mu's Spark utilizes"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:39,000",
-				"to": "00:01:43,000"
+				"from": "00:01:37,520",
+				"to": "00:01:42,420"
 			},
 			"offsets": {
-				"from": 99000,
-				"to": 103000
+				"from": 97520,
+				"to": 102420
 			},
-			"text": " Most of them aren't asking the model to solve some brilliant novel problem."
+			"text": " a highly optimized vision processing loop. It takes real-time high-resolution"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:43,000",
-				"to": "00:01:47,970"
+				"from": "00:01:42,420",
+				"to": "00:01:43,280"
 			},
 			"offsets": {
-				"from": 103000,
-				"to": 107970
+				"from": 102420,
+				"to": 103280
 			},
-			"text": " They're asking it to auto-complete a function, refactor a file, write a test,"
+			"text": " screenshots of"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:47,970",
-				"to": "00:01:49,000"
+				"from": "00:01:43,280",
+				"to": "00:01:47,900"
 			},
 			"offsets": {
-				"from": 107970,
-				"to": 109000
+				"from": 103280,
+				"to": 107900
 			},
-			"text": " fix a small bug."
+			"text": " your desktop environment, maps the UI coordinates instantly, and acts with"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:49,000",
-				"to": "00:01:53,260"
+				"from": "00:01:47,900",
+				"to": "00:01:49,440"
 			},
 			"offsets": {
-				"from": 109000,
-				"to": 113260
+				"from": 107900,
+				"to": 109440
 			},
-			"text": " That kind of work doesn't need a model operating at the very edge of reasoning"
+			"text": " human-like precision."
 		},
 		{
 			"timestamps": {
-				"from": "00:01:53,260",
-				"to": "00:01:54,000"
+				"from": "00:01:49,440",
+				"to": "00:01:54,080"
 			},
 			"offsets": {
-				"from": 113260,
-				"to": 114000
+				"from": 109440,
+				"to": 114080
 			},
-			"text": " ability."
+			"text": " If it encounters a broken API call or an unexpected error pop-up, it doesn't"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:54,000",
-				"to": "00:01:58,630"
+				"from": "00:01:54,080",
+				"to": "00:01:54,480"
 			},
 			"offsets": {
-				"from": 114000,
-				"to": 118630
+				"from": 114080,
+				"to": 114480
 			},
-			"text": " It needs a model that's fast, cheap, and good enough, running at massive volume"
+			"text": " throw a"
 		},
 		{
 			"timestamps": {
-				"from": "00:01:58,630",
-				"to": "00:02:00,000"
+				"from": "00:01:54,480",
+				"to": "00:01:59,710"
 			},
 			"offsets": {
-				"from": 118630,
-				"to": 120000
+				"from": 114480,
+				"to": 119710
 			},
-			"text": " all day, every day."
+			"text": " failure code. It inspects the console logs, fixes the background logic, and"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:00,000",
-				"to": "00:02:03,050"
+				"from": "00:01:59,710",
+				"to": "00:02:01,120"
 			},
 			"offsets": {
-				"from": 120000,
-				"to": 123050
+				"from": 119710,
+				"to": 121120
 			},
-			"text": " And that's exactly the lane where models like Xiaomi's have optimized hard,"
+			"text": " resumes the workflow"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:03,050",
-				"to": "00:02:06,000"
+				"from": "00:02:01,120",
+				"to": "00:02:05,170"
 			},
 			"offsets": {
-				"from": 123050,
-				"to": 126000
+				"from": 121120,
+				"to": 125170
 			},
-			"text": " strong at coding specifically,"
+			"text": " completely autonomously. But the real-killer feature isn't just the"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:06,000",
-				"to": "00:02:09,430"
+				"from": "00:02:05,170",
+				"to": "00:02:07,600"
 			},
 			"offsets": {
-				"from": 126000,
-				"to": 129430
+				"from": 125170,
+				"to": 127600
 			},
-			"text": " price digressively, and available at a scale that makes them the default choice"
+			"text": " intelligence, it's the economics."
 		},
 		{
 			"timestamps": {
-				"from": "00:02:09,430",
-				"to": "00:02:14,000"
+				"from": "00:02:07,600",
+				"to": "00:02:12,660"
 			},
 			"offsets": {
-				"from": 129430,
-				"to": 134000
+				"from": 127600,
+				"to": 132660
 			},
-			"text": " for exactly the kind of repetitive, high volume work that dominates real usage."
+			"text": " Right now, running complex, long horizon multi-agent workflows on top-tier"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:14,000",
-				"to": "00:02:18,160"
+				"from": "00:02:12,660",
+				"to": "00:02:14,160"
 			},
 			"offsets": {
-				"from": 134000,
-				"to": 138160
+				"from": 132660,
+				"to": 134160
 			},
-			"text": " Meanwhile, the models that top the intelligence charts, the ones built and"
+			"text": " models is prohibitively"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:18,160",
-				"to": "00:02:22,000"
+				"from": "00:02:14,160",
+				"to": "00:02:19,750"
 			},
 			"offsets": {
-				"from": 138160,
-				"to": 142000
+				"from": 134160,
+				"to": 139750
 			},
-			"text": " priced for the hardest reasoning tasks, end up used differently."
+			"text": " expensive. We are talking $10 per million tokens on input and up to $50 on"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:22,000",
-				"to": "00:02:26,550"
+				"from": "00:02:19,750",
+				"to": "00:02:20,560"
 			},
 			"offsets": {
-				"from": 142000,
-				"to": 146550
+				"from": 139750,
+				"to": 140560
 			},
-			"text": " They still get called on, but for a narrower slice of work, complex debugging,"
+			"text": " output."
 		},
 		{
 			"timestamps": {
-				"from": "00:02:26,550",
-				"to": "00:02:30,420"
+				"from": "00:02:20,560",
+				"to": "00:02:28,560"
 			},
 			"offsets": {
-				"from": 146550,
-				"to": 150420
+				"from": 140560,
+				"to": 148560
 			},
-			"text": " high stakes analysis, the kind of task we're getting at wrong actually costs"
+			"text": " Mu's Spark 1.1 completely undercuts the market at just $1.25 input and $4.25"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:30,420",
-				"to": "00:02:31,000"
+				"from": "00:02:28,560",
+				"to": "00:02:29,840"
 			},
 			"offsets": {
-				"from": 150420,
-				"to": 151000
+				"from": 148560,
+				"to": 149840
 			},
-			"text": " something."
+			"text": " output. That is a"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:31,000",
-				"to": "00:02:34,000"
+				"from": "00:02:29,840",
+				"to": "00:02:34,850"
 			},
 			"offsets": {
-				"from": 151000,
-				"to": 154000
+				"from": 149840,
+				"to": 154850
 			},
-			"text": " High intelligence, lower volume."
+			"text": " fraction of the cost for equivalent, and in some cases, superior reasoning"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:34,000",
-				"to": "00:02:37,000"
+				"from": "00:02:34,850",
+				"to": "00:02:36,000"
 			},
 			"offsets": {
-				"from": 154000,
-				"to": 157000
+				"from": 154850,
+				"to": 156000
 			},
-			"text": " It's not that these models are being rejected."
+			"text": " performance."
 		},
 		{
 			"timestamps": {
-				"from": "00:02:37,000",
-				"to": "00:02:40,240"
+				"from": "00:02:36,000",
+				"to": "00:02:42,030"
 			},
 			"offsets": {
-				"from": 157000,
-				"to": 160240
+				"from": 156000,
+				"to": 162030
 			},
-			"text": " It's that they're being saved for the moments that actually need them, while"
+			"text": " This pricing shift changes the math for startups entirely. Building massive,"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:40,240",
-				"to": "00:02:43,000"
+				"from": "00:02:42,030",
+				"to": "00:02:42,880"
 			},
 			"offsets": {
-				"from": 160240,
-				"to": 163000
+				"from": 162030,
+				"to": 162880
 			},
-			"text": " everything else gets routed to whatever's good enough and cheap enough to run"
+			"text": " continuous AI"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:43,000",
-				"to": "00:02:43,000"
+				"from": "00:02:42,880",
+				"to": "00:02:48,020"
 			},
 			"offsets": {
-				"from": 163000,
-				"to": 163000
+				"from": 162880,
+				"to": 168020
 			},
-			"text": " constant."
+			"text": " workforces is suddenly financially viable for everyone. Meta is making a"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:43,000",
-				"to": "00:02:46,000"
+				"from": "00:02:48,020",
+				"to": "00:02:49,920"
 			},
 			"offsets": {
-				"from": 163000,
-				"to": 166000
+				"from": 168020,
+				"to": 169920
 			},
-			"text": " And that's really the shift-worth understanding here."
+			"text": " massive statement here."
 		},
 		{
 			"timestamps": {
-				"from": "00:02:46,000",
-				"to": "00:02:51,280"
+				"from": "00:02:49,920",
+				"to": "00:02:55,440"
 			},
 			"offsets": {
-				"from": 166000,
-				"to": 171280
+				"from": 169920,
+				"to": 175440
 			},
-			"text": " For a long time, we treated smartest model and best model as basically the same"
+			"text": " By combining raw multimodal reasoning, bulletproof UI autonomy, and highly"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:51,280",
-				"to": "00:02:52,000"
+				"from": "00:02:55,440",
+				"to": "00:02:56,800"
 			},
 			"offsets": {
-				"from": 171280,
-				"to": 172000
+				"from": 175440,
+				"to": 176800
 			},
-			"text": " thing."
+			"text": " disruptive pricing,"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:52,000",
-				"to": "00:02:56,220"
+				"from": "00:02:56,800",
+				"to": "00:03:00,880"
 			},
 			"offsets": {
-				"from": 172000,
-				"to": 176220
+				"from": 176800,
+				"to": 180880
 			},
-			"text": " But usage data is quietly telling a different story that intelligence and"
+			"text": " Mu's Spark 1.1 is positioned to become the default engine for the next"
 		},
 		{
 			"timestamps": {
-				"from": "00:02:56,220",
-				"to": "00:02:58,000"
+				"from": "00:03:00,880",
+				"to": "00:03:02,800"
 			},
 			"offsets": {
-				"from": 176220,
-				"to": 178000
+				"from": 180880,
+				"to": 182800
 			},
-			"text": " adoption are decoupling."
+			"text": " generation of AI agents."
 		},
 		{
 			"timestamps": {
-				"from": "00:02:58,000",
-				"to": "00:03:02,960"
+				"from": "00:03:02,800",
+				"to": "00:03:07,430"
 			},
 			"offsets": {
-				"from": 178000,
-				"to": 182960
+				"from": 182800,
+				"to": 187430
 			},
-			"text": " The benchmark leaderboard answers the question, what's the most capable model"
+			"text": " But what do you think? Is this cost reduction enough for you to migrate your"
 		},
 		{
 			"timestamps": {
-				"from": "00:03:02,960",
-				"to": "00:03:04,000"
+				"from": "00:03:07,430",
+				"to": "00:03:08,480"
 			},
 			"offsets": {
-				"from": 182960,
-				"to": 184000
+				"from": 187430,
+				"to": 188480
 			},
-			"text": " that exists?"
+			"text": " current tech stack"
 		},
 		{
 			"timestamps": {
-				"from": "00:03:04,000",
-				"to": "00:03:07,000"
+				"from": "00:03:08,480",
+				"to": "00:03:13,200"
 			},
 			"offsets": {
-				"from": 184000,
-				"to": 187000
+				"from": 188480,
+				"to": 193200
 			},
-			"text": " The usage leaderboard answers a completely different question."
+			"text": " away from proprietary enterprise models? Let me know your technical thoughts"
 		},
 		{
 			"timestamps": {
-				"from": "00:03:07,000",
-				"to": "00:03:10,630"
+				"from": "00:03:13,200",
+				"to": "00:03:14,400"
 			},
 			"offsets": {
-				"from": 187000,
-				"to": 190630
+				"from": 193200,
+				"to": 194400
 			},
-			"text": " What's the model people actually trust with their real, everyday work at a"
+			"text": " and comments below."
 		},
 		{
 			"timestamps": {
-				"from": "00:03:10,630",
-				"to": "00:03:12,000"
+				"from": "00:03:14,400",
+				"to": "00:03:17,040"
 			},
 			"offsets": {
-				"from": 190630,
-				"to": 192000
+				"from": 194400,
+				"to": 197040
 			},
-			"text": " price that makes sense?"
-		},
-		{
-			"timestamps": {
-				"from": "00:03:12,000",
-				"to": "00:03:15,000"
-			},
-			"offsets": {
-				"from": 192000,
-				"to": 195000
-			},
-			"text": " Increasingly, those are two different answers."
-		},
-		{
-			"timestamps": {
-				"from": "00:03:15,000",
-				"to": "00:03:19,000"
-			},
-			"offsets": {
-				"from": 195000,
-				"to": 199000
-			},
-			"text": " So the real question going forward isn't just who builds the smartest model."
-		},
-		{
-			"timestamps": {
-				"from": "00:03:19,000",
-				"to": "00:03:23,390"
-			},
-			"offsets": {
-				"from": 199000,
-				"to": 203390
-			},
-			"text": " It's whether being smartest even matters as much as we assumed, or whether the"
-		},
-		{
-			"timestamps": {
-				"from": "00:03:23,390",
-				"to": "00:03:27,300"
-			},
-			"offsets": {
-				"from": 203390,
-				"to": 207300
-			},
-			"text": " companies that win are the ones that figure out how to make good enough, cheap"
-		},
-		{
-			"timestamps": {
-				"from": "00:03:27,300",
-				"to": "00:03:29,000"
-			},
-			"offsets": {
-				"from": 207300,
-				"to": 209000
-			},
-			"text": " enough to run at massive scale."
-		},
-		{
-			"timestamps": {
-				"from": "00:03:29,000",
-				"to": "00:03:33,000"
-			},
-			"offsets": {
-				"from": 209000,
-				"to": 213000
-			},
-			"text": " What do you think that says about where this industry is actually headed?"
-		},
-		{
-			"timestamps": {
-				"from": "00:03:33,000",
-				"to": "00:03:35,280"
-			},
-			"offsets": {
-				"from": 213000,
-				"to": 215280
-			},
-			"text": " this industry is actually headed."
-		},
-		{
-			"timestamps": {
-				"from": "00:03:35,280",
-				"to": "00:03:37,040"
-			},
-			"offsets": {
-				"from": 215280,
-				"to": 217040
-			},
-			"text": " Let me know in the comments."
+			"text": " Thanks for watching, and I'll see you in the next breakdown."
 		}
 	]
 }

@@ -3,7 +3,7 @@ import ffmpegPath from "ffmpeg-static";
 import fs from "fs";
 import path from "path";
 
-const inputAudio = path.join("public", "Voiceover Audio.m4a");
+const inputAudio = path.join("public", "Muse Spark 1.1 (1).m4a");
 const editedWav = path.join("public", "edited_audio.wav");
 const wav16k = path.join("public", "voiceover_16k.wav");
 
