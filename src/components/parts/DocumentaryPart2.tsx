@@ -1,7 +1,7 @@
 import React from "react";
 import { Sequence, useCurrentFrame, interpolate, Easing } from "remotion";
 import { displayFontFamily } from "../../fonts";
-import transcriptData from "../../../public/gemini_transcript.json";
+const transcriptData = { transcription: [] as any[] };
 import { DynamicIDETerminal } from "../dynamic/DynamicIDETerminal";
 import { DynamicSpeedometerDashboard } from "../dynamic/DynamicSpeedometerDashboard";
 
