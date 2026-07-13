@@ -2,6 +2,15 @@ name: Render Remotion Video
 
 on:
   workflow_dispatch:
+    inputs:
+      composition:
+        description: "Choose composition ID to render"
+        required: true
+        default: "ToxicRelationshipsShort"
+        type: choice
+        options:
+          - ToxicRelationshipsShort
+          - MyVideo
 
 jobs:
   render:
@@ -24,10 +33,11 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Render Remotion Composition
-        run: npx remotion render MyVideo out/video.mp4 --concurrency=4 --gl=egl
+        run: npx remotion render ${{ inputs.composition }} out/${{ inputs.composition }}.mp4 --concurrency=4 --gl=egl
 
       - name: Upload Video Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: rendered-video
-          path: out/video.mp4
+          name: rendered-${{ inputs.composition }}
+          path: out/${{ inputs.composition }}.mp4
+          retention-days: 7
