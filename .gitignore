@@ -20,3 +20,5 @@ Cloud-Rendered-Video-v2/
 Cloud-Rendered-Video-v3/
 transcript.json
 public/preview_*.png
+*.bin
+whisper-bin/

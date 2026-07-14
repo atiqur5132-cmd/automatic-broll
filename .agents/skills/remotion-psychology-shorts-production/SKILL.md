@@ -61,24 +61,22 @@ Captions are essential for high retention on Shorts. Place them centered vertica
 3. **Keyword Emphasis:**
    - Psychology trigger words (*"Manipulate"*, *"Trap"*, *"Secret"*, *"Subconscious"*, *"Bias"*) should trigger an instant color shift or subtle shake effect.
 
----
+## 4. Psychology Visual Metaphors & 3D Motion Graphics Architecture
 
-## 4. Psychology Visual Metaphors & Layout Patterns
+> **CRITICAL RULE:** Always consult the `remotion-psychology-3d-motion-graphics` skill. Do **NOT** use flat 2D SVGs or basic 2D boxes for Psychology Shorts. Use **Broadcast-Grade 3D Motion Graphics, Real 3D Icons, and True 3D Perspective Layouts**.
 
-Instead of generic stock footage, build dynamic programmatic visual patterns suited for psychology concepts:
+### A. Real 3D Icons & Asset Staging (`Real3DIconStage`)
+- Always wrap 3D rendered icons (transparent PNG/WebP or 3D models) in a multi-layer stage with volumetric backlight glow, floor perspective shadow, and continuous floating parallax (`translateY` + tilt).
+- Sync subtle lighting shifts (`radial-gradient`) with active audio hooks.
 
-### A. Top/Bottom Split-Screen Comparison
-- **Top Half (`y: 288 to 900`):** "What People Think" or "Conscious Behavior"
-- **Bottom Half (`y: 920 to 1536`):** "Reality / Subconscious Reality"
-- Great for paradoxes, cognitive biases, and expectations vs. reality.
+### B. True 3D Perspective Glassmorphism (`Perspective3DCard`)
+- Use `perspective(1400px)` containers with dynamic `rotateX`/`rotateY` tilt and specular sheen sweep across the glass surface.
+- Inner text and badges float at elevated Z-depth (`translateZ(35px)`).
 
-### B. Animated Cognitive Cards & Scales
-- Glassmorphism cards (`rgba(25, 27, 38, 0.7)` with `backdropFilter: blur(16px)`) displaying psychological laws (e.g., *"Rule #1: The Halo Effect"*).
-- Animated percentage dials, brain-wave frequency bars, or decision-tree nodes.
-
-### C. Dark Psychology Atmospheric Lighting
-- Use radial gradients with deep indigo (`#1A0B2E`), crimson (`#3B0A14`), or cyan (`#0A2E36`) glow centers.
-- Add subtle vignette and film grain overlay to evoke curiosity and mystery.
+### C. Dynamic Visual Metaphors
+- **Top/Bottom Split Reality:** "Conscious Mask" vs. "Subconscious Reality" with chromatic aberration or 3D cracked glass overlay.
+- **Neural Network Pulsing:** 3D connected nodes with glowing synaptic laser pulses traveling along pathways.
+- **Dopamine Addiction Loop:** Futuristic 3D circular HUD ring with animated percentage dial and neon particle ring.
 
 ---
 

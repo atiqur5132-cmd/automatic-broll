@@ -2,6 +2,7 @@ import React from "react";
 import { Composition, CalculateMetadataFunction, staticFile } from "remotion";
 import { MyVideo } from "./MyVideo";
 import { ToxicRelationshipsShort } from "./components/shorts/ToxicRelationshipsShort";
+import { InfiniteScrollingPsychologyShort } from "./components/shorts/InfiniteScrollingPsychologyShort";
 import { getAudioDuration } from "./utils/getAudioDuration";
 import "./index.css";
 
@@ -27,9 +28,29 @@ const calculateShortMetadata: CalculateMetadataFunction<Record<string, unknown>>
   };
 };
 
+const calculateInfiniteScrollingMetadata: CalculateMetadataFunction<Record<string, unknown>> = async () => {
+  const durationInSeconds = await getAudioDuration(staticFile("infinite-scrolling-cleaned.mp3"));
+  const durationInFrames = Math.ceil(durationInSeconds * 30);
+  return {
+    durationInFrames: durationInFrames > 0 ? durationInFrames : 1104,
+    fps: 30,
+    width: 1080,
+    height: 1920,
+  };
+};
+
 export const Root: React.FC = () => {
   return (
     <>
+      <Composition
+        id="InfiniteScrollingPsychologyShort"
+        component={InfiniteScrollingPsychologyShort}
+        durationInFrames={1104}
+        fps={30}
+        width={1080}
+        height={1920}
+        calculateMetadata={calculateInfiniteScrollingMetadata}
+      />
       <Composition
         id="ToxicRelationshipsShort"
         component={ToxicRelationshipsShort}
