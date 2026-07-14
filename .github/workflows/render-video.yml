@@ -6,9 +6,10 @@ on:
       composition:
         description: "Choose composition ID to render"
         required: true
-        default: "ToxicRelationshipsShort"
+        default: "InfiniteScrollingPsychologyShort"
         type: choice
         options:
+          - InfiniteScrollingPsychologyShort
           - ToxicRelationshipsShort
           - MyVideo
 

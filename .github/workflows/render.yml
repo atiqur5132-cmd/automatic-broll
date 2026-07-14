@@ -5,9 +5,10 @@ on:
       composition:
         description: 'Choose composition to render: YTVideo (16:9 HD Video) or YTShorts (9:16 Vertical Shorts)'
         required: true
-        default: 'YTVideo'
+        default: 'InfiniteScrollingPsychologyShort'
         type: choice
         options:
+          - InfiniteScrollingPsychologyShort
           - YTVideo
           - YTShorts
 
