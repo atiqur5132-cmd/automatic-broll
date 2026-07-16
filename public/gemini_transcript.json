@@ -1,0 +1,1132 @@
+{
+	"systeminfo": "AVX = 1 | AVX2 = 1 | AVX512 = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | METAL = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 0 | VSX = 0 | CUDA = 0 | COREML = 0 | OPENVINO = 0",
+	"model": {
+		"type": "tiny",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 384,
+			"head": 6,
+			"layer": 4
+		},
+		"text": {
+			"ctx": 448,
+			"state": 384,
+			"head": 6,
+			"layer": 4
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "whisper\\ggml-tiny.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:05,360"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 5360
+			},
+			"text": " Right now, a seismic shockwave is ripping through the global AI landscape,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:05,360",
+				"to": "00:00:09,200"
+			},
+			"offsets": {
+				"from": 5360,
+				"to": 9200
+			},
+			"text": " catching developer communities and tech giants completely off-guard."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:09,200",
+				"to": "00:00:13,040"
+			},
+			"offsets": {
+				"from": 9200,
+				"to": 13040
+			},
+			"text": " Midway through the World Artificial Intelligence Conference in Shanghai,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:13,040",
+				"to": "00:00:17,840"
+			},
+			"offsets": {
+				"from": 13040,
+				"to": 17840
+			},
+			"text": " Moonshot AI, led by visionary AI scientist Yang Jolene,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:17,840",
+				"to": "00:00:22,400"
+			},
+			"offsets": {
+				"from": 17840,
+				"to": 22400
+			},
+			"text": " just dropped their most ambitious, powerful flagship model to date."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:22,400",
+				"to": "00:00:26,720"
+			},
+			"offsets": {
+				"from": 22400,
+				"to": 26720
+			},
+			"text": " Kimi K3, and this is not just another incremental update."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:26,720",
+				"to": "00:00:32,560"
+			},
+			"offsets": {
+				"from": 26720,
+				"to": 32560
+			},
+			"text": " Kimi K3 arrives as China's largest open-weight AI model in history,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:32,560",
+				"to": "00:00:36,240"
+			},
+			"offsets": {
+				"from": 32560,
+				"to": 36240
+			},
+			"text": " packed with a staggering 2.8 trillion parameters."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:36,240",
+				"to": "00:00:40,480"
+			},
+			"offsets": {
+				"from": 36240,
+				"to": 40480
+			},
+			"text": " While Western tech giants continue to lock their frontier intelligence behind"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:40,480",
+				"to": "00:00:41,600"
+			},
+			"offsets": {
+				"from": 40480,
+				"to": 41600
+			},
+			"text": " proprietary,"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:41,600",
+				"to": "00:00:48,560"
+			},
+			"offsets": {
+				"from": 41600,
+				"to": 48560
+			},
+			"text": " closed APIs, Kimi K3 has unleashed massive scale into the open ecosystem."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:48,560",
+				"to": "00:00:53,520"
+			},
+			"offsets": {
+				"from": 48560,
+				"to": 53520
+			},
+			"text": " Today, we're going deep under the hood to dissect the architecture of Kimi K3"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:53,520",
+				"to": "00:00:58,880"
+			},
+			"offsets": {
+				"from": 53520,
+				"to": 58880
+			},
+			"text": " and see why it poses a direct, formidable challenge to clawed Opus 4.8"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:58,880",
+				"to": "00:01:01,040"
+			},
+			"offsets": {
+				"from": 58880,
+				"to": 61040
+			},
+			"text": " and Open AI's flagship lineup."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:01,040",
+				"to": "00:01:05,120"
+			},
+			"offsets": {
+				"from": 61040,
+				"to": 65120
+			},
+			"text": " Let's break down the technical specifications, because under the hood,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:05,120",
+				"to": "00:01:08,480"
+			},
+			"offsets": {
+				"from": 65120,
+				"to": 68480
+			},
+			"text": " Kimi K3 is an architectural powerhouse."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:08,480",
+				"to": "00:01:13,380"
+			},
+			"offsets": {
+				"from": 68480,
+				"to": 73380
+			},
+			"text": " The model is engineered on a highly optimized mixture of experts or more"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:13,380",
+				"to": "00:01:14,480"
+			},
+			"offsets": {
+				"from": 73380,
+				"to": 74480
+			},
+			"text": " architecture."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:14,480",
+				"to": "00:01:18,880"
+			},
+			"offsets": {
+				"from": 74480,
+				"to": 78880
+			},
+			"text": " Out of its massive 2.8 trillion total parameters,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:18,880",
+				"to": "00:01:24,160"
+			},
+			"offsets": {
+				"from": 78880,
+				"to": 84160
+			},
+			"text": " only specialized expert networks are dynamically activated for any given query."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:24,160",
+				"to": "00:01:27,360"
+			},
+			"offsets": {
+				"from": 84160,
+				"to": 87360
+			},
+			"text": " This delivers extreme computational efficiency"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:27,360",
+				"to": "00:01:30,560"
+			},
+			"offsets": {
+				"from": 87360,
+				"to": 90560
+			},
+			"text": " while maintaining frontier-level reasoning capacity."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:30,560",
+				"to": "00:01:35,680"
+			},
+			"offsets": {
+				"from": 90560,
+				"to": 95680
+			},
+			"text": " Combined with this scale is a massive 1 million token context window,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:35,680",
+				"to": "00:01:39,440"
+			},
+			"offsets": {
+				"from": 95680,
+				"to": 99440
+			},
+			"text": " capable of digesting entire enterprise code bases,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:39,440",
+				"to": "00:01:44,340"
+			},
+			"offsets": {
+				"from": 99440,
+				"to": 104340
+			},
+			"text": " massive research libraries, and hours of transcriptions in a single inference"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:44,340",
+				"to": "00:01:44,880"
+			},
+			"offsets": {
+				"from": 104340,
+				"to": 104880
+			},
+			"text": " pass."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:44,880",
+				"to": "00:01:50,720"
+			},
+			"offsets": {
+				"from": 104880,
+				"to": 110720
+			},
+			"text": " But what truly sets Kimi K3 apart is its novel attention, residuals mechanism."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:50,720",
+				"to": "00:01:53,680"
+			},
+			"offsets": {
+				"from": 110720,
+				"to": 113680
+			},
+			"text": " By replacing traditional residual connections,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:53,680",
+				"to": "00:01:58,400"
+			},
+			"offsets": {
+				"from": 113680,
+				"to": 118400
+			},
+			"text": " Moonshot AI has streamlined information flow across deep layers,"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:58,400",
+				"to": "00:02:02,480"
+			},
+			"offsets": {
+				"from": 118400,
+				"to": 122480
+			},
+			"text": " drastically reducing hallucination rates and memory degradation"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:02,480",
+				"to": "00:02:05,120"
+			},
+			"offsets": {
+				"from": 122480,
+				"to": 125120
+			},
+			"text": " across long horizon reasoning tasks."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:05,120",
+				"to": "00:02:10,400"
+			},
+			"offsets": {
+				"from": 125120,
+				"to": 130400
+			},
+			"text": " Furthermore, Kimi K3 doesn't rely on bolted-on vision modules."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:10,400",
+				"to": "00:02:14,800"
+			},
+			"offsets": {
+				"from": 130400,
+				"to": 134800
+			},
+			"text": " Its advanced 3D spatial reasoning and multimodal capabilities"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:14,800",
+				"to": "00:02:17,680"
+			},
+			"offsets": {
+				"from": 134800,
+				"to": 137680
+			},
+			"text": " are natively baked into the core architecture."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:17,680",
+				"to": "00:02:20,800"
+			},
+			"offsets": {
+				"from": 137680,
+				"to": 140800
+			},
+			"text": " Previous generation models were designed to converse,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:20,800",
+				"to": "00:02:26,400"
+			},
+			"offsets": {
+				"from": 140800,
+				"to": 146400
+			},
+			"text": " but Kimi K3 is fundamentally architected as an autonomous execution engine."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:26,400",
+				"to": "00:02:31,200"
+			},
+			"offsets": {
+				"from": 146400,
+				"to": 151200
+			},
+			"text": " Its standout breakthrough lies in native agent swarm orchestration."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:31,200",
+				"to": "00:02:34,560"
+			},
+			"offsets": {
+				"from": 151200,
+				"to": 154560
+			},
+			"text": " When you assign a complex, long horizon task,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:34,560",
+				"to": "00:02:37,680"
+			},
+			"offsets": {
+				"from": 154560,
+				"to": 157680
+			},
+			"text": " such as refactoring a massive software architecture"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:37,680",
+				"to": "00:02:40,800"
+			},
+			"offsets": {
+				"from": 157680,
+				"to": 160800
+			},
+			"text": " or building a full-stack application from scratch,"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:40,800",
+				"to": "00:02:44,320"
+			},
+			"offsets": {
+				"from": 160800,
+				"to": 164320
+			},
+			"text": " Kimi K3 doesn't just execute serially."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:44,320",
+				"to": "00:02:48,080"
+			},
+			"offsets": {
+				"from": 164320,
+				"to": 168080
+			},
+			"text": " It autonomously spins up and coordinates hundreds"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:48,080",
+				"to": "00:02:51,280"
+			},
+			"offsets": {
+				"from": 168080,
+				"to": 171280
+			},
+			"text": " of specialized sub-agents working in parallel."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:51,280",
+				"to": "00:02:53,760"
+			},
+			"offsets": {
+				"from": 171280,
+				"to": 173760
+			},
+			"text": " One agent handles architectural planning."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:53,760",
+				"to": "00:02:56,160"
+			},
+			"offsets": {
+				"from": 173760,
+				"to": 176160
+			},
+			"text": " Another writes clean modular code."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:56,160",
+				"to": "00:03:00,160"
+			},
+			"offsets": {
+				"from": 176160,
+				"to": 180160
+			},
+			"text": " A third executes real-time unit testing and bug hunting,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:00,160",
+				"to": "00:03:03,040"
+			},
+			"offsets": {
+				"from": 180160,
+				"to": 183040
+			},
+			"text": " while a fourth conducts security compliance audits."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:03,040",
+				"to": "00:03:06,240"
+			},
+			"offsets": {
+				"from": 183040,
+				"to": 186240
+			},
+			"text": " Because of this native parallel goal orchestration,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:06,240",
+				"to": "00:03:10,080"
+			},
+			"offsets": {
+				"from": 186240,
+				"to": 190080
+			},
+			"text": " Kimi K3's performance on benchmarks like SWE Bench Pro"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:10,080",
+				"to": "00:03:11,920"
+			},
+			"offsets": {
+				"from": 190080,
+				"to": 191920
+			},
+			"text": " and long horizon coding tasks"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:11,920",
+				"to": "00:03:14,560"
+			},
+			"offsets": {
+				"from": 191920,
+				"to": 194560
+			},
+			"text": " doesn't feel like a single AI chatbot."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:14,560",
+				"to": "00:03:17,600"
+			},
+			"offsets": {
+				"from": 194560,
+				"to": 197600
+			},
+			"text": " It behaves like an entire senior engineering team"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:17,600",
+				"to": "00:03:19,840"
+			},
+			"offsets": {
+				"from": 197600,
+				"to": 199840
+			},
+			"text": " firing on all cylinders."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:19,840",
+				"to": "00:03:22,080"
+			},
+			"offsets": {
+				"from": 199840,
+				"to": 202080
+			},
+			"text": " So, the ultimate question."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:22,080",
+				"to": "00:03:25,440"
+			},
+			"offsets": {
+				"from": 202080,
+				"to": 205440
+			},
+			"text": " How does Kimi K3 stack up against the reigning heavyweights"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:25,440",
+				"to": "00:03:27,920"
+			},
+			"offsets": {
+				"from": 205440,
+				"to": 207920
+			},
+			"text": " like Claude Opus 4.8?"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:27,920",
+				"to": "00:03:31,360"
+			},
+			"offsets": {
+				"from": 207920,
+				"to": 211360
+			},
+			"text": " Early performance evaluations and technical teardowns"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:31,360",
+				"to": "00:03:33,840"
+			},
+			"offsets": {
+				"from": 211360,
+				"to": 213840
+			},
+			"text": " indicate that across deep reasoning,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:33,840",
+				"to": "00:03:36,800"
+			},
+			"offsets": {
+				"from": 213840,
+				"to": 216800
+			},
+			"text": " math, and long horizon software engineering,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:36,800",
+				"to": "00:03:41,520"
+			},
+			"offsets": {
+				"from": 216800,
+				"to": 221520
+			},
+			"text": " Kimi K3 trades blows directly with frontier US models."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:41,520",
+				"to": "00:03:44,000"
+			},
+			"offsets": {
+				"from": 221520,
+				"to": 224000
+			},
+			"text": " But its most disruptive competitive advantage"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:44,000",
+				"to": "00:03:46,320"
+			},
+			"offsets": {
+				"from": 224000,
+				"to": 226320
+			},
+			"text": " isn't just raw performance."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:46,320",
+				"to": "00:03:48,320"
+			},
+			"offsets": {
+				"from": 226320,
+				"to": 228320
+			},
+			"text": " It is the open weight strategy."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:48,320",
+				"to": "00:03:51,360"
+			},
+			"offsets": {
+				"from": 228320,
+				"to": 231360
+			},
+			"text": " Where Opus 4.8 remains a closed,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:51,360",
+				"to": "00:03:55,680"
+			},
+			"offsets": {
+				"from": 231360,
+				"to": 235680
+			},
+			"text": " proprietary ecosystem carrying premium API costs."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:55,680",
+				"to": "00:03:58,400"
+			},
+			"offsets": {
+				"from": 235680,
+				"to": 238400
+			},
+			"text": " Kimi K3 empowers developers"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:58,400",
+				"to": "00:04:01,440"
+			},
+			"offsets": {
+				"from": 238400,
+				"to": 241440
+			},
+			"text": " and global enterprises with the freedom to self-host,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:01,440",
+				"to": "00:04:05,600"
+			},
+			"offsets": {
+				"from": 241440,
+				"to": 245600
+			},
+			"text": " fine tune, and deploy frontier intelligence on private infrastructure."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:05,600",
+				"to": "00:04:09,200"
+			},
+			"offsets": {
+				"from": 245600,
+				"to": 249200
+			},
+			"text": " And for those leveraging moonshot AI's open platform,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:09,200",
+				"to": "00:04:13,520"
+			},
+			"offsets": {
+				"from": 249200,
+				"to": 253520
+			},
+			"text": " pricing is reported at roughly $3 per million tokens,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:13,520",
+				"to": "00:04:16,000"
+			},
+			"offsets": {
+				"from": 253520,
+				"to": 256000
+			},
+			"text": " delivering aggressive unit economics."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:16,000",
+				"to": "00:04:19,520"
+			},
+			"offsets": {
+				"from": 256000,
+				"to": 259520
+			},
+			"text": " This mirrors the revolutionary price to performance disruption"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:19,520",
+				"to": "00:04:21,680"
+			},
+			"offsets": {
+				"from": 259520,
+				"to": 261680
+			},
+			"text": " initiated by DeepSeek."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:21,680",
+				"to": "00:04:26,240"
+			},
+			"offsets": {
+				"from": 261680,
+				"to": 266240
+			},
+			"text": " Now scaled up to a massive 2.8 trillion parameter frontier."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:26,240",
+				"to": "00:04:30,240"
+			},
+			"offsets": {
+				"from": 266240,
+				"to": 270240
+			},
+			"text": " As we analyze the AI landscape in mid-2026,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:30,240",
+				"to": "00:04:35,920"
+			},
+			"offsets": {
+				"from": 270240,
+				"to": 275920
+			},
+			"text": " the release of Kimi K3 signifies far more than just another model drop."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:35,920",
+				"to": "00:04:40,400"
+			},
+			"offsets": {
+				"from": 275920,
+				"to": 280400
+			},
+			"text": " It marks a fundamental geopolitical shift in artificial intelligence."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:40,400",
+				"to": "00:04:43,360"
+			},
+			"offsets": {
+				"from": 280400,
+				"to": 283360
+			},
+			"text": " The technological gap between top US labs"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:43,360",
+				"to": "00:04:46,960"
+			},
+			"offsets": {
+				"from": 283360,
+				"to": 286960
+			},
+			"text": " and leading Chinese developers has effectively closed."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:46,960",
+				"to": "00:04:50,080"
+			},
+			"offsets": {
+				"from": 286960,
+				"to": 290080
+			},
+			"text": " Companies like Moonshot AI, DeepSeek,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:50,080",
+				"to": "00:04:54,080"
+			},
+			"offsets": {
+				"from": 290080,
+				"to": 294080
+			},
+			"text": " and Alibaba's Quinn have completely altered the dynamics of the great model"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:54,080",
+				"to": "00:04:55,040"
+			},
+			"offsets": {
+				"from": 294080,
+				"to": 295040
+			},
+			"text": " price war,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:55,040",
+				"to": "00:04:59,120"
+			},
+			"offsets": {
+				"from": 295040,
+				"to": 299120
+			},
+			"text": " demonstrating that open-weight architectures can relentlessly challenge closed,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:59,120",
+				"to": "00:05:04,720"
+			},
+			"offsets": {
+				"from": 299120,
+				"to": 304720
+			},
+			"text": " proprietary ecosystems. For developers, founders, and enterprises worldwide,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:04,720",
+				"to": "00:05:06,320"
+			},
+			"offsets": {
+				"from": 304720,
+				"to": 306320
+			},
+			"text": " the takeaway is clear,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:06,320",
+				"to": "00:05:08,000"
+			},
+			"offsets": {
+				"from": 306320,
+				"to": 308000
+			},
+			"text": " building state-of-the-art,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:08,000",
+				"to": "00:05:12,980"
+			},
+			"offsets": {
+				"from": 308000,
+				"to": 312980
+			},
+			"text": " a genetic AI systems no longer requires vendor lock-in with a single closed"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:12,980",
+				"to": "00:05:13,760"
+			},
+			"offsets": {
+				"from": 312980,
+				"to": 313760
+			},
+			"text": " provider."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:13,760",
+				"to": "00:05:17,840"
+			},
+			"offsets": {
+				"from": 313760,
+				"to": 317840
+			},
+			"text": " Frontier level intelligence has truly become decentralized,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:17,840",
+				"to": "00:05:21,440"
+			},
+			"offsets": {
+				"from": 317840,
+				"to": 321440
+			},
+			"text": " accessible, and economically viable at scale."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:21,440",
+				"to": "00:05:25,920"
+			},
+			"offsets": {
+				"from": 321440,
+				"to": 325920
+			},
+			"text": " And that wraps up our deep dive in a Moonshot AI's newest Titan,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:25,920",
+				"to": "00:05:29,600"
+			},
+			"offsets": {
+				"from": 325920,
+				"to": 329600
+			},
+			"text": " Kimi K3. What are your thoughts on this open-weight giant?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:29,600",
+				"to": "00:05:33,280"
+			},
+			"offsets": {
+				"from": 329600,
+				"to": 333280
+			},
+			"text": " Do you think a 2.8 trillion parameter open architecture"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:33,280",
+				"to": "00:05:38,160"
+			},
+			"offsets": {
+				"from": 333280,
+				"to": 338160
+			},
+			"text": " will ultimately take the crown from Claude Opus and the GPT series?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:38,160",
+				"to": "00:05:40,320"
+			},
+			"offsets": {
+				"from": 338160,
+				"to": 340320
+			},
+			"text": " Or are we just entering the opening rounds"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:40,320",
+				"to": "00:05:44,160"
+			},
+			"offsets": {
+				"from": 340320,
+				"to": 344160
+			},
+			"text": " of an even bigger global AI price war?"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:44,160",
+				"to": "00:05:46,320"
+			},
+			"offsets": {
+				"from": 344160,
+				"to": 346320
+			},
+			"text": " Let us know your thoughts in the comments below."
+		},
+		{
+			"timestamps": {
+				"from": "00:05:46,320",
+				"to": "00:05:49,040"
+			},
+			"offsets": {
+				"from": 346320,
+				"to": 349040
+			},
+			"text": " If you enjoyed this deep technical breakdown,"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:49,040",
+				"to": "00:05:52,480"
+			},
+			"offsets": {
+				"from": 349040,
+				"to": 352480
+			},
+			"text": " hit that like button and subscribe to the channel for more cutting-edge"
+		},
+		{
+			"timestamps": {
+				"from": "00:05:52,480",
+				"to": "00:05:56,540"
+			},
+			"offsets": {
+				"from": 352480,
+				"to": 356540
+			},
+			"text": " tech analysis. See you next one!"
+		}
+	]
+}

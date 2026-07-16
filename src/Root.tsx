@@ -7,10 +7,10 @@ import { getAudioDuration } from "./utils/getAudioDuration";
 import "./index.css";
 
 const calculateMetadata: CalculateMetadataFunction<Record<string, unknown>> = async () => {
-  const durationInSeconds = await getAudioDuration(staticFile("gemini_35_leaks.wav"));
+  const durationInSeconds = await getAudioDuration(staticFile("kimi audio.m4a"));
   const durationInFrames = Math.ceil(durationInSeconds * 30);
   return {
-    durationInFrames: durationInFrames > 0 ? durationInFrames : 6652,
+    durationInFrames: durationInFrames > 0 ? durationInFrames : 10696,
     fps: 30,
     width: 1920,
     height: 1080,
@@ -43,6 +43,15 @@ export const Root: React.FC = () => {
   return (
     <>
       <Composition
+        id="MyVideo"
+        component={MyVideo}
+        durationInFrames={10696}
+        fps={30}
+        width={1920}
+        height={1080}
+        calculateMetadata={calculateMetadata}
+      />
+      <Composition
         id="InfiniteScrollingPsychologyShort"
         component={InfiniteScrollingPsychologyShort}
         durationInFrames={1104}
@@ -59,15 +68,6 @@ export const Root: React.FC = () => {
         width={1080}
         height={1920}
         calculateMetadata={calculateShortMetadata}
-      />
-      <Composition
-        id="MyVideo"
-        component={MyVideo}
-        durationInFrames={6652}
-        fps={30}
-        width={1920}
-        height={1080}
-        calculateMetadata={calculateMetadata}
       />
     </>
   );
