@@ -1,5 +1,5 @@
 import React from "react";
-import { useCurrentFrame, interpolate, Easing } from "remotion";
+import { useCurrentFrame, interpolate, spring, useVideoConfig, Easing } from "remotion";
 import { displayFontFamily, bodyFontFamily } from "../fonts";
 
 export interface AnimatedTypographyProps {
@@ -10,6 +10,85 @@ export interface AnimatedTypographyProps {
   scaleAmount?: number;
 }
 
+export const KineticTitle: React.FC<{
+  text: string;
+  fontSize?: number;
+  accentColor?: string;
+  delayPerWord?: number;
+}> = ({ text, fontSize = 48, accentColor = "#00F0FF", delayPerWord = 3 }) => {
+  const frame = useCurrentFrame();
+  const { fps } = useVideoConfig();
+  const words = text.split(" ");
+
+  return (
+    <div
+      style={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "center",
+        gap: "14px",
+        textAlign: "center",
+        maxWidth: "1100px",
+      }}
+    >
+      {words.map((word, idx) => {
+        const wordStart = idx * delayPerWord;
+        const enterSpring = spring({
+          frame: frame - wordStart,
+          fps,
+          config: { damping: 14, stiffness: 120 },
+        });
+
+        const translateY = (1 - enterSpring) * 30;
+        const opacity = enterSpring;
+
+        return (
+          <span
+            key={idx}
+            style={{
+              fontFamily: displayFontFamily,
+              fontSize: `${fontSize}px`,
+              fontWeight: 900,
+              color: idx === 0 || idx === words.length - 1 ? accentColor : "#FFFFFF",
+              display: "inline-block",
+              transform: `translateY(${translateY}px)`,
+              opacity,
+              letterSpacing: "-0.02em",
+              textShadow: `0 10px 30px rgba(0,0,0,0.8), 0 0 30px ${accentColor}30`,
+            }}
+          >
+            {word}
+          </span>
+        );
+      })}
+    </div>
+  );
+};
+
+export const RollingCounter: React.FC<{
+  from?: number;
+  to: number;
+  prefix?: string;
+  suffix?: string;
+  durationInFrames?: number;
+}> = ({ from = 0, to, prefix = "", suffix = "", durationInFrames = 45 }) => {
+  const frame = useCurrentFrame();
+
+  const val = interpolate(frame, [0, durationInFrames], [from, to], {
+    easing: Easing.bezier(0.16, 1, 0.3, 1),
+    extrapolateLeft: "clamp",
+    extrapolateRight: "clamp",
+  });
+
+  return (
+    <span style={{ fontVariantNumeric: "tabular-nums", fontWeight: "bold" }}>
+      {prefix}
+      {Math.round(val).toLocaleString()}
+      {suffix}
+    </span>
+  );
+};
+
 export const AnimatedTypography: React.FC<AnimatedTypographyProps> = ({
   keyword,
   subtitle,
@@ -19,7 +98,6 @@ export const AnimatedTypography: React.FC<AnimatedTypographyProps> = ({
 }) => {
   const frame = useCurrentFrame();
   const localFrame = Math.max(0, frame - delayFrames);
-
   const words = keyword.split(" ");
 
   return (
