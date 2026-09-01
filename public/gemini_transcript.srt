@@ -1,0 +1,36 @@
+1
+00:00:00,000 --> 00:00:06,800
+ Gemini 3.7 barely had time to settle, and Google is already preparing to drop another massive shockwave.
+
+2
+00:00:06,800 --> 00:00:14,560
+ Internal leaks confirm that Gemini 3.8 flash is already deployed in undergoing aggressive testing.
+
+3
+00:00:14,560 --> 00:00:21,200
+ Spotted on Google's internal development platform Jetsky, employees report early preview builds
+
+4
+00:00:21,200 --> 00:00:29,040
+ are noticeably faster and far more capable than 3.7. Flash, Google's engineering team focused heavily
+
+5
+00:00:29,040 --> 00:00:35,520
+ on eliminating conversational AI SLOP, cutting coding hallucinations, and driving agentic latency
+
+6
+00:00:35,520 --> 00:00:42,720
+ down to. Near zero, this is no longer a traditional benchmark race. It is a relentless shipping
+
+7
+00:00:42,720 --> 00:00:50,960
+ war against open AI's Astra and Anthropics Fable 5.1, with Google. Deploying monthly flash updates,
+
+8
+00:00:50,960 --> 00:00:58,160
+ with rumors suggesting Fable 5-level performance at a fraction of the cost, Gemini 3.8 flash is set
+
+9
+00:00:58,160 --> 00:01:03,440
+ to rewrite AI token economics before Gemini 4 even. Arrives
+

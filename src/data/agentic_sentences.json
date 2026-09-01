@@ -1,0 +1,856 @@
+[
+  {
+    "startMs": 70,
+    "endMs": 3380,
+    "startFrame": 2,
+    "endFrame": 101,
+    "text": "Most people still believe artificial intelligence is just"
+  },
+  {
+    "startMs": 3380,
+    "endMs": 5280,
+    "startFrame": 101,
+    "endFrame": 158,
+    "text": "a chat bot waiting for your prompt ."
+  },
+  {
+    "startMs": 5280,
+    "endMs": 8490,
+    "startFrame": 158,
+    "endFrame": 255,
+    "text": "You type a question into a text box"
+  },
+  {
+    "startMs": 8490,
+    "endMs": 10610,
+    "startFrame": 255,
+    "endFrame": 318,
+    "text": ", it \" p redict s the next"
+  },
+  {
+    "startMs": 10610,
+    "endMs": 13020,
+    "startFrame": 318,
+    "endFrame": 391,
+    "text": "token \" and gives you a clean paragraph"
+  },
+  {
+    "startMs": 13020,
+    "endMs": 13200,
+    "startFrame": 391,
+    "endFrame": 396,
+    "text": "."
+  },
+  {
+    "startMs": 13200,
+    "endMs": 16140,
+    "startFrame": 396,
+    "endFrame": 484,
+    "text": "But inside top engineering labs , that era"
+  },
+  {
+    "startMs": 16140,
+    "endMs": 17640,
+    "startFrame": 484,
+    "endFrame": 529,
+    "text": "is already over ."
+  },
+  {
+    "startMs": 17640,
+    "endMs": 21450,
+    "startFrame": 529,
+    "endFrame": 644,
+    "text": "In 20 26 , the entire industry quietly"
+  },
+  {
+    "startMs": 21450,
+    "endMs": 23750,
+    "startFrame": 644,
+    "endFrame": 713,
+    "text": "abandoned simple chat interfaces ."
+  },
+  {
+    "startMs": 23750,
+    "endMs": 27470,
+    "startFrame": 713,
+    "endFrame": 824,
+    "text": "We stopped obsess ing over bigger frontier models"
+  },
+  {
+    "startMs": 27470,
+    "endMs": 30140,
+    "startFrame": 824,
+    "endFrame": 904,
+    "text": "and started building autonomous ."
+  },
+  {
+    "startMs": 30140,
+    "endMs": 32860,
+    "startFrame": 904,
+    "endFrame": 986,
+    "text": "Machines that do not just talk but execute"
+  },
+  {
+    "startMs": 32860,
+    "endMs": 33200,
+    "startFrame": 986,
+    "endFrame": 996,
+    "text": "."
+  },
+  {
+    "startMs": 33200,
+    "endMs": 35040,
+    "startFrame": 996,
+    "endFrame": 1051,
+    "text": "There is a massive t ect onic shift"
+  },
+  {
+    "startMs": 35040,
+    "endMs": 39580,
+    "startFrame": 1051,
+    "endFrame": 1187,
+    "text": "happening right now between three fundamentally different architectures"
+  },
+  {
+    "startMs": 39580,
+    "endMs": 41930,
+    "startFrame": 1187,
+    "endFrame": 1258,
+    "text": ", gener ative AI , AI agents ,"
+  },
+  {
+    "startMs": 41930,
+    "endMs": 44770,
+    "startFrame": 1258,
+    "endFrame": 1343,
+    "text": "and agent systems ."
+  },
+  {
+    "startMs": 44770,
+    "endMs": 47530,
+    "startFrame": 1343,
+    "endFrame": 1426,
+    "text": "If you do not understand the mechanics separating"
+  },
+  {
+    "startMs": 47530,
+    "endMs": 49820,
+    "startFrame": 1426,
+    "endFrame": 1495,
+    "text": "these three tiers , you are building for"
+  },
+  {
+    "startMs": 49820,
+    "endMs": 53230,
+    "startFrame": 1495,
+    "endFrame": 1597,
+    "text": "an AI landscape that no longer exists ."
+  },
+  {
+    "startMs": 53230,
+    "endMs": 56110,
+    "startFrame": 1597,
+    "endFrame": 1683,
+    "text": "Let us break down layer one , gener"
+  },
+  {
+    "startMs": 56110,
+    "endMs": 57280,
+    "startFrame": 1683,
+    "endFrame": 1718,
+    "text": "ative AI ."
+  },
+  {
+    "startMs": 57280,
+    "endMs": 59540,
+    "startFrame": 1718,
+    "endFrame": 1786,
+    "text": "At its core , gener ative AI is"
+  },
+  {
+    "startMs": 59540,
+    "endMs": 60800,
+    "startFrame": 1786,
+    "endFrame": 1824,
+    "text": "purely reactive ."
+  },
+  {
+    "startMs": 60800,
+    "endMs": 63030,
+    "startFrame": 1824,
+    "endFrame": 1891,
+    "text": "Think of it as a brilliant , isolated"
+  },
+  {
+    "startMs": 63030,
+    "endMs": 64080,
+    "startFrame": 1891,
+    "endFrame": 1922,
+    "text": "brain locked ."
+  },
+  {
+    "startMs": 64080,
+    "endMs": 66320,
+    "startFrame": 1922,
+    "endFrame": 1990,
+    "text": "In a dark room , it has ingested"
+  },
+  {
+    "startMs": 66320,
+    "endMs": 69460,
+    "startFrame": 1990,
+    "endFrame": 2084,
+    "text": "trillions of parameters of human knowledge ."
+  },
+  {
+    "startMs": 69460,
+    "endMs": 71100,
+    "startFrame": 2084,
+    "endFrame": 2133,
+    "text": "When you ask it to write a Python"
+  },
+  {
+    "startMs": 71100,
+    "endMs": 72960,
+    "startFrame": 2133,
+    "endFrame": 2189,
+    "text": "script , summarize a legal ."
+  },
+  {
+    "startMs": 72960,
+    "endMs": 75940,
+    "startFrame": 2189,
+    "endFrame": 2278,
+    "text": "Contract or design a user interface , it"
+  },
+  {
+    "startMs": 75940,
+    "endMs": 81220,
+    "startFrame": 2278,
+    "endFrame": 2437,
+    "text": "calculates mathematical probabilities to produce the most statistically"
+  },
+  {
+    "startMs": 81220,
+    "endMs": 82970,
+    "startFrame": 2437,
+    "endFrame": 2489,
+    "text": "accurate next token ."
+  },
+  {
+    "startMs": 82970,
+    "endMs": 85830,
+    "startFrame": 2489,
+    "endFrame": 2575,
+    "text": "But notice what gener ative AI cannot do"
+  },
+  {
+    "startMs": 85830,
+    "endMs": 86160,
+    "startFrame": 2575,
+    "endFrame": 2585,
+    "text": "."
+  },
+  {
+    "startMs": 86160,
+    "endMs": 88680,
+    "startFrame": 2585,
+    "endFrame": 2660,
+    "text": "It cannot check if the code actually runs"
+  },
+  {
+    "startMs": 88680,
+    "endMs": 89170,
+    "startFrame": 2660,
+    "endFrame": 2675,
+    "text": "."
+  },
+  {
+    "startMs": 89170,
+    "endMs": 91600,
+    "startFrame": 2675,
+    "endFrame": 2748,
+    "text": "It cannot open your terminal , test a"
+  },
+  {
+    "startMs": 91600,
+    "endMs": 94660,
+    "startFrame": 2748,
+    "endFrame": 2840,
+    "text": "database , connection , or read a live"
+  },
+  {
+    "startMs": 94660,
+    "endMs": 95860,
+    "startFrame": 2840,
+    "endFrame": 2876,
+    "text": "server log ."
+  },
+  {
+    "startMs": 95860,
+    "endMs": 98210,
+    "startFrame": 2876,
+    "endFrame": 2946,
+    "text": "Once it outputs text on your screen ,"
+  },
+  {
+    "startMs": 98210,
+    "endMs": 100640,
+    "startFrame": 2946,
+    "endFrame": 3019,
+    "text": "its job is completely finished ."
+  },
+  {
+    "startMs": 100640,
+    "endMs": 103070,
+    "startFrame": 3019,
+    "endFrame": 3092,
+    "text": "It has zero agency , zero ."
+  },
+  {
+    "startMs": 103070,
+    "endMs": 106570,
+    "startFrame": 3092,
+    "endFrame": 3197,
+    "text": "Real - time memory and zero capability to"
+  },
+  {
+    "startMs": 106570,
+    "endMs": 109940,
+    "startFrame": 3197,
+    "endFrame": 3298,
+    "text": "interact with the physical or digital world ."
+  },
+  {
+    "startMs": 109940,
+    "endMs": 112440,
+    "startFrame": 3298,
+    "endFrame": 3373,
+    "text": "Gener ative AI is a brilliant creator ,"
+  },
+  {
+    "startMs": 112440,
+    "endMs": 115360,
+    "startFrame": 3373,
+    "endFrame": 3461,
+    "text": "but it is completely helpless on its own"
+  },
+  {
+    "startMs": 115360,
+    "endMs": 115920,
+    "startFrame": 3461,
+    "endFrame": 3478,
+    "text": "."
+  },
+  {
+    "startMs": 115920,
+    "endMs": 119320,
+    "startFrame": 3478,
+    "endFrame": 3580,
+    "text": "That fundamental limitation forced the birth of layer"
+  },
+  {
+    "startMs": 119320,
+    "endMs": 120640,
+    "startFrame": 3580,
+    "endFrame": 3619,
+    "text": "two , AI agents ."
+  },
+  {
+    "startMs": 120640,
+    "endMs": 123640,
+    "startFrame": 3619,
+    "endFrame": 3709,
+    "text": "An AI agent takes that raw neural network"
+  },
+  {
+    "startMs": 123640,
+    "endMs": 125740,
+    "startFrame": 3709,
+    "endFrame": 3772,
+    "text": "and equ ips it with hands ."
+  },
+  {
+    "startMs": 125740,
+    "endMs": 128620,
+    "startFrame": 3772,
+    "endFrame": 3859,
+    "text": "Eyes and tools ."
+  },
+  {
+    "startMs": 128620,
+    "endMs": 131760,
+    "startFrame": 3859,
+    "endFrame": 3953,
+    "text": "Instead of merely answering questions , an agent"
+  },
+  {
+    "startMs": 131760,
+    "endMs": 134180,
+    "startFrame": 3953,
+    "endFrame": 4025,
+    "text": "is given a specific objective , a loop"
+  },
+  {
+    "startMs": 134180,
+    "endMs": 137460,
+    "startFrame": 4025,
+    "endFrame": 4124,
+    "text": "of execution , and direct access to external"
+  },
+  {
+    "startMs": 137460,
+    "endMs": 140560,
+    "startFrame": 4124,
+    "endFrame": 4217,
+    "text": "tools through function calling and APIs ."
+  },
+  {
+    "startMs": 140560,
+    "endMs": 142680,
+    "startFrame": 4217,
+    "endFrame": 4280,
+    "text": "When you tell an AI agent to find"
+  },
+  {
+    "startMs": 142680,
+    "endMs": 145520,
+    "startFrame": 4280,
+    "endFrame": 4366,
+    "text": "the lowest flight price to Tokyo and book"
+  },
+  {
+    "startMs": 145520,
+    "endMs": 147430,
+    "startFrame": 4366,
+    "endFrame": 4423,
+    "text": "the hotel , it does not just write"
+  },
+  {
+    "startMs": 147430,
+    "endMs": 148010,
+    "startFrame": 4423,
+    "endFrame": 4440,
+    "text": "advice ."
+  },
+  {
+    "startMs": 148010,
+    "endMs": 151690,
+    "startFrame": 4440,
+    "endFrame": 4551,
+    "text": "It triggers a function , call to search"
+  },
+  {
+    "startMs": 151690,
+    "endMs": 154780,
+    "startFrame": 4551,
+    "endFrame": 4643,
+    "text": "live airline databases , pars es the incoming"
+  },
+  {
+    "startMs": 154780,
+    "endMs": 157760,
+    "startFrame": 4643,
+    "endFrame": 4733,
+    "text": "JSON response , valid ates prices against your"
+  },
+  {
+    "startMs": 157760,
+    "endMs": 159760,
+    "startFrame": 4733,
+    "endFrame": 4793,
+    "text": "budget , and prepares a payment ."
+  },
+  {
+    "startMs": 160600,
+    "endMs": 161540,
+    "startFrame": 4818,
+    "endFrame": 4846,
+    "text": "Web hook ."
+  },
+  {
+    "startMs": 161540,
+    "endMs": 165040,
+    "startFrame": 4846,
+    "endFrame": 4951,
+    "text": "The AI transitions from a passive conversation partner"
+  },
+  {
+    "startMs": 165040,
+    "endMs": 167440,
+    "startFrame": 4951,
+    "endFrame": 5023,
+    "text": "into an active task execution worker ."
+  },
+  {
+    "startMs": 167440,
+    "endMs": 170480,
+    "startFrame": 5023,
+    "endFrame": 5114,
+    "text": "Yet early AI agents hit a brutal production"
+  },
+  {
+    "startMs": 170480,
+    "endMs": 173520,
+    "startFrame": 5114,
+    "endFrame": 5206,
+    "text": "bottleneck , the single loop failure ."
+  },
+  {
+    "startMs": 173520,
+    "endMs": 176950,
+    "startFrame": 5206,
+    "endFrame": 5309,
+    "text": "When a single model tries to plan ,"
+  },
+  {
+    "startMs": 176950,
+    "endMs": 181740,
+    "startFrame": 5309,
+    "endFrame": 5452,
+    "text": "execute , debug , and verify simultaneously in"
+  },
+  {
+    "startMs": 181740,
+    "endMs": 185240,
+    "startFrame": 5452,
+    "endFrame": 5557,
+    "text": "one prompt loop , context windows quickly overflow"
+  },
+  {
+    "startMs": 185240,
+    "endMs": 188970,
+    "startFrame": 5557,
+    "endFrame": 5669,
+    "text": ", hallucinations compound exponentially , and the agent"
+  },
+  {
+    "startMs": 188970,
+    "endMs": 189360,
+    "startFrame": 5669,
+    "endFrame": 5681,
+    "text": "gets ."
+  },
+  {
+    "startMs": 190410,
+    "endMs": 192270,
+    "startFrame": 5712,
+    "endFrame": 5768,
+    "text": "Tra pped in infinite ret ry loops ."
+  },
+  {
+    "startMs": 192270,
+    "endMs": 196030,
+    "startFrame": 5768,
+    "endFrame": 5881,
+    "text": "Beyond four or five consecutive steps , single"
+  },
+  {
+    "startMs": 196030,
+    "endMs": 198720,
+    "startFrame": 5881,
+    "endFrame": 5962,
+    "text": "agent reliability drops by over 60 %."
+  },
+  {
+    "startMs": 198720,
+    "endMs": 202240,
+    "startFrame": 5962,
+    "endFrame": 6067,
+    "text": "This brings us to layer three , a"
+  },
+  {
+    "startMs": 202240,
+    "endMs": 203090,
+    "startFrame": 6067,
+    "endFrame": 6093,
+    "text": "Gent ic AI ."
+  },
+  {
+    "startMs": 203090,
+    "endMs": 205870,
+    "startFrame": 6093,
+    "endFrame": 6176,
+    "text": "As revealed at Lang ch ane 's interrupt"
+  },
+  {
+    "startMs": 205870,
+    "endMs": 209200,
+    "startFrame": 6176,
+    "endFrame": 6276,
+    "text": "26 conference , modern production AI is no"
+  },
+  {
+    "startMs": 209200,
+    "endMs": 211450,
+    "startFrame": 6276,
+    "endFrame": 6344,
+    "text": "longer a single model in a loop ."
+  },
+  {
+    "startMs": 211450,
+    "endMs": 214660,
+    "startFrame": 6344,
+    "endFrame": 6440,
+    "text": "It is a structured graph of specialized micro"
+  },
+  {
+    "startMs": 214660,
+    "endMs": 217880,
+    "startFrame": 6440,
+    "endFrame": 6536,
+    "text": "agents orchestrated by a thin supervisor ."
+  },
+  {
+    "startMs": 217880,
+    "endMs": 220920,
+    "startFrame": 6536,
+    "endFrame": 6628,
+    "text": "In an ag ent ic architecture , you"
+  },
+  {
+    "startMs": 220920,
+    "endMs": 224080,
+    "startFrame": 6628,
+    "endFrame": 6722,
+    "text": "do not have one model doing everything ."
+  },
+  {
+    "startMs": 224080,
+    "endMs": 227120,
+    "startFrame": 6722,
+    "endFrame": 6814,
+    "text": "You have a supervisor agent that breaks complex"
+  },
+  {
+    "startMs": 227120,
+    "endMs": 229650,
+    "startFrame": 6814,
+    "endFrame": 6890,
+    "text": "requirements into directed ac y cl ic graphs"
+  },
+  {
+    "startMs": 229650,
+    "endMs": 229840,
+    "startFrame": 6890,
+    "endFrame": 6895,
+    "text": "."
+  },
+  {
+    "startMs": 229840,
+    "endMs": 233290,
+    "startFrame": 6895,
+    "endFrame": 6999,
+    "text": "In this swarm , a researcher agent queries"
+  },
+  {
+    "startMs": 233290,
+    "endMs": 235040,
+    "startFrame": 6999,
+    "endFrame": 7051,
+    "text": "vector embed d ings ."
+  },
+  {
+    "startMs": 235040,
+    "endMs": 237830,
+    "startFrame": 7051,
+    "endFrame": 7135,
+    "text": "A c oder agent writes modular code inside"
+  },
+  {
+    "startMs": 237830,
+    "endMs": 241990,
+    "startFrame": 7135,
+    "endFrame": 7260,
+    "text": "sandbox ed virtual environments and a dedicated critic"
+  },
+  {
+    "startMs": 241990,
+    "endMs": 245640,
+    "startFrame": 7260,
+    "endFrame": 7369,
+    "text": "agent runs unit tests while inspecting for security"
+  },
+  {
+    "startMs": 245640,
+    "endMs": 247140,
+    "startFrame": 7369,
+    "endFrame": 7414,
+    "text": "vulnerabilities ."
+  },
+  {
+    "startMs": 247140,
+    "endMs": 249800,
+    "startFrame": 7414,
+    "endFrame": 7494,
+    "text": "If a test fails , the supervisor roots"
+  },
+  {
+    "startMs": 249800,
+    "endMs": 251200,
+    "startFrame": 7494,
+    "endFrame": 7536,
+    "text": "the exact stack ."
+  },
+  {
+    "startMs": 251200,
+    "endMs": 252980,
+    "startFrame": 7536,
+    "endFrame": 7589,
+    "text": "Trace back to the c oder , iter"
+  },
+  {
+    "startMs": 252980,
+    "endMs": 255840,
+    "startFrame": 7589,
+    "endFrame": 7675,
+    "text": "ating autonom ously for hours without a single"
+  },
+  {
+    "startMs": 255840,
+    "endMs": 256880,
+    "startFrame": 7675,
+    "endFrame": 7706,
+    "text": "human key stroke ."
+  },
+  {
+    "startMs": 256880,
+    "endMs": 260410,
+    "startFrame": 7706,
+    "endFrame": 7812,
+    "text": "This brings us to the most critical revelation"
+  },
+  {
+    "startMs": 260410,
+    "endMs": 264240,
+    "startFrame": 7812,
+    "endFrame": 7927,
+    "text": "of 20 26 raw model intelligence is rapidly"
+  },
+  {
+    "startMs": 264240,
+    "endMs": 266120,
+    "startFrame": 7927,
+    "endFrame": 7984,
+    "text": "becoming commod itized ."
+  },
+  {
+    "startMs": 266120,
+    "endMs": 270130,
+    "startFrame": 7984,
+    "endFrame": 8104,
+    "text": "The real technological mode is the software harness"
+  },
+  {
+    "startMs": 270130,
+    "endMs": 273820,
+    "startFrame": 8104,
+    "endFrame": 8215,
+    "text": ", an open source 27 billion parameter model"
+  },
+  {
+    "startMs": 273820,
+    "endMs": 276570,
+    "startFrame": 8215,
+    "endFrame": 8297,
+    "text": "wrapped inside a state ful graph harness with"
+  },
+  {
+    "startMs": 276570,
+    "endMs": 278120,
+    "startFrame": 8297,
+    "endFrame": 8344,
+    "text": "sandbox ed ."
+  },
+  {
+    "startMs": 278120,
+    "endMs": 281890,
+    "startFrame": 8344,
+    "endFrame": 8457,
+    "text": "Execution and deter mon istic evaluation routinely outper"
+  },
+  {
+    "startMs": 281890,
+    "endMs": 285450,
+    "startFrame": 8457,
+    "endFrame": 8564,
+    "text": "forms massive closed frontier models trapped inside a"
+  },
+  {
+    "startMs": 285450,
+    "endMs": 286670,
+    "startFrame": 8564,
+    "endFrame": 8600,
+    "text": "basic web UI ."
+  },
+  {
+    "startMs": 286670,
+    "endMs": 291360,
+    "startFrame": 8600,
+    "endFrame": 8741,
+    "text": "By 20 27 , the artificial intelligence landscape"
+  },
+  {
+    "startMs": 291360,
+    "endMs": 294270,
+    "startFrame": 8741,
+    "endFrame": 8828,
+    "text": "will split into two primary paths , sub"
+  },
+  {
+    "startMs": 294270,
+    "endMs": 297110,
+    "startFrame": 8828,
+    "endFrame": 8913,
+    "text": "- second interactive voice agents handling real time"
+  },
+  {
+    "startMs": 297110,
+    "endMs": 297360,
+    "startFrame": 8913,
+    "endFrame": 8921,
+    "text": "."
+  },
+  {
+    "startMs": 297360,
+    "endMs": 302400,
+    "startFrame": 8921,
+    "endFrame": 9072,
+    "text": "Customer experiences and deeply resilient , asynchronous multi"
+  },
+  {
+    "startMs": 302400,
+    "endMs": 304290,
+    "startFrame": 9072,
+    "endFrame": 9129,
+    "text": "- agent sw arms running eight - hour"
+  },
+  {
+    "startMs": 304290,
+    "endMs": 305840,
+    "startFrame": 9129,
+    "endFrame": 9175,
+    "text": "engineering work flows ."
+  },
+  {
+    "startMs": 305840,
+    "endMs": 307710,
+    "startFrame": 9175,
+    "endFrame": 9231,
+    "text": "The era of prompt ."
+  },
+  {
+    "startMs": 307710,
+    "endMs": 310070,
+    "startFrame": 9231,
+    "endFrame": 9302,
+    "text": "Engineering is over ."
+  },
+  {
+    "startMs": 310070,
+    "endMs": 313440,
+    "startFrame": 9302,
+    "endFrame": 9403,
+    "text": "The era of systems architecture has begun ."
+  }
+]

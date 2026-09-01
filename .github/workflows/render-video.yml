@@ -6,9 +6,10 @@ on:
       composition:
         description: "Choose composition ID to render"
         required: true
-        default: "InfiniteScrollingPsychologyShort"
+        default: "AgenticAI"
         type: choice
         options:
+          - AgenticAI
           - InfiniteScrollingPsychologyShort
           - ToxicRelationshipsShort
           - MyVideo
@@ -34,7 +35,7 @@ jobs:
         run: sudo apt-get update && sudo apt-get install -y ffmpeg
 
       - name: Render Remotion Composition
-        run: npx remotion render ${{ inputs.composition }} out/${{ inputs.composition }}.mp4 --concurrency=4 --gl=egl
+        run: npx remotion render ${{ inputs.composition }} out/${{ inputs.composition }}.mp4 --concurrency=2 --gl=angle
 
       - name: Upload Video Artifact
         uses: actions/upload-artifact@v4

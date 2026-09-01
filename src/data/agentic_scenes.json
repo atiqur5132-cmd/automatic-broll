@@ -1,0 +1,68 @@
+[
+  {
+    "name": "Scene 1: The Prompt Illusion",
+    "query": "Most people still believe",
+    "startFrame": 2,
+    "startMs": 70
+  },
+  {
+    "name": "Scene 2: 3-Tier Shift",
+    "query": "tectonic shift",
+    "startFrame": 0,
+    "startMs": 0
+  },
+  {
+    "name": "Scene 3: GenAI Isolated Brain",
+    "query": "break down layer one",
+    "startFrame": 1614,
+    "startMs": 53810
+  },
+  {
+    "name": "Scene 4: Zero-Action Ceiling",
+    "query": "notice what Generative AI cannot",
+    "startFrame": 0,
+    "startMs": 0
+  },
+  {
+    "name": "Scene 5: AI Agents Doer",
+    "query": "fundamental limitation forced",
+    "startFrame": 3483,
+    "startMs": 116110
+  },
+  {
+    "name": "Scene 6: Real-World APIs",
+    "query": "lowest flight price",
+    "startFrame": 4288,
+    "startMs": 142920
+  },
+  {
+    "name": "Scene 7: Single-Loop Bottleneck",
+    "query": "early AI agents hit",
+    "startFrame": 5043,
+    "startMs": 168110
+  },
+  {
+    "name": "Scene 8: Agentic Swarms",
+    "query": "brings us to layer three",
+    "startFrame": 5977,
+    "startMs": 199230
+  },
+  {
+    "name": "Scene 9: Specialized Micro-Workers",
+    "query": "Researcher Agent queries",
+    "startFrame": 6934,
+    "startMs": 231120
+  },
+  {
+    "name": "Scene 10: Software Harness Moat",
+    "query": "most critical revelation",
+    "startFrame": 7752,
+    "startMs": 258410
+  },
+  {
+    "name": "Scene 11: 2027 Systems Architecture",
+    "query": "artificial intelligence landscape",
+    "startFrame": 8653,
+    "startMs": 288440
+  }
+]

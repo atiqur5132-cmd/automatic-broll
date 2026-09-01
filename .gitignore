@@ -9,8 +9,11 @@ out
 # Temporary/scratch files
 scratch/
 public/voiceover_16k.wav
+public/voiceover_agentic_16k.wav
 public/ElevenLabs_*.wav
-public/voiceover*.wav
+public/test_*.wav
+public/test_*.mp3
+public/edited_audio.wav
 
 # Large temporary/model folders
 whisper/

@@ -1,0 +1,4844 @@
+[
+  {
+    "id": 0,
+    "startMs": 70,
+    "endMs": 260,
+    "text": "Most"
+  },
+  {
+    "id": 1,
+    "startMs": 260,
+    "endMs": 680,
+    "text": "people"
+  },
+  {
+    "id": 2,
+    "startMs": 680,
+    "endMs": 990,
+    "text": "still"
+  },
+  {
+    "id": 3,
+    "startMs": 990,
+    "endMs": 1460,
+    "text": "believe"
+  },
+  {
+    "id": 4,
+    "startMs": 1460,
+    "endMs": 2140,
+    "text": "artificial"
+  },
+  {
+    "id": 5,
+    "startMs": 2140,
+    "endMs": 2950,
+    "text": "intelligence"
+  },
+  {
+    "id": 6,
+    "startMs": 2950,
+    "endMs": 3100,
+    "text": "is"
+  },
+  {
+    "id": 7,
+    "startMs": 3100,
+    "endMs": 3380,
+    "text": "just"
+  },
+  {
+    "id": 8,
+    "startMs": 3380,
+    "endMs": 3510,
+    "text": "a"
+  },
+  {
+    "id": 9,
+    "startMs": 3510,
+    "endMs": 3730,
+    "text": "chat"
+  },
+  {
+    "id": 10,
+    "startMs": 3730,
+    "endMs": 3960,
+    "text": "bot"
+  },
+  {
+    "id": 11,
+    "startMs": 3960,
+    "endMs": 4480,
+    "text": "waiting"
+  },
+  {
+    "id": 12,
+    "startMs": 4480,
+    "endMs": 4640,
+    "text": "for"
+  },
+  {
+    "id": 13,
+    "startMs": 4640,
+    "endMs": 4980,
+    "text": "your"
+  },
+  {
+    "id": 14,
+    "startMs": 4980,
+    "endMs": 5280,
+    "text": "prompt"
+  },
+  {
+    "id": 15,
+    "startMs": 5280,
+    "endMs": 5280,
+    "text": "."
+  },
+  {
+    "id": 16,
+    "startMs": 5280,
+    "endMs": 5480,
+    "text": "You"
+  },
+  {
+    "id": 17,
+    "startMs": 5480,
+    "endMs": 6180,
+    "text": "type"
+  },
+  {
+    "id": 18,
+    "startMs": 6180,
+    "endMs": 6260,
+    "text": "a"
+  },
+  {
+    "id": 19,
+    "startMs": 6260,
+    "endMs": 7220,
+    "text": "question"
+  },
+  {
+    "id": 20,
+    "startMs": 7220,
+    "endMs": 7580,
+    "text": "into"
+  },
+  {
+    "id": 21,
+    "startMs": 7580,
+    "endMs": 7650,
+    "text": "a"
+  },
+  {
+    "id": 22,
+    "startMs": 7650,
+    "endMs": 8090,
+    "text": "text"
+  },
+  {
+    "id": 23,
+    "startMs": 8090,
+    "endMs": 8490,
+    "text": "box"
+  },
+  {
+    "id": 24,
+    "startMs": 8490,
+    "endMs": 8800,
+    "text": ","
+  },
+  {
+    "id": 25,
+    "startMs": 8800,
+    "endMs": 9440,
+    "text": "it"
+  },
+  {
+    "id": 26,
+    "startMs": 9440,
+    "endMs": 9510,
+    "text": "\""
+  },
+  {
+    "id": 27,
+    "startMs": 9510,
+    "endMs": 9530,
+    "text": "p"
+  },
+  {
+    "id": 28,
+    "startMs": 9530,
+    "endMs": 10010,
+    "text": "redict"
+  },
+  {
+    "id": 29,
+    "startMs": 10010,
+    "endMs": 10050,
+    "text": "s"
+  },
+  {
+    "id": 30,
+    "startMs": 10050,
+    "endMs": 10380,
+    "text": "the"
+  },
+  {
+    "id": 31,
+    "startMs": 10380,
+    "endMs": 10610,
+    "text": "next"
+  },
+  {
+    "id": 32,
+    "startMs": 10610,
+    "endMs": 11050,
+    "text": "token"
+  },
+  {
+    "id": 33,
+    "startMs": 11050,
+    "endMs": 11080,
+    "text": "\""
+  },
+  {
+    "id": 34,
+    "startMs": 11080,
+    "endMs": 11120,
+    "text": "and"
+  },
+  {
+    "id": 35,
+    "startMs": 11120,
+    "endMs": 11520,
+    "text": "gives"
+  },
+  {
+    "id": 36,
+    "startMs": 11520,
+    "endMs": 11600,
+    "text": "you"
+  },
+  {
+    "id": 37,
+    "startMs": 11600,
+    "endMs": 11900,
+    "text": "a"
+  },
+  {
+    "id": 38,
+    "startMs": 11900,
+    "endMs": 12080,
+    "text": "clean"
+  },
+  {
+    "id": 39,
+    "startMs": 12080,
+    "endMs": 13020,
+    "text": "paragraph"
+  },
+  {
+    "id": 40,
+    "startMs": 13020,
+    "endMs": 13200,
+    "text": "."
+  },
+  {
+    "id": 41,
+    "startMs": 13200,
+    "endMs": 13440,
+    "text": "But"
+  },
+  {
+    "id": 42,
+    "startMs": 13440,
+    "endMs": 13930,
+    "text": "inside"
+  },
+  {
+    "id": 43,
+    "startMs": 13930,
+    "endMs": 14170,
+    "text": "top"
+  },
+  {
+    "id": 44,
+    "startMs": 14170,
+    "endMs": 15080,
+    "text": "engineering"
+  },
+  {
+    "id": 45,
+    "startMs": 15080,
+    "endMs": 15570,
+    "text": "labs"
+  },
+  {
+    "id": 46,
+    "startMs": 15570,
+    "endMs": 15600,
+    "text": ","
+  },
+  {
+    "id": 47,
+    "startMs": 15600,
+    "endMs": 15900,
+    "text": "that"
+  },
+  {
+    "id": 48,
+    "startMs": 15900,
+    "endMs": 16140,
+    "text": "era"
+  },
+  {
+    "id": 49,
+    "startMs": 16140,
+    "endMs": 16300,
+    "text": "is"
+  },
+  {
+    "id": 50,
+    "startMs": 16300,
+    "endMs": 16870,
+    "text": "already"
+  },
+  {
+    "id": 51,
+    "startMs": 16870,
+    "endMs": 17520,
+    "text": "over"
+  },
+  {
+    "id": 52,
+    "startMs": 17520,
+    "endMs": 17640,
+    "text": "."
+  },
+  {
+    "id": 53,
+    "startMs": 17640,
+    "endMs": 17760,
+    "text": "In"
+  },
+  {
+    "id": 54,
+    "startMs": 17760,
+    "endMs": 18320,
+    "text": "20"
+  },
+  {
+    "id": 55,
+    "startMs": 18320,
+    "endMs": 18830,
+    "text": "26"
+  },
+  {
+    "id": 56,
+    "startMs": 18830,
+    "endMs": 19170,
+    "text": ","
+  },
+  {
+    "id": 57,
+    "startMs": 19170,
+    "endMs": 19490,
+    "text": "the"
+  },
+  {
+    "id": 58,
+    "startMs": 19490,
+    "endMs": 20320,
+    "text": "entire"
+  },
+  {
+    "id": 59,
+    "startMs": 20320,
+    "endMs": 20900,
+    "text": "industry"
+  },
+  {
+    "id": 60,
+    "startMs": 20900,
+    "endMs": 21450,
+    "text": "quietly"
+  },
+  {
+    "id": 61,
+    "startMs": 21450,
+    "endMs": 22060,
+    "text": "abandoned"
+  },
+  {
+    "id": 62,
+    "startMs": 22060,
+    "endMs": 22530,
+    "text": "simple"
+  },
+  {
+    "id": 63,
+    "startMs": 22530,
+    "endMs": 22780,
+    "text": "chat"
+  },
+  {
+    "id": 64,
+    "startMs": 22780,
+    "endMs": 23570,
+    "text": "interfaces"
+  },
+  {
+    "id": 65,
+    "startMs": 23570,
+    "endMs": 23750,
+    "text": "."
+  },
+  {
+    "id": 66,
+    "startMs": 23750,
+    "endMs": 24400,
+    "text": "We"
+  },
+  {
+    "id": 67,
+    "startMs": 24400,
+    "endMs": 24730,
+    "text": "stopped"
+  },
+  {
+    "id": 68,
+    "startMs": 24730,
+    "endMs": 25280,
+    "text": "obsess"
+  },
+  {
+    "id": 69,
+    "startMs": 25280,
+    "endMs": 25600,
+    "text": "ing"
+  },
+  {
+    "id": 70,
+    "startMs": 25600,
+    "endMs": 25840,
+    "text": "over"
+  },
+  {
+    "id": 71,
+    "startMs": 25840,
+    "endMs": 26240,
+    "text": "bigger"
+  },
+  {
+    "id": 72,
+    "startMs": 26240,
+    "endMs": 26870,
+    "text": "frontier"
+  },
+  {
+    "id": 73,
+    "startMs": 26870,
+    "endMs": 27470,
+    "text": "models"
+  },
+  {
+    "id": 74,
+    "startMs": 27470,
+    "endMs": 27590,
+    "text": "and"
+  },
+  {
+    "id": 75,
+    "startMs": 27590,
+    "endMs": 28150,
+    "text": "started"
+  },
+  {
+    "id": 76,
+    "startMs": 28150,
+    "endMs": 28780,
+    "text": "building"
+  },
+  {
+    "id": 77,
+    "startMs": 28780,
+    "endMs": 29490,
+    "text": "autonomous"
+  },
+  {
+    "id": 78,
+    "startMs": 29490,
+    "endMs": 30140,
+    "text": "."
+  },
+  {
+    "id": 79,
+    "startMs": 30140,
+    "endMs": 30470,
+    "text": "Machines"
+  },
+  {
+    "id": 80,
+    "startMs": 30470,
+    "endMs": 30800,
+    "text": "that"
+  },
+  {
+    "id": 81,
+    "startMs": 30800,
+    "endMs": 30950,
+    "text": "do"
+  },
+  {
+    "id": 82,
+    "startMs": 30950,
+    "endMs": 31190,
+    "text": "not"
+  },
+  {
+    "id": 83,
+    "startMs": 31190,
+    "endMs": 31660,
+    "text": "just"
+  },
+  {
+    "id": 84,
+    "startMs": 31660,
+    "endMs": 32060,
+    "text": "talk"
+  },
+  {
+    "id": 85,
+    "startMs": 32060,
+    "endMs": 32160,
+    "text": "but"
+  },
+  {
+    "id": 86,
+    "startMs": 32160,
+    "endMs": 32860,
+    "text": "execute"
+  },
+  {
+    "id": 87,
+    "startMs": 32860,
+    "endMs": 33200,
+    "text": "."
+  },
+  {
+    "id": 88,
+    "startMs": 33200,
+    "endMs": 33530,
+    "text": "There"
+  },
+  {
+    "id": 89,
+    "startMs": 33530,
+    "endMs": 33690,
+    "text": "is"
+  },
+  {
+    "id": 90,
+    "startMs": 33690,
+    "endMs": 33720,
+    "text": "a"
+  },
+  {
+    "id": 91,
+    "startMs": 33720,
+    "endMs": 34190,
+    "text": "massive"
+  },
+  {
+    "id": 92,
+    "startMs": 34190,
+    "endMs": 34350,
+    "text": "t"
+  },
+  {
+    "id": 93,
+    "startMs": 34350,
+    "endMs": 34450,
+    "text": "ect"
+  },
+  {
+    "id": 94,
+    "startMs": 34450,
+    "endMs": 34710,
+    "text": "onic"
+  },
+  {
+    "id": 95,
+    "startMs": 34710,
+    "endMs": 35040,
+    "text": "shift"
+  },
+  {
+    "id": 96,
+    "startMs": 35040,
+    "endMs": 35640,
+    "text": "happening"
+  },
+  {
+    "id": 97,
+    "startMs": 35640,
+    "endMs": 35970,
+    "text": "right"
+  },
+  {
+    "id": 98,
+    "startMs": 35970,
+    "endMs": 36240,
+    "text": "now"
+  },
+  {
+    "id": 99,
+    "startMs": 36240,
+    "endMs": 36640,
+    "text": "between"
+  },
+  {
+    "id": 100,
+    "startMs": 36640,
+    "endMs": 36960,
+    "text": "three"
+  },
+  {
+    "id": 101,
+    "startMs": 36960,
+    "endMs": 37680,
+    "text": "fundamentally"
+  },
+  {
+    "id": 102,
+    "startMs": 37680,
+    "endMs": 38240,
+    "text": "different"
+  },
+  {
+    "id": 103,
+    "startMs": 38240,
+    "endMs": 39580,
+    "text": "architectures"
+  },
+  {
+    "id": 104,
+    "startMs": 39580,
+    "endMs": 39660,
+    "text": ","
+  },
+  {
+    "id": 105,
+    "startMs": 39660,
+    "endMs": 40120,
+    "text": "gener"
+  },
+  {
+    "id": 106,
+    "startMs": 40120,
+    "endMs": 40600,
+    "text": "ative"
+  },
+  {
+    "id": 107,
+    "startMs": 40600,
+    "endMs": 40930,
+    "text": "AI"
+  },
+  {
+    "id": 108,
+    "startMs": 40930,
+    "endMs": 40980,
+    "text": ","
+  },
+  {
+    "id": 109,
+    "startMs": 40980,
+    "endMs": 41170,
+    "text": "AI"
+  },
+  {
+    "id": 110,
+    "startMs": 41170,
+    "endMs": 41930,
+    "text": "agents"
+  },
+  {
+    "id": 111,
+    "startMs": 41930,
+    "endMs": 41930,
+    "text": ","
+  },
+  {
+    "id": 112,
+    "startMs": 41930,
+    "endMs": 42240,
+    "text": "and"
+  },
+  {
+    "id": 113,
+    "startMs": 42240,
+    "endMs": 43080,
+    "text": "agent"
+  },
+  {
+    "id": 114,
+    "startMs": 43080,
+    "endMs": 44160,
+    "text": "systems"
+  },
+  {
+    "id": 115,
+    "startMs": 44160,
+    "endMs": 44770,
+    "text": "."
+  },
+  {
+    "id": 116,
+    "startMs": 44770,
+    "endMs": 44810,
+    "text": "If"
+  },
+  {
+    "id": 117,
+    "startMs": 44810,
+    "endMs": 45070,
+    "text": "you"
+  },
+  {
+    "id": 118,
+    "startMs": 45070,
+    "endMs": 45240,
+    "text": "do"
+  },
+  {
+    "id": 119,
+    "startMs": 45240,
+    "endMs": 45520,
+    "text": "not"
+  },
+  {
+    "id": 120,
+    "startMs": 45520,
+    "endMs": 46080,
+    "text": "understand"
+  },
+  {
+    "id": 121,
+    "startMs": 46080,
+    "endMs": 46240,
+    "text": "the"
+  },
+  {
+    "id": 122,
+    "startMs": 46240,
+    "endMs": 47030,
+    "text": "mechanics"
+  },
+  {
+    "id": 123,
+    "startMs": 47030,
+    "endMs": 47530,
+    "text": "separating"
+  },
+  {
+    "id": 124,
+    "startMs": 47530,
+    "endMs": 47940,
+    "text": "these"
+  },
+  {
+    "id": 125,
+    "startMs": 47940,
+    "endMs": 48220,
+    "text": "three"
+  },
+  {
+    "id": 126,
+    "startMs": 48220,
+    "endMs": 48550,
+    "text": "tiers"
+  },
+  {
+    "id": 127,
+    "startMs": 48550,
+    "endMs": 48850,
+    "text": ","
+  },
+  {
+    "id": 128,
+    "startMs": 48850,
+    "endMs": 48880,
+    "text": "you"
+  },
+  {
+    "id": 129,
+    "startMs": 48880,
+    "endMs": 49080,
+    "text": "are"
+  },
+  {
+    "id": 130,
+    "startMs": 49080,
+    "endMs": 49650,
+    "text": "building"
+  },
+  {
+    "id": 131,
+    "startMs": 49650,
+    "endMs": 49820,
+    "text": "for"
+  },
+  {
+    "id": 132,
+    "startMs": 49820,
+    "endMs": 49950,
+    "text": "an"
+  },
+  {
+    "id": 133,
+    "startMs": 49950,
+    "endMs": 50080,
+    "text": "AI"
+  },
+  {
+    "id": 134,
+    "startMs": 50080,
+    "endMs": 50690,
+    "text": "landscape"
+  },
+  {
+    "id": 135,
+    "startMs": 50690,
+    "endMs": 50960,
+    "text": "that"
+  },
+  {
+    "id": 136,
+    "startMs": 50960,
+    "endMs": 51090,
+    "text": "no"
+  },
+  {
+    "id": 137,
+    "startMs": 51090,
+    "endMs": 51600,
+    "text": "longer"
+  },
+  {
+    "id": 138,
+    "startMs": 52540,
+    "endMs": 53040,
+    "text": "exists"
+  },
+  {
+    "id": 139,
+    "startMs": 53040,
+    "endMs": 53230,
+    "text": "."
+  },
+  {
+    "id": 140,
+    "startMs": 53230,
+    "endMs": 53760,
+    "text": "Let"
+  },
+  {
+    "id": 141,
+    "startMs": 53760,
+    "endMs": 53810,
+    "text": "us"
+  },
+  {
+    "id": 142,
+    "startMs": 53810,
+    "endMs": 54290,
+    "text": "break"
+  },
+  {
+    "id": 143,
+    "startMs": 54290,
+    "endMs": 54670,
+    "text": "down"
+  },
+  {
+    "id": 144,
+    "startMs": 54670,
+    "endMs": 55150,
+    "text": "layer"
+  },
+  {
+    "id": 145,
+    "startMs": 55150,
+    "endMs": 55430,
+    "text": "one"
+  },
+  {
+    "id": 146,
+    "startMs": 55430,
+    "endMs": 55800,
+    "text": ","
+  },
+  {
+    "id": 147,
+    "startMs": 55800,
+    "endMs": 56110,
+    "text": "gener"
+  },
+  {
+    "id": 148,
+    "startMs": 56110,
+    "endMs": 56590,
+    "text": "ative"
+  },
+  {
+    "id": 149,
+    "startMs": 56590,
+    "endMs": 56780,
+    "text": "AI"
+  },
+  {
+    "id": 150,
+    "startMs": 56780,
+    "endMs": 57280,
+    "text": "."
+  },
+  {
+    "id": 151,
+    "startMs": 57280,
+    "endMs": 57280,
+    "text": "At"
+  },
+  {
+    "id": 152,
+    "startMs": 57280,
+    "endMs": 57760,
+    "text": "its"
+  },
+  {
+    "id": 153,
+    "startMs": 57760,
+    "endMs": 57840,
+    "text": "core"
+  },
+  {
+    "id": 154,
+    "startMs": 57840,
+    "endMs": 57990,
+    "text": ","
+  },
+  {
+    "id": 155,
+    "startMs": 57990,
+    "endMs": 58390,
+    "text": "gener"
+  },
+  {
+    "id": 156,
+    "startMs": 58390,
+    "endMs": 58820,
+    "text": "ative"
+  },
+  {
+    "id": 157,
+    "startMs": 58820,
+    "endMs": 59200,
+    "text": "AI"
+  },
+  {
+    "id": 158,
+    "startMs": 59200,
+    "endMs": 59540,
+    "text": "is"
+  },
+  {
+    "id": 159,
+    "startMs": 59540,
+    "endMs": 59760,
+    "text": "purely"
+  },
+  {
+    "id": 160,
+    "startMs": 59760,
+    "endMs": 60800,
+    "text": "reactive"
+  },
+  {
+    "id": 161,
+    "startMs": 60800,
+    "endMs": 60800,
+    "text": "."
+  },
+  {
+    "id": 162,
+    "startMs": 60800,
+    "endMs": 61180,
+    "text": "Think"
+  },
+  {
+    "id": 163,
+    "startMs": 61180,
+    "endMs": 61300,
+    "text": "of"
+  },
+  {
+    "id": 164,
+    "startMs": 61300,
+    "endMs": 61400,
+    "text": "it"
+  },
+  {
+    "id": 165,
+    "startMs": 61400,
+    "endMs": 61570,
+    "text": "as"
+  },
+  {
+    "id": 166,
+    "startMs": 61570,
+    "endMs": 61590,
+    "text": "a"
+  },
+  {
+    "id": 167,
+    "startMs": 61590,
+    "endMs": 62290,
+    "text": "brilliant"
+  },
+  {
+    "id": 168,
+    "startMs": 62290,
+    "endMs": 62340,
+    "text": ","
+  },
+  {
+    "id": 169,
+    "startMs": 62340,
+    "endMs": 63030,
+    "text": "isolated"
+  },
+  {
+    "id": 170,
+    "startMs": 63030,
+    "endMs": 63230,
+    "text": "brain"
+  },
+  {
+    "id": 171,
+    "startMs": 63230,
+    "endMs": 63620,
+    "text": "locked"
+  },
+  {
+    "id": 172,
+    "startMs": 63620,
+    "endMs": 64080,
+    "text": "."
+  },
+  {
+    "id": 173,
+    "startMs": 64080,
+    "endMs": 64110,
+    "text": "In"
+  },
+  {
+    "id": 174,
+    "startMs": 64110,
+    "endMs": 64200,
+    "text": "a"
+  },
+  {
+    "id": 175,
+    "startMs": 64200,
+    "endMs": 64670,
+    "text": "dark"
+  },
+  {
+    "id": 176,
+    "startMs": 64670,
+    "endMs": 64980,
+    "text": "room"
+  },
+  {
+    "id": 177,
+    "startMs": 64980,
+    "endMs": 65360,
+    "text": ","
+  },
+  {
+    "id": 178,
+    "startMs": 65360,
+    "endMs": 65390,
+    "text": "it"
+  },
+  {
+    "id": 179,
+    "startMs": 65390,
+    "endMs": 65710,
+    "text": "has"
+  },
+  {
+    "id": 180,
+    "startMs": 65710,
+    "endMs": 66320,
+    "text": "ingested"
+  },
+  {
+    "id": 181,
+    "startMs": 66320,
+    "endMs": 66960,
+    "text": "trillions"
+  },
+  {
+    "id": 182,
+    "startMs": 66960,
+    "endMs": 67040,
+    "text": "of"
+  },
+  {
+    "id": 183,
+    "startMs": 67040,
+    "endMs": 67780,
+    "text": "parameters"
+  },
+  {
+    "id": 184,
+    "startMs": 67780,
+    "endMs": 67930,
+    "text": "of"
+  },
+  {
+    "id": 185,
+    "startMs": 67930,
+    "endMs": 68300,
+    "text": "human"
+  },
+  {
+    "id": 186,
+    "startMs": 68300,
+    "endMs": 68870,
+    "text": "knowledge"
+  },
+  {
+    "id": 187,
+    "startMs": 68870,
+    "endMs": 69460,
+    "text": "."
+  },
+  {
+    "id": 188,
+    "startMs": 69460,
+    "endMs": 69490,
+    "text": "When"
+  },
+  {
+    "id": 189,
+    "startMs": 69490,
+    "endMs": 69700,
+    "text": "you"
+  },
+  {
+    "id": 190,
+    "startMs": 69700,
+    "endMs": 69920,
+    "text": "ask"
+  },
+  {
+    "id": 191,
+    "startMs": 69920,
+    "endMs": 70110,
+    "text": "it"
+  },
+  {
+    "id": 192,
+    "startMs": 70110,
+    "endMs": 70300,
+    "text": "to"
+  },
+  {
+    "id": 193,
+    "startMs": 70300,
+    "endMs": 70580,
+    "text": "write"
+  },
+  {
+    "id": 194,
+    "startMs": 70580,
+    "endMs": 70660,
+    "text": "a"
+  },
+  {
+    "id": 195,
+    "startMs": 70660,
+    "endMs": 71100,
+    "text": "Python"
+  },
+  {
+    "id": 196,
+    "startMs": 71100,
+    "endMs": 71540,
+    "text": "script"
+  },
+  {
+    "id": 197,
+    "startMs": 71540,
+    "endMs": 71990,
+    "text": ","
+  },
+  {
+    "id": 198,
+    "startMs": 71990,
+    "endMs": 72480,
+    "text": "summarize"
+  },
+  {
+    "id": 199,
+    "startMs": 72480,
+    "endMs": 72500,
+    "text": "a"
+  },
+  {
+    "id": 200,
+    "startMs": 72500,
+    "endMs": 72880,
+    "text": "legal"
+  },
+  {
+    "id": 201,
+    "startMs": 72880,
+    "endMs": 72960,
+    "text": "."
+  },
+  {
+    "id": 202,
+    "startMs": 72960,
+    "endMs": 73840,
+    "text": "Contract"
+  },
+  {
+    "id": 203,
+    "startMs": 73840,
+    "endMs": 73890,
+    "text": "or"
+  },
+  {
+    "id": 204,
+    "startMs": 73890,
+    "endMs": 74370,
+    "text": "design"
+  },
+  {
+    "id": 205,
+    "startMs": 74370,
+    "endMs": 74590,
+    "text": "a"
+  },
+  {
+    "id": 206,
+    "startMs": 74590,
+    "endMs": 74810,
+    "text": "user"
+  },
+  {
+    "id": 207,
+    "startMs": 74810,
+    "endMs": 75610,
+    "text": "interface"
+  },
+  {
+    "id": 208,
+    "startMs": 75610,
+    "endMs": 75780,
+    "text": ","
+  },
+  {
+    "id": 209,
+    "startMs": 75780,
+    "endMs": 75940,
+    "text": "it"
+  },
+  {
+    "id": 210,
+    "startMs": 75940,
+    "endMs": 76840,
+    "text": "calculates"
+  },
+  {
+    "id": 211,
+    "startMs": 76840,
+    "endMs": 77910,
+    "text": "mathematical"
+  },
+  {
+    "id": 212,
+    "startMs": 77910,
+    "endMs": 79150,
+    "text": "probabilities"
+  },
+  {
+    "id": 213,
+    "startMs": 79150,
+    "endMs": 79280,
+    "text": "to"
+  },
+  {
+    "id": 214,
+    "startMs": 79280,
+    "endMs": 79600,
+    "text": "produce"
+  },
+  {
+    "id": 215,
+    "startMs": 79600,
+    "endMs": 79780,
+    "text": "the"
+  },
+  {
+    "id": 216,
+    "startMs": 79780,
+    "endMs": 80080,
+    "text": "most"
+  },
+  {
+    "id": 217,
+    "startMs": 80320,
+    "endMs": 81220,
+    "text": "statistically"
+  },
+  {
+    "id": 218,
+    "startMs": 81220,
+    "endMs": 81990,
+    "text": "accurate"
+  },
+  {
+    "id": 219,
+    "startMs": 81990,
+    "endMs": 82270,
+    "text": "next"
+  },
+  {
+    "id": 220,
+    "startMs": 82270,
+    "endMs": 82530,
+    "text": "token"
+  },
+  {
+    "id": 221,
+    "startMs": 82530,
+    "endMs": 82970,
+    "text": "."
+  },
+  {
+    "id": 222,
+    "startMs": 82970,
+    "endMs": 83380,
+    "text": "But"
+  },
+  {
+    "id": 223,
+    "startMs": 83380,
+    "endMs": 83750,
+    "text": "notice"
+  },
+  {
+    "id": 224,
+    "startMs": 83750,
+    "endMs": 84100,
+    "text": "what"
+  },
+  {
+    "id": 225,
+    "startMs": 84100,
+    "endMs": 84540,
+    "text": "gener"
+  },
+  {
+    "id": 226,
+    "startMs": 84540,
+    "endMs": 84970,
+    "text": "ative"
+  },
+  {
+    "id": 227,
+    "startMs": 84970,
+    "endMs": 85140,
+    "text": "AI"
+  },
+  {
+    "id": 228,
+    "startMs": 85140,
+    "endMs": 85660,
+    "text": "cannot"
+  },
+  {
+    "id": 229,
+    "startMs": 85660,
+    "endMs": 85830,
+    "text": "do"
+  },
+  {
+    "id": 230,
+    "startMs": 85830,
+    "endMs": 86160,
+    "text": "."
+  },
+  {
+    "id": 231,
+    "startMs": 86160,
+    "endMs": 86310,
+    "text": "It"
+  },
+  {
+    "id": 232,
+    "startMs": 86310,
+    "endMs": 86780,
+    "text": "cannot"
+  },
+  {
+    "id": 233,
+    "startMs": 86780,
+    "endMs": 87210,
+    "text": "check"
+  },
+  {
+    "id": 234,
+    "startMs": 87210,
+    "endMs": 87390,
+    "text": "if"
+  },
+  {
+    "id": 235,
+    "startMs": 87390,
+    "endMs": 87570,
+    "text": "the"
+  },
+  {
+    "id": 236,
+    "startMs": 87570,
+    "endMs": 87860,
+    "text": "code"
+  },
+  {
+    "id": 237,
+    "startMs": 87860,
+    "endMs": 88480,
+    "text": "actually"
+  },
+  {
+    "id": 238,
+    "startMs": 88480,
+    "endMs": 88680,
+    "text": "runs"
+  },
+  {
+    "id": 239,
+    "startMs": 88680,
+    "endMs": 89170,
+    "text": "."
+  },
+  {
+    "id": 240,
+    "startMs": 89170,
+    "endMs": 89350,
+    "text": "It"
+  },
+  {
+    "id": 241,
+    "startMs": 89350,
+    "endMs": 89640,
+    "text": "cannot"
+  },
+  {
+    "id": 242,
+    "startMs": 89640,
+    "endMs": 89950,
+    "text": "open"
+  },
+  {
+    "id": 243,
+    "startMs": 89950,
+    "endMs": 90260,
+    "text": "your"
+  },
+  {
+    "id": 244,
+    "startMs": 90260,
+    "endMs": 90870,
+    "text": "terminal"
+  },
+  {
+    "id": 245,
+    "startMs": 90870,
+    "endMs": 91310,
+    "text": ","
+  },
+  {
+    "id": 246,
+    "startMs": 91310,
+    "endMs": 91560,
+    "text": "test"
+  },
+  {
+    "id": 247,
+    "startMs": 91560,
+    "endMs": 91600,
+    "text": "a"
+  },
+  {
+    "id": 248,
+    "startMs": 91600,
+    "endMs": 92620,
+    "text": "database"
+  },
+  {
+    "id": 249,
+    "startMs": 92620,
+    "endMs": 92800,
+    "text": ","
+  },
+  {
+    "id": 250,
+    "startMs": 92800,
+    "endMs": 93590,
+    "text": "connection"
+  },
+  {
+    "id": 251,
+    "startMs": 93590,
+    "endMs": 93740,
+    "text": ","
+  },
+  {
+    "id": 252,
+    "startMs": 93740,
+    "endMs": 93900,
+    "text": "or"
+  },
+  {
+    "id": 253,
+    "startMs": 93900,
+    "endMs": 94220,
+    "text": "read"
+  },
+  {
+    "id": 254,
+    "startMs": 94220,
+    "endMs": 94300,
+    "text": "a"
+  },
+  {
+    "id": 255,
+    "startMs": 94300,
+    "endMs": 94660,
+    "text": "live"
+  },
+  {
+    "id": 256,
+    "startMs": 94660,
+    "endMs": 95090,
+    "text": "server"
+  },
+  {
+    "id": 257,
+    "startMs": 95090,
+    "endMs": 95320,
+    "text": "log"
+  },
+  {
+    "id": 258,
+    "startMs": 95320,
+    "endMs": 95860,
+    "text": "."
+  },
+  {
+    "id": 259,
+    "startMs": 95860,
+    "endMs": 95880,
+    "text": "Once"
+  },
+  {
+    "id": 260,
+    "startMs": 95880,
+    "endMs": 96040,
+    "text": "it"
+  },
+  {
+    "id": 261,
+    "startMs": 96040,
+    "endMs": 96600,
+    "text": "outputs"
+  },
+  {
+    "id": 262,
+    "startMs": 96600,
+    "endMs": 96910,
+    "text": "text"
+  },
+  {
+    "id": 263,
+    "startMs": 96910,
+    "endMs": 97140,
+    "text": "on"
+  },
+  {
+    "id": 264,
+    "startMs": 97140,
+    "endMs": 97390,
+    "text": "your"
+  },
+  {
+    "id": 265,
+    "startMs": 97390,
+    "endMs": 97860,
+    "text": "screen"
+  },
+  {
+    "id": 266,
+    "startMs": 97860,
+    "endMs": 98210,
+    "text": ","
+  },
+  {
+    "id": 267,
+    "startMs": 98210,
+    "endMs": 98480,
+    "text": "its"
+  },
+  {
+    "id": 268,
+    "startMs": 98480,
+    "endMs": 98720,
+    "text": "job"
+  },
+  {
+    "id": 269,
+    "startMs": 98720,
+    "endMs": 99000,
+    "text": "is"
+  },
+  {
+    "id": 270,
+    "startMs": 99000,
+    "endMs": 99520,
+    "text": "completely"
+  },
+  {
+    "id": 271,
+    "startMs": 99520,
+    "endMs": 100250,
+    "text": "finished"
+  },
+  {
+    "id": 272,
+    "startMs": 100250,
+    "endMs": 100640,
+    "text": "."
+  },
+  {
+    "id": 273,
+    "startMs": 100640,
+    "endMs": 100980,
+    "text": "It"
+  },
+  {
+    "id": 274,
+    "startMs": 100980,
+    "endMs": 101140,
+    "text": "has"
+  },
+  {
+    "id": 275,
+    "startMs": 101140,
+    "endMs": 101550,
+    "text": "zero"
+  },
+  {
+    "id": 276,
+    "startMs": 101550,
+    "endMs": 102160,
+    "text": "agency"
+  },
+  {
+    "id": 277,
+    "startMs": 102160,
+    "endMs": 102360,
+    "text": ","
+  },
+  {
+    "id": 278,
+    "startMs": 102360,
+    "endMs": 102850,
+    "text": "zero"
+  },
+  {
+    "id": 279,
+    "startMs": 102850,
+    "endMs": 103070,
+    "text": "."
+  },
+  {
+    "id": 280,
+    "startMs": 103070,
+    "endMs": 103430,
+    "text": "Real"
+  },
+  {
+    "id": 281,
+    "startMs": 103430,
+    "endMs": 103740,
+    "text": "-"
+  },
+  {
+    "id": 282,
+    "startMs": 103740,
+    "endMs": 103990,
+    "text": "time"
+  },
+  {
+    "id": 283,
+    "startMs": 103990,
+    "endMs": 104600,
+    "text": "memory"
+  },
+  {
+    "id": 284,
+    "startMs": 104600,
+    "endMs": 104900,
+    "text": "and"
+  },
+  {
+    "id": 285,
+    "startMs": 104900,
+    "endMs": 105320,
+    "text": "zero"
+  },
+  {
+    "id": 286,
+    "startMs": 105320,
+    "endMs": 106400,
+    "text": "capability"
+  },
+  {
+    "id": 287,
+    "startMs": 106400,
+    "endMs": 106570,
+    "text": "to"
+  },
+  {
+    "id": 288,
+    "startMs": 106570,
+    "endMs": 107040,
+    "text": "interact"
+  },
+  {
+    "id": 289,
+    "startMs": 107040,
+    "endMs": 107200,
+    "text": "with"
+  },
+  {
+    "id": 290,
+    "startMs": 107200,
+    "endMs": 107440,
+    "text": "the"
+  },
+  {
+    "id": 291,
+    "startMs": 107440,
+    "endMs": 108110,
+    "text": "physical"
+  },
+  {
+    "id": 292,
+    "startMs": 108110,
+    "endMs": 108270,
+    "text": "or"
+  },
+  {
+    "id": 293,
+    "startMs": 108270,
+    "endMs": 108840,
+    "text": "digital"
+  },
+  {
+    "id": 294,
+    "startMs": 108840,
+    "endMs": 109160,
+    "text": "world"
+  },
+  {
+    "id": 295,
+    "startMs": 109160,
+    "endMs": 109940,
+    "text": "."
+  },
+  {
+    "id": 296,
+    "startMs": 109940,
+    "endMs": 109970,
+    "text": "Gener"
+  },
+  {
+    "id": 297,
+    "startMs": 109970,
+    "endMs": 110350,
+    "text": "ative"
+  },
+  {
+    "id": 298,
+    "startMs": 110350,
+    "endMs": 110510,
+    "text": "AI"
+  },
+  {
+    "id": 299,
+    "startMs": 110510,
+    "endMs": 110670,
+    "text": "is"
+  },
+  {
+    "id": 300,
+    "startMs": 110670,
+    "endMs": 110750,
+    "text": "a"
+  },
+  {
+    "id": 301,
+    "startMs": 110750,
+    "endMs": 111500,
+    "text": "brilliant"
+  },
+  {
+    "id": 302,
+    "startMs": 111500,
+    "endMs": 112080,
+    "text": "creator"
+  },
+  {
+    "id": 303,
+    "startMs": 112080,
+    "endMs": 112440,
+    "text": ","
+  },
+  {
+    "id": 304,
+    "startMs": 112440,
+    "endMs": 112510,
+    "text": "but"
+  },
+  {
+    "id": 305,
+    "startMs": 112510,
+    "endMs": 112640,
+    "text": "it"
+  },
+  {
+    "id": 306,
+    "startMs": 112640,
+    "endMs": 113640,
+    "text": "is"
+  },
+  {
+    "id": 307,
+    "startMs": 113640,
+    "endMs": 114160,
+    "text": "completely"
+  },
+  {
+    "id": 308,
+    "startMs": 114160,
+    "endMs": 114720,
+    "text": "helpless"
+  },
+  {
+    "id": 309,
+    "startMs": 114720,
+    "endMs": 114880,
+    "text": "on"
+  },
+  {
+    "id": 310,
+    "startMs": 114880,
+    "endMs": 115160,
+    "text": "its"
+  },
+  {
+    "id": 311,
+    "startMs": 115160,
+    "endMs": 115360,
+    "text": "own"
+  },
+  {
+    "id": 312,
+    "startMs": 115360,
+    "endMs": 115920,
+    "text": "."
+  },
+  {
+    "id": 313,
+    "startMs": 115920,
+    "endMs": 116110,
+    "text": "That"
+  },
+  {
+    "id": 314,
+    "startMs": 116110,
+    "endMs": 116810,
+    "text": "fundamental"
+  },
+  {
+    "id": 315,
+    "startMs": 116810,
+    "endMs": 117620,
+    "text": "limitation"
+  },
+  {
+    "id": 316,
+    "startMs": 117620,
+    "endMs": 118100,
+    "text": "forced"
+  },
+  {
+    "id": 317,
+    "startMs": 118100,
+    "endMs": 118340,
+    "text": "the"
+  },
+  {
+    "id": 318,
+    "startMs": 118340,
+    "endMs": 118740,
+    "text": "birth"
+  },
+  {
+    "id": 319,
+    "startMs": 118740,
+    "endMs": 118900,
+    "text": "of"
+  },
+  {
+    "id": 320,
+    "startMs": 118900,
+    "endMs": 119320,
+    "text": "layer"
+  },
+  {
+    "id": 321,
+    "startMs": 119320,
+    "endMs": 119540,
+    "text": "two"
+  },
+  {
+    "id": 322,
+    "startMs": 119540,
+    "endMs": 119800,
+    "text": ","
+  },
+  {
+    "id": 323,
+    "startMs": 119800,
+    "endMs": 119860,
+    "text": "AI"
+  },
+  {
+    "id": 324,
+    "startMs": 119860,
+    "endMs": 120370,
+    "text": "agents"
+  },
+  {
+    "id": 325,
+    "startMs": 120370,
+    "endMs": 120640,
+    "text": "."
+  },
+  {
+    "id": 326,
+    "startMs": 120640,
+    "endMs": 120820,
+    "text": "An"
+  },
+  {
+    "id": 327,
+    "startMs": 120820,
+    "endMs": 120990,
+    "text": "AI"
+  },
+  {
+    "id": 328,
+    "startMs": 120990,
+    "endMs": 121710,
+    "text": "agent"
+  },
+  {
+    "id": 329,
+    "startMs": 121710,
+    "endMs": 121880,
+    "text": "takes"
+  },
+  {
+    "id": 330,
+    "startMs": 121880,
+    "endMs": 122230,
+    "text": "that"
+  },
+  {
+    "id": 331,
+    "startMs": 122230,
+    "endMs": 122490,
+    "text": "raw"
+  },
+  {
+    "id": 332,
+    "startMs": 122490,
+    "endMs": 123060,
+    "text": "neural"
+  },
+  {
+    "id": 333,
+    "startMs": 123060,
+    "endMs": 123640,
+    "text": "network"
+  },
+  {
+    "id": 334,
+    "startMs": 123640,
+    "endMs": 123900,
+    "text": "and"
+  },
+  {
+    "id": 335,
+    "startMs": 123900,
+    "endMs": 124160,
+    "text": "equ"
+  },
+  {
+    "id": 336,
+    "startMs": 124160,
+    "endMs": 124420,
+    "text": "ips"
+  },
+  {
+    "id": 337,
+    "startMs": 124420,
+    "endMs": 124600,
+    "text": "it"
+  },
+  {
+    "id": 338,
+    "startMs": 124600,
+    "endMs": 125010,
+    "text": "with"
+  },
+  {
+    "id": 339,
+    "startMs": 125010,
+    "endMs": 125390,
+    "text": "hands"
+  },
+  {
+    "id": 340,
+    "startMs": 125390,
+    "endMs": 125740,
+    "text": "."
+  },
+  {
+    "id": 341,
+    "startMs": 125740,
+    "endMs": 126930,
+    "text": "Eyes"
+  },
+  {
+    "id": 342,
+    "startMs": 126930,
+    "endMs": 127410,
+    "text": "and"
+  },
+  {
+    "id": 343,
+    "startMs": 127410,
+    "endMs": 128570,
+    "text": "tools"
+  },
+  {
+    "id": 344,
+    "startMs": 128570,
+    "endMs": 128620,
+    "text": "."
+  },
+  {
+    "id": 345,
+    "startMs": 128620,
+    "endMs": 128960,
+    "text": "Instead"
+  },
+  {
+    "id": 346,
+    "startMs": 128960,
+    "endMs": 129120,
+    "text": "of"
+  },
+  {
+    "id": 347,
+    "startMs": 129120,
+    "endMs": 129590,
+    "text": "merely"
+  },
+  {
+    "id": 348,
+    "startMs": 129590,
+    "endMs": 130300,
+    "text": "answering"
+  },
+  {
+    "id": 349,
+    "startMs": 130300,
+    "endMs": 131040,
+    "text": "questions"
+  },
+  {
+    "id": 350,
+    "startMs": 131040,
+    "endMs": 131160,
+    "text": ","
+  },
+  {
+    "id": 351,
+    "startMs": 131160,
+    "endMs": 131310,
+    "text": "an"
+  },
+  {
+    "id": 352,
+    "startMs": 131310,
+    "endMs": 131760,
+    "text": "agent"
+  },
+  {
+    "id": 353,
+    "startMs": 131760,
+    "endMs": 131840,
+    "text": "is"
+  },
+  {
+    "id": 354,
+    "startMs": 131840,
+    "endMs": 132250,
+    "text": "given"
+  },
+  {
+    "id": 355,
+    "startMs": 132250,
+    "endMs": 132310,
+    "text": "a"
+  },
+  {
+    "id": 356,
+    "startMs": 132310,
+    "endMs": 132950,
+    "text": "specific"
+  },
+  {
+    "id": 357,
+    "startMs": 132950,
+    "endMs": 133650,
+    "text": "objective"
+  },
+  {
+    "id": 358,
+    "startMs": 133650,
+    "endMs": 133800,
+    "text": ","
+  },
+  {
+    "id": 359,
+    "startMs": 133800,
+    "endMs": 133870,
+    "text": "a"
+  },
+  {
+    "id": 360,
+    "startMs": 133870,
+    "endMs": 134180,
+    "text": "loop"
+  },
+  {
+    "id": 361,
+    "startMs": 134180,
+    "endMs": 134380,
+    "text": "of"
+  },
+  {
+    "id": 362,
+    "startMs": 134380,
+    "endMs": 135120,
+    "text": "execution"
+  },
+  {
+    "id": 363,
+    "startMs": 135120,
+    "endMs": 135120,
+    "text": ","
+  },
+  {
+    "id": 364,
+    "startMs": 135200,
+    "endMs": 135380,
+    "text": "and"
+  },
+  {
+    "id": 365,
+    "startMs": 135380,
+    "endMs": 135900,
+    "text": "direct"
+  },
+  {
+    "id": 366,
+    "startMs": 135900,
+    "endMs": 136420,
+    "text": "access"
+  },
+  {
+    "id": 367,
+    "startMs": 136420,
+    "endMs": 136590,
+    "text": "to"
+  },
+  {
+    "id": 368,
+    "startMs": 136590,
+    "endMs": 137460,
+    "text": "external"
+  },
+  {
+    "id": 369,
+    "startMs": 137460,
+    "endMs": 137780,
+    "text": "tools"
+  },
+  {
+    "id": 370,
+    "startMs": 137780,
+    "endMs": 138330,
+    "text": "through"
+  },
+  {
+    "id": 371,
+    "startMs": 138330,
+    "endMs": 139030,
+    "text": "function"
+  },
+  {
+    "id": 372,
+    "startMs": 139030,
+    "endMs": 139640,
+    "text": "calling"
+  },
+  {
+    "id": 373,
+    "startMs": 139640,
+    "endMs": 139900,
+    "text": "and"
+  },
+  {
+    "id": 374,
+    "startMs": 139900,
+    "endMs": 140250,
+    "text": "APIs"
+  },
+  {
+    "id": 375,
+    "startMs": 140250,
+    "endMs": 140560,
+    "text": "."
+  },
+  {
+    "id": 376,
+    "startMs": 140560,
+    "endMs": 141130,
+    "text": "When"
+  },
+  {
+    "id": 377,
+    "startMs": 141130,
+    "endMs": 141310,
+    "text": "you"
+  },
+  {
+    "id": 378,
+    "startMs": 141310,
+    "endMs": 141460,
+    "text": "tell"
+  },
+  {
+    "id": 379,
+    "startMs": 141460,
+    "endMs": 141620,
+    "text": "an"
+  },
+  {
+    "id": 380,
+    "startMs": 141620,
+    "endMs": 141780,
+    "text": "AI"
+  },
+  {
+    "id": 381,
+    "startMs": 141780,
+    "endMs": 142190,
+    "text": "agent"
+  },
+  {
+    "id": 382,
+    "startMs": 142190,
+    "endMs": 142350,
+    "text": "to"
+  },
+  {
+    "id": 383,
+    "startMs": 142350,
+    "endMs": 142680,
+    "text": "find"
+  },
+  {
+    "id": 384,
+    "startMs": 142680,
+    "endMs": 142920,
+    "text": "the"
+  },
+  {
+    "id": 385,
+    "startMs": 142920,
+    "endMs": 143410,
+    "text": "lowest"
+  },
+  {
+    "id": 386,
+    "startMs": 143410,
+    "endMs": 143900,
+    "text": "flight"
+  },
+  {
+    "id": 387,
+    "startMs": 143900,
+    "endMs": 144310,
+    "text": "price"
+  },
+  {
+    "id": 388,
+    "startMs": 144310,
+    "endMs": 144550,
+    "text": "to"
+  },
+  {
+    "id": 389,
+    "startMs": 144550,
+    "endMs": 144880,
+    "text": "Tokyo"
+  },
+  {
+    "id": 390,
+    "startMs": 144880,
+    "endMs": 145120,
+    "text": "and"
+  },
+  {
+    "id": 391,
+    "startMs": 145120,
+    "endMs": 145520,
+    "text": "book"
+  },
+  {
+    "id": 392,
+    "startMs": 145520,
+    "endMs": 145680,
+    "text": "the"
+  },
+  {
+    "id": 393,
+    "startMs": 145680,
+    "endMs": 146190,
+    "text": "hotel"
+  },
+  {
+    "id": 394,
+    "startMs": 146190,
+    "endMs": 146400,
+    "text": ","
+  },
+  {
+    "id": 395,
+    "startMs": 146400,
+    "endMs": 146510,
+    "text": "it"
+  },
+  {
+    "id": 396,
+    "startMs": 146510,
+    "endMs": 146780,
+    "text": "does"
+  },
+  {
+    "id": 397,
+    "startMs": 146780,
+    "endMs": 146910,
+    "text": "not"
+  },
+  {
+    "id": 398,
+    "startMs": 146910,
+    "endMs": 147140,
+    "text": "just"
+  },
+  {
+    "id": 399,
+    "startMs": 147140,
+    "endMs": 147430,
+    "text": "write"
+  },
+  {
+    "id": 400,
+    "startMs": 147430,
+    "endMs": 147780,
+    "text": "advice"
+  },
+  {
+    "id": 401,
+    "startMs": 147780,
+    "endMs": 148010,
+    "text": "."
+  },
+  {
+    "id": 402,
+    "startMs": 148010,
+    "endMs": 149090,
+    "text": "It"
+  },
+  {
+    "id": 403,
+    "startMs": 149090,
+    "endMs": 149360,
+    "text": "triggers"
+  },
+  {
+    "id": 404,
+    "startMs": 149360,
+    "endMs": 149410,
+    "text": "a"
+  },
+  {
+    "id": 405,
+    "startMs": 149410,
+    "endMs": 150440,
+    "text": "function"
+  },
+  {
+    "id": 406,
+    "startMs": 150440,
+    "endMs": 150900,
+    "text": ","
+  },
+  {
+    "id": 407,
+    "startMs": 150900,
+    "endMs": 151020,
+    "text": "call"
+  },
+  {
+    "id": 408,
+    "startMs": 151020,
+    "endMs": 151170,
+    "text": "to"
+  },
+  {
+    "id": 409,
+    "startMs": 151170,
+    "endMs": 151690,
+    "text": "search"
+  },
+  {
+    "id": 410,
+    "startMs": 151690,
+    "endMs": 151920,
+    "text": "live"
+  },
+  {
+    "id": 411,
+    "startMs": 151920,
+    "endMs": 152480,
+    "text": "airline"
+  },
+  {
+    "id": 412,
+    "startMs": 152480,
+    "endMs": 153320,
+    "text": "databases"
+  },
+  {
+    "id": 413,
+    "startMs": 153320,
+    "endMs": 153520,
+    "text": ","
+  },
+  {
+    "id": 414,
+    "startMs": 153520,
+    "endMs": 153910,
+    "text": "pars"
+  },
+  {
+    "id": 415,
+    "startMs": 153910,
+    "endMs": 153960,
+    "text": "es"
+  },
+  {
+    "id": 416,
+    "startMs": 153960,
+    "endMs": 154180,
+    "text": "the"
+  },
+  {
+    "id": 417,
+    "startMs": 154180,
+    "endMs": 154780,
+    "text": "incoming"
+  },
+  {
+    "id": 418,
+    "startMs": 154780,
+    "endMs": 155090,
+    "text": "JSON"
+  },
+  {
+    "id": 419,
+    "startMs": 155090,
+    "endMs": 155680,
+    "text": "response"
+  },
+  {
+    "id": 420,
+    "startMs": 155680,
+    "endMs": 155820,
+    "text": ","
+  },
+  {
+    "id": 421,
+    "startMs": 155820,
+    "endMs": 156250,
+    "text": "valid"
+  },
+  {
+    "id": 422,
+    "startMs": 156250,
+    "endMs": 156480,
+    "text": "ates"
+  },
+  {
+    "id": 423,
+    "startMs": 156480,
+    "endMs": 156950,
+    "text": "prices"
+  },
+  {
+    "id": 424,
+    "startMs": 156950,
+    "endMs": 157450,
+    "text": "against"
+  },
+  {
+    "id": 425,
+    "startMs": 157450,
+    "endMs": 157760,
+    "text": "your"
+  },
+  {
+    "id": 426,
+    "startMs": 157760,
+    "endMs": 158200,
+    "text": "budget"
+  },
+  {
+    "id": 427,
+    "startMs": 158200,
+    "endMs": 158540,
+    "text": ","
+  },
+  {
+    "id": 428,
+    "startMs": 158540,
+    "endMs": 158590,
+    "text": "and"
+  },
+  {
+    "id": 429,
+    "startMs": 158590,
+    "endMs": 159120,
+    "text": "prepares"
+  },
+  {
+    "id": 430,
+    "startMs": 159120,
+    "endMs": 159280,
+    "text": "a"
+  },
+  {
+    "id": 431,
+    "startMs": 159280,
+    "endMs": 159760,
+    "text": "payment"
+  },
+  {
+    "id": 432,
+    "startMs": 159760,
+    "endMs": 159760,
+    "text": "."
+  },
+  {
+    "id": 433,
+    "startMs": 160600,
+    "endMs": 160790,
+    "text": "Web"
+  },
+  {
+    "id": 434,
+    "startMs": 160790,
+    "endMs": 161100,
+    "text": "hook"
+  },
+  {
+    "id": 435,
+    "startMs": 161100,
+    "endMs": 161540,
+    "text": "."
+  },
+  {
+    "id": 436,
+    "startMs": 161540,
+    "endMs": 161560,
+    "text": "The"
+  },
+  {
+    "id": 437,
+    "startMs": 161560,
+    "endMs": 161710,
+    "text": "AI"
+  },
+  {
+    "id": 438,
+    "startMs": 161710,
+    "endMs": 162570,
+    "text": "transitions"
+  },
+  {
+    "id": 439,
+    "startMs": 162570,
+    "endMs": 162890,
+    "text": "from"
+  },
+  {
+    "id": 440,
+    "startMs": 162890,
+    "endMs": 163030,
+    "text": "a"
+  },
+  {
+    "id": 441,
+    "startMs": 163030,
+    "endMs": 163590,
+    "text": "passive"
+  },
+  {
+    "id": 442,
+    "startMs": 163590,
+    "endMs": 164440,
+    "text": "conversation"
+  },
+  {
+    "id": 443,
+    "startMs": 164440,
+    "endMs": 165040,
+    "text": "partner"
+  },
+  {
+    "id": 444,
+    "startMs": 165040,
+    "endMs": 165350,
+    "text": "into"
+  },
+  {
+    "id": 445,
+    "startMs": 165350,
+    "endMs": 165520,
+    "text": "an"
+  },
+  {
+    "id": 446,
+    "startMs": 165520,
+    "endMs": 165840,
+    "text": "active"
+  },
+  {
+    "id": 447,
+    "startMs": 165840,
+    "endMs": 166360,
+    "text": "task"
+  },
+  {
+    "id": 448,
+    "startMs": 166360,
+    "endMs": 167040,
+    "text": "execution"
+  },
+  {
+    "id": 449,
+    "startMs": 167040,
+    "endMs": 167360,
+    "text": "worker"
+  },
+  {
+    "id": 450,
+    "startMs": 167360,
+    "endMs": 167440,
+    "text": "."
+  },
+  {
+    "id": 451,
+    "startMs": 167440,
+    "endMs": 168110,
+    "text": "Yet"
+  },
+  {
+    "id": 452,
+    "startMs": 168110,
+    "endMs": 168110,
+    "text": "early"
+  },
+  {
+    "id": 453,
+    "startMs": 168110,
+    "endMs": 168580,
+    "text": "AI"
+  },
+  {
+    "id": 454,
+    "startMs": 168580,
+    "endMs": 168800,
+    "text": "agents"
+  },
+  {
+    "id": 455,
+    "startMs": 168800,
+    "endMs": 169040,
+    "text": "hit"
+  },
+  {
+    "id": 456,
+    "startMs": 169040,
+    "endMs": 169120,
+    "text": "a"
+  },
+  {
+    "id": 457,
+    "startMs": 169120,
+    "endMs": 169630,
+    "text": "brutal"
+  },
+  {
+    "id": 458,
+    "startMs": 169630,
+    "endMs": 170480,
+    "text": "production"
+  },
+  {
+    "id": 459,
+    "startMs": 170480,
+    "endMs": 171330,
+    "text": "bottleneck"
+  },
+  {
+    "id": 460,
+    "startMs": 171330,
+    "endMs": 171500,
+    "text": ","
+  },
+  {
+    "id": 461,
+    "startMs": 171500,
+    "endMs": 171750,
+    "text": "the"
+  },
+  {
+    "id": 462,
+    "startMs": 171750,
+    "endMs": 172270,
+    "text": "single"
+  },
+  {
+    "id": 463,
+    "startMs": 172270,
+    "endMs": 172600,
+    "text": "loop"
+  },
+  {
+    "id": 464,
+    "startMs": 172600,
+    "endMs": 173190,
+    "text": "failure"
+  },
+  {
+    "id": 465,
+    "startMs": 173190,
+    "endMs": 173520,
+    "text": "."
+  },
+  {
+    "id": 466,
+    "startMs": 173520,
+    "endMs": 173680,
+    "text": "When"
+  },
+  {
+    "id": 467,
+    "startMs": 173680,
+    "endMs": 174570,
+    "text": "a"
+  },
+  {
+    "id": 468,
+    "startMs": 174570,
+    "endMs": 174800,
+    "text": "single"
+  },
+  {
+    "id": 469,
+    "startMs": 174800,
+    "endMs": 175380,
+    "text": "model"
+  },
+  {
+    "id": 470,
+    "startMs": 175380,
+    "endMs": 175960,
+    "text": "tries"
+  },
+  {
+    "id": 471,
+    "startMs": 175960,
+    "endMs": 176280,
+    "text": "to"
+  },
+  {
+    "id": 472,
+    "startMs": 176280,
+    "endMs": 176650,
+    "text": "plan"
+  },
+  {
+    "id": 473,
+    "startMs": 176650,
+    "endMs": 176950,
+    "text": ","
+  },
+  {
+    "id": 474,
+    "startMs": 176950,
+    "endMs": 177830,
+    "text": "execute"
+  },
+  {
+    "id": 475,
+    "startMs": 177830,
+    "endMs": 177940,
+    "text": ","
+  },
+  {
+    "id": 476,
+    "startMs": 177940,
+    "endMs": 178590,
+    "text": "debug"
+  },
+  {
+    "id": 477,
+    "startMs": 178590,
+    "endMs": 178750,
+    "text": ","
+  },
+  {
+    "id": 478,
+    "startMs": 178750,
+    "endMs": 179790,
+    "text": "and"
+  },
+  {
+    "id": 479,
+    "startMs": 179790,
+    "endMs": 179840,
+    "text": "verify"
+  },
+  {
+    "id": 480,
+    "startMs": 179840,
+    "endMs": 181520,
+    "text": "simultaneously"
+  },
+  {
+    "id": 481,
+    "startMs": 181520,
+    "endMs": 181740,
+    "text": "in"
+  },
+  {
+    "id": 482,
+    "startMs": 181740,
+    "endMs": 182190,
+    "text": "one"
+  },
+  {
+    "id": 483,
+    "startMs": 182190,
+    "endMs": 182490,
+    "text": "prompt"
+  },
+  {
+    "id": 484,
+    "startMs": 182490,
+    "endMs": 183040,
+    "text": "loop"
+  },
+  {
+    "id": 485,
+    "startMs": 183040,
+    "endMs": 183040,
+    "text": ","
+  },
+  {
+    "id": 486,
+    "startMs": 183040,
+    "endMs": 183690,
+    "text": "context"
+  },
+  {
+    "id": 487,
+    "startMs": 183690,
+    "endMs": 184280,
+    "text": "windows"
+  },
+  {
+    "id": 488,
+    "startMs": 184280,
+    "endMs": 184630,
+    "text": "quickly"
+  },
+  {
+    "id": 489,
+    "startMs": 184630,
+    "endMs": 185240,
+    "text": "overflow"
+  },
+  {
+    "id": 490,
+    "startMs": 185240,
+    "endMs": 185630,
+    "text": ","
+  },
+  {
+    "id": 491,
+    "startMs": 185630,
+    "endMs": 186460,
+    "text": "hallucinations"
+  },
+  {
+    "id": 492,
+    "startMs": 186460,
+    "endMs": 187070,
+    "text": "compound"
+  },
+  {
+    "id": 493,
+    "startMs": 187070,
+    "endMs": 188060,
+    "text": "exponentially"
+  },
+  {
+    "id": 494,
+    "startMs": 188060,
+    "endMs": 188340,
+    "text": ","
+  },
+  {
+    "id": 495,
+    "startMs": 188340,
+    "endMs": 188440,
+    "text": "and"
+  },
+  {
+    "id": 496,
+    "startMs": 188440,
+    "endMs": 188640,
+    "text": "the"
+  },
+  {
+    "id": 497,
+    "startMs": 188640,
+    "endMs": 188970,
+    "text": "agent"
+  },
+  {
+    "id": 498,
+    "startMs": 188970,
+    "endMs": 189360,
+    "text": "gets"
+  },
+  {
+    "id": 499,
+    "startMs": 189360,
+    "endMs": 189360,
+    "text": "."
+  },
+  {
+    "id": 500,
+    "startMs": 190410,
+    "endMs": 190440,
+    "text": "Tra"
+  },
+  {
+    "id": 501,
+    "startMs": 190440,
+    "endMs": 190740,
+    "text": "pped"
+  },
+  {
+    "id": 502,
+    "startMs": 190740,
+    "endMs": 190830,
+    "text": "in"
+  },
+  {
+    "id": 503,
+    "startMs": 190830,
+    "endMs": 191410,
+    "text": "infinite"
+  },
+  {
+    "id": 504,
+    "startMs": 191410,
+    "endMs": 191560,
+    "text": "ret"
+  },
+  {
+    "id": 505,
+    "startMs": 191560,
+    "endMs": 191700,
+    "text": "ry"
+  },
+  {
+    "id": 506,
+    "startMs": 191700,
+    "endMs": 192020,
+    "text": "loops"
+  },
+  {
+    "id": 507,
+    "startMs": 192020,
+    "endMs": 192270,
+    "text": "."
+  },
+  {
+    "id": 508,
+    "startMs": 192270,
+    "endMs": 192980,
+    "text": "Beyond"
+  },
+  {
+    "id": 509,
+    "startMs": 192980,
+    "endMs": 193220,
+    "text": "four"
+  },
+  {
+    "id": 510,
+    "startMs": 193220,
+    "endMs": 193520,
+    "text": "or"
+  },
+  {
+    "id": 511,
+    "startMs": 193520,
+    "endMs": 193800,
+    "text": "five"
+  },
+  {
+    "id": 512,
+    "startMs": 193800,
+    "endMs": 194990,
+    "text": "consecutive"
+  },
+  {
+    "id": 513,
+    "startMs": 194990,
+    "endMs": 195320,
+    "text": "steps"
+  },
+  {
+    "id": 514,
+    "startMs": 195320,
+    "endMs": 195600,
+    "text": ","
+  },
+  {
+    "id": 515,
+    "startMs": 195600,
+    "endMs": 196030,
+    "text": "single"
+  },
+  {
+    "id": 516,
+    "startMs": 196030,
+    "endMs": 196390,
+    "text": "agent"
+  },
+  {
+    "id": 517,
+    "startMs": 196390,
+    "endMs": 197180,
+    "text": "reliability"
+  },
+  {
+    "id": 518,
+    "startMs": 197180,
+    "endMs": 197540,
+    "text": "drops"
+  },
+  {
+    "id": 519,
+    "startMs": 197540,
+    "endMs": 197880,
+    "text": "by"
+  },
+  {
+    "id": 520,
+    "startMs": 197880,
+    "endMs": 197970,
+    "text": "over"
+  },
+  {
+    "id": 521,
+    "startMs": 197970,
+    "endMs": 198420,
+    "text": "60"
+  },
+  {
+    "id": 522,
+    "startMs": 198420,
+    "endMs": 198720,
+    "text": "%."
+  },
+  {
+    "id": 523,
+    "startMs": 198720,
+    "endMs": 199230,
+    "text": "This"
+  },
+  {
+    "id": 524,
+    "startMs": 199230,
+    "endMs": 200250,
+    "text": "brings"
+  },
+  {
+    "id": 525,
+    "startMs": 200250,
+    "endMs": 200290,
+    "text": "us"
+  },
+  {
+    "id": 526,
+    "startMs": 200290,
+    "endMs": 200610,
+    "text": "to"
+  },
+  {
+    "id": 527,
+    "startMs": 200610,
+    "endMs": 201140,
+    "text": "layer"
+  },
+  {
+    "id": 528,
+    "startMs": 201140,
+    "endMs": 201780,
+    "text": "three"
+  },
+  {
+    "id": 529,
+    "startMs": 201780,
+    "endMs": 202080,
+    "text": ","
+  },
+  {
+    "id": 530,
+    "startMs": 202080,
+    "endMs": 202240,
+    "text": "a"
+  },
+  {
+    "id": 531,
+    "startMs": 202240,
+    "endMs": 202500,
+    "text": "Gent"
+  },
+  {
+    "id": 532,
+    "startMs": 202500,
+    "endMs": 202670,
+    "text": "ic"
+  },
+  {
+    "id": 533,
+    "startMs": 202670,
+    "endMs": 202850,
+    "text": "AI"
+  },
+  {
+    "id": 534,
+    "startMs": 202850,
+    "endMs": 203090,
+    "text": "."
+  },
+  {
+    "id": 535,
+    "startMs": 203090,
+    "endMs": 203260,
+    "text": "As"
+  },
+  {
+    "id": 536,
+    "startMs": 203260,
+    "endMs": 203980,
+    "text": "revealed"
+  },
+  {
+    "id": 537,
+    "startMs": 203980,
+    "endMs": 204110,
+    "text": "at"
+  },
+  {
+    "id": 538,
+    "startMs": 204110,
+    "endMs": 204450,
+    "text": "Lang"
+  },
+  {
+    "id": 539,
+    "startMs": 204450,
+    "endMs": 204640,
+    "text": "ch"
+  },
+  {
+    "id": 540,
+    "startMs": 204640,
+    "endMs": 204870,
+    "text": "ane"
+  },
+  {
+    "id": 541,
+    "startMs": 204870,
+    "endMs": 205040,
+    "text": "'s"
+  },
+  {
+    "id": 542,
+    "startMs": 205040,
+    "endMs": 205870,
+    "text": "interrupt"
+  },
+  {
+    "id": 543,
+    "startMs": 205870,
+    "endMs": 206310,
+    "text": "26"
+  },
+  {
+    "id": 544,
+    "startMs": 206310,
+    "endMs": 207360,
+    "text": "conference"
+  },
+  {
+    "id": 545,
+    "startMs": 207360,
+    "endMs": 207390,
+    "text": ","
+  },
+  {
+    "id": 546,
+    "startMs": 207390,
+    "endMs": 207720,
+    "text": "modern"
+  },
+  {
+    "id": 547,
+    "startMs": 207720,
+    "endMs": 208320,
+    "text": "production"
+  },
+  {
+    "id": 548,
+    "startMs": 208320,
+    "endMs": 208880,
+    "text": "AI"
+  },
+  {
+    "id": 549,
+    "startMs": 208880,
+    "endMs": 209080,
+    "text": "is"
+  },
+  {
+    "id": 550,
+    "startMs": 209080,
+    "endMs": 209200,
+    "text": "no"
+  },
+  {
+    "id": 551,
+    "startMs": 209200,
+    "endMs": 209600,
+    "text": "longer"
+  },
+  {
+    "id": 552,
+    "startMs": 209600,
+    "endMs": 209680,
+    "text": "a"
+  },
+  {
+    "id": 553,
+    "startMs": 209680,
+    "endMs": 210190,
+    "text": "single"
+  },
+  {
+    "id": 554,
+    "startMs": 210190,
+    "endMs": 210290,
+    "text": "model"
+  },
+  {
+    "id": 555,
+    "startMs": 210290,
+    "endMs": 210780,
+    "text": "in"
+  },
+  {
+    "id": 556,
+    "startMs": 210780,
+    "endMs": 211040,
+    "text": "a"
+  },
+  {
+    "id": 557,
+    "startMs": 211040,
+    "endMs": 211200,
+    "text": "loop"
+  },
+  {
+    "id": 558,
+    "startMs": 211200,
+    "endMs": 211450,
+    "text": "."
+  },
+  {
+    "id": 559,
+    "startMs": 211450,
+    "endMs": 211620,
+    "text": "It"
+  },
+  {
+    "id": 560,
+    "startMs": 211620,
+    "endMs": 211790,
+    "text": "is"
+  },
+  {
+    "id": 561,
+    "startMs": 211790,
+    "endMs": 211870,
+    "text": "a"
+  },
+  {
+    "id": 562,
+    "startMs": 211870,
+    "endMs": 212890,
+    "text": "structured"
+  },
+  {
+    "id": 563,
+    "startMs": 212890,
+    "endMs": 213140,
+    "text": "graph"
+  },
+  {
+    "id": 564,
+    "startMs": 213140,
+    "endMs": 213310,
+    "text": "of"
+  },
+  {
+    "id": 565,
+    "startMs": 213310,
+    "endMs": 214240,
+    "text": "specialized"
+  },
+  {
+    "id": 566,
+    "startMs": 214240,
+    "endMs": 214660,
+    "text": "micro"
+  },
+  {
+    "id": 567,
+    "startMs": 214660,
+    "endMs": 215170,
+    "text": "agents"
+  },
+  {
+    "id": 568,
+    "startMs": 215170,
+    "endMs": 216240,
+    "text": "orchestrated"
+  },
+  {
+    "id": 569,
+    "startMs": 216240,
+    "endMs": 216420,
+    "text": "by"
+  },
+  {
+    "id": 570,
+    "startMs": 216420,
+    "endMs": 216520,
+    "text": "a"
+  },
+  {
+    "id": 571,
+    "startMs": 216520,
+    "endMs": 216900,
+    "text": "thin"
+  },
+  {
+    "id": 572,
+    "startMs": 216900,
+    "endMs": 217790,
+    "text": "supervisor"
+  },
+  {
+    "id": 573,
+    "startMs": 217790,
+    "endMs": 217880,
+    "text": "."
+  },
+  {
+    "id": 574,
+    "startMs": 217880,
+    "endMs": 218320,
+    "text": "In"
+  },
+  {
+    "id": 575,
+    "startMs": 218320,
+    "endMs": 218700,
+    "text": "an"
+  },
+  {
+    "id": 576,
+    "startMs": 218700,
+    "endMs": 218770,
+    "text": "ag"
+  },
+  {
+    "id": 577,
+    "startMs": 218770,
+    "endMs": 218980,
+    "text": "ent"
+  },
+  {
+    "id": 578,
+    "startMs": 218980,
+    "endMs": 219210,
+    "text": "ic"
+  },
+  {
+    "id": 579,
+    "startMs": 219210,
+    "endMs": 220320,
+    "text": "architecture"
+  },
+  {
+    "id": 580,
+    "startMs": 220320,
+    "endMs": 220630,
+    "text": ","
+  },
+  {
+    "id": 581,
+    "startMs": 220630,
+    "endMs": 220920,
+    "text": "you"
+  },
+  {
+    "id": 582,
+    "startMs": 220920,
+    "endMs": 221140,
+    "text": "do"
+  },
+  {
+    "id": 583,
+    "startMs": 221140,
+    "endMs": 221650,
+    "text": "not"
+  },
+  {
+    "id": 584,
+    "startMs": 221650,
+    "endMs": 221950,
+    "text": "have"
+  },
+  {
+    "id": 585,
+    "startMs": 221950,
+    "endMs": 222320,
+    "text": "one"
+  },
+  {
+    "id": 586,
+    "startMs": 222320,
+    "endMs": 222720,
+    "text": "model"
+  },
+  {
+    "id": 587,
+    "startMs": 222720,
+    "endMs": 223120,
+    "text": "doing"
+  },
+  {
+    "id": 588,
+    "startMs": 223120,
+    "endMs": 223800,
+    "text": "everything"
+  },
+  {
+    "id": 589,
+    "startMs": 223800,
+    "endMs": 224080,
+    "text": "."
+  },
+  {
+    "id": 590,
+    "startMs": 224080,
+    "endMs": 224300,
+    "text": "You"
+  },
+  {
+    "id": 591,
+    "startMs": 224300,
+    "endMs": 224610,
+    "text": "have"
+  },
+  {
+    "id": 592,
+    "startMs": 224610,
+    "endMs": 224660,
+    "text": "a"
+  },
+  {
+    "id": 593,
+    "startMs": 224660,
+    "endMs": 225440,
+    "text": "supervisor"
+  },
+  {
+    "id": 594,
+    "startMs": 225440,
+    "endMs": 225770,
+    "text": "agent"
+  },
+  {
+    "id": 595,
+    "startMs": 225770,
+    "endMs": 226040,
+    "text": "that"
+  },
+  {
+    "id": 596,
+    "startMs": 226040,
+    "endMs": 226590,
+    "text": "breaks"
+  },
+  {
+    "id": 597,
+    "startMs": 226590,
+    "endMs": 227120,
+    "text": "complex"
+  },
+  {
+    "id": 598,
+    "startMs": 227120,
+    "endMs": 227890,
+    "text": "requirements"
+  },
+  {
+    "id": 599,
+    "startMs": 227890,
+    "endMs": 228180,
+    "text": "into"
+  },
+  {
+    "id": 600,
+    "startMs": 228180,
+    "endMs": 228720,
+    "text": "directed"
+  },
+  {
+    "id": 601,
+    "startMs": 228720,
+    "endMs": 228920,
+    "text": "ac"
+  },
+  {
+    "id": 602,
+    "startMs": 228920,
+    "endMs": 228920,
+    "text": "y"
+  },
+  {
+    "id": 603,
+    "startMs": 228920,
+    "endMs": 229070,
+    "text": "cl"
+  },
+  {
+    "id": 604,
+    "startMs": 229070,
+    "endMs": 229420,
+    "text": "ic"
+  },
+  {
+    "id": 605,
+    "startMs": 229420,
+    "endMs": 229650,
+    "text": "graphs"
+  },
+  {
+    "id": 606,
+    "startMs": 229650,
+    "endMs": 229840,
+    "text": "."
+  },
+  {
+    "id": 607,
+    "startMs": 229840,
+    "endMs": 230020,
+    "text": "In"
+  },
+  {
+    "id": 608,
+    "startMs": 230020,
+    "endMs": 230850,
+    "text": "this"
+  },
+  {
+    "id": 609,
+    "startMs": 230850,
+    "endMs": 230970,
+    "text": "swarm"
+  },
+  {
+    "id": 610,
+    "startMs": 230970,
+    "endMs": 231030,
+    "text": ","
+  },
+  {
+    "id": 611,
+    "startMs": 231030,
+    "endMs": 231120,
+    "text": "a"
+  },
+  {
+    "id": 612,
+    "startMs": 231120,
+    "endMs": 232060,
+    "text": "researcher"
+  },
+  {
+    "id": 613,
+    "startMs": 232060,
+    "endMs": 232510,
+    "text": "agent"
+  },
+  {
+    "id": 614,
+    "startMs": 232510,
+    "endMs": 233290,
+    "text": "queries"
+  },
+  {
+    "id": 615,
+    "startMs": 233290,
+    "endMs": 233740,
+    "text": "vector"
+  },
+  {
+    "id": 616,
+    "startMs": 233740,
+    "endMs": 234170,
+    "text": "embed"
+  },
+  {
+    "id": 617,
+    "startMs": 234170,
+    "endMs": 234260,
+    "text": "d"
+  },
+  {
+    "id": 618,
+    "startMs": 234260,
+    "endMs": 234630,
+    "text": "ings"
+  },
+  {
+    "id": 619,
+    "startMs": 234630,
+    "endMs": 235040,
+    "text": "."
+  },
+  {
+    "id": 620,
+    "startMs": 235040,
+    "endMs": 235080,
+    "text": "A"
+  },
+  {
+    "id": 621,
+    "startMs": 235080,
+    "endMs": 235120,
+    "text": "c"
+  },
+  {
+    "id": 622,
+    "startMs": 235120,
+    "endMs": 235460,
+    "text": "oder"
+  },
+  {
+    "id": 623,
+    "startMs": 235460,
+    "endMs": 235920,
+    "text": "agent"
+  },
+  {
+    "id": 624,
+    "startMs": 235920,
+    "endMs": 236340,
+    "text": "writes"
+  },
+  {
+    "id": 625,
+    "startMs": 236340,
+    "endMs": 236800,
+    "text": "modular"
+  },
+  {
+    "id": 626,
+    "startMs": 236800,
+    "endMs": 237200,
+    "text": "code"
+  },
+  {
+    "id": 627,
+    "startMs": 237200,
+    "endMs": 237830,
+    "text": "inside"
+  },
+  {
+    "id": 628,
+    "startMs": 237830,
+    "endMs": 238550,
+    "text": "sandbox"
+  },
+  {
+    "id": 629,
+    "startMs": 238550,
+    "endMs": 238560,
+    "text": "ed"
+  },
+  {
+    "id": 630,
+    "startMs": 238560,
+    "endMs": 239180,
+    "text": "virtual"
+  },
+  {
+    "id": 631,
+    "startMs": 239180,
+    "endMs": 240260,
+    "text": "environments"
+  },
+  {
+    "id": 632,
+    "startMs": 240260,
+    "endMs": 240310,
+    "text": "and"
+  },
+  {
+    "id": 633,
+    "startMs": 240310,
+    "endMs": 241090,
+    "text": "a"
+  },
+  {
+    "id": 634,
+    "startMs": 241090,
+    "endMs": 241450,
+    "text": "dedicated"
+  },
+  {
+    "id": 635,
+    "startMs": 241450,
+    "endMs": 241990,
+    "text": "critic"
+  },
+  {
+    "id": 636,
+    "startMs": 241990,
+    "endMs": 242440,
+    "text": "agent"
+  },
+  {
+    "id": 637,
+    "startMs": 242440,
+    "endMs": 242800,
+    "text": "runs"
+  },
+  {
+    "id": 638,
+    "startMs": 242800,
+    "endMs": 243160,
+    "text": "unit"
+  },
+  {
+    "id": 639,
+    "startMs": 243160,
+    "endMs": 243810,
+    "text": "tests"
+  },
+  {
+    "id": 640,
+    "startMs": 243810,
+    "endMs": 243920,
+    "text": "while"
+  },
+  {
+    "id": 641,
+    "startMs": 243920,
+    "endMs": 244760,
+    "text": "inspecting"
+  },
+  {
+    "id": 642,
+    "startMs": 244760,
+    "endMs": 244980,
+    "text": "for"
+  },
+  {
+    "id": 643,
+    "startMs": 244980,
+    "endMs": 245640,
+    "text": "security"
+  },
+  {
+    "id": 644,
+    "startMs": 245640,
+    "endMs": 247120,
+    "text": "vulnerabilities"
+  },
+  {
+    "id": 645,
+    "startMs": 247120,
+    "endMs": 247140,
+    "text": "."
+  },
+  {
+    "id": 646,
+    "startMs": 247140,
+    "endMs": 247300,
+    "text": "If"
+  },
+  {
+    "id": 647,
+    "startMs": 247300,
+    "endMs": 247360,
+    "text": "a"
+  },
+  {
+    "id": 648,
+    "startMs": 247360,
+    "endMs": 247930,
+    "text": "test"
+  },
+  {
+    "id": 649,
+    "startMs": 247930,
+    "endMs": 248100,
+    "text": "fails"
+  },
+  {
+    "id": 650,
+    "startMs": 248100,
+    "endMs": 248320,
+    "text": ","
+  },
+  {
+    "id": 651,
+    "startMs": 248320,
+    "endMs": 248540,
+    "text": "the"
+  },
+  {
+    "id": 652,
+    "startMs": 248540,
+    "endMs": 249280,
+    "text": "supervisor"
+  },
+  {
+    "id": 653,
+    "startMs": 249280,
+    "endMs": 249800,
+    "text": "roots"
+  },
+  {
+    "id": 654,
+    "startMs": 249800,
+    "endMs": 249840,
+    "text": "the"
+  },
+  {
+    "id": 655,
+    "startMs": 249840,
+    "endMs": 250440,
+    "text": "exact"
+  },
+  {
+    "id": 656,
+    "startMs": 250440,
+    "endMs": 250990,
+    "text": "stack"
+  },
+  {
+    "id": 657,
+    "startMs": 250990,
+    "endMs": 251200,
+    "text": "."
+  },
+  {
+    "id": 658,
+    "startMs": 251200,
+    "endMs": 251560,
+    "text": "Trace"
+  },
+  {
+    "id": 659,
+    "startMs": 251560,
+    "endMs": 251850,
+    "text": "back"
+  },
+  {
+    "id": 660,
+    "startMs": 251850,
+    "endMs": 252020,
+    "text": "to"
+  },
+  {
+    "id": 661,
+    "startMs": 252020,
+    "endMs": 252200,
+    "text": "the"
+  },
+  {
+    "id": 662,
+    "startMs": 252200,
+    "endMs": 252350,
+    "text": "c"
+  },
+  {
+    "id": 663,
+    "startMs": 252350,
+    "endMs": 252550,
+    "text": "oder"
+  },
+  {
+    "id": 664,
+    "startMs": 252550,
+    "endMs": 252690,
+    "text": ","
+  },
+  {
+    "id": 665,
+    "startMs": 252690,
+    "endMs": 252980,
+    "text": "iter"
+  },
+  {
+    "id": 666,
+    "startMs": 252980,
+    "endMs": 253340,
+    "text": "ating"
+  },
+  {
+    "id": 667,
+    "startMs": 253340,
+    "endMs": 253840,
+    "text": "autonom"
+  },
+  {
+    "id": 668,
+    "startMs": 253840,
+    "endMs": 254240,
+    "text": "ously"
+  },
+  {
+    "id": 669,
+    "startMs": 254240,
+    "endMs": 254520,
+    "text": "for"
+  },
+  {
+    "id": 670,
+    "startMs": 254520,
+    "endMs": 254770,
+    "text": "hours"
+  },
+  {
+    "id": 671,
+    "startMs": 254770,
+    "endMs": 255270,
+    "text": "without"
+  },
+  {
+    "id": 672,
+    "startMs": 255270,
+    "endMs": 255340,
+    "text": "a"
+  },
+  {
+    "id": 673,
+    "startMs": 255340,
+    "endMs": 255840,
+    "text": "single"
+  },
+  {
+    "id": 674,
+    "startMs": 255840,
+    "endMs": 256240,
+    "text": "human"
+  },
+  {
+    "id": 675,
+    "startMs": 256240,
+    "endMs": 256410,
+    "text": "key"
+  },
+  {
+    "id": 676,
+    "startMs": 256410,
+    "endMs": 256710,
+    "text": "stroke"
+  },
+  {
+    "id": 677,
+    "startMs": 256710,
+    "endMs": 256880,
+    "text": "."
+  },
+  {
+    "id": 678,
+    "startMs": 256880,
+    "endMs": 256880,
+    "text": "This"
+  },
+  {
+    "id": 679,
+    "startMs": 256880,
+    "endMs": 257930,
+    "text": "brings"
+  },
+  {
+    "id": 680,
+    "startMs": 257930,
+    "endMs": 257960,
+    "text": "us"
+  },
+  {
+    "id": 681,
+    "startMs": 257960,
+    "endMs": 258250,
+    "text": "to"
+  },
+  {
+    "id": 682,
+    "startMs": 258250,
+    "endMs": 258410,
+    "text": "the"
+  },
+  {
+    "id": 683,
+    "startMs": 258410,
+    "endMs": 258770,
+    "text": "most"
+  },
+  {
+    "id": 684,
+    "startMs": 258770,
+    "endMs": 259500,
+    "text": "critical"
+  },
+  {
+    "id": 685,
+    "startMs": 259500,
+    "endMs": 260410,
+    "text": "revelation"
+  },
+  {
+    "id": 686,
+    "startMs": 260410,
+    "endMs": 260800,
+    "text": "of"
+  },
+  {
+    "id": 687,
+    "startMs": 260800,
+    "endMs": 261360,
+    "text": "20"
+  },
+  {
+    "id": 688,
+    "startMs": 261360,
+    "endMs": 262140,
+    "text": "26"
+  },
+  {
+    "id": 689,
+    "startMs": 262140,
+    "endMs": 262320,
+    "text": "raw"
+  },
+  {
+    "id": 690,
+    "startMs": 262320,
+    "endMs": 262720,
+    "text": "model"
+  },
+  {
+    "id": 691,
+    "startMs": 262720,
+    "endMs": 263550,
+    "text": "intelligence"
+  },
+  {
+    "id": 692,
+    "startMs": 263550,
+    "endMs": 263780,
+    "text": "is"
+  },
+  {
+    "id": 693,
+    "startMs": 263780,
+    "endMs": 264240,
+    "text": "rapidly"
+  },
+  {
+    "id": 694,
+    "startMs": 264240,
+    "endMs": 264720,
+    "text": "becoming"
+  },
+  {
+    "id": 695,
+    "startMs": 264720,
+    "endMs": 265290,
+    "text": "commod"
+  },
+  {
+    "id": 696,
+    "startMs": 265290,
+    "endMs": 266120,
+    "text": "itized"
+  },
+  {
+    "id": 697,
+    "startMs": 266120,
+    "endMs": 266120,
+    "text": "."
+  },
+  {
+    "id": 698,
+    "startMs": 266120,
+    "endMs": 266620,
+    "text": "The"
+  },
+  {
+    "id": 699,
+    "startMs": 266620,
+    "endMs": 266770,
+    "text": "real"
+  },
+  {
+    "id": 700,
+    "startMs": 266770,
+    "endMs": 267990,
+    "text": "technological"
+  },
+  {
+    "id": 701,
+    "startMs": 267990,
+    "endMs": 268360,
+    "text": "mode"
+  },
+  {
+    "id": 702,
+    "startMs": 268360,
+    "endMs": 268750,
+    "text": "is"
+  },
+  {
+    "id": 703,
+    "startMs": 268750,
+    "endMs": 268820,
+    "text": "the"
+  },
+  {
+    "id": 704,
+    "startMs": 268820,
+    "endMs": 269570,
+    "text": "software"
+  },
+  {
+    "id": 705,
+    "startMs": 269570,
+    "endMs": 270130,
+    "text": "harness"
+  },
+  {
+    "id": 706,
+    "startMs": 270130,
+    "endMs": 270650,
+    "text": ","
+  },
+  {
+    "id": 707,
+    "startMs": 270650,
+    "endMs": 270650,
+    "text": "an"
+  },
+  {
+    "id": 708,
+    "startMs": 270650,
+    "endMs": 271030,
+    "text": "open"
+  },
+  {
+    "id": 709,
+    "startMs": 271030,
+    "endMs": 271710,
+    "text": "source"
+  },
+  {
+    "id": 710,
+    "startMs": 271710,
+    "endMs": 272240,
+    "text": "27"
+  },
+  {
+    "id": 711,
+    "startMs": 272240,
+    "endMs": 272800,
+    "text": "billion"
+  },
+  {
+    "id": 712,
+    "startMs": 272800,
+    "endMs": 273460,
+    "text": "parameter"
+  },
+  {
+    "id": 713,
+    "startMs": 273460,
+    "endMs": 273820,
+    "text": "model"
+  },
+  {
+    "id": 714,
+    "startMs": 273820,
+    "endMs": 274330,
+    "text": "wrapped"
+  },
+  {
+    "id": 715,
+    "startMs": 274330,
+    "endMs": 274840,
+    "text": "inside"
+  },
+  {
+    "id": 716,
+    "startMs": 274840,
+    "endMs": 274910,
+    "text": "a"
+  },
+  {
+    "id": 717,
+    "startMs": 274910,
+    "endMs": 275200,
+    "text": "state"
+  },
+  {
+    "id": 718,
+    "startMs": 275200,
+    "endMs": 275410,
+    "text": "ful"
+  },
+  {
+    "id": 719,
+    "startMs": 275410,
+    "endMs": 275770,
+    "text": "graph"
+  },
+  {
+    "id": 720,
+    "startMs": 275770,
+    "endMs": 276280,
+    "text": "harness"
+  },
+  {
+    "id": 721,
+    "startMs": 276280,
+    "endMs": 276570,
+    "text": "with"
+  },
+  {
+    "id": 722,
+    "startMs": 276570,
+    "endMs": 277160,
+    "text": "sandbox"
+  },
+  {
+    "id": 723,
+    "startMs": 277160,
+    "endMs": 277280,
+    "text": "ed"
+  },
+  {
+    "id": 724,
+    "startMs": 277280,
+    "endMs": 278120,
+    "text": "."
+  },
+  {
+    "id": 725,
+    "startMs": 278120,
+    "endMs": 278960,
+    "text": "Execution"
+  },
+  {
+    "id": 726,
+    "startMs": 278960,
+    "endMs": 279040,
+    "text": "and"
+  },
+  {
+    "id": 727,
+    "startMs": 279040,
+    "endMs": 279360,
+    "text": "deter"
+  },
+  {
+    "id": 728,
+    "startMs": 279360,
+    "endMs": 279590,
+    "text": "mon"
+  },
+  {
+    "id": 729,
+    "startMs": 279590,
+    "endMs": 280010,
+    "text": "istic"
+  },
+  {
+    "id": 730,
+    "startMs": 280010,
+    "endMs": 280740,
+    "text": "evaluation"
+  },
+  {
+    "id": 731,
+    "startMs": 280740,
+    "endMs": 281450,
+    "text": "routinely"
+  },
+  {
+    "id": 732,
+    "startMs": 281450,
+    "endMs": 281890,
+    "text": "outper"
+  },
+  {
+    "id": 733,
+    "startMs": 281890,
+    "endMs": 282270,
+    "text": "forms"
+  },
+  {
+    "id": 734,
+    "startMs": 282270,
+    "endMs": 282810,
+    "text": "massive"
+  },
+  {
+    "id": 735,
+    "startMs": 282810,
+    "endMs": 283270,
+    "text": "closed"
+  },
+  {
+    "id": 736,
+    "startMs": 283270,
+    "endMs": 283890,
+    "text": "frontier"
+  },
+  {
+    "id": 737,
+    "startMs": 283890,
+    "endMs": 284350,
+    "text": "models"
+  },
+  {
+    "id": 738,
+    "startMs": 284350,
+    "endMs": 285020,
+    "text": "trapped"
+  },
+  {
+    "id": 739,
+    "startMs": 285020,
+    "endMs": 285360,
+    "text": "inside"
+  },
+  {
+    "id": 740,
+    "startMs": 285360,
+    "endMs": 285450,
+    "text": "a"
+  },
+  {
+    "id": 741,
+    "startMs": 285450,
+    "endMs": 285920,
+    "text": "basic"
+  },
+  {
+    "id": 742,
+    "startMs": 285920,
+    "endMs": 286250,
+    "text": "web"
+  },
+  {
+    "id": 743,
+    "startMs": 286250,
+    "endMs": 286390,
+    "text": "UI"
+  },
+  {
+    "id": 744,
+    "startMs": 286390,
+    "endMs": 286670,
+    "text": "."
+  },
+  {
+    "id": 745,
+    "startMs": 286670,
+    "endMs": 287420,
+    "text": "By"
+  },
+  {
+    "id": 746,
+    "startMs": 287420,
+    "endMs": 287730,
+    "text": "20"
+  },
+  {
+    "id": 747,
+    "startMs": 287730,
+    "endMs": 288040,
+    "text": "27"
+  },
+  {
+    "id": 748,
+    "startMs": 288040,
+    "endMs": 288160,
+    "text": ","
+  },
+  {
+    "id": 749,
+    "startMs": 288160,
+    "endMs": 288440,
+    "text": "the"
+  },
+  {
+    "id": 750,
+    "startMs": 288440,
+    "endMs": 289380,
+    "text": "artificial"
+  },
+  {
+    "id": 751,
+    "startMs": 289380,
+    "endMs": 290510,
+    "text": "intelligence"
+  },
+  {
+    "id": 752,
+    "startMs": 290510,
+    "endMs": 291360,
+    "text": "landscape"
+  },
+  {
+    "id": 753,
+    "startMs": 291360,
+    "endMs": 291730,
+    "text": "will"
+  },
+  {
+    "id": 754,
+    "startMs": 291730,
+    "endMs": 292200,
+    "text": "split"
+  },
+  {
+    "id": 755,
+    "startMs": 292200,
+    "endMs": 292570,
+    "text": "into"
+  },
+  {
+    "id": 756,
+    "startMs": 292570,
+    "endMs": 292850,
+    "text": "two"
+  },
+  {
+    "id": 757,
+    "startMs": 292850,
+    "endMs": 293510,
+    "text": "primary"
+  },
+  {
+    "id": 758,
+    "startMs": 293510,
+    "endMs": 294080,
+    "text": "paths"
+  },
+  {
+    "id": 759,
+    "startMs": 294080,
+    "endMs": 294080,
+    "text": ","
+  },
+  {
+    "id": 760,
+    "startMs": 294080,
+    "endMs": 294270,
+    "text": "sub"
+  },
+  {
+    "id": 761,
+    "startMs": 294270,
+    "endMs": 294330,
+    "text": "-"
+  },
+  {
+    "id": 762,
+    "startMs": 294330,
+    "endMs": 294710,
+    "text": "second"
+  },
+  {
+    "id": 763,
+    "startMs": 294710,
+    "endMs": 295410,
+    "text": "interactive"
+  },
+  {
+    "id": 764,
+    "startMs": 295410,
+    "endMs": 295730,
+    "text": "voice"
+  },
+  {
+    "id": 765,
+    "startMs": 295730,
+    "endMs": 296110,
+    "text": "agents"
+  },
+  {
+    "id": 766,
+    "startMs": 296110,
+    "endMs": 296620,
+    "text": "handling"
+  },
+  {
+    "id": 767,
+    "startMs": 296620,
+    "endMs": 296860,
+    "text": "real"
+  },
+  {
+    "id": 768,
+    "startMs": 296860,
+    "endMs": 297110,
+    "text": "time"
+  },
+  {
+    "id": 769,
+    "startMs": 297110,
+    "endMs": 297360,
+    "text": "."
+  },
+  {
+    "id": 770,
+    "startMs": 297360,
+    "endMs": 298430,
+    "text": "Customer"
+  },
+  {
+    "id": 771,
+    "startMs": 298430,
+    "endMs": 299960,
+    "text": "experiences"
+  },
+  {
+    "id": 772,
+    "startMs": 299960,
+    "endMs": 300080,
+    "text": "and"
+  },
+  {
+    "id": 773,
+    "startMs": 300080,
+    "endMs": 300480,
+    "text": "deeply"
+  },
+  {
+    "id": 774,
+    "startMs": 300480,
+    "endMs": 301280,
+    "text": "resilient"
+  },
+  {
+    "id": 775,
+    "startMs": 301280,
+    "endMs": 301280,
+    "text": ","
+  },
+  {
+    "id": 776,
+    "startMs": 301390,
+    "endMs": 302070,
+    "text": "asynchronous"
+  },
+  {
+    "id": 777,
+    "startMs": 302070,
+    "endMs": 302400,
+    "text": "multi"
+  },
+  {
+    "id": 778,
+    "startMs": 302400,
+    "endMs": 302530,
+    "text": "-"
+  },
+  {
+    "id": 779,
+    "startMs": 302530,
+    "endMs": 302790,
+    "text": "agent"
+  },
+  {
+    "id": 780,
+    "startMs": 302790,
+    "endMs": 302920,
+    "text": "sw"
+  },
+  {
+    "id": 781,
+    "startMs": 302920,
+    "endMs": 303240,
+    "text": "arms"
+  },
+  {
+    "id": 782,
+    "startMs": 303240,
+    "endMs": 303780,
+    "text": "running"
+  },
+  {
+    "id": 783,
+    "startMs": 303780,
+    "endMs": 303970,
+    "text": "eight"
+  },
+  {
+    "id": 784,
+    "startMs": 303970,
+    "endMs": 304030,
+    "text": "-"
+  },
+  {
+    "id": 785,
+    "startMs": 304030,
+    "endMs": 304290,
+    "text": "hour"
+  },
+  {
+    "id": 786,
+    "startMs": 304290,
+    "endMs": 305010,
+    "text": "engineering"
+  },
+  {
+    "id": 787,
+    "startMs": 305010,
+    "endMs": 305270,
+    "text": "work"
+  },
+  {
+    "id": 788,
+    "startMs": 305270,
+    "endMs": 305600,
+    "text": "flows"
+  },
+  {
+    "id": 789,
+    "startMs": 305600,
+    "endMs": 305840,
+    "text": "."
+  },
+  {
+    "id": 790,
+    "startMs": 305840,
+    "endMs": 306500,
+    "text": "The"
+  },
+  {
+    "id": 791,
+    "startMs": 306500,
+    "endMs": 306500,
+    "text": "era"
+  },
+  {
+    "id": 792,
+    "startMs": 306500,
+    "endMs": 306950,
+    "text": "of"
+  },
+  {
+    "id": 793,
+    "startMs": 306950,
+    "endMs": 307380,
+    "text": "prompt"
+  },
+  {
+    "id": 794,
+    "startMs": 307380,
+    "endMs": 307710,
+    "text": "."
+  },
+  {
+    "id": 795,
+    "startMs": 307710,
+    "endMs": 308920,
+    "text": "Engineering"
+  },
+  {
+    "id": 796,
+    "startMs": 308920,
+    "endMs": 309140,
+    "text": "is"
+  },
+  {
+    "id": 797,
+    "startMs": 309140,
+    "endMs": 309580,
+    "text": "over"
+  },
+  {
+    "id": 798,
+    "startMs": 309580,
+    "endMs": 310070,
+    "text": "."
+  },
+  {
+    "id": 799,
+    "startMs": 310070,
+    "endMs": 310190,
+    "text": "The"
+  },
+  {
+    "id": 800,
+    "startMs": 310190,
+    "endMs": 310460,
+    "text": "era"
+  },
+  {
+    "id": 801,
+    "startMs": 310460,
+    "endMs": 310720,
+    "text": "of"
+  },
+  {
+    "id": 802,
+    "startMs": 310720,
+    "endMs": 311270,
+    "text": "systems"
+  },
+  {
+    "id": 803,
+    "startMs": 311270,
+    "endMs": 312390,
+    "text": "architecture"
+  },
+  {
+    "id": 804,
+    "startMs": 312390,
+    "endMs": 312630,
+    "text": "has"
+  },
+  {
+    "id": 805,
+    "startMs": 312630,
+    "endMs": 312760,
+    "text": "begun"
+  },
+  {
+    "id": 806,
+    "startMs": 312760,
+    "endMs": 313440,
+    "text": "."
+  }
+]
