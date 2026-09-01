@@ -1,46 +1,46 @@
 ---
 name: ai-documentary-production-workflow
-description: End-to-end workflow for producing cinematic AI documentary and B-roll videos in Remotion. Includes voiceover intake, transcript timestamp sync, real company brand logos, 2.5D parallax camera, Vox-style 3D document inspection, automated GitHub push, and GitHub Actions cloud rendering.
+description: End-to-end workflow for producing cinematic AI documentary and B-roll videos in Remotion from X posts, website links, or raw voiceovers. Includes deep research, script generation, link-to-visual mapping, audio sync, real brand logos, 2.5D parallax camera, Vox-style 3D inspection, and automated GitHub rendering.
 metadata:
-  tags: remotion, documentary, workflow, audio-sync, real-logos, parallax, github-actions
+  tags: remotion, documentary, workflow, x-posts, web-research, audio-sync, real-logos, parallax, github-actions
 ---
 
 # AI Documentary & Cinematic Video Production Workflow
 
 Follow this mandatory pipeline whenever producing or updating Remotion videos:
 
-## 1. Voiceover Intake & Timestamp Extraction
-1. Locate the voiceover audio inside `public/` (e.g. `public/voiceover.wav` or `public/voiceover.mp3`).
-2. Transcribe the audio (using Whisper or local transcription script) to extract word-level and sentence-level timestamps.
-3. Compute the exact duration: `durationInFrames = Math.ceil(durationInSeconds * 30)`.
-4. Ensure `calculateMetadata` and composition definitions in `Root.tsx` match the exact duration.
+## 1. Link Intake & Deep Web/X Research
+- When the user provides X (Twitter) post links or website URLs:
+  1. Deeply inspect and research the linked content, extracting core arguments, metrics, visual assets, quotes, and video demonstrations.
+  2. Synthesize an engaging, high-retention documentary voiceover script.
+  3. Map each reference directly to the visual storyboard (e.g. *"At [00:15 - 00:25], show 3D card of this specific X post [Link: URL] or embed its video snippet"*).
 
-## 2. Real Brand Logos & Assets
-- When companies or tech brands are mentioned (OpenAI, Anthropic, Google DeepMind, Nvidia, Apple, Microsoft, etc.), NEVER use flat placeholder boxes or generic SVG shapes.
-- Use authentic brand vector SVGs in 3D glowing glassmorphism cards (`RealLogos.tsx`).
+## 2. Voiceover Audio Intake & Timestamp Sync
+1. Once the voiceover audio is provided/generated inside `public/` (e.g. `public/voiceover.wav` or `public/voiceover.mp3`).
+2. Transcribe the audio using Whisper/local scripts to extract exact sentence and word-level timestamps.
+3. Set composition `durationInFrames = Math.ceil(durationInSeconds * 30)` in `Root.tsx` and `calculateMetadata` to guarantee 100% audio sync without cutoffs or dead silence.
 
-## 3. Cinematic 2.5D Parallax Camera
+## 3. Real Brand Logos & Official Vectors
+- Whenever companies or products (OpenAI, Anthropic, Google DeepMind, Nvidia, Apple, Microsoft, etc.) are mentioned:
+  - NEVER use flat generic shapes or basic boxes.
+  - Always render official brand vector SVGs in 3D glowing glassmorphism cards (`RealLogos.tsx`).
+
+## 4. Cinematic 2.5D Parallax Camera
 - Wrap every scene in `<ParallaxCameraScene>`:
-  - Continuous subtle dolly zoom (`zoomFrom: 1.0` to `zoomTo: 1.12 - 1.14`).
-  - Positional pans (`panX`, `panY`).
-  - Ensures no visual frame is ever completely static.
+  - Continuous subtle dolly zoom (`scale: 1.0 -> 1.14`) and smooth position pans (`panX`, `panY`).
+  - Zero static scenes across the runtime.
 
-## 4. Vox-Style 3D Document Inspection & Highlighting
-- For financial statements, unit economics, code, or articles:
-  - Tilt in 3D perspective (`perspective: 1200px`, `rotateX(8deg)`, `rotateY(-6deg)`).
-  - Animate neon highlighter strips (`HighlightedTextLine`) across key statistics.
+## 5. Vox-Style 3D Document & Tweet Inspection
+- For articles, tweets, unit economics, or code:
+  - Render with 3D perspective tilt (`perspective: 1200px`, `rotateX(8deg)`, `rotateY(-6deg)`).
+  - Animate neon highlighter strips (`HighlightedTextLine`) sweeping across key text.
 
-## 5. Director Storyboard & Permission Gate
-- Draft a frame-accurate Scene Breakdown table with exact timecodes and visual descriptions.
-- Present the storyboard to the user for explicit review and feedback.
-
-## 6. Implementation & TypeScript Verification
-- Build clean, modular scene components in `src/scenes/`.
-- Verify with `npx tsc --noEmit` ensuring zero compilation errors.
+## 6. Storyboard & Link Mapping Permission Gate
+- Present the complete Visual Storyboard table with exact timecodes, script sentences, visual descriptions, and **specific X post / media links** to the user.
+- Await explicit user approval before generating Remotion composition code.
 
 ## 7. Automated GitHub Push & Cloud Rendering Workflow
-1. Stage, commit, and push all code and workflow files to GitHub `origin main`.
-2. Configure `.github/workflows/render-video.yml` with `--concurrency=2` (matching GitHub Actions 2-core runner limit).
-3. Provide the user with:
-   - Direct GitHub Actions URL for 1-click cloud rendering.
-   - Remotion Studio local URL (`http://localhost:3000`) for interactive browser preview.
+1. Verify TypeScript compilation (`npx tsc --noEmit`).
+2. Stage, commit, and push all files to GitHub `origin main`.
+3. Configure `.github/workflows/render-video.yml` with `--concurrency=2` for 2-core Linux runners.
+4. Provide direct GitHub Actions URL for 1-click cloud rendering and `http://localhost:3000` for Remotion Studio preview.

@@ -1,10 +1,11 @@
 # Project Rules: Automatic B-Roll & AI Documentary Studio
 
 - **Mandatory 7-Step Workflow**: Always follow the `ai-documentary-production-workflow` skill for video production.
+- **X / Website Research & Link-to-Visual Mapping**: When X (Twitter) posts or website links are provided, thoroughly research the source material, draft a viral voiceover script, and explicitly map which tweet, post screenshot, quote, or video clip appears at each exact timecode in the visual storyboard with source links referenced.
 - **Audio Intake & Synchronization Rule**: Always transcribe voiceover audio files inside `public/` (using Whisper/local scripts) to get exact sentence and word timestamps. Always set composition duration in `Root.tsx` and `calculateMetadata` to match the exact audio duration without cutoff or dead silence.
 - **Real Brand Logos Rule**: When tech companies or brands (OpenAI, Anthropic, Google DeepMind, Apple, Nvidia, Microsoft, etc.) are mentioned in voiceovers, NEVER use flat 2D generic shapes or basic placeholders. Always use authentic brand SVG vectors in 3D glowing glassmorphism cards (`RealLogos.tsx`).
 - **2.5D Parallax Camera & Anti-Static Rule**: Every scene must be wrapped in a virtual 2.5D camera (`ParallaxCameraScene`) with continuous subtle dolly zoom (`scale: 1.0 -> 1.14`) and slow pans. No scene must ever remain completely static.
-- **Vox-Style Document & Financial Inspection Rule**: When presenting statistics, code, costs, or articles, use 3D perspective tilt (`perspective: 1200px`, `rotateX(8deg)`, `rotateY(-6deg)`) and animated neon highlighter strips (`HighlightedTextLine`).
+- **Vox-Style Document & Financial Inspection Rule**: When presenting statistics, code, tweets, costs, or articles, use 3D perspective tilt (`perspective: 1200px`, `rotateX(8deg)`, `rotateY(-6deg)`) and animated neon highlighter strips (`HighlightedTextLine`).
 - **Storyboard Permission Gate**: Never generate Remotion composition code without first presenting a detailed visual/pacing storyboard and receiving explicit user approval.
 - **Automated Verification & GitHub Push**: Always verify TypeScript compilation (`npx tsc --noEmit`), stage, commit, and push to GitHub `origin main`. Ensure `.github/workflows/render-video.yml` uses `--concurrency=2` for 2-core GitHub Actions runners.
 - **Local Remotion Studio Preview**: Always provide `http://localhost:3000` so the user can inspect the video live in their browser.
