@@ -1,52 +1,40 @@
 import React from "react";
 import { AbsoluteFill, Sequence, staticFile, Audio } from "remotion";
-import { Scene1TrioIntro } from "./scenes/Scene1TrioIntro";
-import { Scene2DatacenterCost } from "./scenes/Scene2DatacenterCost";
-import { Scene3FlagshipDecoy } from "./scenes/Scene3FlagshipDecoy";
-import { Scene4RestaurantMenu } from "./scenes/Scene4RestaurantMenu";
-import { Scene5CarTrimStorage } from "./scenes/Scene5CarTrimStorage";
-import { Scene6RoutingPlumbing } from "./scenes/Scene6RoutingPlumbing";
-import { Scene7IllusionOfChoice } from "./scenes/Scene7IllusionOfChoice";
+import { Act1SuddenShockwave } from "./scenes/gemini38/Act1SuddenShockwave";
+import { Act2JetskiPlatform } from "./scenes/gemini38/Act2JetskiPlatform";
+import { Act3KillingSlopLatency } from "./scenes/gemini38/Act3KillingSlopLatency";
+import { Act4TitanShippingWar } from "./scenes/gemini38/Act4TitanShippingWar";
+import { Act5TokenEconomicsOutro } from "./scenes/gemini38/Act5TokenEconomicsOutro";
 
 export const MyVideo: React.FC = () => {
   return (
-    <AbsoluteFill style={{ backgroundColor: "#08090C" }}>
-      {/* 1. Voiceover Audio Track */}
+    <AbsoluteFill style={{ backgroundColor: "#07080C" }}>
+      {/* 1. Studio Quality Neural Voiceover Audio Track */}
       <Audio src={staticFile("voiceover.wav")} />
 
-      {/* 2. Scene 1: The Three Tiers (Intro & Brand Logos) */}
-      <Sequence from={0} durationInFrames={720}>
-        <Scene1TrioIntro />
+      {/* 2. Act 1: The Sudden Shockwave & The Leaks (Frames 0 - 1210) */}
+      <Sequence from={0} durationInFrames={1210}>
+        <Act1SuddenShockwave />
       </Sequence>
 
-      {/* 3. Scene 2: Datacenter Compute & GPU Burn Rate */}
-      <Sequence from={720} durationInFrames={465}>
-        <Scene2DatacenterCost />
+      {/* 3. Act 2: Inside Google's Secret Testing Platform Jetski (Frames 1210 - 2698) */}
+      <Sequence from={1210} durationInFrames={1488}>
+        <Act2JetskiPlatform />
       </Sequence>
 
-      {/* 4. Scene 3: Flagship Decoy & Bankruptcy Economics */}
-      <Sequence from={1185} durationInFrames={1260}>
-        <Scene3FlagshipDecoy />
+      {/* 4. Act 3: The Technical Overhaul - Killing AI Slop & Latency (Frames 2698 - 4118) */}
+      <Sequence from={2698} durationInFrames={1420}>
+        <Act3KillingSlopLatency />
       </Sequence>
 
-      {/* 5. Scene 4: Restaurant Menu Anchoring & Habit Loop */}
-      <Sequence from={2445} durationInFrames={2010}>
-        <Scene4RestaurantMenu />
+      {/* 5. Act 4: The 2026 AI Shipping War (Frames 4118 - 5268) */}
+      <Sequence from={4118} durationInFrames={1150}>
+        <Act4TitanShippingWar />
       </Sequence>
 
-      {/* 6. Scene 5: The Car Trim Playbook & Storage Gap */}
-      <Sequence from={4455} durationInFrames={1545}>
-        <Scene5CarTrimStorage />
-      </Sequence>
-
-      {/* 7. Scene 6: Request Routing & Infrastructure Plumbing */}
-      <Sequence from={6000} durationInFrames={1095}>
-        <Scene6RoutingPlumbing />
-      </Sequence>
-
-      {/* 8. Scene 7: The Grand Finale & Menu Illusion */}
-      <Sequence from={7095} durationInFrames={815}>
-        <Scene7IllusionOfChoice />
+      {/* 6. Act 5: Disrupting Token Economics & Road to Gemini 4 (Frames 5268 - 6387) */}
+      <Sequence from={5268} durationInFrames={1119}>
+        <Act5TokenEconomicsOutro />
       </Sequence>
     </AbsoluteFill>
   );

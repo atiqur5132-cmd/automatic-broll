@@ -1,74 +1,306 @@
 [
   {
     "id": 1,
-    "text": "Gemini 3.7 barely had time to settle, and Google is already preparing to drop another massive shockwave.",
+    "text": "Just when the developer ecosystem was beginning to digest the release of Gemini 3.7,",
     "startMs": 0,
-    "endMs": 6800,
+    "endMs": 5360,
     "startFrame": 0,
-    "endFrame": 204
+    "endFrame": 161
   },
   {
     "id": 2,
-    "text": "Internal leaks confirm that Gemini 3.8 flash is already deployed in undergoing aggressive testing.",
-    "startMs": 6800,
-    "endMs": 14560,
-    "startFrame": 204,
-    "endFrame": 437
+    "text": "Google has quietly prepared another massive shockwave.",
+    "startMs": 5360,
+    "endMs": 8160,
+    "startFrame": 160,
+    "endFrame": 245
   },
   {
     "id": 3,
-    "text": "Spotted on Google's internal development platform Jetsky, employees report early preview builds",
-    "startMs": 14560,
-    "endMs": 21200,
-    "startFrame": 436,
-    "endFrame": 636
+    "text": "Reports circulating across the tech industry confirm that Gemini 3.8 flash is not just",
+    "startMs": 8160,
+    "endMs": 14480,
+    "startFrame": 244,
+    "endFrame": 435
   },
   {
     "id": 4,
-    "text": "are noticeably faster and far more capable than 3.7. Flash, Google's engineering team focused heavily",
-    "startMs": 21200,
-    "endMs": 29040,
-    "startFrame": 636,
-    "endFrame": 872
+    "text": "an active development, it has already been compiled, deployed, and placed into internal testing",
+    "startMs": 14480,
+    "endMs": 19760,
+    "startFrame": 434,
+    "endFrame": 593
   },
   {
     "id": 5,
-    "text": "on eliminating conversational AI SLOP, cutting coding hallucinations, and driving agentic latency",
-    "startMs": 29040,
-    "endMs": 35520,
-    "startFrame": 871,
-    "endFrame": 1066
+    "text": "ahead of a surprise public drop. For developers who thought the model cycle would settle down,",
+    "startMs": 19760,
+    "endMs": 25520,
+    "startFrame": 592,
+    "endFrame": 766
   },
   {
     "id": 6,
-    "text": "down to. Near zero, this is no longer a traditional benchmark race. It is a relentless shipping",
-    "startMs": 35520,
-    "endMs": 42720,
-    "startFrame": 1065,
-    "endFrame": 1282
+    "text": "there's sudden revelation signals that the era of annual AI upgrades is officially over.",
+    "startMs": 25520,
+    "endMs": 30080,
+    "startFrame": 765,
+    "endFrame": 903
   },
   {
     "id": 7,
-    "text": "war against open AI's Astra and Anthropics Fable 5.1, with Google. Deploying monthly flash updates,",
-    "startMs": 42720,
-    "endMs": 50960,
-    "startFrame": 1281,
-    "endFrame": 1529
+    "text": "Today, we are breaking down everything leaked about Google's next frontier model,",
+    "startMs": 30080,
+    "endMs": 35440,
+    "startFrame": 902,
+    "endFrame": 1064
   },
   {
     "id": 8,
-    "text": "with rumors suggesting Fable 5-level performance at a fraction of the cost, Gemini 3.8 flash is set",
-    "startMs": 50960,
-    "endMs": 58160,
-    "startFrame": 1528,
-    "endFrame": 1745
+    "text": "from internal platform tests to architectural shifts that could redefine how we build software.",
+    "startMs": 35440,
+    "endMs": 40320,
+    "startFrame": 1063,
+    "endFrame": 1210
   },
   {
     "id": 9,
-    "text": "to rewrite AI token economics before Gemini 4 even. Arrives",
-    "startMs": 58160,
-    "endMs": 63440,
-    "startFrame": 1744,
-    "endFrame": 1904
+    "text": "The earliest traces of Gemini 3.8 flash surfaced from an unexpected place,",
+    "startMs": 40320,
+    "endMs": 46320,
+    "startFrame": 1209,
+    "endFrame": 1390
+  },
+  {
+    "id": 10,
+    "text": "Google's proprietary internal development platform, known internally as Jet Ski.",
+    "startMs": 46320,
+    "endMs": 50800,
+    "startFrame": 1389,
+    "endFrame": 1524
+  },
+  {
+    "id": 11,
+    "text": "On Jet Ski, Google engineers have reportedly been running side-by-side evaluations against",
+    "startMs": 51760,
+    "endMs": 56960,
+    "startFrame": 1552,
+    "endFrame": 1709
+  },
+  {
+    "id": 12,
+    "text": "existing production models. Early employee feedback has been remarkably consistent.",
+    "startMs": 56960,
+    "endMs": 62240,
+    "startFrame": 1708,
+    "endFrame": 1868
+  },
+  {
+    "id": 13,
+    "text": "Rather than incremental benchmarking gains, users report noticeable jumps in raw execution speed,",
+    "startMs": 62240,
+    "endMs": 69120,
+    "startFrame": 1867,
+    "endFrame": 2074
+  },
+  {
+    "id": 14,
+    "text": "multi-turn reasoning consistency, and responsiveness.",
+    "startMs": 69120,
+    "endMs": 72160,
+    "startFrame": 2073,
+    "endFrame": 2165
+  },
+  {
+    "id": 15,
+    "text": "By testing the model directly on real-world engineering workflows inside Jet Ski,",
+    "startMs": 72160,
+    "endMs": 77840,
+    "startFrame": 2164,
+    "endFrame": 2336
+  },
+  {
+    "id": 16,
+    "text": "Google appears to be tuning 3.8 flash specifically for continuous code synthesis and developer",
+    "startMs": 77840,
+    "endMs": 83200,
+    "startFrame": 2335,
+    "endFrame": 2496
+  },
+  {
+    "id": 17,
+    "text": "productivity before any public announcement. To understand why Gemini 3.8 flash matters,",
+    "startMs": 83200,
+    "endMs": 89920,
+    "startFrame": 2496,
+    "endFrame": 2698
+  },
+  {
+    "id": 18,
+    "text": "we have to examine where Gemini 3.7 flash struggled. Despite impressive multimodal capabilities,",
+    "startMs": 89920,
+    "endMs": 97200,
+    "startFrame": 2697,
+    "endFrame": 2916
+  },
+  {
+    "id": 19,
+    "text": "users frequently complained about two critical bottlenecks, conversational verbosity,",
+    "startMs": 97200,
+    "endMs": 102240,
+    "startFrame": 2916,
+    "endFrame": 3068
+  },
+  {
+    "id": 20,
+    "text": "often termed AI SLOP, an unpredictable latency in automated agentic loops. In 3.8 flash,",
+    "startMs": 102240,
+    "endMs": 109760,
+    "startFrame": 3067,
+    "endFrame": 3293
+  },
+  {
+    "id": 21,
+    "text": "Google's engineering team appears to have aggressively overhauled the decoding pipeline.",
+    "startMs": 109760,
+    "endMs": 114000,
+    "startFrame": 3292,
+    "endFrame": 3420
+  },
+  {
+    "id": 22,
+    "text": "By trimming unnecessary conversational filler and penalizing hallucinations during code",
+    "startMs": 114000,
+    "endMs": 119760,
+    "startFrame": 3420,
+    "endFrame": 3593
+  },
+  {
+    "id": 23,
+    "text": "generation, the model delivers concise, high-density outputs. For autonomous agent loops where",
+    "startMs": 119760,
+    "endMs": 126240,
+    "startFrame": 3592,
+    "endFrame": 3788
+  },
+  {
+    "id": 24,
+    "text": "every millisecond in token counts, this architectural focus directly translates to faster",
+    "startMs": 126240,
+    "endMs": 131280,
+    "startFrame": 3787,
+    "endFrame": 3939
+  },
+  {
+    "id": 25,
+    "text": "completions and lower compute overhead. This rapid release cadence reveals a profound shift in",
+    "startMs": 131280,
+    "endMs": 137280,
+    "startFrame": 3938,
+    "endFrame": 4119
+  },
+  {
+    "id": 26,
+    "text": "big tech strategy. We are no longer witnessing a conventional research race, we are in the middle",
+    "startMs": 137280,
+    "endMs": 143280,
+    "startFrame": 4118,
+    "endFrame": 4299
+  },
+  {
+    "id": 27,
+    "text": "of a brutal, high-velocity shipping war. Open AI has countered with its next-generation",
+    "startMs": 143280,
+    "endMs": 149120,
+    "startFrame": 4298,
+    "endFrame": 4474
+  },
+  {
+    "id": 28,
+    "text": "astromodels, while anthropic continues to push the boundaries of reasoning with Fable 5.1.",
+    "startMs": 149120,
+    "endMs": 154560,
+    "startFrame": 4473,
+    "endFrame": 4637
+  },
+  {
+    "id": 29,
+    "text": "Google's response is a relentless monthly deployment tempo.",
+    "startMs": 154560,
+    "endMs": 158480,
+    "startFrame": 4636,
+    "endFrame": 4755
+  },
+  {
+    "id": 30,
+    "text": "By treating the flash series as an agile, rapidly iterating product line rather than a static",
+    "startMs": 159360,
+    "endMs": 164480,
+    "startFrame": 4780,
+    "endFrame": 4935
+  },
+  {
+    "id": 31,
+    "text": "annual milestone, Google is applying unprecedented pressure on competitor margins and capturing",
+    "startMs": 164480,
+    "endMs": 169680,
+    "startFrame": 4934,
+    "endFrame": 5091
+  },
+  {
+    "id": 32,
+    "text": "developer mindshare before the competition can react. Perhaps the most disruptive aspect of",
+    "startMs": 169680,
+    "endMs": 175600,
+    "startFrame": 5090,
+    "endFrame": 5268
+  },
+  {
+    "id": 33,
+    "text": "Gemini 3.8 flash is its aggressive unit economics. Industry insiders suggest that 3.8 flash is",
+    "startMs": 175600,
+    "endMs": 183360,
+    "startFrame": 5268,
+    "endFrame": 5501
+  },
+  {
+    "id": 34,
+    "text": "targeted to achieve performance parity with anthropics flagship Fable 5, but at a fraction of the",
+    "startMs": 183360,
+    "endMs": 188640,
+    "startFrame": 5500,
+    "endFrame": 5660
+  },
+  {
+    "id": 35,
+    "text": "inference cost. If Google successfully delivers Tier 1 intelligence at sub-dollar per million token",
+    "startMs": 188640,
+    "endMs": 194880,
+    "startFrame": 5659,
+    "endFrame": 5847
+  },
+  {
+    "id": 36,
+    "text": "pricing, it will fundamentally rewrite the economics of AI software and high-volume agent swarms.",
+    "startMs": 194880,
+    "endMs": 200640,
+    "startFrame": 5846,
+    "endFrame": 6020
+  },
+  {
+    "id": 37,
+    "text": "As we look ahead to the eventual arrival of Gemini 4, Gemini 3.8 flash proves that the real",
+    "startMs": 200640,
+    "endMs": 207440,
+    "startFrame": 6019,
+    "endFrame": 6224
+  },
+  {
+    "id": 38,
+    "text": "revolution isn't just bigger parameters, it is hyper-efficient intelligence made accessible at scale.",
+    "startMs": 207440,
+    "endMs": 212880,
+    "startFrame": 6223,
+    "endFrame": 6387
   }
 ]
