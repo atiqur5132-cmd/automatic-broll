@@ -42,5 +42,5 @@ Follow this mandatory pipeline whenever producing or updating Remotion videos:
 ## 7. Automated GitHub Push & Cloud Rendering Workflow
 1. Verify TypeScript compilation (`npx tsc --noEmit`).
 2. Stage, commit, and push all files to GitHub `origin main`.
-3. Configure `.github/workflows/render-video.yml` with `--concurrency=2` for 2-core Linux runners.
+3. Configure `.github/workflows/render-video.yml` with `--concurrency=4` for rendering.
 4. Provide direct GitHub Actions URL for 1-click cloud rendering and `http://localhost:3000` for Remotion Studio preview.

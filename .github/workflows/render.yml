@@ -35,7 +35,7 @@ jobs:
         run: npm run verify
 
       - name: Cloud Render Video
-        run: npx remotion render src/index.ts ${{ inputs.composition }} out/rendered-video.mp4
+        run: npx remotion render src/index.ts ${{ inputs.composition }} out/rendered-video.mp4 --concurrency=4 --gl=angle
 
       - name: Upload Finished Artifact
         uses: actions/upload-artifact@v4
