@@ -10,3 +10,4 @@
 - **Automated Verification & GitHub Push**: Always verify TypeScript compilation (`npx tsc --noEmit`), stage, commit, and push to GitHub `origin main`. Ensure `.github/workflows/render-video.yml` uses `--concurrency=4` for rendering.
 - **Local Remotion Studio Preview**: Always provide `http://localhost:3000` so the user can inspect the video live in their browser.
 - **Psychology 3D Motion Graphics Rule**: When creating or editing vertical Psychology Shorts (`9:16`), consult and apply the `remotion-psychology-3d-motion-graphics` skill. Use `Real3DIconStage`, `Perspective3DCard`, and broadcast animations (`CameraWhipPan`, `OrigamiFoldCard`, `MaskRevealWipe`).
+- **Permanent Voiceover Rule**: Always and strictly use `msedge-tts` with voice `en-US-ChristopherNeural` (Rate: `-3%`, Pitch: `-2Hz`, Format: `AUDIO_24KHZ_96KBITRATE_MONO_MP3`) for all English tech explainer and documentary videos across all sessions. Never use inconsistent or generic robotic voices.

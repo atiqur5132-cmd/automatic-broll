@@ -15,8 +15,8 @@ Follow this mandatory pipeline whenever producing or updating Remotion videos:
   2. Synthesize an engaging, high-retention documentary voiceover script.
   3. Map each reference directly to the visual storyboard (e.g. *"At [00:15 - 00:25], show 3D card of this specific X post [Link: URL] or embed its video snippet"*).
 
-## 2. Voiceover Audio Intake & Timestamp Sync
-1. Once the voiceover audio is provided/generated inside `public/` (e.g. `public/voiceover.wav` or `public/voiceover.mp3`).
+## 2. Voiceover Synthesis & Timestamp Sync
+1. Synthesize the script using the canonical voice engine `msedge-tts` with fixed voice `en-US-ChristopherNeural` (Rate: `-3%`, Pitch: `-2Hz`, Format: `AUDIO_24KHZ_96KBITRATE_MONO_MP3`) to output `public/voiceover.mp3`.
 2. Transcribe the audio using Whisper/local scripts to extract exact sentence and word-level timestamps.
 3. Set composition `durationInFrames = Math.ceil(durationInSeconds * 30)` in `Root.tsx` and `calculateMetadata` to guarantee 100% audio sync without cutoffs or dead silence.
 
