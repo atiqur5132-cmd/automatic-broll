@@ -9,16 +9,29 @@ metadata:
 
 Follow this mandatory pipeline whenever producing or updating Remotion videos:
 
-## 1. Link Intake & Deep Web/X Research
-- When the user provides X (Twitter) post links or website URLs:
-  1. Deeply inspect and research the linked content, extracting core arguments, metrics, visual assets, quotes, and video demonstrations.
-  2. Synthesize an engaging, high-retention documentary voiceover script.
-  3. Map each reference directly to the visual storyboard (e.g. *"At [00:15 - 00:25], show 3D card of this specific X post [Link: URL] or embed its video snippet"*).
+## 1. Deep Web/X Research & High-Retention Hook Scriptwriting
+- When research material (X posts, articles, benchmarks) is provided:
+  1. Extract the core revelation, technical contradictions, raw metrics, and architectural shift.
+  2. **Mandatory Cold-Open Hook Formula (First 0-15s)**:
+     - **Strict Zero-Filler Rule**: NEVER start with "Welcome back", "In this video", "Today we will explore", or conversational pleasantries.
+     - **Sentence 1 (Immediate Disruption)**: Drop the viewer directly into the conflict or paradigm shift (e.g. *"What you are looking at is not another incremental benchmark leak. It is the architectural shift that just killed the VRAM bottleneck."*).
+     - **Sentence 2 (The Hidden Stake)**: State the massive implication for the viewer or industry within 8 seconds.
+     - **Sentence 3 (The Roadmap)**: Tease the non-obvious revelation they can't afford to miss.
+  3. **Pacing & Information Density**: High-retention technical storytelling inspired by Kai Explains & Vox. Short, punchy sentences interspersed with authoritative deep dives.
+  4. **Link-to-Visual Mapping**: Map every technical statement directly to the visual storyboard with source tweet/article links.
 
-## 2. Voiceover Synthesis & Timestamp Sync
-1. Synthesize the script using the canonical voice engine `msedge-tts` with fixed voice `en-US-ChristopherNeural` (Rate: `-3%`, Pitch: `-2Hz`, Format: `AUDIO_24KHZ_96KBITRATE_MONO_MP3`) to output `public/voiceover.mp3`.
-2. Transcribe the audio using Whisper/local scripts to extract exact sentence and word-level timestamps.
-3. Set composition `durationInFrames = Math.ceil(durationInSeconds * 30)` in `Root.tsx` and `calculateMetadata` to guarantee 100% audio sync without cutoffs or dead silence.
+## 2. Voiceover Studio Synthesis & Broadcast Mastering
+1. **Canonical Tech Explainer Voice**: Always use `msedge-tts` with fixed voice `en-US-ChristopherNeural` (100% Free & Commercial use).
+2. **Speech Physics & Tuning**:
+   - Rate: `-3%` (thoughtful, deliberate tech documentary pace — eliminates robotic rush).
+   - Pitch: `-2Hz` (grounded, authoritative resonance).
+   - Natural Pause Breaks: Inject `<break time="350ms"/>` between thought blocks and `<break time="500ms"/>` between narrative acts.
+3. **Broadcast Loudness Mastering (FFmpeg)**:
+   - Always run mastering through `loudnorm=I=-16:TP=-1.5:LRA=11,atempo=1.0` (YouTube EBU R128 standard).
+   - Output high-fidelity master `public/voiceover.wav` and 16kHz mono `public/voiceover_16k.wav`.
+4. **Frame-Accurate Whisper Transcription**:
+   - Transcribe `voiceover_16k.wav` using local Whisper to extract exact word-level and sentence-level timestamps.
+   - Set composition `durationInFrames = Math.ceil(durationInSeconds * 30)` in `Root.tsx` and `calculateMetadata`. Guarantee zero audio cutoff or trailing silence.
 
 ## 3. Real Brand Logos & Official Vectors
 - Whenever companies or products (OpenAI, Anthropic, Google DeepMind, Nvidia, Apple, Microsoft, etc.) are mentioned:
