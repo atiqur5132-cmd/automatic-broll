@@ -14,6 +14,8 @@ public/ElevenLabs_*.wav
 public/test_*.wav
 public/test_*.mp3
 public/edited_audio.wav
+public/tts_vram_temp/
+public/tts_5min_temp/
 
 # Large temporary/model folders
 whisper/

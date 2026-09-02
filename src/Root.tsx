@@ -3,7 +3,7 @@ import { Composition, CalculateMetadataFunction } from "remotion";
 import { MyVideo } from "./MyVideo";
 import "./index.css";
 
-const TOTAL_DURATION_FRAMES = 6387; // 212.88s exact sync with Whisper voiceover
+const TOTAL_DURATION_FRAMES = 7915; // 263.83s exact sync with Whisper voiceover
 
 const calculateMetadata: CalculateMetadataFunction<Record<string, unknown>> = async () => {
   return {

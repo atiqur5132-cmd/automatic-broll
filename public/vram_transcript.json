@@ -1,0 +1,692 @@
+{
+	"systeminfo": "AVX = 1 | AVX2 = 1 | AVX512 = 0 | FMA = 1 | NEON = 0 | ARM_FMA = 0 | METAL = 0 | F16C = 1 | FP16_VA = 0 | WASM_SIMD = 0 | BLAS = 0 | SSE3 = 1 | SSSE3 = 0 | VSX = 0 | CUDA = 0 | COREML = 0 | OPENVINO = 0",
+	"model": {
+		"type": "tiny",
+		"multilingual": false,
+		"vocab": 51864,
+		"audio": {
+			"ctx": 1500,
+			"state": 384,
+			"head": 6,
+			"layer": 4
+		},
+		"text": {
+			"ctx": 448,
+			"state": 384,
+			"head": 6,
+			"layer": 4
+		},
+		"mels": 80,
+		"ftype": 1
+	},
+	"params": {
+		"model": "D:\\automatic-broll\\whisper\\ggml-tiny.en.bin",
+		"language": "en",
+		"translate": false
+	},
+	"result": {
+		"language": "en"
+	},
+	"transcription": [
+		{
+			"timestamps": {
+				"from": "00:00:00,000",
+				"to": "00:00:06,000"
+			},
+			"offsets": {
+				"from": 0,
+				"to": 6000
+			},
+			"text": " For 40 years, every computer chip on Earth followed one rigid mathematical law, machine learning"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:06,000",
+				"to": "00:00:09,820"
+			},
+			"offsets": {
+				"from": 6000,
+				"to": 9820
+			},
+			"text": " requires floating-point matrix multiplication."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:09,820",
+				"to": "00:00:14,880"
+			},
+			"offsets": {
+				"from": 9820,
+				"to": 14880
+			},
+			"text": " That single assumption built NVIDIA's $3 trillion empire, locked local models behind"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:14,880",
+				"to": "00:00:20,120"
+			},
+			"offsets": {
+				"from": 14880,
+				"to": 20120
+			},
+			"text": " 24 gigabytes of VRAM and convinced the world that running frontier intelligence at home"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:20,120",
+				"to": "00:00:22,520"
+			},
+			"offsets": {
+				"from": 20120,
+				"to": 22520
+			},
+			"text": " was hardware impossible."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:22,520",
+				"to": "00:00:23,520"
+			},
+			"offsets": {
+				"from": 22520,
+				"to": 23520
+			},
+			"text": " Until now"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:23,520",
+				"to": "00:00:28,800"
+			},
+			"offsets": {
+				"from": 23520,
+				"to": 28800
+			},
+			"text": " A radical architectural breakthrough called one-bit turnery quantization just deleted"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:28,800",
+				"to": "00:00:32,800"
+			},
+			"offsets": {
+				"from": 28800,
+				"to": 32800
+			},
+			"text": " multiplication from neural networks entirely."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:32,800",
+				"to": "00:00:40,000"
+			},
+			"offsets": {
+				"from": 32800,
+				"to": 40000
+			},
+			"text": " Instead of massive 16-bit weight matrices, the weights only exist in 3 states -1, 0 and"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:40,000",
+				"to": "00:00:41,800"
+			},
+			"offsets": {
+				"from": 40000,
+				"to": 41800
+			},
+			"text": " +1."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:41,800",
+				"to": "00:00:44,400"
+			},
+			"offsets": {
+				"from": 41800,
+				"to": 44400
+			},
+			"text": " No floating-point units."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:44,400",
+				"to": "00:00:47,040"
+			},
+			"offsets": {
+				"from": 44400,
+				"to": 47040
+			},
+			"text": " No molten thermal throttling."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:47,040",
+				"to": "00:00:52,880"
+			},
+			"offsets": {
+				"from": 47040,
+				"to": 52880
+			},
+			"text": " And suddenly, a $70 billion parameter reasoning model that once choked a $2,000 GPU can run"
+		},
+		{
+			"timestamps": {
+				"from": "00:00:52,880",
+				"to": "00:00:56,320"
+			},
+			"offsets": {
+				"from": 52880,
+				"to": 56320
+			},
+			"text": " silently on a $400 laptop."
+		},
+		{
+			"timestamps": {
+				"from": "00:00:56,320",
+				"to": "00:01:00,440"
+			},
+			"offsets": {
+				"from": 56320,
+				"to": 60440
+			},
+			"text": " Here is the hidden architecture that just broke the hardware wall."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:00,440",
+				"to": "00:01:05,640"
+			},
+			"offsets": {
+				"from": 60440,
+				"to": 65640
+			},
+			"text": " To understand why this breaks the paradigm, we have to look at what GPUs actually do during"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:05,640",
+				"to": "00:01:07,400"
+			},
+			"offsets": {
+				"from": 65640,
+				"to": 67400
+			},
+			"text": " inference."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:07,400",
+				"to": "00:01:13,720"
+			},
+			"offsets": {
+				"from": 67400,
+				"to": 73720
+			},
+			"text": " In standard FP-16 transformer models, every single forward pass requires multiplying floating-point"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:13,720",
+				"to": "00:01:17,440"
+			},
+			"offsets": {
+				"from": 73720,
+				"to": 77440
+			},
+			"text": " numbers billions of times per second."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:17,440",
+				"to": "00:01:20,240"
+			},
+			"offsets": {
+				"from": 77440,
+				"to": 80240
+			},
+			"text": " Multiplyers are silicon-hungry monsters."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:20,240",
+				"to": "00:01:26,720"
+			},
+			"offsets": {
+				"from": 80240,
+				"to": 86720
+			},
+			"text": " They demand massive physical dye space, draw enormous wattage, and generate immense heat."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:26,720",
+				"to": "00:01:32,160"
+			},
+			"offsets": {
+				"from": 86720,
+				"to": 92160
+			},
+			"text": " But researchers behind BitNet be 1.58 asked a fundamental question, what if we restrict"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:32,160",
+				"to": "00:01:37,200"
+			},
+			"offsets": {
+				"from": 92160,
+				"to": 97200
+			},
+			"text": " weights to a turnery set, -1, 0, +1?"
+		},
+		{
+			"timestamps": {
+				"from": "00:01:37,200",
+				"to": "00:01:43,520"
+			},
+			"offsets": {
+				"from": 97200,
+				"to": 103520
+			},
+			"text": " In turnery math, multiplying an activation by -1 is just a sign flip."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:43,520",
+				"to": "00:01:46,040"
+			},
+			"offsets": {
+				"from": 103520,
+				"to": 106040
+			},
+			"text": " Multiplying by 0 is 0."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:46,040",
+				"to": "00:01:50,680"
+			},
+			"offsets": {
+				"from": 106040,
+				"to": 110680
+			},
+			"text": " Multiplying by +1 is the value itself."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:50,680",
+				"to": "00:01:53,320"
+			},
+			"offsets": {
+				"from": 110680,
+				"to": 113320
+			},
+			"text": " Multiplication is completely eradicated."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:53,320",
+				"to": "00:01:58,400"
+			},
+			"offsets": {
+				"from": 113320,
+				"to": 118400
+			},
+			"text": " The entire matrix multiplication engine collapses into pure addition."
+		},
+		{
+			"timestamps": {
+				"from": "00:01:58,400",
+				"to": "00:02:04,120"
+			},
+			"offsets": {
+				"from": 118400,
+				"to": 124120
+			},
+			"text": " And addition requires a fraction of the silicon area and less than 1/10 of the energy."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:04,120",
+				"to": "00:02:09,040"
+			},
+			"offsets": {
+				"from": 124120,
+				"to": 129040
+			},
+			"text": " Here is the industry's secret that Nvidia rarely highlights, modern LLM inference is not"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:09,040",
+				"to": "00:02:12,800"
+			},
+			"offsets": {
+				"from": 129040,
+				"to": 132800
+			},
+			"text": " compute-bound, it is memory-bandwidth-bound."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:12,800",
+				"to": "00:02:17,720"
+			},
+			"offsets": {
+				"from": 132800,
+				"to": 137720
+			},
+			"text": " When you run a 70 billion parameter model, your processor spends most of its clock cycles"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:17,720",
+				"to": "00:02:22,800"
+			},
+			"offsets": {
+				"from": 137720,
+				"to": 142800
+			},
+			"text": " sitting idle, desperately waiting for billions of 16 bit weights to travel across the memory"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:22,800",
+				"to": "00:02:26,320"
+			},
+			"offsets": {
+				"from": 142800,
+				"to": 146320
+			},
+			"text": " bus from VRAM into the compute cores."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:26,320",
+				"to": "00:02:32,400"
+			},
+			"offsets": {
+				"from": 146320,
+				"to": 152400
+			},
+			"text": " At 16 bits per parameter, a 70-bit model demands over 140 gigabytes of memory transfer"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:32,400",
+				"to": "00:02:35,400"
+			},
+			"offsets": {
+				"from": 152400,
+				"to": 155400
+			},
+			"text": " just to spit out a single token."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:35,400",
+				"to": "00:02:41,640"
+			},
+			"offsets": {
+				"from": 155400,
+				"to": 161640
+			},
+			"text": " That is why an RTX 4090 with 24 gigabytes of VRAM instantly crashes with an out-of-memory"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:41,640",
+				"to": "00:02:43,040"
+			},
+			"offsets": {
+				"from": 161640,
+				"to": 163040
+			},
+			"text": " layer."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:43,040",
+				"to": "00:02:49,440"
+			},
+			"offsets": {
+				"from": 163040,
+				"to": 169440
+			},
+			"text": " But at 1.58 bits, that same 70 billion parameter model compresses into less than 15"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:49,440",
+				"to": "00:02:50,440"
+			},
+			"offsets": {
+				"from": 169440,
+				"to": 170440
+			},
+			"text": " gigabytes."
+		},
+		{
+			"timestamps": {
+				"from": "00:02:50,440",
+				"to": "00:02:56,320"
+			},
+			"offsets": {
+				"from": 170440,
+				"to": 176320
+			},
+			"text": " Suddenly, the entire model fits comfortably inside consumer unified memory and memory"
+		},
+		{
+			"timestamps": {
+				"from": "00:02:56,320",
+				"to": "00:03:00,120"
+			},
+			"offsets": {
+				"from": 176320,
+				"to": 180120
+			},
+			"text": " bus pressure drops by nearly 90%."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:00,120",
+				"to": "00:03:04,760"
+			},
+			"offsets": {
+				"from": 180120,
+				"to": 184760
+			},
+			"text": " The immediate counter-argument was obvious, won't crushing weights down to turnery states"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:04,760",
+				"to": "00:03:07,440"
+			},
+			"offsets": {
+				"from": 184760,
+				"to": 187440
+			},
+			"text": " destroy model intelligence."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:07,440",
+				"to": "00:03:11,760"
+			},
+			"offsets": {
+				"from": 187440,
+				"to": 191760
+			},
+			"text": " The empirical benchmark results shocked the AI community."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:11,760",
+				"to": "00:03:18,160"
+			},
+			"offsets": {
+				"from": 191760,
+				"to": 198160
+			},
+			"text": " Across massive datasets, BitNet be 1.58 models achieve near-identical perplexity and task"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:18,160",
+				"to": "00:03:22,840"
+			},
+			"offsets": {
+				"from": 198160,
+				"to": 202840
+			},
+			"text": " accuracy compared to full precision FP-16 baselines."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:22,840",
+				"to": "00:03:25,560"
+			},
+			"offsets": {
+				"from": 202840,
+				"to": 205560
+			},
+			"text": " But look at the hardware reality."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:25,560",
+				"to": "00:03:31,480"
+			},
+			"offsets": {
+				"from": 205560,
+				"to": 211480
+			},
+			"text": " On standard CPU hardware, BitNet delivers up to a fourfold speed-up in token generation,"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:31,480",
+				"to": "00:03:37,000"
+			},
+			"offsets": {
+				"from": 211480,
+				"to": 217000
+			},
+			"text": " with some implementations hitting over 80 tokens per second on an Apple M series chip."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:37,000",
+				"to": "00:03:42,280"
+			},
+			"offsets": {
+				"from": 217000,
+				"to": 222280
+			},
+			"text": " Devices that previously couldn't load a 14 billion parameter model can now execute complex"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:42,280",
+				"to": "00:03:47,600"
+			},
+			"offsets": {
+				"from": 222280,
+				"to": 227600
+			},
+			"text": " multi-step reasoning workflows without a dedicated discrete graphics card."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:47,600",
+				"to": "00:03:53,600"
+			},
+			"offsets": {
+				"from": 227600,
+				"to": 233600
+			},
+			"text": " This shift changes the geopolitical and economic landscape of artificial intelligence."
+		},
+		{
+			"timestamps": {
+				"from": "00:03:53,600",
+				"to": "00:03:58,600"
+			},
+			"offsets": {
+				"from": 233600,
+				"to": 238600
+			},
+			"text": " If high-tier intelligence can run on somewhat silicon using pure integer addition, the data"
+		},
+		{
+			"timestamps": {
+				"from": "00:03:58,600",
+				"to": "00:04:01,480"
+			},
+			"offsets": {
+				"from": 238600,
+				"to": 241480
+			},
+			"text": " center monopoly loses its mode."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:01,480",
+				"to": "00:04:06,680"
+			},
+			"offsets": {
+				"from": 241480,
+				"to": 246680
+			},
+			"text": " We are transitioning from an era of centralized server farms charging per token to local,"
+		},
+		{
+			"timestamps": {
+				"from": "00:04:06,680",
+				"to": "00:04:13,120"
+			},
+			"offsets": {
+				"from": 246680,
+				"to": 253120
+			},
+			"text": " government intelligence running continuously on personal devices, robotics, and edge hardware."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:13,120",
+				"to": "00:04:18,400"
+			},
+			"offsets": {
+				"from": 253120,
+				"to": 258400
+			},
+			"text": " The future of AI is not about building bigger nuclear power data centers."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:18,400",
+				"to": "00:04:21,440"
+			},
+			"offsets": {
+				"from": 258400,
+				"to": 261440
+			},
+			"text": " It is about architectural efficiency."
+		},
+		{
+			"timestamps": {
+				"from": "00:04:21,440",
+				"to": "00:04:23,000"
+			},
+			"offsets": {
+				"from": 261440,
+				"to": 263000
+			},
+			"text": " And the math has already won."
+		}
+	]
+}

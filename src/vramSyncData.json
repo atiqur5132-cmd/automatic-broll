@@ -1,0 +1,528 @@
+{
+  "totalDurationSec": 263.83,
+  "totalFrames": 7915,
+  "actTimings": [
+    {
+      "id": "act1",
+      "title": "A1 · THE 40-YEAR LAW & THE VRAM WALL",
+      "durationSec": 60.19,
+      "startFrame": 0,
+      "endFrame": 1806,
+      "durationFrames": 1806
+    },
+    {
+      "id": "act2",
+      "title": "A2 · THE TERNARY BREAKTHROUGH - DELETING MULTIPLICATION",
+      "durationSec": 63.6,
+      "startFrame": 1805,
+      "endFrame": 3714,
+      "durationFrames": 1908
+    },
+    {
+      "id": "act3",
+      "title": "A3 · THE MEMORY BUS BOTTLENECK",
+      "durationSec": 56.06,
+      "startFrame": 3713,
+      "endFrame": 5396,
+      "durationFrames": 1682
+    },
+    {
+      "id": "act4",
+      "title": "A4 · BENCHMARK WARS & HARDWARE REALITY",
+      "durationSec": 47.4,
+      "startFrame": 5395,
+      "endFrame": 6818,
+      "durationFrames": 1422
+    },
+    {
+      "id": "act5",
+      "title": "A5 · THE POST-NVIDIA ERA & LOCAL SWARMS",
+      "durationSec": 36.6,
+      "startFrame": 6817,
+      "endFrame": 7916,
+      "durationFrames": 1098
+    }
+  ],
+  "subtitles": [
+    {
+      "id": 1,
+      "text": "For 40 years, every computer chip on Earth followed one rigid mathematical law, machine learning",
+      "startMs": 0,
+      "endMs": 6000,
+      "startFrame": 0,
+      "endFrame": 180
+    },
+    {
+      "id": 2,
+      "text": "requires floating-point matrix multiplication.",
+      "startMs": 6000,
+      "endMs": 9820,
+      "startFrame": 180,
+      "endFrame": 295
+    },
+    {
+      "id": 3,
+      "text": "That single assumption built NVIDIA's $3 trillion empire, locked local models behind",
+      "startMs": 9820,
+      "endMs": 14880,
+      "startFrame": 294,
+      "endFrame": 447
+    },
+    {
+      "id": 4,
+      "text": "24 gigabytes of VRAM and convinced the world that running frontier intelligence at home",
+      "startMs": 14880,
+      "endMs": 20120,
+      "startFrame": 446,
+      "endFrame": 604
+    },
+    {
+      "id": 5,
+      "text": "was hardware impossible.",
+      "startMs": 20120,
+      "endMs": 22520,
+      "startFrame": 603,
+      "endFrame": 676
+    },
+    {
+      "id": 6,
+      "text": "Until now",
+      "startMs": 22520,
+      "endMs": 23520,
+      "startFrame": 675,
+      "endFrame": 706
+    },
+    {
+      "id": 7,
+      "text": "A radical architectural breakthrough called one-bit turnery quantization just deleted",
+      "startMs": 23520,
+      "endMs": 28800,
+      "startFrame": 705,
+      "endFrame": 864
+    },
+    {
+      "id": 8,
+      "text": "multiplication from neural networks entirely.",
+      "startMs": 28800,
+      "endMs": 32800,
+      "startFrame": 864,
+      "endFrame": 984
+    },
+    {
+      "id": 9,
+      "text": "Instead of massive 16-bit weight matrices, the weights only exist in 3 states -1, 0 and",
+      "startMs": 32800,
+      "endMs": 40000,
+      "startFrame": 983,
+      "endFrame": 1200
+    },
+    {
+      "id": 10,
+      "text": "+1.",
+      "startMs": 40000,
+      "endMs": 41800,
+      "startFrame": 1200,
+      "endFrame": 1254
+    },
+    {
+      "id": 11,
+      "text": "No floating-point units.",
+      "startMs": 41800,
+      "endMs": 44400,
+      "startFrame": 1254,
+      "endFrame": 1332
+    },
+    {
+      "id": 12,
+      "text": "No molten thermal throttling.",
+      "startMs": 44400,
+      "endMs": 47040,
+      "startFrame": 1332,
+      "endFrame": 1412
+    },
+    {
+      "id": 13,
+      "text": "And suddenly, a $70 billion parameter reasoning model that once choked a $2,000 GPU can run",
+      "startMs": 47040,
+      "endMs": 52880,
+      "startFrame": 1411,
+      "endFrame": 1587
+    },
+    {
+      "id": 14,
+      "text": "silently on a $400 laptop.",
+      "startMs": 52880,
+      "endMs": 56320,
+      "startFrame": 1586,
+      "endFrame": 1690
+    },
+    {
+      "id": 15,
+      "text": "Here is the hidden architecture that just broke the hardware wall.",
+      "startMs": 56320,
+      "endMs": 60440,
+      "startFrame": 1689,
+      "endFrame": 1814
+    },
+    {
+      "id": 16,
+      "text": "To understand why this breaks the paradigm, we have to look at what GPUs actually do during",
+      "startMs": 60440,
+      "endMs": 65640,
+      "startFrame": 1813,
+      "endFrame": 1970
+    },
+    {
+      "id": 17,
+      "text": "inference.",
+      "startMs": 65640,
+      "endMs": 67400,
+      "startFrame": 1969,
+      "endFrame": 2023
+    },
+    {
+      "id": 18,
+      "text": "In standard FP-16 transformer models, every single forward pass requires multiplying floating-point",
+      "startMs": 67400,
+      "endMs": 73720,
+      "startFrame": 2022,
+      "endFrame": 2212
+    },
+    {
+      "id": 19,
+      "text": "numbers billions of times per second.",
+      "startMs": 73720,
+      "endMs": 77440,
+      "startFrame": 2211,
+      "endFrame": 2324
+    },
+    {
+      "id": 20,
+      "text": "Multiplyers are silicon-hungry monsters.",
+      "startMs": 77440,
+      "endMs": 80240,
+      "startFrame": 2323,
+      "endFrame": 2408
+    },
+    {
+      "id": 21,
+      "text": "They demand massive physical dye space, draw enormous wattage, and generate immense heat.",
+      "startMs": 80240,
+      "endMs": 86720,
+      "startFrame": 2407,
+      "endFrame": 2602
+    },
+    {
+      "id": 22,
+      "text": "But researchers behind BitNet be 1.58 asked a fundamental question, what if we restrict",
+      "startMs": 86720,
+      "endMs": 92160,
+      "startFrame": 2601,
+      "endFrame": 2765
+    },
+    {
+      "id": 23,
+      "text": "weights to a turnery set, -1, 0, +1?",
+      "startMs": 92160,
+      "endMs": 97200,
+      "startFrame": 2764,
+      "endFrame": 2916
+    },
+    {
+      "id": 24,
+      "text": "In turnery math, multiplying an activation by -1 is just a sign flip.",
+      "startMs": 97200,
+      "endMs": 103520,
+      "startFrame": 2916,
+      "endFrame": 3106
+    },
+    {
+      "id": 25,
+      "text": "Multiplying by 0 is 0.",
+      "startMs": 103520,
+      "endMs": 106040,
+      "startFrame": 3105,
+      "endFrame": 3182
+    },
+    {
+      "id": 26,
+      "text": "Multiplying by +1 is the value itself.",
+      "startMs": 106040,
+      "endMs": 110680,
+      "startFrame": 3181,
+      "endFrame": 3321
+    },
+    {
+      "id": 27,
+      "text": "Multiplication is completely eradicated.",
+      "startMs": 110680,
+      "endMs": 113320,
+      "startFrame": 3320,
+      "endFrame": 3400
+    },
+    {
+      "id": 28,
+      "text": "The entire matrix multiplication engine collapses into pure addition.",
+      "startMs": 113320,
+      "endMs": 118400,
+      "startFrame": 3399,
+      "endFrame": 3552
+    },
+    {
+      "id": 29,
+      "text": "And addition requires a fraction of the silicon area and less than 1/10 of the energy.",
+      "startMs": 118400,
+      "endMs": 124120,
+      "startFrame": 3552,
+      "endFrame": 3724
+    },
+    {
+      "id": 30,
+      "text": "Here is the industry's secret that Nvidia rarely highlights, modern LLM inference is not",
+      "startMs": 124120,
+      "endMs": 129040,
+      "startFrame": 3723,
+      "endFrame": 3872
+    },
+    {
+      "id": 31,
+      "text": "compute-bound, it is memory-bandwidth-bound.",
+      "startMs": 129040,
+      "endMs": 132800,
+      "startFrame": 3871,
+      "endFrame": 3985
+    },
+    {
+      "id": 32,
+      "text": "When you run a 70 billion parameter model, your processor spends most of its clock cycles",
+      "startMs": 132800,
+      "endMs": 137720,
+      "startFrame": 3984,
+      "endFrame": 4132
+    },
+    {
+      "id": 33,
+      "text": "sitting idle, desperately waiting for billions of 16 bit weights to travel across the memory",
+      "startMs": 137720,
+      "endMs": 142800,
+      "startFrame": 4131,
+      "endFrame": 4284
+    },
+    {
+      "id": 34,
+      "text": "bus from VRAM into the compute cores.",
+      "startMs": 142800,
+      "endMs": 146320,
+      "startFrame": 4284,
+      "endFrame": 4390
+    },
+    {
+      "id": 35,
+      "text": "At 16 bits per parameter, a 70-bit model demands over 140 gigabytes of memory transfer",
+      "startMs": 146320,
+      "endMs": 152400,
+      "startFrame": 4389,
+      "endFrame": 4572
+    },
+    {
+      "id": 36,
+      "text": "just to spit out a single token.",
+      "startMs": 152400,
+      "endMs": 155400,
+      "startFrame": 4572,
+      "endFrame": 4662
+    },
+    {
+      "id": 37,
+      "text": "That is why an RTX 4090 with 24 gigabytes of VRAM instantly crashes with an out-of-memory",
+      "startMs": 155400,
+      "endMs": 161640,
+      "startFrame": 4662,
+      "endFrame": 4850
+    },
+    {
+      "id": 38,
+      "text": "layer.",
+      "startMs": 161640,
+      "endMs": 163040,
+      "startFrame": 4849,
+      "endFrame": 4892
+    },
+    {
+      "id": 39,
+      "text": "But at 1.58 bits, that same 70 billion parameter model compresses into less than 15",
+      "startMs": 163040,
+      "endMs": 169440,
+      "startFrame": 4891,
+      "endFrame": 5084
+    },
+    {
+      "id": 40,
+      "text": "gigabytes.",
+      "startMs": 169440,
+      "endMs": 170440,
+      "startFrame": 5083,
+      "endFrame": 5114
+    },
+    {
+      "id": 41,
+      "text": "Suddenly, the entire model fits comfortably inside consumer unified memory and memory",
+      "startMs": 170440,
+      "endMs": 176320,
+      "startFrame": 5113,
+      "endFrame": 5290
+    },
+    {
+      "id": 42,
+      "text": "bus pressure drops by nearly 90%.",
+      "startMs": 176320,
+      "endMs": 180120,
+      "startFrame": 5289,
+      "endFrame": 5404
+    },
+    {
+      "id": 43,
+      "text": "The immediate counter-argument was obvious, won't crushing weights down to turnery states",
+      "startMs": 180120,
+      "endMs": 184760,
+      "startFrame": 5403,
+      "endFrame": 5543
+    },
+    {
+      "id": 44,
+      "text": "destroy model intelligence.",
+      "startMs": 184760,
+      "endMs": 187440,
+      "startFrame": 5542,
+      "endFrame": 5624
+    },
+    {
+      "id": 45,
+      "text": "The empirical benchmark results shocked the AI community.",
+      "startMs": 187440,
+      "endMs": 191760,
+      "startFrame": 5623,
+      "endFrame": 5753
+    },
+    {
+      "id": 46,
+      "text": "Across massive datasets, BitNet be 1.58 models achieve near-identical perplexity and task",
+      "startMs": 191760,
+      "endMs": 198160,
+      "startFrame": 5752,
+      "endFrame": 5945
+    },
+    {
+      "id": 47,
+      "text": "accuracy compared to full precision FP-16 baselines.",
+      "startMs": 198160,
+      "endMs": 202840,
+      "startFrame": 5944,
+      "endFrame": 6086
+    },
+    {
+      "id": 48,
+      "text": "But look at the hardware reality.",
+      "startMs": 202840,
+      "endMs": 205560,
+      "startFrame": 6085,
+      "endFrame": 6167
+    },
+    {
+      "id": 49,
+      "text": "On standard CPU hardware, BitNet delivers up to a fourfold speed-up in token generation,",
+      "startMs": 205560,
+      "endMs": 211480,
+      "startFrame": 6166,
+      "endFrame": 6345
+    },
+    {
+      "id": 50,
+      "text": "with some implementations hitting over 80 tokens per second on an Apple M series chip.",
+      "startMs": 211480,
+      "endMs": 217000,
+      "startFrame": 6344,
+      "endFrame": 6510
+    },
+    {
+      "id": 51,
+      "text": "Devices that previously couldn't load a 14 billion parameter model can now execute complex",
+      "startMs": 217000,
+      "endMs": 222280,
+      "startFrame": 6510,
+      "endFrame": 6669
+    },
+    {
+      "id": 52,
+      "text": "multi-step reasoning workflows without a dedicated discrete graphics card.",
+      "startMs": 222280,
+      "endMs": 227600,
+      "startFrame": 6668,
+      "endFrame": 6828
+    },
+    {
+      "id": 53,
+      "text": "This shift changes the geopolitical and economic landscape of artificial intelligence.",
+      "startMs": 227600,
+      "endMs": 233600,
+      "startFrame": 6828,
+      "endFrame": 7008
+    },
+    {
+      "id": 54,
+      "text": "If high-tier intelligence can run on somewhat silicon using pure integer addition, the data",
+      "startMs": 233600,
+      "endMs": 238600,
+      "startFrame": 7008,
+      "endFrame": 7158
+    },
+    {
+      "id": 55,
+      "text": "center monopoly loses its mode.",
+      "startMs": 238600,
+      "endMs": 241480,
+      "startFrame": 7158,
+      "endFrame": 7245
+    },
+    {
+      "id": 56,
+      "text": "We are transitioning from an era of centralized server farms charging per token to local,",
+      "startMs": 241480,
+      "endMs": 246680,
+      "startFrame": 7244,
+      "endFrame": 7401
+    },
+    {
+      "id": 57,
+      "text": "government intelligence running continuously on personal devices, robotics, and edge hardware.",
+      "startMs": 246680,
+      "endMs": 253120,
+      "startFrame": 7400,
+      "endFrame": 7594
+    },
+    {
+      "id": 58,
+      "text": "The future of AI is not about building bigger nuclear power data centers.",
+      "startMs": 253120,
+      "endMs": 258400,
+      "startFrame": 7593,
+      "endFrame": 7752
+    },
+    {
+      "id": 59,
+      "text": "It is about architectural efficiency.",
+      "startMs": 258400,
+      "endMs": 261440,
+      "startFrame": 7751,
+      "endFrame": 7844
+    },
+    {
+      "id": 60,
+      "text": "And the math has already won.",
+      "startMs": 261440,
+      "endMs": 263000,
+      "startFrame": 7843,
+      "endFrame": 7890
+    }
+  ]
+}
